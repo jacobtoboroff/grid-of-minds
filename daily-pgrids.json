@@ -1,0 +1,926 @@
+{
+  "1": {
+    "rows": [
+      "Republican Party",
+      "Served in Military",
+      "Democratic Party"
+    ],
+    "columns": [
+      "Cold War President",
+      "First Name Starts with A–J",
+      "Served more than 5 years"
+    ]
+  },
+  "2": {
+    "rows": [
+      "Democratic Party",
+      "Served in Congress",
+      "Impeached"
+    ],
+    "columns": [
+      "Born 1900–2000",
+      "First Name Starts with A–J",
+      "Served less than 5 years"
+    ]
+  },
+"3": {
+  "rows": [
+    "Republican Party",
+    "Served in the House",
+    "Born before 1800"
+  ],
+  "columns": [
+    "Inaugurated older than 50",
+    "Last Name K–Z",
+    "Died in Office"
+  ]
+},
+  "4": {
+    "rows": [
+      "Democratic Party",
+      "Born 1900–2000",
+      "First Name Starts with A–J"
+    ],
+    "columns": [
+      "Nobel Prize Winner",
+      "Attended Ivy League School",
+      "Former State Governors"
+    ]
+  },
+  "5": {
+    "rows": [
+      "Born 1800 - 1900",
+      "Born before 1800",
+      "Born 1900–2000"
+    ],
+    "columns": [
+      "Served in Congress",
+      "Died in Office",
+      "Served as Vice President"
+    ]
+  },
+  "6": {
+    "rows": [
+      "Appears On Currency",
+      "Served more than 5 years",
+      "Inaugurated older than 60"
+    ],
+    "columns": [
+      "Served in Military",
+      "Served as Vice President",
+      "Served in Congress"
+    ]
+  },
+  "7": {
+    "rows": [
+      "Republican Party",
+      "Last Name K–Z",
+      "Won Re-election"
+    ],
+    "columns": [
+      "Served Past 1850",
+      "Won Without Popular Vote",
+      "First Name Starts with A–J"
+    ]
+  },
+  "8": {
+    "rows": [
+      "Democratic Party",
+      "Served more than 5 years",
+      "Former State Governors"
+    ],
+    "columns": [
+      "Born 1900–2000",
+      "First Name Starts with A–J",
+      "Attended Ivy League School"
+    ]
+  },
+  "9": {
+    "rows": [
+      "Republican Party",
+      "Served in Military",
+      "Born 1800 - 1900"
+    ],
+    "columns": [
+      "Served in Congress",
+      "Last Name K–Z",
+      "Won Re-election"
+    ]
+  },
+  "10": {
+    "rows": [
+      "Democratic Party",
+      "Served less than 5 years",
+      "Republican Party"
+    ],
+    "columns": [
+      "Born 1900–2000",
+      "Cold War President",
+      "Died in Office"
+    ]
+  },
+  "11": {
+    "rows": [
+      "Republican Party",
+      "Served more than 5 years",
+      "Won Re-election"
+    ],
+    "columns": [
+      "First Name Starts with A–J",
+      "Served as Vice President",
+      "Born 1900-2000"
+    ]
+  },
+  "12": {
+    "rows": [
+      "First Name Starts with A–J",
+      "Served in Congress",
+      "Attended Ivy League School"
+    ],
+    "columns": [
+      "Republican Party",
+      "Born 1800 - 1900",
+      "Last Name K–Z"
+    ]
+  },
+  "13": {
+    "rows": [
+      "Republican Party",
+      "Served in Military",
+      "Born before 1800"
+    ],
+    "columns": [
+      "Served less than 5 years",
+      "Won Re-election",
+      "First Name Starts with A–J"
+    ]
+  },
+  "14": {
+    "rows": [
+      "Democratic Party",
+      "Republican Party",
+      "Last Name A–J"
+    ],
+    "columns": [
+      "Served Past 1900",
+      "Served in Congress",
+      "Served as Vice President"
+    ]
+  },
+  "15": {
+    "rows": [
+      "Democratic-republican Party",
+      "Served in Congress",
+      "First Name Starts with K–Z"
+    ],
+    "columns": [
+      "Appears on Currency",
+      "Served in Military",
+      "Served more than 5 years"
+    ]
+  },
+  "16": {
+    "rows": [
+      "Democratic Party",
+      "Served less than 5 years",
+      "Impeached"
+    ],
+    "columns": [
+      "Cold War President",
+      "Born 1900–2000",
+      "Served more than 5 years"
+    ]
+  },
+  "17": {
+    "rows": [
+      "Republican Party",
+      "Served more than 5 years",
+      "Won Re-election"
+    ],
+    "columns": [
+      "Served in Congress",
+      "Name Starts with A–J",
+      "Served in Military"
+    ]
+  },
+  "18": {
+    "rows": [
+      "Democratic Party",
+      "Served in Military",
+      "Born 1900–2000"
+    ],
+    "columns": [
+      "Impeached",
+      "Born before 1800",
+      "Cold War President"
+    ]
+  },
+  "19": {
+    "rows": [
+      "Republican Party",
+      "Served in Congress",
+      "Born before 1800"
+    ],
+    "columns": [
+      "Served less than 5 years",
+      "Won Re-election",
+      "Name Starts with K–Z"
+    ]
+  },
+  "20": {
+    "rows": [
+      "Democratic Party",
+      "Served more than 5 years",
+      "Impeached"
+    ],
+    "columns": [
+      "Cold War President",
+      "Served in Military",
+      "Born 1900–2000"
+    ]
+  },
+  "21": {
+    "rows": [
+      "Republican Party",
+      "Served in Military",
+      "Won Re-election"
+    ],
+    "columns": [
+      "Name Starts with A–J",
+      "Served in Congress",
+      "Served less than 5 years"
+    ]
+  },
+  "22": {
+    "rows": [
+      "Democratic Party",
+      "Served in Congress",
+      "Impeached"
+    ],
+    "columns": [
+      "Cold War President",
+      "Born 1900–2000",
+      "Name Starts with K–Z"
+    ]
+  },
+  "23": {
+    "rows": [
+      "Republican Party",
+      "Served less than 5 years",
+      "Born before 1800"
+    ],
+    "columns": [
+      "Served in Military",
+      "Won Re-election",
+      "Name Starts with A–J"
+    ]
+  },
+  "24": {
+    "rows": [
+      "Democratic Party",
+      "Served more than 5 years",
+      "Impeached"
+    ],
+    "columns": [
+      "Cold War President",
+      "Served in Congress",
+      "Born 1900–2000"
+    ]
+  },
+  "25": {
+    "rows": [
+      "Republican Party",
+      "Served in Congress",
+      "Won Re-election"
+    ],
+    "columns": [
+      "Name Starts with K–Z",
+      "Served in Military",
+      "Born before 1800"
+    ]
+  },
+  "26": {
+    "rows": [
+      "Democratic Party",
+      "Served less than 5 years",
+      "Impeached"
+    ],
+    "columns": [
+      "Cold War President",
+      "Born 1900–2000",
+      "Served more than 5 years"
+    ]
+  },
+  "27": {
+    "rows": [
+      "Republican Party",
+      "Served more than 5 years",
+      "Won Re-election"
+    ],
+    "columns": [
+      "Served in Congress",
+      "Name Starts with A–J",
+      "Served in Military"
+    ]
+  },
+  "28": {
+    "rows": [
+      "Democratic Party",
+      "Served in Military",
+      "Born 1900–2000"
+    ],
+    "columns": [
+      "Impeached",
+      "Born before 1800",
+      "Cold War President"
+    ]
+  },
+  "29": {
+    "rows": [
+      "Republican Party",
+      "Served in Congress",
+      "Born before 1800"
+    ],
+    "columns": [
+      "Served less than 5 years",
+      "Won Re-election",
+      "Name Starts with K–Z"
+    ]
+  },
+  "30": {
+    "rows": [
+      "Democratic Party",
+      "Served more than 5 years",
+      "Impeached"
+    ],
+    "columns": [
+      "Cold War President",
+      "Served in Military",
+      "Born 1900–2000"
+    ]
+  },
+  "31": {
+    "rows": [
+      "Republican Party",
+      "Served in Military",
+      "Won Re-election"
+    ],
+    "columns": [
+      "Name Starts with A–J",
+      "Served in Congress",
+      "Served less than 5 years"
+    ]
+  },
+  "32": {
+    "rows": [
+      "Democratic Party",
+      "Served in Congress",
+      "Impeached"
+    ],
+    "columns": [
+      "Cold War President",
+      "Born 1900–2000",
+      "Name Starts with K–Z"
+    ]
+  },
+  "33": {
+    "rows": [
+      "Republican Party",
+      "Served less than 5 years",
+      "Born before 1800"
+    ],
+    "columns": [
+      "Served in Military",
+      "Won Re-election",
+      "Name Starts with A–J"
+    ]
+  },
+  "34": {
+    "rows": [
+      "Democratic Party",
+      "Served more than 5 years",
+      "Impeached"
+    ],
+    "columns": [
+      "Cold War President",
+      "Served in Congress",
+      "Born 1900–2000"
+    ]
+  },
+  "35": {
+    "rows": [
+      "Republican Party",
+      "Served in Congress",
+      "Won Re-election"
+    ],
+    "columns": [
+      "Name Starts with K–Z",
+      "Served in Military",
+      "Born before 1800"
+    ]
+  },
+  "36": {
+    "rows": [
+      "Democratic Party",
+      "Served less than 5 years",
+      "Impeached"
+    ],
+    "columns": [
+      "Cold War President",
+      "Born 1900–2000",
+      "Served more than 5 years"
+    ]
+  },
+  "37": {
+    "rows": [
+      "Republican Party",
+      "Served more than 5 years",
+      "Won Re-election"
+    ],
+    "columns": [
+      "Served in Congress",
+      "Name Starts with A–J",
+      "Served in Military"
+    ]
+  },
+  "38": {
+    "rows": [
+      "Democratic Party",
+      "Served in Military",
+      "Born 1900–2000"
+    ],
+    "columns": [
+      "Impeached",
+      "Born before 1800",
+      "Cold War President"
+    ]
+  },
+  "39": {
+    "rows": [
+      "Republican Party",
+      "Served in Congress",
+      "Born before 1800"
+    ],
+    "columns": [
+      "Served less than 5 years",
+      "Won Re-election",
+      "Name Starts with K–Z"
+    ]
+  },
+  "40": {
+    "rows": [
+      "Democratic Party",
+      "Served more than 5 years",
+      "Impeached"
+    ],
+    "columns": [
+      "Cold War President",
+      "Served in Military",
+      "Born 1900–2000"
+    ]
+  },
+  "41": {
+    "rows": [
+      "Republican Party",
+      "Served in Military",
+      "Won Re-election"
+    ],
+    "columns": [
+      "Name Starts with A–J",
+      "Served in Congress",
+      "Served less than 5 years"
+    ]
+  },
+  "42": {
+    "rows": [
+      "Democratic Party",
+      "Served in Congress",
+      "Impeached"
+    ],
+    "columns": [
+      "Cold War President",
+      "Born 1900–2000",
+      "Name Starts with K–Z"
+    ]
+  },
+  "43": {
+    "rows": [
+      "Republican Party",
+      "Served less than 5 years",
+      "Born before 1800"
+    ],
+    "columns": [
+      "Served in Military",
+      "Won Re-election",
+      "Name Starts with A–J"
+    ]
+  },
+  "44": {
+    "rows": [
+      "Democratic Party",
+      "Served more than 5 years",
+      "Impeached"
+    ],
+    "columns": [
+      "Cold War President",
+      "Served in Congress",
+      "Born 1900–2000"
+    ]
+  },
+  "45": {
+    "rows": [
+      "Republican Party",
+      "Served in Congress",
+      "Won Re-election"
+    ],
+    "columns": [
+      "Name Starts with K–Z",
+      "Served in Military",
+      "Born before 1800"
+    ]
+  },
+  "46": {
+    "rows": [
+      "Democratic Party",
+      "Served less than 5 years",
+      "Impeached"
+    ],
+    "columns": [
+      "Cold War President",
+      "Born 1900–2000",
+      "Served more than 5 years"
+    ]
+  },
+  "47": {
+    "rows": [
+      "Republican Party",
+      "Served more than 5 years",
+      "Won Re-election"
+    ],
+    "columns": [
+      "Served in Congress",
+      "Name Starts with A–J",
+      "Served in Military"
+    ]
+  },
+  "48": {
+    "rows": [
+      "Democratic Party",
+      "Served in Military",
+      "Born 1900–2000"
+    ],
+    "columns": [
+      "Impeached",
+      "Born before 1800",
+      "Cold War President"
+    ]
+  },
+  "49": {
+    "rows": [
+      "Republican Party",
+      "Served in Congress",
+      "Born before 1800"
+    ],
+    "columns": [
+      "Served less than 5 years",
+      "Won Re-election",
+      "Name Starts with K–Z"
+    ]
+  },
+  "50": {
+    "rows": [
+      "Democratic Party",
+      "Served more than 5 years",
+      "Impeached"
+    ],
+    "columns": [
+      "Cold War President",
+      "Served in Military",
+      "Born 1900–2000"
+    ]
+  },
+  "51": {
+    "rows": [
+      "Republican Party",
+      "Served in Military",
+      "Won Re-election"
+    ],
+    "columns": [
+      "Name Starts with A–J",
+      "Served in Congress",
+      "Served less than 5 years"
+    ]
+  },
+  "52": {
+    "rows": [
+      "Democratic Party",
+      "Served in Congress",
+      "Impeached"
+    ],
+    "columns": [
+      "Cold War President",
+      "Born 1900–2000",
+      "Name Starts with K–Z"
+    ]
+  },
+  "53": {
+    "rows": [
+      "Republican Party",
+      "Served less than 5 years",
+      "Born before 1800"
+    ],
+    "columns": [
+      "Served in Military",
+      "Won Re-election",
+      "Name Starts with A–J"
+    ]
+  },
+  "54": {
+    "rows": [
+      "Democratic Party",
+      "Served more than 5 years",
+      "Impeached"
+    ],
+    "columns": [
+      "Cold War President",
+      "Served in Congress",
+      "Born 1900–2000"
+    ]
+  },
+  "55": {
+    "rows": [
+      "Republican Party",
+      "Served in Congress",
+      "Won Re-election"
+    ],
+    "columns": [
+      "Name Starts with K–Z",
+      "Served in Military",
+      "Born before 1800"
+    ]
+  },
+  "56": {
+    "rows": [
+      "Democratic Party",
+      "Served less than 5 years",
+      "Impeached"
+    ],
+    "columns": [
+      "Cold War President",
+      "Born 1900–2000",
+      "Served more than 5 years"
+    ]
+  },
+  "57": {
+    "rows": [
+      "Republican Party",
+      "Served more than 5 years",
+      "Won Re-election"
+    ],
+    "columns": [
+      "Served in Congress",
+      "Name Starts with A–J",
+      "Served in Military"
+    ]
+  },
+  "58": {
+    "rows": [
+      "Democratic Party",
+      "Served in Military",
+      "Born 1900–2000"
+    ],
+    "columns": [
+      "Impeached",
+      "Born before 1800",
+      "Cold War President"
+    ]
+  },
+  "59": {
+    "rows": [
+      "Republican Party",
+      "Served in Congress",
+      "Born before 1800"
+    ],
+    "columns": [
+      "Served less than 5 years",
+      "Won Re-election",
+      "Name Starts with K–Z"
+    ]
+  },
+  "60": {
+    "rows": [
+      "Democratic Party",
+      "Served more than 5 years",
+      "Impeached"
+    ],
+    "columns": [
+      "Cold War President",
+      "Served in Military",
+      "Born 1900–2000"
+    ]
+  },
+  "61": {
+    "rows": [
+      "Republican Party",
+      "Served in Military",
+      "Won Re-election"
+    ],
+    "columns": [
+      "Name Starts with A–J",
+      "Served in Congress",
+      "Served less than 5 years"
+    ]
+  },
+  "62": {
+    "rows": [
+      "Democratic Party",
+      "Served in Congress",
+      "Impeached"
+    ],
+    "columns": [
+      "Cold War President",
+      "Born 1900–2000",
+      "Name Starts with K–Z"
+    ]
+  },
+  "63": {
+    "rows": [
+      "Republican Party",
+      "Served less than 5 years",
+      "Born before 1800"
+    ],
+    "columns": [
+      "Served in Military",
+      "Won Re-election",
+      "Name Starts with A–J"
+    ]
+  },
+  "64": {
+    "rows": [
+      "Democratic Party",
+      "Served more than 5 years",
+      "Impeached"
+    ],
+    "columns": [
+      "Cold War President",
+      "Served in Congress",
+      "Born 1900–2000"
+    ]
+  },
+  "65": {
+    "rows": [
+      "Republican Party",
+      "Served in Congress",
+      "Won Re-election"
+    ],
+    "columns": [
+      "Name Starts with K–Z",
+      "Served in Military",
+      "Born before 1800"
+    ]
+  },
+  "66": {
+    "rows": [
+      "Democratic Party",
+      "Served less than 5 years",
+      "Impeached"
+    ],
+    "columns": [
+      "Cold War President",
+      "Born 1900–2000",
+      "Served more than 5 years"
+    ]
+  },
+  "67": {
+    "rows": [
+      "Republican Party",
+      "Served more than 5 years",
+      "Won Re-election"
+    ],
+    "columns": [
+      "Served in Congress",
+      "Name Starts with A–J",
+      "Served in Military"
+    ]
+  },
+  "68": {
+    "rows": [
+      "Democratic Party",
+      "Served in Military",
+      "Born 1900–2000"
+    ],
+    "columns": [
+      "Impeached",
+      "Born before 1800",
+      "Cold War President"
+    ]
+  },
+  "69": {
+    "rows": [
+      "Republican Party",
+      "Served in Congress",
+      "Born before 1800"
+    ],
+    "columns": [
+      "Served less than 5 years",
+      "Won Re-election",
+      "Name Starts with K–Z"
+    ]
+  },
+  "70": {
+    "rows": [
+      "Democratic Party",
+      "Served more than 5 years",
+      "Impeached"
+    ],
+    "columns": [
+      "Cold War President",
+      "Served in Military",
+      "Born 1900–2000"
+    ]
+  },
+  "71": {
+    "rows": [
+      "Republican Party",
+      "Served in Military",
+      "Won Re-election"
+    ],
+    "columns": [
+      "Name Starts with A–J",
+      "Served in Congress",
+      "Served less than 5 years"
+    ]
+  },
+  "72": {
+    "rows": [
+      "Democratic Party",
+      "Served in Congress",
+      "Impeached"
+    ],
+    "columns": [
+      "Cold War President",
+      "Born 1900–2000",
+      "Name Starts with K–Z"
+    ]
+  },
+  "73": {
+    "rows": [
+      "Republican Party",
+      "Served less than 5 years",
+      "Born before 1800"
+    ],
+    "columns": [
+      "Served in Military",
+      "Won Re-election",
+      "Name Starts with A–J"
+    ]
+  },
+  "74": {
+    "rows": [
+      "Democratic Party",
+      "Served more than 5 years",
+      "Impeached"
+    ],
+    "columns": [
+      "Cold War President",
+      "Served in Congress",
+      "Born 1900–2000"
+    ]
+  },
+  "75": {
+    "rows": [
+      "Republican Party",
+      "Served in Congress",
+      "Won Re-election"
+    ],
+    "columns": [
+      "Name Starts with K–Z",
+      "Served in Military",
+      "Born before 1800"
+    ]
+  },
+  "76": {
+    "rows": [
+      "Democratic Party",
+      "Served less than 5 years",
+      "Impeached"
+    ],
+    "columns": [
+      "Cold War President",
+      "Born 1900–2000",
+      "Served more than 5 years"
+    ]
+  },
+  "77": {
+    "rows": [
+      "Republican Party",
+      "Served more than 5 years",
+      "Won Re-election"
+    ],
+    "columns": [
+      "Served in Congress",
+      "Name Starts with A–J",
+      "Served in Military"
+    ]
+  }
+}

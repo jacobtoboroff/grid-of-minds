@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+    <title>Grid of Minds – Daily Presidential Logic Puzzle Game</title>
+    <meta name="description" content="Test your U.S. presidential knowledge with Grid of Minds – a free daily trivia logic puzzle game. Play, guess, and connect history!" />
+  
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Grid of Minds – Daily Presidential Puzzle Game" />
+    <meta property="og:description" content="Play a free daily game where you match U.S. presidents to grid clues. It's like Wordle meets history!" />
+    <meta property="og:image" content="https://yourdomain.com/og-image.jpg" />
+    <meta property="og:url" content="https://yourdomain.com" />
+    <meta property="og:type" content="website" />
+  
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Grid of Minds – Daily Presidential Puzzle Game" />
+    <meta name="twitter:description" content="Challenge your mind with a daily U.S. presidential logic puzzle." />
+    <meta name="twitter:image" content="https://yourdomain.com/og-image.jpg" />
+  
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+  
+    <!-- Canonical -->
+    <link rel="canonical" href="https://yourdomain.com" />
+  
+    <!-- Styles -->
+    <link rel="stylesheet" href="grid.css" />
+  </head>
+  
+<body>
+  <div class="top-bar">
+    <span class="grid-number" id="grid-number"></span>
+    <a href="#" id="rules-link">Rules</a>
+  </div>
+
+  </div>
+  <div class="wrapper">
+    <div class="row-labels">
+      <div class="row-label">Row 1</div>
+      <div class="row-label">Row 2</div>
+      <div class="row-label">Row 3</div>
+    </div>
+    <div class="main-container">
+      <div class="grid-heading">
+        <h1 class="grid-title">
+          <span>P</span><span>r</span><span>e</span><span>s</span><span>i</span><span>d</span><span>e</span><span>n</span><span>t</span><span>i</span><span>a</span><span>l</span>
+          <span> </span>
+          <span>G</span><span>r</span><span>i</span><span>d</span>
+        </h1>
+      </div>
+      <div class="col-labels">
+        <div class="col-label">Column 1</div>
+        <div class="col-label">Column 2</div>
+        <div class="col-label">Column 3</div>
+      </div>  
+    
+      <div class="main-grid">
+        <!-- 3x3 Grid -->
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+      </div>
+    </div>
+    <div class="side-panel">
+      <div class="guesses-label">GUESSES LEFT:</div>
+      <div class="guesses-count">9</div>
+      <button class="give-up-btn">Give Up?</button>
+    </div>
+  </div>
+
+  <div id="card-grid" class="card-grid"></div>
+
+  <!-- Rules Modal -->
+  <div id="rules-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-button" id="close-rules">&times;</span>
+      <h2>🧠 How to Play Grid of Minds</h2>
+      <ul class="rules-list">
+        <li>Click on a cell in the 3×3 grid to submit a guess that matches the criteria for that row and column.</li>
+        <li>You have <strong>9 guesses</strong> total to complete the entire grid.</li>
+        <li><strong>Each guess counts</strong>, whether it’s right or wrong.</li>
+        <li>You can click any cell in any order.</li>
+        <li><strong>Each guess must be the name of a U.S. president.</strong></li>
+        <li>Once all 9 cells are filled correctly — you win!</li>
+      </ul>      
+      <p class="rules-tip"><em>Tip: Think carefully — every guess matters!</em></p>
+    </div>
+  </div>
+
+<!-- Guess Modal -->
+<div id="guess-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-button" id="close-guess">&times;</span>
+    <h2>Enter Your Guess</h2>
+    <p id="guess-context">Row 1 × Column 1</p>
+    <div class="autocomplete-wrapper">
+      <input type="text" id="guess-input" placeholder="Enter name..." autocomplete="off" />
+      <div id="autocomplete-box"></div>
+    </div>
+    
+    <p id="guess-error" style="color: red; display: none; margin-top: 10px;"></p>
+  </div>
+</div>
+
+<!-- ✅ End-of-Game Modal -->
+<div id="endgame-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-button" id="close-endgame">&times;</span>
+    <h2>Game Over – Here's how you did!</h2>
+
+    <div class="summary-section">
+      <h3>Your Grid</h3>
+      <div id="player-summary-grid" class="summary-grid"></div>
+    
+      <div style="margin-top: 15px; text-align: center;">
+        <button id="play-again-btn">Play Again</button>
+      </div>
+      <div style="margin-top: 15px; text-align: center;">
+        <button id="share-results-btn">Share Results</button>
+      </div>      
+      
+      <div style="margin-top: 15px; margin-bottom: 15px;">
+        <button id="copy-results-btn">Copy Results to Clipboard</button>
+        <p id="copy-confirmation" style="display: none; color: green;">Copied!</p>
+      </div>
+      
+    </div>
+    
+    <div class="summary-section">
+      <h3>View Results</h3>
+      <div id="result-summary-grid" class="summary-grid"></div>
+    </div>
+    
+    <div class="summary-section">
+      <h3>Summary</h3>
+      <p id="final-score-text">You got X out of 9 correct!</p>
+    </div>
+    
+  </div>
+</div>
+
+<!-- 🧾 Eligible Answers Modal -->
+<div id="answers-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-button" id="close-answers">&times;</span>
+    <h2 id="answers-modal-title">Matching Presidents</h2>
+    <ul id="answer-list" class="answer-list"></ul>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+<script src="grid.js"></script>
+<!-- Contact Email -->
+  Contact Us: <a href="mailto:gridofminds123@gmail.com">gridofminds123@gmail.com</a>
+</div>
+</body>
+</html>

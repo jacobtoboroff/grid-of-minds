@@ -35,47 +35,25 @@ body {
 }
 
 .row-labels {
-  display: flex;
-  flex-direction: column;
-  margin-top: 110px;
+  display: grid;
+  grid-template-rows: repeat(3, 150px);
+  margin-top: 60px;
 }
 
 .row-label {
-  width: 150px;
-  height: 140px;
-  font-weight: bold;
-  font-size: 14px;
-  color: #333;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 190px;
+  width: 150px;
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
   text-align: center;
-  vertical-align: middle;
   white-space: pre-line;
   word-break: break-word;
-  padding: 7px;
-}
-
-.col-labels {
-  display: grid;
-  grid-template-columns: repeat(3, 150px);
-  gap: 2px;
-  margin-bottom: 6px;
-  text-align: center;
-  vertical-align: middle;
-  white-space: normal;
-  word-break: break-word;
+  line-height: 1.2;
   padding: 10px;
-}
-
-.col-label {
-  font-weight: bold;
-  font-size: 14px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #333;
 }
 
 .main-container {
@@ -83,6 +61,26 @@ body {
   flex-direction: column;
   margin: 0;
   padding: 0;
+}
+
+.col-labels {
+  display: grid;
+  grid-template-columns: 150px 150px 150px;
+  justify-content: start; /* ensures column 1 starts at 0px */
+  padding: 0;
+  margin: 0;
+}
+
+.col-label {
+  width: 150px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+  height: 60px;
+  color: #333;
 }
 
 .main-grid {
@@ -94,6 +92,7 @@ body {
   border-radius: 0;
   box-shadow: none;
 }
+
 
 .cell,
 .grid-box {
@@ -585,316 +584,4 @@ body {
 
 .grid-title span:nth-child(odd) {
   color: red;
-}
-
-/* Mobile Responsive Design */
-@media (max-width: 768px) {
-  body {
-    padding: 10px;
-  }
-
-  .top-bar {
-    flex-direction: column;
-    gap: 10px;
-    font-size: 12px;
-    padding: 10px;
-  }
-
-  .wrapper {
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-    gap: 0;
-  }
-
-  .main-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-  }
-
-  .col-labels {
-    grid-template-columns: repeat(3, 100px);
-    gap: 1px;
-    padding: 5px;
-    margin-left: 100px; /* Align with grid, accounting for row-labels width */
-  }
-
-  .col-label {
-    font-size: 12px;
-    height: 50px;
-  }
-
-  .row-labels {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    position: absolute;
-    left: 10px;
-    margin-top: 1px; /* Adjusted to align with top of main-grid, below col-labels */
-  }
-
-  .row-label {
-    width: 100px;
-    height: 85px;
-    font-size: 12px;
-    padding: 5px;
-  }
-
-  .main-grid {
-    grid-template-columns: repeat(3, 100px);
-    grid-template-rows: repeat(3, 100px);
-    margin-left: 100px; /* Align with col-labels, account for row-labels width */
-  }
-
-  .cell,
-  .grid-box {
-    width: 100px;
-    height: 100px;
-    font-size: 14px;
-  }
-
-  .cell img.cell-image {
-    width: 50px;
-  }
-
-  .side-panel {
-    margin-top: 20px;
-    margin-left: 0;
-    align-items: center;
-  }
-
-  .guesses-count {
-    font-size: 32px;
-  }
-
-  .give-up-btn {
-    padding: 8px 12px;
-    font-size: 12px;
-  }
-
-  .modal-content {
-    margin: 20% auto;
-    padding: 15px 20px;
-    width: 90%;
-    max-width: 400px;
-  }
-
-  #guess-modal .modal-content {
-    width: 90%;
-    max-width: 300px;
-    padding: 10px 12px;
-  }
-
-  #guess-modal h2 {
-    font-size: 16px;
-  }
-
-  #guess-context {
-    font-size: 12px;
-  }
-
-  #guess-input {
-    font-size: 14px;
-    padding: 5px;
-  }
-
-  #submit-guess {
-    padding: 8px 16px;
-    font-size: 14px;
-  }
-
-  .autocomplete-wrapper {
-    width: 100%;
-  }
-
-  #autocomplete-box {
-    width: 90%;
-    max-width: 280px;
-  }
-
-  .autocomplete-item {
-    padding: 10px 14px;
-    font-size: 14px;
-  }
-
-  .autocomplete-text strong {
-    font-size: 14px;
-  }
-
-  .autocomplete-text span {
-    font-size: 12px;
-  }
-
-  .autocomplete-select-btn {
-    padding: 5px 12px;
-    font-size: 12px;
-  }
-
-  .summary-grid {
-    grid-template-columns: repeat(3, 80px);
-    grid-template-rows: repeat(3, 80px);
-    margin-left: 80px; /* Align with smaller row-labels */
-  }
-
-  .summary-grid .cell {
-    width: 80px;
-    height: 80px;
-    font-size: 11px;
-    padding: 4px;
-  }
-
-  .grid-title {
-    font-size: 24px;
-  }
-
-  #answers-modal .modal-content {
-    max-width: 280px;
-    padding: 20px 30px;
-  }
-
-  #answers-modal-title {
-    font-size: 18px;
-  }
-
-  #answer-list {
-    font-size: 14px;
-  }
-
-  .contact-email {
-    bottom: 20px;
-    left: 20px;
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 480px) {
-  .col-labels {
-    grid-template-columns: repeat(3, 80px);
-    margin-left: 80px; /* Align with grid, account for smaller row-labels */
-  }
-
-  .col-label {
-    font-size: 10px;
-    height: 40px;
-  }
-
-  .row-labels {
-    left: 10px;
-    margin-top: 40px; /* Adjusted to align with top of main-grid, below col-labels */
-  }
-
-  .row-label {
-    width: 80px;
-    height: 80px;
-    font-size: 10px;
-  }
-
-  .main-grid {
-    grid-template-columns: repeat(3, 80px);
-    grid-template-rows: repeat(3, 80px);
-    margin-left: 80px; /* Align with col-labels */
-  }
-
-  .cell,
-  .grid-box {
-    width: 80px;
-    height: 80px;
-    font-size: 12px;
-  }
-
-  .cell img.cell-image {
-    width: 40px;
-  }
-
-  .guesses-count {
-    font-size: 28px;
-  }
-
-  .give-up-btn {
-    padding: 6px 10px;
-    font-size: 11px;
-  }
-
-  .modal-content {
-    margin: 30% auto;
-    padding: 10px 15px;
-  }
-
-  #guess-modal .modal-content {
-    width: 95%;
-    max-width: 260px;
-  }
-
-  #guess-modal h2 {
-    font-size: 14px;
-  }
-
-  #guess-context {
-    font-size: 11px;
-  }
-
-  #guess-input {
-    font-size: 13px;
-    padding: 4px;
-  }
-
-  #submit-guess {
-    padding: 6px 12px;
-    font-size: 13px;
-  }
-
-  #autocomplete-box {
-    width: 95%;
-    max-width: 240px;
-  }
-
-  .autocomplete-item {
-    padding: 8px 10px;
-    font-size: 13px;
-  }
-
-  .autocomplete-text strong {
-    font-size: 13px;
-  }
-
-  .autocomplete-text span {
-    font-size: 11px;
-  }
-
-  .autocomplete-select-btn {
-    padding: 4px 10px;
-    font-size: 11px;
-  }
-
-  .summary-grid {
-    grid-template-columns: repeat(3, 60px);
-    grid-template-rows: repeat(3, 60px);
-    margin-left: 60px; /* Align with smaller row-labels */
-  }
-
-  .summary-grid .cell {
-    width: 60px;
-    height: 60px;
-    font-size: 10px;
-    padding: 3px;
-  }
-
-  .grid-title {
-    font-size: 20px;
-  }
-
-  #answers-modal .modal-content {
-    max-width: 240px;
-    padding: 15px 20px;
-  }
-
-  #answers-modal-title {
-    font-size: 16px;
-  }
-
-  #answer-list {
-    font-size: 13px;
-  }
 }

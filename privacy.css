@@ -1,0 +1,161 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f6f7f9;
+  padding: 20px;
+  margin: 0;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 15px;
+  font-size: 14px;
+  background-color: #f7f9fc;
+  border-bottom: 1px solid #ccc;
+}
+
+.top-bar a {
+  text-decoration: none;
+  color: #3366cc;
+  font-weight: 500;
+}
+
+.top-bar a:hover {
+  color: #0052cc;
+}
+
+.policy-wrapper {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.policy-wrapper h1 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #222;
+  margin: 0 0 20px 0;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.policy-wrapper h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin: 30px 0 15px 0;
+}
+
+.policy-wrapper p {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.6;
+  margin: 0 0 20px 0;
+}
+
+.policy-wrapper ul {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.6;
+  margin: 0 0 20px 20px;
+  padding-left: 20px;
+}
+
+.policy-wrapper ul li {
+  margin-bottom: 10px;
+}
+
+.policy-wrapper a {
+  color: #0077cc;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.policy-wrapper a:hover {
+  text-decoration: underline;
+  color: #005fa3;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  .top-bar {
+    flex-direction: column;
+    gap: 10px;
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .policy-wrapper {
+    margin: 20px auto;
+    padding: 15px;
+    max-width: 90%;
+  }
+
+  .policy-wrapper h1 {
+    font-size: 24px;
+  }
+
+  .policy-wrapper h2 {
+    font-size: 20px;
+    margin: 20px 0 10px 0;
+  }
+
+  .policy-wrapper p,
+  .policy-wrapper ul {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .policy-wrapper ul {
+    margin: 0 0 15px 15px;
+    padding-left: 15px;
+  }
+
+  .policy-wrapper ul li {
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .policy-wrapper {
+    margin: 15px auto;
+    padding: 10px;
+  }
+
+  .policy-wrapper h1 {
+    font-size: 20px;
+  }
+
+  .policy-wrapper h2 {
+    font-size: 18px;
+    margin: 15px 0 8px 0;
+  }
+
+  .policy-wrapper p,
+  .policy-wrapper ul {
+    font-size: 13px;
+  }
+
+  .policy-wrapper ul {
+    margin: 0 0 10px 10px;
+    padding-left: 10px;
+  }
+
+  .policy-wrapper ul li {
+    margin-bottom: 6px;
+  }
+
+  .top-bar {
+    font-size: 11px;
+    padding: 8px;
+  }
+}

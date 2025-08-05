@@ -50,47 +50,57 @@
 
   </div>
   <div class="wrapper">
-    <div class="row-labels">
-      <div class="row-label">Row 1</div>
-      <div class="row-label">Row 2</div>
-      <div class="row-label">Row 3</div>
-    </div>
-    <div class="main-container">
-      <div class="grid-heading">
-        <h1 class="grid-title">
-          <span>P</span><span>r</span><span>e</span><span>s</span><span>i</span><span>d</span><span>e</span><span>n</span><span>t</span><span>i</span><span>a</span><span>l</span>
-          <span> </span>
-          <span>G</span><span>r</span><span>i</span><span>d</span>
-        </h1>
+
+    <!-- New grid-block wrapper for row labels + main container -->
+    <div class="grid-block">
+      <div class="row-labels">
+        <div class="row-label">Row 1</div>
+        <div class="row-label">Row 2</div>
+        <div class="row-label">Row 3</div>
       </div>
-      <div class="col-labels">
-        <div class="col-label">Column 1</div>
-        <div class="col-label">Column 2</div>
-        <div class="col-label">Column 3</div>
-      </div>  
+      <div class="main-container">
+        <div class="grid-heading">
+          <h1 class="grid-title">
+            <span>P</span><span>r</span><span>e</span><span>s</span><span>i</span><span>d</span><span>e</span><span>n</span><span>t</span><span>i</span><span>a</span><span>l</span>
+            <span> </span>
+            <span>G</span><span>r</span><span>i</span><span>d</span>
+          </h1>
+        </div>
+        
+        <div class="grid-wrapper">
+          <div class="col-labels">
+            <div class="col-label">Column 1</div>
+            <div class="col-label">Column 2</div>
+            <div class="col-label">Column 3</div>
+          </div>  
     
-      <div class="main-grid">
-        <!-- 3x3 Grid -->
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
+          <div class="main-grid">
+            <!-- 3x3 Grid -->
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+          </div>
+        </div>
       </div>
     </div>
+  
+    <!-- Side panel below grid-block -->
     <div class="side-panel">
       <div class="guesses-label">GUESSES LEFT:</div>
       <div class="guesses-count">9</div>
       <button class="give-up-btn">Give Up?</button>
     </div>
+  
   </div>
-
+  
   <div id="card-grid" class="card-grid"></div>
-
+  
   <!-- Rules Modal -->
   <div id="rules-modal" class="modal">
     <div class="modal-content">

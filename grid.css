@@ -30,11 +30,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 10px; /* tightened gap between grid and side panel */
+  gap: 10px;
   margin-top: 40px;
 }
 
-/* Row labels on the left */
 .row-labels {
   display: flex;
   flex-direction: column;
@@ -51,8 +50,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.row-label {
   text-align: center;
   vertical-align: middle;
   white-space: pre-line;
@@ -62,11 +59,9 @@ body {
 
 .col-labels {
   display: grid;
-  grid-template-columns: repeat(3, 150px); /* ✅ Only 3 columns */
+  grid-template-columns: repeat(3, 150px);
   gap: 2px;
   margin-bottom: 6px;
-}
-.col-labels {
   text-align: center;
   vertical-align: middle;
   white-space: normal;
@@ -115,14 +110,33 @@ body {
   font-size: 16px;
 }
 
+.cell:hover {
+  background-color: #d3d3d3;
+  cursor: pointer;
+}
+
+.cell img.cell-image {
+  width: 70px;
+  height: auto;
+  display: block;
+  margin: 0 auto 4px auto;
+}
+
+.cell-full-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .side-panel {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  margin-top: 220px; /* Aligns with second row */
-  margin-left: 20px; /* Remove any extra left margin */
-  padding: 0;      /* Remove internal padding */
+  margin-top: 220px;
+  margin-left: 20px;
+  padding: 0;
 }
 
 .guesses-label {
@@ -154,7 +168,6 @@ body {
   background-color: #0052cc;
 }
 
-/* Optional: For additional cards */
 .card-grid {
   display: flex;
   flex-wrap: wrap;
@@ -164,7 +177,6 @@ body {
   max-width: 900px;
 }
 
-/* Modal overlay */
 .modal {
   display: none;
   position: fixed;
@@ -174,43 +186,9 @@ body {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-
-/* Close button */
-.close-button {
-  float: right;
-  font-size: 22px;
-  font-weight: bold;
-  cursor: pointer;
-  color: #333;
-}
-
-.rules-list li {
-  margin-bottom: 12px;
-}
-
-.rules-tip {
-  margin-top: 20px;
-  font-style: italic;
-  color: #444;
-}
-
-/* Modal Background */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.5); /* Black with opacity */
-}
-
-/* Modal Content */
 .modal-content {
   background-color: #fff;
   margin: 10% auto;
@@ -222,7 +200,6 @@ body {
   position: relative;
 }
 
-/* Close Button (X) */
 .close-button {
   position: absolute;
   top: 12px;
@@ -236,7 +213,6 @@ body {
   color: #000;
 }
 
-/* Rules list styling */
 .rules-list {
   margin-top: 15px;
   padding-left: 20px;
@@ -247,7 +223,12 @@ body {
   line-height: 1.5;
 }
 
-/* Guess Modal Container */
+.rules-tip {
+  margin-top: 20px;
+  font-style: italic;
+  color: #444;
+}
+
 #guess-modal .modal-content {
   background-color: #fefee9;
   margin: 12% auto;
@@ -262,14 +243,12 @@ body {
   gap: 8px;
 }
 
-/* Modal Title */
 #guess-modal h2 {
   font-size: 18px;
   font-weight: bold;
   margin: 0;
 }
 
-/* Subtext (Row x Column) */
 #guess-context {
   font-size: 13px;
   color: #333;
@@ -277,7 +256,6 @@ body {
   line-height: 1.3;
 }
 
-/* Input Field */
 #guess-input {
   width: 100%;
   padding: 6px;
@@ -290,7 +268,6 @@ body {
   outline: none;
 }
 
-/* Submit Button */
 #submit-guess {
   margin-top: 8px;
   background-color: #8994a3;
@@ -308,7 +285,6 @@ body {
   background-color: #6c7482;
 }
 
-/* Close Button */
 #guess-modal .close-button {
   position: absolute;
   top: 8px;
@@ -317,31 +293,13 @@ body {
   color: #333;
   cursor: pointer;
 }
-.cell:hover {
-  background-color: #d3d3d3;
-  cursor: pointer;
-}
-.cell img.cell-image {
-  width: 70px;
-  height: auto;
-  display: block;
-  margin: 0 auto 4px auto;
-}
 
-.cell-full-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-/* Container for autocomplete input + dropdown */
 .autocomplete-wrapper {
   position: relative;
-  width: 480px; /* or 100% if inside a constrained modal */
+  width: 480px;
   max-width: 100%;
 }
 
-/* Input field style override */
 #guess-input {
   border: none;
   outline: none;
@@ -373,7 +331,6 @@ body {
   padding: 6px 0;
 }
 
-/* Each suggestion row */
 .autocomplete-item {
   display: flex;
   justify-content: space-between;
@@ -395,11 +352,6 @@ body {
   border-bottom: none;
 }
 
-.autocomplete-item:hover {
-  background-color: #f7f9fb;
-}
-
-/* Left side (name + optional years) */
 .autocomplete-text {
   display: flex;
   flex-direction: column;
@@ -416,7 +368,6 @@ body {
   margin-top: 2px;
 }
 
-/* Inline Guess button */
 .autocomplete-select-btn {
   background-color: #28a745;
   color: white;
@@ -432,12 +383,13 @@ body {
 .autocomplete-select-btn:hover {
   background-color: #218838;
 }
+
 .autocomplete-select-btn.disabled {
   background-color: #ccc;
   color: #666;
   cursor: not-allowed;
 }
-/* ======= End-of-Game Modal ======= */
+
 #endgame-modal .modal-content {
   width: fit-content;
   margin: auto;
@@ -517,22 +469,21 @@ body {
   margin-top: 8px;
   font-size: 13px;
 }
-/* View Results Grid Cell Hover */
+
 #result-summary-grid .cell {
   cursor: pointer;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 #result-summary-grid .cell:hover {
-  background-color: #e0e0e0; /* light gray */
+  background-color: #e0e0e0;
 }
 
-/* Make "View Answers" look clickable on hover */
 #result-summary-grid .cell:hover {
   color: #0077cc;
   text-decoration: underline;
 }
-/* ======= Eligible Answers Modal ======= */
+
 #answers-modal .modal-content {
   max-width: 300px;
   margin: auto;
@@ -552,9 +503,8 @@ body {
   margin-bottom: 20px;
 }
 
-/* List of matching presidents */
 #answer-list {
-  list-style: none; /* no bullets */
+  list-style: none;
   padding: 0;
   margin: 0;
   font-size: 16px;
@@ -568,7 +518,6 @@ body {
   margin: 12px 0;
 }
 
-/* Close button shared styling */
 #close-answers {
   position: absolute;
   top: 14px;
@@ -583,15 +532,10 @@ body {
   color: #000;
 }
 
-/* Modal background dim */
-.modal {
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
 .contact-email {
   position: absolute;
-  bottom: 40px;  /* moves it up */
-  left: 30px;    /* moves it to the right */
+  bottom: 40px;
+  left: 30px;
   font-size: 14px;
   color: #444;
   font-family: Arial, sans-serif;
@@ -605,21 +549,8 @@ body {
 .contact-email a:hover {
   text-decoration: underline;
 }
-#play-again-btn {
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #0077cc;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
 
-#play-again-btn:hover {
-  background-color: #005fa3;
-}
-
+#play-again-btn,
 #share-results-btn {
   padding: 10px 20px;
   font-size: 16px;
@@ -631,26 +562,320 @@ body {
   transition: background-color 0.3s;
 }
 
+#play-again-btn:hover,
 #share-results-btn:hover {
   background-color: #005fa3;
 }
+
 .grid-heading {
   text-align: center;
-  margin-bottom: 0; /* remove extra spacing from the container */
+  margin-bottom: 0;
 }
 
 .grid-title {
   font-size: 32px;
   font-weight: bold;
   color: #222;
-  margin-bottom: 4px; /* reduce space between title and column labels */
-}
-.grid-title {
-  font-size: 32px;
-  font-weight: bold;
-  text-align: center;
   margin: 0 0 8px 0;
   line-height: 1.2;
 }
-.grid-title span:nth-child(even) { color: blue; }
-.grid-title span:nth-child(odd) { color: red; }
+
+.grid-title span:nth-child(even) {
+  color: blue;
+}
+
+.grid-title span:nth-child(odd) {
+  color: red;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  .top-bar {
+    flex-direction: column;
+    gap: 10px;
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .wrapper {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    gap: 5px;
+  }
+
+  .row-labels {
+    flex-direction: row;
+    margin-top: 0;
+    gap: 2px;
+    justify-content: center;
+  }
+
+  .row-label {
+    width: 100px;
+    height: 100px;
+    font-size: 12px;
+    padding: 5px;
+  }
+
+  .col-labels {
+    grid-template-columns: repeat(3, 100px);
+    gap: 1px;
+    padding: 5px;
+  }
+
+  .col-label {
+    font-size: 12px;
+    height: 50px;
+  }
+
+  .main-grid {
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+  }
+
+  .cell,
+  .grid-box {
+    width: 100px;
+    height: 100px;
+    font-size: 14px;
+  }
+
+  .cell img.cell-image {
+    width: 50px;
+  }
+
+  .side-panel {
+    margin-top: 20px;
+    margin-left: 0;
+    align-items: center;
+  }
+
+  .guesses-count {
+    font-size: 32px;
+  }
+
+  .give-up-btn {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .modal-content {
+    margin: 20% auto;
+    padding: 15px 20px;
+    width: 90%;
+    max-width: 400px;
+  }
+
+  #guess-modal .modal-content {
+    width: 90%;
+    max-width: 300px;
+    padding: 10px 12px;
+  }
+
+  #guess-modal h2 {
+    font-size: 16px;
+  }
+
+  #guess-context {
+    font-size: 12px;
+  }
+
+  #guess-input {
+    font-size: 14px;
+    padding: 5px;
+  }
+
+  #submit-guess {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .autocomplete-wrapper {
+    width: 100%;
+  }
+
+  #autocomplete-box {
+    width: 90%;
+    max-width: 280px;
+  }
+
+  .autocomplete-item {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+
+  .autocomplete-text strong {
+    font-size: 14px;
+  }
+
+  .autocomplete-text span {
+    font-size: 12px;
+  }
+
+  .autocomplete-select-btn {
+    padding: 5px 12px;
+    font-size: 12px;
+  }
+
+  .summary-grid {
+    grid-template-columns: repeat(3, 80px);
+    grid-template-rows: repeat(3, 80px);
+  }
+
+  .summary-grid .cell {
+    width: 80px;
+    height: 80px;
+    font-size: 11px;
+    padding: 4px;
+  }
+
+  .grid-title {
+    font-size: 24px;
+  }
+
+  #answers-modal .modal-content {
+    max-width: 280px;
+    padding: 20px 30px;
+  }
+
+  #answers-modal-title {
+    font-size: 18px;
+  }
+
+  #answer-list {
+    font-size: 14px;
+  }
+
+  .contact-email {
+    bottom: 20px;
+    left: 20px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .row-label {
+    width: 80px;
+    height: 80px;
+    font-size: 10px;
+  }
+
+  .col-labels {
+    grid-template-columns: repeat(3, 80px);
+  }
+
+  .col-label {
+    font-size: 10px;
+    height: 40px;
+  }
+
+  .main-grid {
+    grid-template-columns: repeat(3, 80px);
+    grid-template-rows: repeat(3, 80px);
+  }
+
+  .cell,
+  .grid-box {
+    width: 80px;
+    height: 80px;
+    font-size: 12px;
+  }
+
+  .cell img.cell-image {
+    width: 40px;
+  }
+
+  .guesses-count {
+    font-size: 28px;
+  }
+
+  .give-up-btn {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+
+  .modal-content {
+    margin: 30% auto;
+    padding: 10px 15px;
+  }
+
+  #guess-modal .modal-content {
+    width: 95%;
+    max-width: 260px;
+  }
+
+  #guess-modal h2 {
+    font-size: 14px;
+  }
+
+  #guess-context {
+    font-size: 11px;
+  }
+
+  #guess-input {
+    font-size: 13px;
+    padding: 4px;
+  }
+
+  #submit-guess {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+
+  #autocomplete-box {
+    width: 95%;
+    max-width: 240px;
+  }
+
+  .autocomplete-item {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+
+  .autocomplete-text strong {
+    font-size: 13px;
+  }
+
+  .autocomplete-text span {
+    font-size: 11px;
+  }
+
+  .autocomplete-select-btn {
+    padding: 4px 10px;
+    font-size: 11px;
+  }
+
+  .summary-grid {
+    grid-template-columns: repeat(3, 60px);
+    grid-template-rows: repeat(3, 60px);
+  }
+
+  .summary-grid .cell {
+    width: 60px;
+    height: 60px;
+    font-size: 10px;
+    padding: 3px;
+  }
+
+  .grid-title {
+    font-size: 20px;
+  }
+
+  #answers-modal .modal-content {
+    max-width: 240px;
+    padding: 15px 20px;
+  }
+
+  #answers-modal-title {
+    font-size: 16px;
+  }
+
+  #answer-list {
+    font-size: 13px;
+  }
+}

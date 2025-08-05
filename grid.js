@@ -61,12 +61,17 @@ async function renderGrid(dataArray) {
 }
 
 // ======= Global State =======
-const launchDate = new Date("August 5, 2024 00:00:00"); // local time
+const launchDate = new Date("August 5, 2025 00:00:00");
+
+// Normalize current time to today's midnight (local time)
 const now = new Date();
+const todayMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
 const msInDay = 24 * 60 * 60 * 1000;
-const currentDay = Math.floor((now - launchDate) / msInDay) + 1;
+const currentDay = Math.floor((todayMidnight - launchDate) / msInDay) + 1;
 
 let presidentData = [];
+const today = currentDay;
 
 // ======= CSV Loader =======
 async function loadPresidents() {
@@ -431,6 +436,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   
+  
     // ✅ Trigger Game Over modal if necessary
     if (state.gameOver) {
       setTimeout(showEndgameSummary, 300); // Delay ensures DOM is ready
@@ -489,6 +495,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.target === endgameModal) endgameModal.style.display = "none";
   };
   loadPresidents().then(loadGameState);
+  loadGridByDay(currentDay);
 });
 
 function showEndgameSummary() {
@@ -615,44 +622,6 @@ function showEndgameSummary() {
     });
   };  
 }
-// ========== Previous Grids Modal Logic ==========
-
-const previousGridsLink = document.getElementById("previous-grids-link");
-const previousGridsModal = document.getElementById("previous-grids-modal");
-const closePreviousGridsBtn = document.getElementById("close-previous-grids");
-const gridButtonsContainer = document.getElementById("grid-buttons-container");
-const backToTodayBtn = document.getElementById("back-to-today");
-
-const today = currentDay;
-
-// Open modal on click
-previousGridsLink.addEventListener("click", (e) => {
-  e.preventDefault();
-  previousGridsModal.style.display = "block";
-  gridButtonsContainer.innerHTML = "";
-
-  for (let day = 1; day < today; day++) {
-    const btn = document.createElement("button");
-    btn.textContent = `Grid #${String(day).padStart(3, "0")}`;
-    btn.addEventListener("click", () => {
-      loadGridByDay(day);
-      previousGridsModal.style.display = "none";
-    });
-    gridButtonsContainer.appendChild(btn);
-  }
-});
-
-// Close modal
-closePreviousGridsBtn.addEventListener("click", () => {
-  previousGridsModal.style.display = "none";
-});
-
-// Return to today's grid
-backToTodayBtn.addEventListener("click", () => {
-  loadGridByDay(today);
-  previousGridsModal.style.display = "none";
-});
-
 
 // ======= Grid Loader =======
 fetch("daily-pgrids.json")

@@ -609,3 +609,158 @@ body {
   margin-top: 5px;  /* less gap above footer */
   margin-bottom: 10px;
 }
+@media (max-width: 768px) {
+  .top-bar {
+    gap: 15px;
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .grid-block {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .row-labels {
+    grid-template-rows: none;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 0;
+    margin-bottom: 10px;
+    justify-items: center;
+  }
+
+  .row-label {
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .main-container {
+    width: 100%;
+  }
+
+  .col-labels {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .col-label {
+    font-size: 12px;
+    padding-bottom: 2px;
+    max-width: 100px;
+  }
+
+  .main-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 100px);
+  }
+
+  .cell {
+    font-size: 12px;
+  }
+
+  .wrapper {
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .side-panel {
+    margin-top: 10px;
+    align-items: center;
+  }
+
+  .guesses-label {
+    font-size: 12px;
+  }
+
+  .guesses-count {
+    font-size: 32px;
+  }
+
+  .give-up-btn {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .card-grid {
+    margin: 20px auto;
+    gap: 15px;
+  }
+
+  .modal-content {
+    width: 95%;
+    max-width: 400px;
+    padding: 20px;
+  }
+
+  #guess-modal .modal-content {
+    width: 90%;
+    max-width: 300px;
+    padding: 12px;
+  }
+
+  #guess-input {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .autocomplete-wrapper {
+    width: 100%;
+  }
+
+  #autocomplete-box {
+    width: 90%;
+    max-width: 280px;
+  }
+
+  .autocomplete-item {
+    font-size: 14px;
+    padding: 10px 14px;
+  }
+
+  .autocomplete-select-btn {
+    font-size: 12px;
+    padding: 5px 12px;
+  }
+
+  #endgame-modal .modal-content {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .summary-grid {
+    grid-template-columns: repeat(3, 80px);
+    grid-template-rows: repeat(3, 80px);
+  }
+
+  .summary-grid .cell {
+    width: 80px;
+    height: 80px;
+    font-size: 10px;
+    padding: 4px;
+  }
+
+  #answers-modal .modal-content {
+    max-width: 280px;
+    padding: 20px;
+  }
+
+  #answers-modal-title {
+    font-size: 18px;
+  }
+
+  #answer-list {
+    font-size: 14px;
+  }
+
+  .grid-title {
+    font-size: 24px;
+  }
+
+  .footer {
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}

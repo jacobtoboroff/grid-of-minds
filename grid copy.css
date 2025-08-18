@@ -1,9 +1,9 @@
 body {
   font-family: Arial, sans-serif;
   background: #f6f7f9;
-  padding: 10px;
+  padding: 10px; /* was 20px */
   margin: 0;
-  overflow-y: auto;
+  overflow-y: hidden; /* remove vertical scroll */
 }
 
 .top-bar {
@@ -21,96 +21,103 @@ body {
   color: #3366cc;
   font-weight: 500;
 }
-/* Grid block wrapper */
+
+.grid-number {
+  font-weight: bold;
+  color: #333;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* was 15px */
+  margin-top: 20px; /* was 40px */
+}
+
 .grid-block {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   gap: 10px;
-  margin-top: 0px;
 }
 
-/* Row labels on the left */
 .row-labels {
   display: grid;
-  grid-template-rows: repeat(3, 180px);
+  grid-template-rows: repeat(3, 130px); /* was 150px */
   justify-items: end;
   align-items: center;
-  margin-top: 100px; /* align with grid */
+  margin-top: 40px; /* was 100px */
   margin-right: 10px;
 }
 
 .row-label {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  max-width: 140px;
   font-weight: bold;
   font-size: 14px;
   color: #333;
+  text-align: right;
+  white-space: normal;
+  word-break: break-word;
+  line-height: 1.2;
+  padding: 5px;
 }
 
-/* Main container with column labels above grid */
 .main-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
-/* Column labels above the grid */
 .col-labels {
   display: grid;
-  grid-template-columns: repeat(3, 180px);
-  margin-bottom: 5px;
+  grid-template-columns: repeat(3, 130px); /* was 150px */
+  margin: 0 0 5px 0; /* tighter gap */
 }
 
 .col-label {
+  width: 130px; /* was 135px */
   text-align: center;
-  font-weight: bold;
-  font-size: 14px;
-  color: #333;
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  padding-bottom: 4px;
-  line-height: 1.2;
-
-  max-width: 150px;   /* narrower than the 180px cell */
-  margin: 0 auto;     /* centers the narrower label inside the cell width */
+  font-weight: bold;
+  font-size: 14px;
+  min-height: 40px; /* was 50px */
+  color: #333;
+  padding: 5px;
+  white-space: normal;
+  word-break: break-word;
 }
 
-/* Main grid */
 .main-grid {
   display: grid;
-  grid-template-columns: repeat(3, 180px);
-  grid-template-rows: repeat(3, 180px);
-  border: 1px solid #000;
-  border-radius: 8px;
-  overflow: hidden;
+  grid-template-columns: repeat(3, 130px); /* was 150px */
+  grid-template-rows: repeat(3, 130px); /* was 150px */
 }
 
-/* Each cell */
-.cell {
-  background-color: #fff;
-  border: 1px solid #000;
+.cell,
+.grid-box {
+  background-color: white;
+  width: 130px;
+  height: 130px;
+  border: 1px solid black;
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
   font-weight: bold;
-}
-/* Wrapper that holds grid block + side panel side-by-side */
-.wrapper {
-  display: flex;
-  justify-content: center; /* centers both grid + side panel together */
-  align-items: flex-start; /* top align */
-  gap: 30px; /* space between grid and side panel */
-  margin-top: 20px;
+  font-size: 16px;
 }
 
-/* Side panel styling */
 .side-panel {
   display: flex;
   flex-direction: column;
-  margin-top: 310px;
   align-items: center;
 }
+
 .guesses-label {
   font-size: 13px;
   color: #333;
@@ -138,7 +145,9 @@ body {
 
 .give-up-btn:hover {
   background-color: #0052cc;
-}.card-grid {
+}
+
+.card-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -557,55 +566,348 @@ body {
 .grid-title span:nth-child(odd) {
   color: red;
 }
-/* Base cell styling */
-.cell {
-  cursor: pointer;
-  transition: background-color 0.2s ease;
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  .top-bar {
+    flex-direction: column;
+    gap: 10px;
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  /* Stack grid-block (row labels + grid) and side-panel vertically */
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    gap: 15px;
+  }
+
+  /* New container to keep row labels + grid centered as a unit */
+  .grid-block {
+    position: relative;
+    display: flex;
+    justify-content: center; /* centers main-container */
+    align-items: flex-start;
+    padding-right: 70px; /* space for row labels */
+  }
+
+  /* Row labels on the left */
+  .row-labels {
+    display: grid;
+    grid-template-rows: repeat(3, 100px);
+    justify-items: end;
+    align-items: center;
+    margin-top: 70px;
+    margin-right: 5px; /* slightly closer to grid */
+  }
+
+  .row-label {
+    width: 85px; /* keep readable width */
+    font-size: 12px;
+    padding: 3px;
+    text-align: right;
+    line-height: 1.2;
+    word-break: break-word;
+    white-space: normal;
+  }
+
+  /* Column labels on top */
+  .main-container {
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+  }
+
+  .col-labels {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    justify-content: start;
+    padding: 0;
+    margin: 0 0 5px 0;
+  }
+
+  .col-label {
+    width: 100px;
+    font-size: 12px;
+    min-height: 40px;
+    padding: 3px;
+    line-height: 1.2;
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  /* Grid cells */
+  .main-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 0;
+  }
+
+  .cell,
+  .grid-box {
+    width: 100px;
+    height: 100px;
+    font-size: 14px;
+  }
+
+  .cell img.cell-image {
+    width: 50px;
+  }
+
+  /* Side panel below the grid */
+  .side-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+  }
+
+  .guesses-count {
+    font-size: 32px;
+  }
+
+  .give-up-btn {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  /* Modal adjustments */
+  .modal-content {
+    margin: 20% auto;
+    padding: 15px 20px;
+    width: 90%;
+    max-width: 400px;
+  }
+
+  #guess-modal .modal-content {
+    width: 90%;
+    max-width: 300px;
+    padding: 10px 12px;
+  }
+
+  #guess-modal h2 {
+    font-size: 16px;
+  }
+
+  #guess-context {
+    font-size: 12px;
+  }
+
+  #guess-input {
+    font-size: 14px;
+    padding: 5px;
+  }
+
+  #submit-guess {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .autocomplete-wrapper {
+    width: 100%;
+  }
+
+  #autocomplete-box {
+    width: 90%;
+    max-width: 280px;
+  }
+
+  .autocomplete-item {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+
+  .autocomplete-text strong {
+    font-size: 14px;
+  }
+
+  .autocomplete-text span {
+    font-size: 12px;
+  }
+
+  .autocomplete-select-btn {
+    padding: 5px 12px;
+    font-size: 12px;
+  }
+
+  /* Summary grid adjustments */
+  .summary-grid {
+    grid-template-columns: repeat(3, 80px);
+    grid-template-rows: repeat(3, 80px);
+    margin-left: 10px; /* aligns with smaller row labels */
+  }
+
+  .summary-grid .cell {
+    width: 80px;
+    height: 80px;
+    font-size: 11px;
+    padding: 4px;
+  }
+
+  .grid-title {
+    font-size: 24px;
+  }
+
+  /* Answers modal */
+  #answers-modal .modal-content {
+    max-width: 280px;
+    padding: 20px 30px;
+  }
+
+  #answers-modal-title {
+    font-size: 18px;
+  }
+
+  #answer-list {
+    font-size: 14px;
+  }
+
+/* Contact email */
+.contact-email {
+  position: static;       /* remove fixed or absolute positioning */
+  font-size: 12px;
+  margin-top: -20px; /* adjust as needed */
+  text-align: center;     /* keep it centered under the button */
+}
 }
 
-/* Hover effect for empty/unclicked cells */
-.cell:hover {
-  background-color: #e0e0e0; /* light grey */
-}
+@media (max-width: 480px) {
+  .col-labels {
+    grid-template-columns: repeat(3, 80px);
+    margin-left: 80px; /* Align with grid, account for smaller row-labels */
+  }
 
-/* Keep correct cells unchanged on hover */
-.cell.correct:hover {
-  background-color: transparent;
-  cursor: default;
-}
-.footer {
-  text-align: center;     /* or left if you prefer */
-  margin-top: 10px;       /* controls spacing above footer */
-  margin-bottom: 10px;    /* controls spacing below footer */
-  font-size: 18px;
-  color: #444;
-  font-family: Arial, sans-serif;
-}
+  .col-label {
+    font-size: 10px;
+    height: 40px;
+  }
 
-.footer a {
-  color: #0077cc;
-  text-decoration: none;
-}
+  .row-labels {
+    left: 10px;
+    margin-top: 40px; /* Adjusted to align with top of main-grid, below col-labels */
+  }
 
-.footer a:hover {
-  text-decoration: underline;
-}
-/* Push grid further down from header */
-.grid-block {
-  margin-top: 25px; /* increase for more space under header */
-}
+  .row-label {
+    width: 80px;
+    height: 80px;
+    font-size: 10px;
+  }
 
-/* Reduce space below grid */
-.wrapper {
-  margin-bottom: 5px; /* shrink gap above footer */
-}
+  .main-grid {
+    grid-template-columns: repeat(3, 80px);
+    grid-template-rows: repeat(3, 80px);
+    margin-left: 80px; /* Align with col-labels */
+  }
 
-.card-grid {
-  margin: 10px auto; /* reduce default 40px margin */
-}
+  .cell,
+  .grid-box {
+    width: 80px;
+    height: 80px;
+    font-size: 12px;
+  }
 
-/* Footer spacing */
-.footer {
-  margin-top: 5px;  /* less gap above footer */
-  margin-bottom: 10px;
+  .cell img.cell-image {
+    width: 40px;
+  }
+
+  .guesses-count {
+    font-size: 28px;
+  }
+
+  .give-up-btn {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+
+  .modal-content {
+    margin: 30% auto;
+    padding: 10px 15px;
+  }
+
+  #guess-modal .modal-content {
+    width: 95%;
+    max-width: 260px;
+  }
+
+  #guess-modal h2 {
+    font-size: 14px;
+  }
+
+  #guess-context {
+    font-size: 11px;
+  }
+
+  #guess-input {
+    font-size: 13px;
+    padding: 4px;
+  }
+
+  #submit-guess {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+
+  #autocomplete-box {
+    width: 95%;
+    max-width: 240px;
+  }
+
+  .autocomplete-item {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+
+  .autocomplete-text strong {
+    font-size: 13px;
+  }
+
+  .autocomplete-text span {
+    font-size: 11px;
+  }
+
+  .autocomplete-select-btn {
+    padding: 4px 10px;
+    font-size: 11px;
+  }
+
+  .summary-grid {
+    grid-template-columns: repeat(3, 60px);
+    grid-template-rows: repeat(3, 60px);
+    margin-left: 60px; /* Align with smaller row-labels */
+  }
+
+  .summary-grid .cell {
+    width: 60px;
+    height: 60px;
+    font-size: 10px;
+    padding: 3px;
+  }
+
+  .grid-title {
+    font-size: 20px;
+  }
+
+  #answers-modal .modal-content {
+    max-width: 240px;
+    padding: 15px 20px;
+  }
+
+  #answers-modal-title {
+    font-size: 16px;
+  }
+
+  #answer-list {
+    font-size: 13px;
+  }
 }

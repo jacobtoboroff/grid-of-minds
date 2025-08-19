@@ -812,6 +812,14 @@ body {
     transform: translateX(40px) !important;  /* ← adjust */
     transition: transform 0.2s ease;
   }
+.main-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  grid-template-rows: repeat(3, 80px);
+  border: 1px solid #000;
+  border-radius: 8px;
+  overflow: hidden;
+}
 
   .footer {
     transform: translateX(40px) !important;  /* ← adjust */

@@ -826,6 +826,7 @@ body {
   .top-bar {
     gap: 8px;
     font-size: 10px;
+    transform: translateX(40px) !important; /* ← adjust px value */
     padding: 6px;
   }
 

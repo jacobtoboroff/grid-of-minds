@@ -792,29 +792,46 @@ body {
     margin: 0;
   }
 }
-/* ===== Phones (<=480px) — shift side panel + footer right ===== */
-@media (max-width: 780px) {
-  /* change these pixel values to move further right */
-  .side-panel {
-    transform: translateX(40px) !important;  /* ← adjust */
-    transition: transform 0.2s ease;
-  }
-
-  .footer {
-    transform: translateX(40px) !important;  /* ← adjust */
-    transition: transform 0.2s ease;
-  }
-}
-/* ===== Phones (<=480px) — shift side panel + footer right ===== */
+/* ===== Phones (<=480px) — keep row labels visible ===== */
 @media (max-width: 480px) {
-  /* change these pixel values to move further right */
-  .side-panel {
-    transform: translateX(40px) !important;  /* ← adjust */
-    transition: transform 0.2s ease;
+  /* Center the whole grid area */
+  .grid-block {
+    display: block;
+    width: fit-content;
+    margin: 10px auto;
   }
 
-  .footer {
-    transform: translateX(40px) !important;  /* ← adjust */
-    transition: transform 0.2s ease;
+  /* Reserve space on the LEFT for row labels so they don't go offscreen */
+  .grid-wrapper {
+    position: relative;
+    padding-left: 84px;         /* ← adjust this to change label gutter width */
+  }
+
+  /* Put labels into that reserved gutter */
+  .row-labels {
+    position: absolute;
+    left: 0;
+    top: 22px;                  /* ← nudge to align with grid under column labels */
+    width: 80px;                /* ← label column width (<= padding-left) */
+    text-align: right;
+    display: grid;
+    grid-template-rows: repeat(3, 80px);
+    align-items: center;
+    justify-items: end;
+    margin: 0;
+    overflow: visible;
+  }
+
+  .row-label { 
+    font-size: 12px;            /* make readable; tweak if needed */
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+
+  /* Ensure the grid itself is centered within the wrapper (no extra left-shift) */
+  .main-grid {
+    margin: 0;                  /* wrapper handles centering + label space */
+    transform: none !important; /* cancel any previous mobile left-shift */
   }
 }
+

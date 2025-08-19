@@ -805,40 +805,16 @@ body {
     transition: transform 0.2s ease;
   }
 }
-/* ===== Phones (<=480px) — shift side panel + footer right, shrink grid ===== */
+/* ===== Phones (<=480px) — shift side panel + footer right ===== */
 @media (max-width: 480px) {
-  /* move side panel */
+  /* change these pixel values to move further right */
   .side-panel {
-    transform: translateX(40px) !important;  /* ← adjust this px value */
+    transform: translateX(40px) !important;  /* ← adjust */
     transition: transform 0.2s ease;
   }
 
-  /* move footer */
   .footer {
-    transform: translateX(40px) !important;  /* ← adjust this px value */
+    transform: translateX(40px) !important;  /* ← adjust */
     transition: transform 0.2s ease;
-  }
-
-  /* shrink grid so it fits without scroll */
-  .grid {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* smaller min width */
-    gap: 6px; /* tighter spacing */
-    padding: 4px; /* reduce outer padding */
-  }
-
-  /* shrink text & controls */
-  .grid-item {
-    font-size: 12px;
-    padding: 6px;
-  }
-
-  .grid-item img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  /* optionally shrink headers/titles */
-  h1, h2, h3 {
-    font-size: 1rem;
   }
 }

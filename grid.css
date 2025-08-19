@@ -827,6 +827,8 @@ body {
     gap: 8px;
     font-size: 10px;
     padding: 6px;
+    transform: translateX(40px) !important; /* same shift as side panel/footer */
+    transition: transform 0.2s ease;
   }
 
   .grid-block {
@@ -839,7 +841,7 @@ body {
 
   .row-labels {
     display: grid;
-    grid-template-rows: repeat(3, 80px); /* smaller so it fits */
+    grid-template-rows: repeat(3, 100px); /* was 80px */
     justify-items: end;
     align-items: center;
     margin-top: 40px;
@@ -866,18 +868,18 @@ body {
   .col-label {
     font-size: 10px;
     padding-bottom: 2px;
-    max-width: 80px;
+    max-width: 100px; /* was 80px */
     margin: 0;
   }
 
   .main-grid {
-    grid-template-columns: repeat(3, 80px);
-    grid-template-rows: repeat(3, 80px);
+    grid-template-columns: repeat(3, 100px); /* was 80px */
+    grid-template-rows: repeat(3, 100px);    /* was 80px */
     margin: 0 auto;
   }
 
   .cell {
-    font-size: 10px;
+    font-size: 11px; /* slightly larger for 100px cells */
   }
 
   .wrapper {
@@ -894,7 +896,7 @@ body {
     margin-top: 0;
     align-items: center;
     text-align: center;
-    transform: translateX(40px) !important; /* ← adjust px value */
+    transform: translateX(40px) !important; /* shift right */
     transition: transform 0.2s ease;
   }
 
@@ -993,7 +995,7 @@ body {
     font-size: 12px;
     margin-top: 5px;
     margin-bottom: 5px;
-    transform: translateX(40px) !important; /* ← adjust px value */
+    transform: translateX(40px) !important; /* shift right */
     transition: transform 0.2s ease;
   }
 

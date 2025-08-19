@@ -5,6 +5,16 @@ body {
   margin: 0;
   overflow-y: auto;
 }
+/* Works for all breakpoints */
+.cell { position: relative; overflow: hidden; }
+.cell img,
+.cell .cell-full-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;          /* fill the square */
+  object-position: center;    /* keep face centered */
+}
 
 .top-bar {
   display: flex;

@@ -842,7 +842,7 @@ body {
     grid-template-rows: repeat(3, 100px); /* smaller so it fits */
     justify-items: end;
     align-items: center;
-    margin-top: 40px;
+    margin-top: 55px;
     margin-right: 0;
   }
 

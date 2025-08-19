@@ -826,7 +826,6 @@ body {
   .top-bar {
     gap: 8px;
     font-size: 10px;
-    transform: translateX(40px) !important; /* ← adjust px value */
     padding: 6px;
   }
 
@@ -840,7 +839,7 @@ body {
 
   .row-labels {
     display: grid;
-    grid-template-rows: repeat(3, 80px); /* smaller so it fits */
+    grid-template-rows: repeat(3, 100px); /* smaller so it fits */
     justify-items: end;
     align-items: center;
     margin-top: 40px;

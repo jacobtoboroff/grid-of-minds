@@ -622,7 +622,8 @@ body {
   }
 
   .grid-block {
-    flex-direction: row;
+    display: flex;
+    justify-content: center;
     align-items: flex-start;
     margin-top: 10px;
     gap: 5px;
@@ -634,7 +635,7 @@ body {
     justify-items: end;
     align-items: center;
     margin-top: 60px;
-    margin-right: 5px;
+    margin-right: 0px;
   }
 
   .row-label {
@@ -645,7 +646,8 @@ body {
 
   .main-container {
     width: 100%;
-    align-items: center;
+    display: flex;
+    justify-content: center;
   }
 
   .col-labels {
@@ -663,6 +665,7 @@ body {
   .main-grid {
     grid-template-columns: repeat(3, 120px);
     grid-template-rows: repeat(3, 120px);
+    margin: 0 auto;
   }
 
   .cell {
@@ -672,9 +675,10 @@ body {
   .wrapper {
     flex-direction: column;
     gap: 15px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 10px auto;
     align-items: center;
+    justify-content: center;
+    text-align: center;
   }
 
   .side-panel {
@@ -789,23 +793,36 @@ body {
   }
 }
 
+/* ===== Mobile Optimizations (Phones <=480px) ===== */
 @media (max-width: 480px) {
+  body {
+    padding: 5px;
+  }
+
+  /* Header */
   .top-bar {
     gap: 10px;
     font-size: 10px;
     padding: 6px;
+    justify-content: center;  /* keep header centered */
   }
 
+  /* Grid wrapper */
   .grid-block {
-    flex-direction: row;
-    margin-top: 5px;
-    gap: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin: 10px auto;       /* center horizontally */
+    width: fit-content;      /* shrink-wrap to grid + labels */
   }
 
   .row-labels {
+    display: grid;
     grid-template-rows: repeat(3, 80px);
-    margin-top: 40px;
-    margin-right: 2px;
+    justify-items: end;      /* text hugs the grid */
+    align-items: center;
+    margin: 0;               /* no extra push */
   }
 
   .row-label {
@@ -813,30 +830,45 @@ body {
     padding: 3px;
   }
 
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .col-labels {
     grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 5px;
   }
 
   .col-label {
     font-size: 10px;
     max-width: 80px;
+    padding-bottom: 2px;
+    margin: 0;
   }
 
   .main-grid {
     grid-template-columns: repeat(3, 80px);
     grid-template-rows: repeat(3, 80px);
+    margin: 0 auto;
   }
 
   .cell {
     font-size: 10px;
   }
 
+  /* Wrapper holding grid + sidebar */
   .wrapper {
+    flex-direction: column;
     gap: 10px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin: 5px auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
 
+  /* Side panel */
   .side-panel {
     margin-top: 0;
     align-items: center;
@@ -856,11 +888,13 @@ body {
     font-size: 10px;
   }
 
+  /* Cards */
   .card-grid {
     margin: 10px auto;
     gap: 10px;
   }
 
+  /* Modals */
   .modal-content {
     width: 95%;
     max-width: 320px;
@@ -903,6 +937,7 @@ body {
     padding: 15px;
   }
 
+  /* Summary grid */
   .summary-grid {
     grid-template-columns: repeat(3, 60px);
     grid-template-rows: repeat(3, 60px);
@@ -928,10 +963,12 @@ body {
     font-size: 12px;
   }
 
+  /* Title */
   .grid-title {
     font-size: 20px;
   }
 
+  /* Footer */
   .footer {
     font-size: 12px;
     margin-top: 5px;

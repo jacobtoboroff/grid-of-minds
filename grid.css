@@ -839,10 +839,10 @@ body {
 
   .row-labels {
     display: grid;
-    grid-template-rows: repeat(3, 100px); /* smaller so it fits */
+    grid-template-rows: repeat(3, 80px); /* smaller so it fits */
     justify-items: end;
     align-items: center;
-    margin-top: 55px;
+    margin-top: 40px;
     margin-right: 0;
   }
 
@@ -871,8 +871,8 @@ body {
   }
 
   .main-grid {
-    grid-template-columns: repeat(3, 100px);
-    grid-template-rows: repeat(3, 100px);
+    grid-template-columns: repeat(3, 80px);
+    grid-template-rows: repeat(3, 80px);
     margin: 0 auto;
   }
 

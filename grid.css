@@ -844,10 +844,10 @@ body {
     grid-template-rows: repeat(3, 100px); /* was 80px */
     justify-items: end;
     align-items: center;
-    margin-top: 100px;
+    margin-top: 60px !important; /* force push down */
     margin-right: 0;
   }
-
+  
   .row-label {
     font-size: 10px;
     text-align: right;

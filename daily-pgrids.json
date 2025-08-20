@@ -182,13 +182,13 @@
   "16": {
     "rows": [
       "Democratic Party",
-      "Served less than 5 years",
-      "Impeached"
+      "Republican Party",
+      "First Name Starts with A–J"
     ],
     "columns": [
-      "Cold War President",
-      "Born 1900–2000",
-      "Served more than 5 years"
+      "Served in the senate",
+      "Served in Congress",
+      "Served in the House"
     ]
   },
   "17": {

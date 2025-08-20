@@ -22,6 +22,7 @@ async function fetchWikipediaImage(title) {
     return "https://via.placeholder.com/400x260?text=No+Image";
   }
 }
+
 function loadGridByDay(day) {
   fetch("daily-pgrids.json")
     .then(res => res.json())
@@ -37,7 +38,6 @@ function loadGridByDay(day) {
       window.viewingPastGrid = day !== currentDay;
     });
 }
-
 
 // ======= Card Renderer =======
 async function renderGrid(dataArray) {
@@ -205,7 +205,6 @@ function matchMatchesLabel(p, label) {
   const pastMatch = l.match(/(began presidency|started|took office).*past\s*(\d{4})/i);
   if (pastMatch) return start > parseInt(pastMatch[2]);
   
-
   const endBeforeMatch = l.match(/(ended|end|served.*until).*before\s*(\d{4})/i);
   if (endBeforeMatch) return end < parseInt(endBeforeMatch[2]);
 
@@ -223,16 +222,15 @@ function matchMatchesLabel(p, label) {
   if (l.includes("ended in 20th century")) return end >= 1901 && end <= 2000;
   if (l.includes("ended in 21st century")) return end >= 2001 && end <= 2100;
 
-// ========== Years in Office ==========
-if (l.includes("served more than 5 years")) return years > 5;
-if (l.includes("served less than 5 years")) return years < 5;
+  // ========== Years in Office ==========
+  if (l.includes("served more than 5 years")) return years > 5;
+  if (l.includes("served less than 5 years")) return years < 5;
 
-const yearsMoreMatch = l.match(/years in office\s*>\s*(\d+(\.\d+)?)/i);
-if (yearsMoreMatch) return years > parseFloat(yearsMoreMatch[1]);
+  const yearsMoreMatch = l.match(/years in office\s*>\s*(\d+(\.\d+)?)/i);
+  if (yearsMoreMatch) return years > parseFloat(yearsMoreMatch[1]);
 
-const yearsLessMatch = l.match(/years in office\s*<\s*(\d+(\.\d+)?)/i);
-if (yearsLessMatch) return years < parseFloat(yearsLessMatch[1]);
-
+  const yearsLessMatch = l.match(/years in office\s*<\s*(\d+(\.\d+)?)/i);
+  if (yearsLessMatch) return years < parseFloat(yearsLessMatch[1]);
 
   // ========== Age at Start ==========
   const ageMoreMatch = l.match(/age at start\s*>\s*(\d+)/i);
@@ -312,7 +310,7 @@ document.addEventListener("DOMContentLoaded", () => {
     saveGameState(); // ✅ Save state with guessesLeft = 0
     showEndgameSummary();
   });
-  
+
   const gridLabel = document.getElementById("grid-number");
   if (gridLabel) {
     gridLabel.textContent = `GRID #${String(currentDay).padStart(3, "0")}`;
@@ -371,7 +369,7 @@ document.addEventListener("DOMContentLoaded", () => {
         guessBtn.textContent = "Guess";
         guessBtn.addEventListener("click", () => handleGuess(p.name));
       }
-      
+
       item.appendChild(nameSpan);
       item.appendChild(guessBtn);
       box.appendChild(item);
@@ -411,7 +409,8 @@ document.addEventListener("DOMContentLoaded", () => {
       guessesLeft,
       usedPresidents: Array.from(usedPresidents),
       gridData,
-      gameOver: guessesLeft === 0
+      gameOver: guessesLeft === 0,
+      currentDay // Store the current day to track which grid the state belongs to
     };
     localStorage.setItem("gridOfMindsGame", JSON.stringify(gameState));
   }
@@ -419,13 +418,19 @@ document.addEventListener("DOMContentLoaded", () => {
   function loadGameState() {
     const saved = localStorage.getItem("gridOfMindsGame");
     if (!saved) return;
-  
+
     const state = JSON.parse(saved);
+    if (state.currentDay !== currentDay) {
+      // Clear localStorage if the saved day does not match the current day
+      localStorage.removeItem("gridOfMindsGame");
+      return; // Exit to start fresh with the new grid
+    }
+
     guessesLeft = state.guessesLeft ?? 9;
     document.querySelector(".guesses-count").textContent = guessesLeft;
-  
+
     state.usedPresidents.forEach(name => usedPresidents.add(name));
-  
+
     const cells = document.querySelectorAll(".cell");
     state.gridData.forEach((name, i) => {
       if (name && cells[i]) {
@@ -435,13 +440,11 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
     });
-  
-  
-    // ✅ Trigger Game Over modal if necessary
+
     if (state.gameOver) {
       setTimeout(showEndgameSummary, 300); // Delay ensures DOM is ready
     }
-  }  
+  }
 
   async function handleGuess(inputName) {
     const guess = inputName.toLowerCase();
@@ -452,14 +455,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     guessesLeft = Math.max(guessesLeft - 1, 0);
     document.querySelector(".guesses-count").textContent = guessesLeft;
-    
+
     // 🔒 Disable guess button if no guesses left
     if (guessesLeft === 0) {
       // Disable all future autocomplete buttons
       box.innerHTML = ""; // Clears autocomplete box
       setTimeout(showEndgameSummary, 300);
-    }    
-    
+    }
+
     const guessRemaining = document.getElementById("guess-remaining");
     if (guessRemaining) guessRemaining.textContent = `Guesses left: ${guessesLeft}`;
     guessModal.style.display = "none";
@@ -471,7 +474,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!match || usedPresidents.has(match.name)) {
       saveGameState(); // ✅ persist even if guess was incorrect or repeated
       return;
-    }    
+    }
     const idx = [...document.querySelectorAll(".cell")].indexOf(activeCell);
     const row = Math.floor(idx / 3);
     const col = idx % 3;
@@ -494,8 +497,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.target === answersModal) answersModal.style.display = "none";
     if (e.target === endgameModal) endgameModal.style.display = "none";
   };
-  loadPresidents().then(loadGameState);
-  loadGridByDay(currentDay);
+  loadPresidents().then(() => {
+    loadGameState();
+    loadGridByDay(currentDay);
+  });
 });
 
 function showEndgameSummary() {
@@ -510,23 +515,23 @@ function showEndgameSummary() {
     const rowLabels = ["Row 1", "Row 2", "Row 3"];
     const colLabels = ["Col 1", "Col 2", "Col 3"];
     const cells = [...playerGrid.children];
-  
+
     let output = `Presidential Grid Results\n${finalScoreText.textContent}\n\n`;
-  
+
     for (let i = 0; i < cells.length; i++) {
       const row = Math.floor(i / 3);
       const col = i % 3;
-    
+
       const rowLabel = document.querySelectorAll(".row-label")[row]?.textContent.trim() || `Row ${row + 1}`;
       const colLabel = document.querySelectorAll(".col-label")[col]?.textContent.trim() || `Col ${col + 1}`;
-    
+
       const guess = cells[i].querySelector("img")?.alt || "—";
       const isCorrect = cells[i].classList.contains("correct");
       const mark = isCorrect ? "✅" : "❌";
-    
+
       output += `${rowLabel} × ${colLabel}: ${guess} ${mark}\n`;
-    }    
-  
+    }
+
     if (navigator.share) {
       navigator.share({
         title: 'Grid of Minds Results',
@@ -537,7 +542,7 @@ function showEndgameSummary() {
     } else {
       alert("Sharing not supported on this device.");
     }
-  };  
+  };
 
   const cells = document.querySelectorAll(".main-grid .cell");
   playerGrid.innerHTML = "";
@@ -590,7 +595,6 @@ function showEndgameSummary() {
     localStorage.removeItem("gridOfMindsGame");
     location.reload(); // Reloads the page and resets everything
   });
-  
 
   finalScoreText.textContent = `You got ${correctCount} out of 9 correct!`;
   endgameModal.style.display = "block";
@@ -599,28 +603,28 @@ function showEndgameSummary() {
     const rowLabels = ["Row 1", "Row 2", "Row 3"];
     const colLabels = ["Col 1", "Col 2", "Col 3"];
     const cells = [...playerGrid.children];
-  
+
     let output = `${finalScoreText.textContent}\n\nYour Answers:\n`;
-  
+
     for (let i = 0; i < cells.length; i++) {
       const row = Math.floor(i / 3);
       const col = i % 3;
-    
+
       const rowLabel = document.querySelectorAll(".row-label")[row]?.textContent.trim() || `Row ${row + 1}`;
       const colLabel = document.querySelectorAll(".col-label")[col]?.textContent.trim() || `Col ${col + 1}`;
-    
+
       const guess = cells[i].querySelector("img")?.alt || "—";
       const isCorrect = cells[i].classList.contains("correct");
       const mark = isCorrect ? "✅" : "❌";
-    
+
       output += `${rowLabel} × ${colLabel}: ${guess} ${mark}\n`;
-    }    
-  
+    }
+
     navigator.clipboard.writeText(output).then(() => {
       copyConfirm.style.display = "block";
       setTimeout(() => (copyConfirm.style.display = "none"), 2000);
     });
-  };  
+  };
 }
 
 // ======= Grid Loader =======

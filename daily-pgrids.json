@@ -193,13 +193,13 @@
   },
   "17": {
     "rows": [
-      "Republican Party",
+      "Born in Virginia",
       "Served more than 5 years",
-      "Won Re-election"
+      "Last Name A–J"
     ],
     "columns": [
-      "Served in Congress",
-      "Name Starts with A–J",
+      "Appears On Currency",
+      "Born before 1800",
       "Served in Military"
     ]
   },

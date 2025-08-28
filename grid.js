@@ -61,7 +61,7 @@ async function renderGrid(dataArray) {
 }
 
 // ======= Global State =======
-const launchDate = new Date("August 20, 2025 00:00:00");
+const launchDate = new Date("August 10, 2025 00:00:00");
 
 // Normalize current time to today's midnight (local time)
 const now = new Date();
@@ -99,6 +99,7 @@ async function loadPresidents() {
           ivy_league: (p["Attended Ivy League School"] || "").trim().toLowerCase(),
           died_in_office: (p["Died in Office"] || "").trim().toLowerCase(),
           vice_president: (p["Serve as Vice President"] || "").trim().toLowerCase(),
+          mount_rushmore: (p["Appears on Mount Rushmore"] || "").trim().toLowerCase(),
           years_in_office: parseFloat(p["Years in Office"]) || null,
           nobel: (p["Nobel Prize Winner"] || "").trim().toLowerCase(),
           impeached: (p["Impeached"] || "").trim().toLowerCase(),
@@ -264,6 +265,7 @@ function matchMatchesLabel(p, label) {
   if (l.includes("without popular vote")) return yes.includes(safe(p.lost_popular_vote));
   if (l.includes("cold war")) return yes.includes(safe(p.cold_war));
   if (l.includes("appears on currency")) return yes.includes(safe(p.on_currency));
+  if (l.includes("appears on mount rushmore")) return yes.includes(safe(p.mount_rushmore));
   if (l.includes("won re-election")) return yes.includes(safe(p.re_elected));
   if (l.includes("not re-elected") || l.includes("not reelected")) return safe(p.re_elected) === "no";
   if (l.includes("born before 1800")) return yes.includes(safe(p.born_before_1800));

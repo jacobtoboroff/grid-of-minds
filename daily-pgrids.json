@@ -214,5 +214,17 @@
       "First Name Starts with K–Z",
       "Last Name A–J"
     ]
+  },
+  "19": {
+    "rows": [
+      "Appears on Mount Rushmore",
+      "Inaugurated older than 50",
+      "Served in Congress"
+    ],
+    "columns": [
+    "Born before 1800",
+    "Born 1800 - 1900",
+    "Republican Party"
+    ]
   }
 }

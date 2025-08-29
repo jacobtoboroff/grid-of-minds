@@ -61,7 +61,7 @@ async function renderGrid(dataArray) {
 }
 
 // ======= Global State =======
-const launchDate = new Date("August 10, 2025 00:00:00");
+const launchDate = new Date("August 20, 2025 00:00:00");
 
 // Normalize current time to today's midnight (local time)
 const now = new Date();

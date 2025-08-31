@@ -231,12 +231,24 @@
     "rows": [
       "Presidency Number 11-20",
       "Presidency Number 21-30",
-  "Presidency Number 31-40"
+      "Presidency Number 31-40"
     ],
     "columns": [
     "Republican Party",
     "Democratic Party",
     "Last Name A–J"
+    ]
+  },
+  "21": {
+    "rows": [
+      "Served as Vice President",
+      "Served more than 5 years",
+      "Won Without Popular Vote"
+    ],
+    "columns": [
+    "Served Past 1900",
+    "Served Before 1900",
+    "First Name Starts with A–J"
     ]
   }
 }

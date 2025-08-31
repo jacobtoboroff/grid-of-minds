@@ -226,5 +226,17 @@
     "Born 1800 - 1900",
     "Republican Party"
     ]
+  },
+  "20": {
+    "rows": [
+      "Presidency Number 11-20",
+      "Presidency Number 21-30",
+  "Presidency Number 31-40"
+    ],
+    "columns": [
+    "Republican Party",
+    "Democratic Party",
+    "Last Name A–J"
+    ]
   }
 }

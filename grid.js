@@ -222,6 +222,14 @@ function matchMatchesLabel(p, label) {
   if (l.includes("ended in 19th century")) return end >= 1801 && end <= 1900;
   if (l.includes("ended in 20th century")) return end >= 1901 && end <= 2000;
   if (l.includes("ended in 21st century")) return end >= 2001 && end <= 2100;
+  // ========== Presidency Number Ranges ==========
+const presNum = p.presidency_number || 0;
+const presRangeMatch = l.match(/presidency number\s*(\d+)\s*[-–to]+\s*(\d+)/i);
+if (presRangeMatch) {
+  const min = parseInt(presRangeMatch[1]);
+  const max = parseInt(presRangeMatch[2]);
+  return presNum >= min && presNum <= max;
+}
 
   // ========== Years in Office ==========
   if (l.includes("served more than 5 years")) return years > 5;

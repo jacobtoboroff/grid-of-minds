@@ -250,5 +250,29 @@
     "Served Before 1900",
     "First Name Starts with A–J"
     ]
+  },
+  "22": {
+    "rows": [
+      "Former State Governors",
+      "Cold War President",
+      "Served less than 5 years"
+    ],
+    "columns": [
+      "Inaugurated older than 50",
+      "Presidency Number 1-10",
+      "Last Name K–Z"
+    ]
+  },
+  "23": {
+    "rows": [
+      "Nobel Prize Winner",
+      "Won Re-election",
+      "Died in Office"
+    ],
+    "columns": [
+      "Democratic Party",
+    "Last Name A–J",
+    "Served Past 1850"
+    ]
   }
 }

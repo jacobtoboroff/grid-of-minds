@@ -648,7 +648,7 @@ function showEndgameSummary() {
 }
 
 // ================================
-// Archives Modal Logic
+// Archives Modal Logic (always list from latest → 1)
 // ================================
 (function () {
   const archivesLink   = document.getElementById("archives-link");
@@ -659,62 +659,79 @@ function showEndgameSummary() {
 
   if (!archivesLink || !archivesModal || !closeArchives || !archivesList) return;
 
-  function getCurrentGridNumberForModal() {
-    // Prefer path (truth source)
-    const byPath = getGridNumberFromPath();
-    if (byPath) return byPath;
-    // Fallback to global set by loader
-    if (typeof window.__CURRENT_GRID__ === "number" && window.__CURRENT_GRID__ > 0) {
-      return window.__CURRENT_GRID__;
-    }
-    // Last resort: parse the label
-    if (gridNumberEl && gridNumberEl.textContent) {
-      const match = gridNumberEl.textContent.match(/#?(\d{1,4})/);
-      if (match) return parseInt(match[1], 10);
-    }
-    return 1;
+  const GRID_JSON_URL = "daily-pgrids.json";
+  let __gridsCache = null;
+  let __latestGrid = null;
+
+  async function fetchAllGrids() {
+    if (__gridsCache) return __gridsCache;
+    const res = await fetch(GRID_JSON_URL, { cache: "no-cache" });
+    if (!res.ok) throw new Error("Failed to fetch daily-pgrids.json");
+    __gridsCache = await res.json();
+    return __gridsCache;
   }
 
-  function populateArchives() {
-    const current = getCurrentGridNumberForModal();
-    archivesList.innerHTML = "";
-
-    for (let n = current - 1; n >= 1; n--) {
-      const btn = document.createElement("button");
-      btn.className = "archive-item";
-      btn.textContent = `Grid #${String(n).padStart(3, "0")}`;
-      btn.style.display = "block";
-      btn.style.width   = "100%";
-      btn.style.margin  = "6px 0";
-      btn.style.padding = "10px 12px";
-      btn.style.border  = "none";
-      btn.style.borderRadius = "6px";
-      btn.style.cursor  = "pointer";
-      btn.onclick = () => selectArchive(n);
-      archivesList.appendChild(btn);
-    }
-
-    if (archivesList.children.length === 0) {
-      const p = document.createElement("p");
-      p.textContent = "No previous grids available yet.";
-      archivesList.appendChild(p);
-    }
+  async function getLatestGridNumber() {
+    if (typeof __latestGrid === "number") return __latestGrid;
+    const data = await fetchAllGrids();
+    const nums = Object.keys(data)
+      .map(k => parseInt(k, 10))
+      .filter(n => !isNaN(n));
+    __latestGrid = nums.length ? Math.max(...nums) : 1;
+    return __latestGrid;
   }
 
   function selectArchive(n) {
     closeModal();
-    // Navigate to a real path so refresh/back/share work
-    window.location.href = buildGridPath(n);
+    // Prefer pretty paths if buildGridPath exists (prod); fallback to ?grid= (local)
+    if (typeof window.buildGridPath === "function") {
+      window.location.href = window.buildGridPath(n);
+    } else {
+      const url = new URL(window.location.href);
+      url.searchParams.set("grid", String(n));
+      window.location.href = url.toString();
+    }
   }
 
-  function openModal() {
-    populateArchives();
+  function buttonFor(n) {
+    const btn = document.createElement("button");
+    btn.className = "archive-item";
+    btn.textContent = `Grid #${String(n).padStart(3, "0")}`;
+    btn.style.display = "block";
+    btn.style.width   = "100%";
+    btn.style.margin  = "6px 0";
+    btn.style.padding = "10px 12px";
+    btn.style.border  = "none";
+    btn.style.borderRadius = "6px";
+    btn.style.cursor  = "pointer";
+    btn.onclick = () => selectArchive(n);
+    return btn;
+  }
+
+  async function populateArchivesFromLatest() {
+    const latest = await getLatestGridNumber();
+    archivesList.innerHTML = "";
+
+    for (let n = latest; n >= 1; n--) {
+      archivesList.appendChild(buttonFor(n));
+    }
+
+    if (archivesList.children.length === 0) {
+      const p = document.createElement("p");
+      p.textContent = "No grids available yet.";
+      archivesList.appendChild(p);
+    }
+  }
+
+  async function openModal() {
+    await populateArchivesFromLatest();
     archivesModal.style.display = "block";
   }
   function closeModal() {
     archivesModal.style.display = "none";
   }
 
+  // Events
   archivesLink.addEventListener("click", (e) => {
     e.preventDefault();
     openModal();

@@ -23,49 +23,23 @@ async function fetchWikipediaImage(title) {
   }
 }
 
-// ======= Helpers: Path-based routing =======
-function getGridNumberFromPath() {
-  const parts = window.location.pathname.split("/").filter(Boolean);
-  const last = parts[parts.length - 1];
-  return /^\d+$/.test(last) ? parseInt(last, 10) : null;
-}
-// If your site is served from a subfolder, set base to that (e.g. '/gom')
-const BASE_PATH = "/"; 
-function buildGridPath(n) {
-  return BASE_PATH.replace(/\/$/, "") + "/" + String(n);
-}
+function loadGridByDay(day) {
+  fetch("daily-pgrids.json")
+    .then(res => res.json())
+    .then(data => {
+      const grid = data[day];
+      if (!grid) return;
 
-// ======= Label Loader from daily-pgrids.json =======
-async function loadGridByDay(day) {
-  try {
-    const res = await fetch("daily-pgrids.json", { cache: "no-cache" });
-    const data = await res.json();
-    const grid = data[day];
-    if (!grid) return;
+      document.getElementById("grid-number").textContent = `Grid #${String(day).padStart(3, "0")}`;
+      document.querySelectorAll(".row-label").forEach((el, i) => el.textContent = grid.rows[i] || "");
+      document.querySelectorAll(".col-label").forEach((el, i) => el.textContent = grid.columns[i] || "");
 
-    // Header
-    const header = document.getElementById("grid-number");
-    if (header) header.textContent = `GRID #${String(day).padStart(3, "0")}`;
-
-    // Labels
-    document.querySelectorAll(".row-label").forEach((el, i) => {
-      el.textContent = grid.rows[i] || "";
+      // Optional: prevent interactivity for past grids
+      window.viewingPastGrid = day !== currentDay;
     });
-    document.querySelectorAll(".col-label").forEach((el, i) => {
-      el.textContent = grid.columns[i] || "";
-    });
-
-    // Let Archives know what we're on
-    window.__CURRENT_GRID__ = day;
-
-    // Optional: mark if viewing a past grid
-    window.viewingPastGrid = (typeof currentDay === "number") ? (day !== currentDay) : false;
-  } catch (e) {
-    console.error("Failed to load daily-pgrids.json", e);
-  }
 }
 
-// ======= Card Renderer (unused by archives, kept as-is) =======
+// ======= Card Renderer =======
 async function renderGrid(dataArray) {
   const grid = document.getElementById("card-grid");
   if (!grid) return;
@@ -88,9 +62,11 @@ async function renderGrid(dataArray) {
 
 // ======= Global State =======
 const launchDate = new Date("August 20, 2025 00:00:00");
+
+// Normalize current time to today's midnight (local time)
 const now = new Date();
-// Midnight local
 const todayMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
 const msInDay = 24 * 60 * 60 * 1000;
 const currentDay = Math.floor((todayMidnight - launchDate) / msInDay) + 1;
 
@@ -146,6 +122,7 @@ async function loadPresidents() {
 function matchMatchesLabel(p, label) {
   if (!p || !label) return false;
 
+  // Normalize label for consistent matching
   const l = label
     .toLowerCase()
     .replace(/–/g, "-")
@@ -153,6 +130,7 @@ function matchMatchesLabel(p, label) {
     .replace(/\s+/g, " ")
     .trim();
 
+  // Handle null/undefined fields safely
   const safe = (val) => (val || "").toLowerCase().trim();
   const name = safe(p.name);
   const firstName = safe(p.first_name);
@@ -163,34 +141,42 @@ function matchMatchesLabel(p, label) {
   const years = parseFloat(p.years_in_office) || 0;
   const age = parseInt(p.age_at_start) || 0;
 
-  // Names
+  // ========== Name Filters ==========
+  // First name range (e.g., "First Name Starts with A-J" or "First Name A-J")
   if (l.includes("first name starts with a-j") || l.includes("first name a-j")) {
     const firstChar = firstName.charAt(0).toUpperCase();
+    console.log(`Checking first name A-J for ${name}: ${firstChar} -> ${firstChar >= "A" && firstChar <= "J"}`); // Debug
     return firstChar >= "A" && firstChar <= "J";
   }
   if (l.includes("first name starts with k-z") || l.includes("first name k-z")) {
     const firstChar = firstName.charAt(0).toUpperCase();
+    console.log(`Checking first name K-Z for ${name}: ${firstChar} -> ${firstChar >= "K" && firstChar <= "Z"}`); // Debug
     return firstChar >= "K" && firstChar <= "Z";
   }
   if (l.includes("served past 1850")) return start > 1850;
   if (l.includes("served past 1900")) return start > 1900;
 
+  // Last name range (e.g., "Last Name A-J" or "Last Name K-Z")
   if (l.includes("last name a-j")) {
     const firstChar = lastName.charAt(0).toUpperCase();
+    console.log(`Checking last name A-J for ${name}: ${firstChar} -> ${firstChar >= "A" && firstChar <= "J"}`); // Debug
     return firstChar >= "A" && firstChar <= "J";
   }
   if (l.includes("last name k-z")) {
     const firstChar = lastName.charAt(0).toUpperCase();
+    console.log(`Checking last name K-Z for ${name}: ${firstChar} -> ${firstChar >= "K" && firstChar <= "Z"}`); // Debug
     return firstChar >= "K" && firstChar <= "Z";
   }
 
+  // Specific name match (e.g., "Name Lincoln")
   const nameMatch = l.match(/name\s+([a-z\s]+)/i);
   if (nameMatch) {
     const targetName = nameMatch[1].trim().toLowerCase();
+    console.log(`Checking specific name for ${name}: ${targetName} -> ${name.includes(targetName) || lastName.includes(targetName)}`); // Debug
     return name.includes(targetName) || lastName.includes(targetName);
   }
 
-  // Party
+  // ========== Political Party ==========
   if (l.includes("federalist")) return party.includes("federalist");
   if (l.includes("democratic-republican")) return party.includes("democratic-republican");
   if (l.includes("republican")) return party === "republican";
@@ -198,13 +184,14 @@ function matchMatchesLabel(p, label) {
   if (l.includes("whig")) return party === "whig";
   if (l.includes("none") || l.includes("independent")) return party === "none" || party === "";
 
-  // Year filters
+  // ========== Term Year Filters ==========
   const rangeMatch = l.match(/served.*?from\s*(\d{3,4})\s*[-–to]+\s*(\d{3,4}|present)/i);
   if (rangeMatch) {
     const min = parseInt(rangeMatch[1]);
     const max = rangeMatch[2].toLowerCase() === "present" ? new Date().getFullYear() + 1 : parseInt(rangeMatch[2]);
     return start >= min && start <= max;
   }
+
   if (l.includes("18th century")) return start >= 1701 && start <= 1800;
   if (l.includes("19th century")) return start >= 1801 && start <= 1900;
   if (l.includes("20th century")) return start >= 1901 && start <= 2000;
@@ -215,10 +202,10 @@ function matchMatchesLabel(p, label) {
 
   const afterMatch = l.match(/(served|started|began presidency|took office).*after\s*(\d{4})/i);
   if (afterMatch) return start > parseInt(afterMatch[2]);
-
+  
   const pastMatch = l.match(/(began presidency|started|took office).*past\s*(\d{4})/i);
   if (pastMatch) return start > parseInt(pastMatch[2]);
-
+  
   const endBeforeMatch = l.match(/(ended|end|served.*until).*before\s*(\d{4})/i);
   if (endBeforeMatch) return end < parseInt(endBeforeMatch[2]);
 
@@ -235,17 +222,16 @@ function matchMatchesLabel(p, label) {
   if (l.includes("ended in 19th century")) return end >= 1801 && end <= 1900;
   if (l.includes("ended in 20th century")) return end >= 1901 && end <= 2000;
   if (l.includes("ended in 21st century")) return end >= 2001 && end <= 2100;
+  // ========== Presidency Number Ranges ==========
+const presNum = p.presidency_number || 0;
+const presRangeMatch = l.match(/presidency number\s*(\d+)\s*[-–to]+\s*(\d+)/i);
+if (presRangeMatch) {
+  const min = parseInt(presRangeMatch[1]);
+  const max = parseInt(presRangeMatch[2]);
+  return presNum >= min && presNum <= max;
+}
 
-  // Presidency number range
-  const presNum = p.presidency_number || 0;
-  const presRangeMatch = l.match(/presidency number\s*(\d+)\s*[-–to]+\s*(\d+)/i);
-  if (presRangeMatch) {
-    const min = parseInt(presRangeMatch[1]);
-    const max = parseInt(presRangeMatch[2]);
-    return presNum >= min && presNum <= max;
-  }
-
-  // Years in office
+  // ========== Years in Office ==========
   if (l.includes("served more than 5 years")) return years > 5;
   if (l.includes("served less than 5 years")) return years < 5;
 
@@ -255,7 +241,7 @@ function matchMatchesLabel(p, label) {
   const yearsLessMatch = l.match(/years in office\s*<\s*(\d+(\.\d+)?)/i);
   if (yearsLessMatch) return years < parseFloat(yearsLessMatch[1]);
 
-  // Age at start
+  // ========== Age at Start ==========
   const ageMoreMatch = l.match(/age at start\s*>\s*(\d+)/i);
   if (ageMoreMatch) return age > parseInt(ageMoreMatch[1]);
 
@@ -271,7 +257,7 @@ function matchMatchesLabel(p, label) {
   const inauguratedAtAgeMatch = l.match(/inaugurated.*age\s*(\d+)/i);
   if (inauguratedAtAgeMatch) return age === parseInt(inauguratedAtAgeMatch[1]);
 
-  // Binary flags
+  // ========== Binary Flags ==========
   const yes = ["yes", "true", "1"];
   if (l.includes("assassinated")) return yes.includes(safe(p.assassinated));
   if (l.includes("died in office")) return yes.includes(safe(p.died_in_office));
@@ -294,7 +280,7 @@ function matchMatchesLabel(p, label) {
   if (l.includes("born 1800 - 1900")) return yes.includes(safe(p.born_1800_1900));
   if (l.includes("born 1900-2000")) return yes.includes(safe(p.born_1900_2000));
 
-  // Birth state
+  // ========== Birth State ==========
   const stateMatch = l.match(/born in\s+([a-z\s]+)/i);
   if (stateMatch) {
     const targetState = stateMatch[1].trim().toLowerCase();
@@ -331,11 +317,14 @@ document.addEventListener("DOMContentLoaded", () => {
   giveUpButton.addEventListener("click", () => {
     guessesLeft = 0;
     document.querySelector(".guesses-count").textContent = guessesLeft;
-    saveGameState();
+    saveGameState(); // ✅ Save state with guessesLeft = 0
     showEndgameSummary();
   });
 
   const gridLabel = document.getElementById("grid-number");
+  if (gridLabel) {
+    gridLabel.textContent = `GRID #${String(currentDay).padStart(3, "0")}`;
+  }
 
   rulesLink.onclick = () => (rulesModal.style.display = "block");
   closeRules.onclick = () => (rulesModal.style.display = "none");
@@ -381,6 +370,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (guessesLeft === 0) {
         guessBtn.disabled = true;
         guessBtn.classList.add("disabled");
+        guessBtn.textContent = "Guess";
       } else if (alreadyUsed) {
         guessBtn.disabled = true;
         guessBtn.classList.add("disabled");
@@ -420,7 +410,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let guessesLeft = 9;
   const usedPresidents = new Set();
-
   function saveGameState() {
     const gridData = [...document.querySelectorAll(".cell")].map(cell => {
       const img = cell.querySelector("img");
@@ -431,7 +420,7 @@ document.addEventListener("DOMContentLoaded", () => {
       usedPresidents: Array.from(usedPresidents),
       gridData,
       gameOver: guessesLeft === 0,
-      currentDay
+      currentDay // Store the current day to track which grid the state belongs to
     };
     localStorage.setItem("gridOfMindsGame", JSON.stringify(gameState));
   }
@@ -439,14 +428,19 @@ document.addEventListener("DOMContentLoaded", () => {
   function loadGameState() {
     const saved = localStorage.getItem("gridOfMindsGame");
     if (!saved) return;
+
     const state = JSON.parse(saved);
     if (state.currentDay !== currentDay) {
+      // Clear localStorage if the saved day does not match the current day
       localStorage.removeItem("gridOfMindsGame");
-      return;
+      return; // Exit to start fresh with the new grid
     }
+
     guessesLeft = state.guessesLeft ?? 9;
     document.querySelector(".guesses-count").textContent = guessesLeft;
+
     state.usedPresidents.forEach(name => usedPresidents.add(name));
+
     const cells = document.querySelectorAll(".cell");
     state.gridData.forEach((name, i) => {
       if (name && cells[i]) {
@@ -456,8 +450,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
     });
+
     if (state.gameOver) {
-      setTimeout(showEndgameSummary, 300);
+      setTimeout(showEndgameSummary, 300); // Delay ensures DOM is ready
     }
   }
 
@@ -471,8 +466,10 @@ document.addEventListener("DOMContentLoaded", () => {
     guessesLeft = Math.max(guessesLeft - 1, 0);
     document.querySelector(".guesses-count").textContent = guessesLeft;
 
+    // 🔒 Disable guess button if no guesses left
     if (guessesLeft === 0) {
-      box.innerHTML = "";
+      // Disable all future autocomplete buttons
+      box.innerHTML = ""; // Clears autocomplete box
       setTimeout(showEndgameSummary, 300);
     }
 
@@ -485,7 +482,7 @@ document.addEventListener("DOMContentLoaded", () => {
       setTimeout(showEndgameSummary, 300);
     }
     if (!match || usedPresidents.has(match.name)) {
-      saveGameState();
+      saveGameState(); // ✅ persist even if guess was incorrect or repeated
       return;
     }
     const idx = [...document.querySelectorAll(".cell")].indexOf(activeCell);
@@ -493,6 +490,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const col = idx % 3;
     const rowLabel = document.querySelectorAll(".row-label")[row]?.textContent;
     const colLabel = document.querySelectorAll(".col-label")[col]?.textContent;
+    console.log(`Evaluating guess: ${match.name} for ${rowLabel} × ${colLabel}`); // Debug
     if (matchMatchesLabel(match, rowLabel) && matchMatchesLabel(match, colLabel)) {
       const img = await fetchWikipediaImage(match.name);
       activeCell.innerHTML = `<img src="${img}" alt="${match.name}" class="cell-full-image">`;
@@ -509,34 +507,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.target === answersModal) answersModal.style.display = "none";
     if (e.target === endgameModal) endgameModal.style.display = "none";
   };
-
-  // Load data first, then decide which grid to show based on PATH
-  loadPresidents().then(async () => {
-    let num = getGridNumberFromPath();
-    if (!num) {
-      // no number in path → show today's grid (no redirect here)
-      num = today;
-    }
-
-    // Header + labels for this grid
-    if (gridLabel) gridLabel.textContent = `GRID #${String(num).padStart(3, "0")}`;
-    window.__CURRENT_GRID__ = num;
-
-    // Only load saved game state on today's grid
-    if (num === today) {
-      loadGameState();
-    } else {
-      // Past grids → keep board clean
-      localStorage.removeItem("gridOfMindsGame");
-      const gc = document.querySelector(".guesses-count");
-      if (gc) gc.textContent = "9";
-      document.querySelectorAll(".main-grid .cell").forEach(c => {
-        c.textContent = "";
-        c.className = "cell";
-      });
-    }
-
-    await loadGridByDay(num);
+  loadPresidents().then(() => {
+    loadGameState();
+    loadGridByDay(currentDay);
   });
 });
 
@@ -549,20 +522,31 @@ function showEndgameSummary() {
   const endgameModal = document.getElementById("endgame-modal");
   const shareBtn = document.getElementById("share-results-btn");
   shareBtn.onclick = () => {
+    const rowLabels = ["Row 1", "Row 2", "Row 3"];
+    const colLabels = ["Col 1", "Col 2", "Col 3"];
     const cells = [...playerGrid.children];
+
     let output = `Presidential Grid Results\n${finalScoreText.textContent}\n\n`;
+
     for (let i = 0; i < cells.length; i++) {
       const row = Math.floor(i / 3);
       const col = i % 3;
+
       const rowLabel = document.querySelectorAll(".row-label")[row]?.textContent.trim() || `Row ${row + 1}`;
       const colLabel = document.querySelectorAll(".col-label")[col]?.textContent.trim() || `Col ${col + 1}`;
+
       const guess = cells[i].querySelector("img")?.alt || "—";
       const isCorrect = cells[i].classList.contains("correct");
       const mark = isCorrect ? "✅" : "❌";
+
       output += `${rowLabel} × ${colLabel}: ${guess} ${mark}\n`;
     }
+
     if (navigator.share) {
-      navigator.share({ title: "Grid of Minds Results", text: output }).catch(err => {
+      navigator.share({
+        title: 'Grid of Minds Results',
+        text: output
+      }).catch(err => {
         alert("Sharing failed: " + err.message);
       });
     } else {
@@ -588,7 +572,6 @@ function showEndgameSummary() {
       playerCell.classList.add("empty");
     }
     playerGrid.appendChild(playerCell);
-
     const resultCell = document.createElement("div");
     resultCell.className = "cell view-answers";
     resultCell.textContent = "View Answers";
@@ -618,28 +601,35 @@ function showEndgameSummary() {
     });
     resultGrid.appendChild(resultCell);
   });
-
   document.getElementById("play-again-btn").addEventListener("click", () => {
     localStorage.removeItem("gridOfMindsGame");
-    location.reload();
+    location.reload(); // Reloads the page and resets everything
   });
 
   finalScoreText.textContent = `You got ${correctCount} out of 9 correct!`;
   endgameModal.style.display = "block";
 
   copyBtn.onclick = () => {
+    const rowLabels = ["Row 1", "Row 2", "Row 3"];
+    const colLabels = ["Col 1", "Col 2", "Col 3"];
     const cells = [...playerGrid.children];
+
     let output = `${finalScoreText.textContent}\n\nYour Answers:\n`;
+
     for (let i = 0; i < cells.length; i++) {
       const row = Math.floor(i / 3);
       const col = i % 3;
+
       const rowLabel = document.querySelectorAll(".row-label")[row]?.textContent.trim() || `Row ${row + 1}`;
       const colLabel = document.querySelectorAll(".col-label")[col]?.textContent.trim() || `Col ${col + 1}`;
+
       const guess = cells[i].querySelector("img")?.alt || "—";
       const isCorrect = cells[i].classList.contains("correct");
       const mark = isCorrect ? "✅" : "❌";
+
       output += `${rowLabel} × ${colLabel}: ${guess} ${mark}\n`;
     }
+
     navigator.clipboard.writeText(output).then(() => {
       copyConfirm.style.display = "block";
       setTimeout(() => (copyConfirm.style.display = "none"), 2000);
@@ -647,95 +637,12 @@ function showEndgameSummary() {
   };
 }
 
-// ================================
-// Archives Modal Logic
-// ================================
-(function () {
-  const archivesLink   = document.getElementById("archives-link");
-  const archivesModal  = document.getElementById("archives-modal");
-  const closeArchives  = document.getElementById("close-archives");
-  const archivesList   = document.getElementById("archives-list");
-  const gridNumberEl   = document.getElementById("grid-number");
-
-  if (!archivesLink || !archivesModal || !closeArchives || !archivesList) return;
-
-  function getCurrentGridNumberForModal() {
-    // Prefer path (truth source)
-    const byPath = getGridNumberFromPath();
-    if (byPath) return byPath;
-    // Fallback to global set by loader
-    if (typeof window.__CURRENT_GRID__ === "number" && window.__CURRENT_GRID__ > 0) {
-      return window.__CURRENT_GRID__;
-    }
-    // Last resort: parse the label
-    if (gridNumberEl && gridNumberEl.textContent) {
-      const match = gridNumberEl.textContent.match(/#?(\d{1,4})/);
-      if (match) return parseInt(match[1], 10);
-    }
-    return 1;
-  }
-
-  function populateArchives() {
-    const current = getCurrentGridNumberForModal();
-    archivesList.innerHTML = "";
-
-    for (let n = current - 1; n >= 1; n--) {
-      const btn = document.createElement("button");
-      btn.className = "archive-item";
-      btn.textContent = `Grid #${String(n).padStart(3, "0")}`;
-      btn.style.display = "block";
-      btn.style.width   = "100%";
-      btn.style.margin  = "6px 0";
-      btn.style.padding = "10px 12px";
-      btn.style.border  = "none";
-      btn.style.borderRadius = "6px";
-      btn.style.cursor  = "pointer";
-      btn.onclick = () => selectArchive(n);
-      archivesList.appendChild(btn);
-    }
-
-    if (archivesList.children.length === 0) {
-      const p = document.createElement("p");
-      p.textContent = "No previous grids available yet.";
-      archivesList.appendChild(p);
-    }
-  }
-
-  function selectArchive(n) {
-    closeModal();
-    // Navigate to a real path so refresh/back/share work
-    window.location.href = buildGridPath(n);
-  }
-
-  function openModal() {
-    populateArchives();
-    archivesModal.style.display = "block";
-  }
-  function closeModal() {
-    archivesModal.style.display = "none";
-  }
-
-  archivesLink.addEventListener("click", (e) => {
-    e.preventDefault();
-    openModal();
+// ======= Grid Loader =======
+fetch("daily-pgrids.json")
+  .then(res => res.json())
+  .then(data => {
+    const grid = data[currentDay];
+    if (!grid) return;
+    document.querySelectorAll(".row-label").forEach((el, i) => el.textContent = grid.rows[i] || "");
+    document.querySelectorAll(".col-label").forEach((el, i) => el.textContent = grid.columns[i] || "");
   });
-
-  if (gridNumberEl) {
-    gridNumberEl.style.cursor = "pointer";
-    gridNumberEl.title = "View archives";
-    gridNumberEl.addEventListener("click", (e) => {
-      e.preventDefault();
-      openModal();
-    });
-  }
-
-  closeArchives.addEventListener("click", closeModal);
-  window.addEventListener("click", (e) => {
-    if (e.target === archivesModal) closeModal();
-  });
-  window.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && archivesModal.style.display === "block") {
-      closeModal();
-    }
-  });
-})();

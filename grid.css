@@ -1014,3 +1014,8 @@ body {
     margin: 0;
   }
 }
+#archives-list {
+  max-height: 300px;   /* adjust height as needed */
+  overflow-y: auto;
+  margin-top: 10px;
+}

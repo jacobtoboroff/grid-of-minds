@@ -93,6 +93,7 @@ const now = new Date();
 const todayMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate());
 const msInDay = 24 * 60 * 60 * 1000;
 const currentDay = Math.floor((todayMidnight - launchDate) / msInDay) + 1;
+window.TODAYS_GRID = currentDay; // <-- add this line
 
 let presidentData = [];
 const today = currentDay;
@@ -708,24 +709,27 @@ function showEndgameSummary() {
 
   async function populateArchivesFromCap() {
     const latest = await getLatestGridNumber();
-
-    // Use currentDay from your script (const currentDay = …). If it's not available,
-    // fall back to latest so nothing breaks.
-    const effectiveToday = (typeof currentDay === "number" && currentDay > 0) ? currentDay : latest;
-
+  
+    // Read the global we set after computing currentDay
+    const effectiveToday = Number(window.TODAYS_GRID) || 1;
+  
+    // Cap to the smaller of (latest in JSON) and (today)
     const cap = Math.min(latest, effectiveToday);
+  
+    // Debug so you can verify in DevTools console
+    console.log("[Archives] latest in JSON =", latest, " | today =", effectiveToday, " | cap =", cap);
+  
     archivesList.innerHTML = "";
-
     for (let n = cap; n >= 1; n--) {
       archivesList.appendChild(buttonFor(n));
     }
-
+  
     if (archivesList.children.length === 0) {
       const p = document.createElement("p");
       p.textContent = "No grids available yet.";
       archivesList.appendChild(p);
     }
-  }
+  }  
 
   async function openModal() {
     await populateArchivesFromCap();

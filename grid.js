@@ -648,7 +648,7 @@ function showEndgameSummary() {
 }
 
 // ================================
-// Archives Modal Logic (list from min(latest, today) → 1)
+// Archives Modal Logic (list from min(latest, currentDay) → 1)
 // ================================
 (function () {
   const archivesLink   = document.getElementById("archives-link");
@@ -708,11 +708,14 @@ function showEndgameSummary() {
 
   async function populateArchivesFromCap() {
     const latest = await getLatestGridNumber();
-    // Use window.today if your app defines it, else fall back to latest
-    const todayCap = (typeof window.today === "number" && window.today > 0) ? window.today : latest;
-    const cap = Math.min(latest, todayCap);
 
+    // Use currentDay from your script (const currentDay = …). If it's not available,
+    // fall back to latest so nothing breaks.
+    const effectiveToday = (typeof currentDay === "number" && currentDay > 0) ? currentDay : latest;
+
+    const cap = Math.min(latest, effectiveToday);
     archivesList.innerHTML = "";
+
     for (let n = cap; n >= 1; n--) {
       archivesList.appendChild(buttonFor(n));
     }

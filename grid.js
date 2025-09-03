@@ -648,7 +648,7 @@ function showEndgameSummary() {
 }
 
 // ================================
-// Archives Modal Logic (always list from latest → 1)
+// Archives Modal Logic (list from min(latest, today) → 1)
 // ================================
 (function () {
   const archivesLink   = document.getElementById("archives-link");
@@ -674,16 +674,14 @@ function showEndgameSummary() {
   async function getLatestGridNumber() {
     if (typeof __latestGrid === "number") return __latestGrid;
     const data = await fetchAllGrids();
-    const nums = Object.keys(data)
-      .map(k => parseInt(k, 10))
-      .filter(n => !isNaN(n));
+    const nums = Object.keys(data).map(k => parseInt(k, 10)).filter(n => !isNaN(n));
     __latestGrid = nums.length ? Math.max(...nums) : 1;
     return __latestGrid;
   }
 
   function selectArchive(n) {
     closeModal();
-    // Prefer pretty paths if buildGridPath exists (prod); fallback to ?grid= (local)
+    // Prefer pretty paths if available; fallback to ?grid= for local dev
     if (typeof window.buildGridPath === "function") {
       window.location.href = window.buildGridPath(n);
     } else {
@@ -708,11 +706,14 @@ function showEndgameSummary() {
     return btn;
   }
 
-  async function populateArchivesFromLatest() {
+  async function populateArchivesFromCap() {
     const latest = await getLatestGridNumber();
-    archivesList.innerHTML = "";
+    // Use window.today if your app defines it, else fall back to latest
+    const todayCap = (typeof window.today === "number" && window.today > 0) ? window.today : latest;
+    const cap = Math.min(latest, todayCap);
 
-    for (let n = latest; n >= 1; n--) {
+    archivesList.innerHTML = "";
+    for (let n = cap; n >= 1; n--) {
       archivesList.appendChild(buttonFor(n));
     }
 
@@ -724,7 +725,7 @@ function showEndgameSummary() {
   }
 
   async function openModal() {
-    await populateArchivesFromLatest();
+    await populateArchivesFromCap();
     archivesModal.style.display = "block";
   }
   function closeModal() {
@@ -732,27 +733,17 @@ function showEndgameSummary() {
   }
 
   // Events
-  archivesLink.addEventListener("click", (e) => {
-    e.preventDefault();
-    openModal();
-  });
+  archivesLink.addEventListener("click", (e) => { e.preventDefault(); openModal(); });
 
   if (gridNumberEl) {
     gridNumberEl.style.cursor = "pointer";
     gridNumberEl.title = "View archives";
-    gridNumberEl.addEventListener("click", (e) => {
-      e.preventDefault();
-      openModal();
-    });
+    gridNumberEl.addEventListener("click", (e) => { e.preventDefault(); openModal(); });
   }
 
   closeArchives.addEventListener("click", closeModal);
-  window.addEventListener("click", (e) => {
-    if (e.target === archivesModal) closeModal();
-  });
+  window.addEventListener("click", (e) => { if (e.target === archivesModal) closeModal(); });
   window.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && archivesModal.style.display === "block") {
-      closeModal();
-    }
+    if (e.key === "Escape" && archivesModal.style.display === "block") closeModal();
   });
 })();

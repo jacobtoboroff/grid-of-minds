@@ -560,13 +560,6 @@ body {
   line-height: 1.2;
 }
 
-.grid-title span:nth-child(even) {
-  color: blue;
-}
-
-.grid-title span:nth-child(odd) {
-  color: red;
-}
 /* Base cell styling */
 .cell {
   cursor: pointer;

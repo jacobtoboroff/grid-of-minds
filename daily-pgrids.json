@@ -274,5 +274,17 @@
     "Last Name A–J",
     "Served Past 1850"
     ]
+  },
+  "24": {
+    "rows": [
+      "Last Name A–J",
+      "Last Name K–Z",
+      "Served as Vice President"
+    ],
+    "columns": [
+      "First Name Starts with A–J",
+    "First Name Starts with K–Z",
+    "Born 1900–2000"
+    ]
   }
 }

@@ -286,5 +286,17 @@
     "First Name Starts with K–Z",
     "Born 1900–2000"
     ]
+  },
+  "25": {
+    "rows": [
+    "Born before 1800",
+    "Born 1800 - 1900",
+     "First Name Starts with Vowel"
+    ],
+    "columns": [
+      "Democratic Party",
+    "Won Re-election",
+    "Served in Military"
+    ]
   }
 }

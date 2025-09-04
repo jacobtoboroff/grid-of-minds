@@ -109,7 +109,8 @@ async function loadPresidents() {
           first_name: (p["First Name"] || "").trim(),
           last_name: (p["Last Name"] || "").trim(),
           name: ((p["First Name"] || "") + " " + (p["Last Name"] || "")).trim(),
-          party: (p["Political Party"] || "").trim(),
+          first_name_vowel: /^[aeiou]/i.test((p["First Name"] || "").trim()),  // true/false
+          party: (p["Political Party"] || "").trim(),          
           term_start: parseInt(p["Start Year"]) || null,
           term_end: parseInt(p["End Year"]) || null,
           assassinated: (p["Assassinated"] || "").trim().toLowerCase(),
@@ -164,32 +165,35 @@ function matchMatchesLabel(p, label) {
   const years = parseFloat(p.years_in_office) || 0;
   const age = parseInt(p.age_at_start) || 0;
 
-  // Names
-  if (l.includes("first name starts with a-j") || l.includes("first name a-j")) {
-    const firstChar = firstName.charAt(0).toUpperCase();
-    return firstChar >= "A" && firstChar <= "J";
-  }
-  if (l.includes("first name starts with k-z") || l.includes("first name k-z")) {
-    const firstChar = firstName.charAt(0).toUpperCase();
-    return firstChar >= "K" && firstChar <= "Z";
-  }
-  if (l.includes("served past 1850")) return start > 1850;
-  if (l.includes("served past 1900")) return start > 1900;
+// Names
+if (l.includes("first name starts with a-j") || l.includes("first name a-j")) {
+  const firstChar = firstName.charAt(0).toUpperCase();
+  return firstChar >= "A" && firstChar <= "J";
+}
+if (l.includes("first name starts with k-z") || l.includes("first name k-z")) {
+  const firstChar = firstName.charAt(0).toUpperCase();
+  return firstChar >= "K" && firstChar <= "Z";
+}
+if (l.includes("first name starts with vowel") || l.includes("first name vowel")) {
+  return /^[AEIOU]/i.test(firstName);
+}
+if (l.includes("served past 1850")) return start > 1850;
+if (l.includes("served past 1900")) return start > 1900;
 
-  if (l.includes("last name a-j")) {
-    const firstChar = lastName.charAt(0).toUpperCase();
-    return firstChar >= "A" && firstChar <= "J";
-  }
-  if (l.includes("last name k-z")) {
-    const firstChar = lastName.charAt(0).toUpperCase();
-    return firstChar >= "K" && firstChar <= "Z";
-  }
+if (l.includes("last name a-j")) {
+  const firstChar = lastName.charAt(0).toUpperCase();
+  return firstChar >= "A" && firstChar <= "J";
+}
+if (l.includes("last name k-z")) {
+  const firstChar = lastName.charAt(0).toUpperCase();
+  return firstChar >= "K" && firstChar <= "Z";
+}
 
-  const nameMatch = l.match(/name\s+([a-z\s]+)/i);
-  if (nameMatch) {
-    const targetName = nameMatch[1].trim().toLowerCase();
-    return name.includes(targetName) || lastName.includes(targetName);
-  }
+const nameMatch = l.match(/name\s+([a-z\s]+)/i);
+if (nameMatch) {
+  const targetName = nameMatch[1].trim().toLowerCase();
+  return name.includes(targetName) || lastName.includes(targetName);
+}
 
   // Party
   if (l.includes("federalist")) return party.includes("federalist");

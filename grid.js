@@ -110,6 +110,7 @@ async function loadPresidents() {
           last_name: (p["Last Name"] || "").trim(),
           name: ((p["First Name"] || "") + " " + (p["Last Name"] || "")).trim(),
           first_name_vowel: /^[aeiou]/i.test((p["First Name"] || "").trim()),  // true/false
+          last_name_vowel: /^[aeiou]/i.test((p["Last Name"] || "").trim()),  // true/false
           party: (p["Political Party"] || "").trim(),          
           term_start: parseInt(p["Start Year"]) || null,
           term_end: parseInt(p["End Year"]) || null,
@@ -175,7 +176,14 @@ if (l.includes("first name starts with k-z") || l.includes("first name k-z")) {
   return firstChar >= "K" && firstChar <= "Z";
 }
 if (l.includes("first name starts with vowel") || l.includes("first name vowel")) {
-  return /^[AEIOU]/i.test(firstName);
+  return p.first_name_vowel;  // already normalized above
+}
+if (
+  l.includes("last name starts with vowel") ||
+  l.includes("last name vowel") ||
+  l.includes("last name begins with vowel")   // optional alias
+) {
+  return p.last_name_vowel;  // use normalized boolean
 }
 if (l.includes("served past 1850")) return start > 1850;
 if (l.includes("served past 1900")) return start > 1900;
@@ -293,8 +301,15 @@ if (nameMatch) {
   if (l.includes("cold war")) return yes.includes(safe(p.cold_war));
   if (l.includes("appears on currency")) return yes.includes(safe(p.on_currency));
   if (l.includes("appears on mount rushmore")) return yes.includes(safe(p.mount_rushmore));
-  if (l.includes("won re-election")) return yes.includes(safe(p.re_elected));
-  if (l.includes("not re-elected") || l.includes("not reelected")) return safe(p.re_elected) === "no";
+// matching (add Lost Re-election aliases; allow optional hyphen)
+if (l.includes("won re-election")) return yes.includes(safe(p.re_elected));
+if (
+  l.includes("not re-elected") ||
+  l.includes("not reelected") ||
+  /lost re-?election/.test(l)   // <-- NEW
+) {
+  return safe(p.re_elected) === "no";
+}
   if (l.includes("born before 1800")) return yes.includes(safe(p.born_before_1800));
   if (l.includes("born 1800 - 1900")) return yes.includes(safe(p.born_1800_1900));
   if (l.includes("born 1900-2000")) return yes.includes(safe(p.born_1900_2000));

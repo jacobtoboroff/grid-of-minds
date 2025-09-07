@@ -298,5 +298,17 @@
     "Won Re-election",
     "Served in Military"
     ]
+  },
+  "26": {
+    "rows": [
+      "Inaugurated older than 60",
+      "Born 1900-2000",
+     "Last Name Starts with Vowel"
+    ],
+    "columns": [
+      "Presidency Number 40-47",
+    "Lost Re-election",
+    "Served in Military"
+    ]
   }
 }

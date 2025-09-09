@@ -1,6 +1,5 @@
 /******************************
- * GEO GRID — v1 (Data + Guess)
- * Step 1: CSV loader, state, autocomplete, basic guess placement
+ * GEO GRID — v2 (flags in cells, give-up, flexible labels)
  ******************************/
 
 // ======= Helpers: Path-based routing (same pattern as presidents) =======
@@ -10,13 +9,13 @@ function getGridNumberFromPath() {
   return /^\d+$/.test(last) ? parseInt(last, 10) : null;
 }
 // If your site is served from a subfolder, set base to that (e.g. '/gom')
-const BASE_PATH = "/"; 
+const BASE_PATH = "/";
 function buildGridPath(n) {
   return BASE_PATH.replace(/\/$/, "") + "/" + String(n);
 }
 window.buildGridPath = buildGridPath;
 
-
+// ======= Label Loader from daily-geogrids.json =======
 async function loadGeoGridByDay(day) {
   try {
     const res = await fetch("daily-geogrids.json", { cache: "no-cache" });
@@ -43,15 +42,14 @@ async function loadGeoGridByDay(day) {
   }
 }
 
-// ======= Global Day State (same approach) =======
-const launchDate = new Date("August 20, 2025 00:00:00");
+// ======= Global Day State =======
+const launchDate = new Date("September 6, 2025 00:00:00");
 const now = new Date();
 const todayMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate());
 const msInDay = 24 * 60 * 60 * 1000;
 const currentDay = Math.floor((todayMidnight - launchDate) / msInDay) + 1;
 window.TODAYS_GRID = currentDay;
 
-// ======= Dataset =======
 let countryData = [];
 const today = currentDay;
 
@@ -62,11 +60,12 @@ async function loadCountries() {
       header: true,
       download: true,
       complete: (results) => {
-        const yes = (v) => String(v || "").trim().toLowerCase() === "yes";
+        const yes = (v) => /^(yes|y|true|1)$/i.test(String(v || "").trim());
         const num = (v) => {
           const n = parseInt(String(v || "").replace(/[^0-9-]/g, ""), 10);
           return Number.isFinite(n) ? n : null;
         };
+        const fixReligion = (v) => String(v || "").replace(/chirstianity/gi, "Christianity").trim();
 
         countryData = results.data
           .map(r => {
@@ -74,28 +73,28 @@ async function loadCountries() {
             if (!name) return null;
 
             const capital = (r["Capital"] || "").trim();
-            const nameInCapital = yes(r["Country Name in Capital"]); // C
+            const nameInCapital = yes(r["Country Name in Capital"]); // binary
             const continent = (r["Continent"] || r["continent"] || "").trim();
             const region = (r["Region"] || "").trim();
 
             // Ranks
-            const populationRank = num(r["Population #"]);   // F (India 1)
-            const areaRank       = num(r["Largest Country"]); // G (Russia 1)
+            const populationRank = num(r["Population #"]);   // India = 1
+            const areaRank       = num(r["Largest Country"]); // Russia = 1
 
-            // Binaries (robust to minor header typos you mentioned)
-            const landlocked     = yes(r["Landlocked"] || r["Landloicked"]);
-            const primaryReligion= (r["Primary Religion"] || "").trim();
-            const onEquator      = yes(r["Countries on the equator"]);
-            const islandNation   = yes(r["Island nation"] || r["Island Nation"]);
-            const bordersChina   = yes(r["Borders China"]);
-            const bordersRussia  = yes(r["Border Russia"] || r["Borders Russia"]);
-            const borderCount    = num(r["Number of bordering countries"]);
-            const hostsOlympics  = yes(r["To his olympics"] || r["Hosts Olympics"]);
-            const worldCupWinner = yes(r["World Culp Winner"] || r["World Cup Winner"]);
-            const natoMember     = yes(r["Nato Membership"] || r["NATO Membership"]);
+            // Binaries (robust to the typos mentioned)
+            const landlocked      = yes(r["Landlocked"] || r["Landloicked"]);
+            const primaryReligion = fixReligion(r["Primary Religion"]);
+            const onEquator       = yes(r["Countries on the equator"]);
+            const islandNation    = yes(r["Island nation"] || r["Island Nation"]);
+            const bordersChina    = yes(r["Borders China"]);
+            const bordersRussia   = yes(r["Border Russia"] || r["Borders Russia"]);
+            const borderCount     = num(r["Number of Bordering Countries"] || r["Number of bordering countries"]);
+            const hostsOlympics   = yes(r["To Host Olympics"] || r["Hosts Olympics"] || r["To his olympics"]);
+            const worldCupWinner  = yes(r["World Cup Winner"] || r["World Culp Winner"]);
+            const natoMember      = yes(r["NATO Member"] || r["Nato Membership"] || r["NATO Membership"]);
 
             // Flag / image
-            const imageUrl = (r["image url"] || r["Image URL"] || r["Flag URL"] || "").trim();
+            const imageUrl = (r["Image Url"] || r["image url"] || r["Image URL"] || r["Flag URL"] || "").trim();
 
             return {
               // basics
@@ -103,6 +102,12 @@ async function loadCountries() {
               name_lc: name.toLowerCase(),
               capital,
               capital_lc: capital.toLowerCase(),
+
+              // precomputed first letters + vowel flags (for fast matching)
+              name_first: name.charAt(0).toUpperCase() || "",
+              capital_first: capital.charAt(0).toUpperCase() || "",
+              name_starts_vowel: /^[AEIOU]/i.test(name),
+              capital_starts_vowel: /^[AEIOU]/i.test(capital),
 
               // geo tags
               continent,
@@ -127,11 +132,14 @@ async function loadCountries() {
               nato: natoMember,
 
               primary_religion: primaryReligion,
+              primary_religion_lc: primaryReligion.toLowerCase(),
+
+              // autocomplete (endonyms/exonyms can be added later)
+              aliases_lc: [],
 
               // media
               image_url: imageUrl,
 
-              // keep full original if needed later
               _row: r
             };
           })
@@ -144,108 +152,191 @@ async function loadCountries() {
   });
 }
 
-// ======= Label Matching (stub for Step 1) =======
-// For now we only support exact-name cells (will expand next step to continents, population, etc.)
+// ======= Label Matching Utilities =======
+
+// Parse letter ranges like "Country Name starts with A–J", "Country A-J", "Capital L–Z"
+function parseLetterRange(l, keyword) {
+  const rx = new RegExp(
+    `(?:^|\\b)(?:${keyword}|${keyword.replace(" name","")})\\s*(?:name\\s*)?(?:starts(?:\\s*with)?\\s*)?([a-z])\\s*(?:–|-|to)\\s*([a-z])`,
+    "i"
+  );
+  const m = l.match(rx);
+  if (!m) return null;
+  return [m[1].toUpperCase(), m[2].toUpperCase()];
+}
+
+// Rank matcher utility (population / area rank)
+function rankMatch(l, prefixRegex, value) {
+  if (value == null) return false;
+
+  // Group the alternation so the suffix applies to all options
+  const pr = `(?:${prefixRegex})`;
+
+  // exact: "= N"
+  let m = l.match(new RegExp(`${pr}\\s*=\\s*(\\d+)`, "i"));
+  if (m) return value === parseInt(m[1], 10);
+
+  // <=, >=, <, >
+  m = l.match(new RegExp(`${pr}\\s*<=\\s*(\\d+)`, "i"));
+  if (m) return value <= parseInt(m[1], 10);
+
+  m = l.match(new RegExp(`${pr}\\s*>=\\s*(\\d+)`, "i"));
+  if (m) return value >= parseInt(m[1], 10);
+
+  m = l.match(new RegExp(`${pr}\\s*<\\s*(\\d+)`, "i"));
+  if (m) return value < parseInt(m[1], 10);
+
+  m = l.match(new RegExp(`${pr}\\s*>\\s*(\\d+)`, "i"));
+  if (m) return value > parseInt(m[1], 10);
+
+  // ranges "1–50", "from 1 to 50", "between 1-50"
+  m = l.match(new RegExp(`${pr}\\s*(?:between|from)?\\s*(\\d+)\\s*(?:and|to|–|-)\\s*(\\d+)`, "i"));
+  if (m) {
+    const a = parseInt(m[1], 10), b = parseInt(m[2], 10);
+    return value >= Math.min(a, b) && value <= Math.max(a, b);
+  }
+
+  // aliases "Top 50 Population", "Top 50 Area / Largest Country"
+  m = l.match(new RegExp(`top\\s*(\\d+)\\s*${pr}`, "i"));
+  if (m) return value <= parseInt(m[1], 10);
+
+  return false;
+}
+
 function matchGeoLabel(entity, label) {
   if (!entity || !label) return false;
 
   const l = label
     .toLowerCase()
-    .replace(/–/g, "-")
+    .replace(/[–—]/g, "-")
     .replace(/“|”/g, '"')
     .replace(/\s+/g, " ")
     .trim();
 
-  // ---- Name contains
-  const nameMatch = l.match(/name\s+([a-z\s]+)/i);
-  if (nameMatch) {
-    const target = nameMatch[1].trim().toLowerCase();
-    return entity.name_lc.includes(target);
+  // ---------- Country letter ranges & vowels ----------
+  const countryRange = parseLetterRange(l, "country name");
+  if (countryRange) {
+    const ch = entity.name_first;
+    return ch >= countryRange[0] && ch <= countryRange[1];
+  }
+  if (/(^|\b)(country|country name)\s*(starts\s*with\s*)?vowel\b/i.test(l)) {
+    return !!entity.name_starts_vowel;
   }
 
-  // ---- Continent (e.g., "in africa", "continent: europe")
-  const contMatch = l.match(/(?:in|continent[: ]+)\s*(africa|asia|europe|oceania|north america|south america|antarctica)/i);
+  // ---------- Capital letter ranges & vowels ----------
+  const capitalRange = parseLetterRange(l, "capital name");
+  if (capitalRange) {
+    const ch = entity.capital_first;
+    return ch >= capitalRange[0] && ch <= capitalRange[1];
+  }
+  if (/(^|\b)(capital|capital name)\s*(starts\s*with\s*)?vowel\b/i.test(l)) {
+    return !!entity.capital_starts_vowel;
+  }
+
+  // ---------- Continents ----------
+  const bareCont = l.match(/^(africa|asia|europe|oceania|north america|south america|antarctica)$/i);
+  if (bareCont) return entity.continent_lc === bareCont[1].toLowerCase();
+
+  const contMatch = l.match(/(?:^| )(?:in|located in|continent[: ]+)\s*(africa|asia|europe|oceania|north america|south america|antarctica)/i);
   if (contMatch) {
     const target = contMatch[1].toLowerCase();
     return entity.continent_lc === target;
   }
 
-  // ---- Region contains (e.g., "region: southern europe")
-  const regMatch = l.match(/region[: ]+\s*([a-z\s-]+)/i);
+  // ---------- Regions ----------
+  const regMatch = l.match(/(?:^| )(?:region[: ]+|located in )\s*([a-z\s-]+)/i);
   if (regMatch) {
     const target = regMatch[1].trim().toLowerCase();
     return entity.region_lc.includes(target);
   }
 
-  // ---- Simple binaries
-  if (l.includes("landlocked"))           return !!entity.landlocked;
-  if (l.includes("island nation"))        return !!entity.island_nation;
-  if (l.includes("on the equator") || l.includes("equator")) return !!entity.on_equator;
-  if (l.includes("borders china"))        return !!entity.borders_china;
-  if (l.includes("borders russia"))       return !!entity.borders_russia;
-  if (l.includes("hosts olympics") || l.includes("olympics host")) return !!entity.hosts_olympics;
-  if (l.includes("world cup winner"))     return !!entity.world_cup_winner;
-  if (l.includes("nato member") || l.includes("nato membership")) return !!entity.nato;
+  // ---------- Primary Religion ----------
+  const relEq = l.match(/primary\s*religion[: ]+\s*([a-z\s-]+)/i);
+  if (relEq) {
+    const target = relEq[1].trim().toLowerCase();
+    return entity.primary_religion_lc === target || entity.primary_religion_lc.includes(target);
+  }
+  const relContains = l.match(/religion\s*contains\s*([a-z\s-]+)/i);
+  if (relContains) {
+    const target = relContains[1].trim().toLowerCase();
+    return entity.primary_religion_lc.includes(target);
+  }
+  if (/^islam primary religion$/i.test(label))         return /islam/.test(entity.primary_religion_lc);
+  if (/^christianity primary religion$/i.test(label))  return /christian/.test(entity.primary_religion_lc);
 
-  // ---- Capital / Name relations
-  if (l.includes("country name in capital")) return !!entity.name_in_capital;
-  const capContainsMatch = l.match(/capital contains\s+([a-z\s'-]+)/i);
+  // ---------- Border count ----------
+  let m = l.match(/borders\s*=\s*(\d+)/i);
+  if (m && entity.border_count != null) return entity.border_count === parseInt(m[1], 10);
+  m = l.match(/borders\s*>\s*(\d+)/i);
+  if (m && entity.border_count != null) return entity.border_count > parseInt(m[1], 10);
+  m = l.match(/borders\s*<\s*(\d+)/i);
+  if (m && entity.border_count != null) return entity.border_count < parseInt(m[1], 10);
+  m = l.match(/(?:borders|bordering countries)\s*(?:between|from)\s*(\d+)\s*(?:and|to|-)\s*(\d+)/i);
+  if (m && entity.border_count != null) {
+    const a = parseInt(m[1], 10), b = parseInt(m[2], 10);
+    return entity.border_count >= Math.min(a, b) && entity.border_count <= Math.max(a, b);
+  }
+  m = l.match(/(\d+)\s*\+\s*bordering countries/i);
+  if (m && entity.border_count != null) return entity.border_count >= parseInt(m[1], 10);
+  m = l.match(/borders\s*more than\s*(\d+)\s*countries/i);
+  if (m && entity.border_count != null) return entity.border_count > parseInt(m[1], 10);
+
+  // ---------- Ranks ----------
+  // Population: supports "Population Rank 1-50", "Most Populated 1-50", etc.
+  if (/(?:population\s*rank|most\s*populated|population)\b/i.test(l)) {
+    if (rankMatch(l, "population\\s*rank|most\\s*populated|population", entity.population_rank)) {
+      return true;
+    }
+  }
+
+// Area (Largest Country): accepts "Largest Country Rank 1-50" and "Largest Country 1-50"
+if (/(?:area\s*rank|largest\s*country(?:\s*rank)?)\b/i.test(l)) {
+  if (rankMatch(l, "area\\s*rank|largest\\s*country(?:\\s*rank)?", entity.area_rank)) {
+    return true;
+  }
+}
+
+  // ---------- Simple binaries & their negatives ----------
+  if (/(^| )landlocked( |$)/.test(l))                                        return !!entity.landlocked;
+  if (/^not landlocked$|does not have coastline/.test(l))                    return !entity.landlocked;
+
+  if (/(^| )island nation( |$)/.test(l))                                     return !!entity.island_nation;
+  if (/^not island nation$|land-connected/.test(l))                          return !entity.island_nation;
+
+  if (/(^| )on the equator( |$)|(^| )equator( |$)/.test(l))                  return !!entity.on_equator;
+  if (/^not on the equator$/.test(l))                                        return !entity.on_equator;
+
+  if (/borders china/.test(l))                                               return !!entity.borders_china;
+  if (/does not border china|no border with china/.test(l))                  return !entity.borders_china;
+
+  if (/borders russia/.test(l))                                              return !!entity.borders_russia;
+  if (/does not border russia|no border with russia/.test(l))                return !entity.borders_russia;
+
+  // Hosted Olympics (your requested title)
+  if (/hosted olympics|hosts olympics|olympics host/.test(l))                return !!entity.hosts_olympics;
+  if (/did not host olympics|never hosted olympics/.test(l))                 return !entity.hosts_olympics;
+
+  if (/world cup winner/.test(l))                                            return !!entity.world_cup_winner;
+  if (/not world cup winner|never won world cup/.test(l))                    return !entity.world_cup_winner;
+
+  if (/nato member|nato membership/.test(l))                                 return !!entity.nato;
+  if (/not nato member|non-nato/.test(l))                                    return !entity.nato;
+
+  if (/country name in capital/.test(l))                                     return !!entity.name_in_capital;
+  if (/no country name in capital/.test(l))                                  return !entity.name_in_capital;
+
+  // Capital contains phrase
+  const capContainsMatch = l.match(/capital\s*contains\s*([a-z\s'-]+)/i);
   if (capContainsMatch) {
     const target = capContainsMatch[1].trim().toLowerCase();
     return entity.capital_lc.includes(target);
   }
 
-  // ---- Border count (e.g., "borders = 2", "borders > 5", "borders between 3-6")
-  const eqBorders = l.match(/borders\s*=\s*(\d+)/i);
-  if (eqBorders && entity.border_count != null) {
-    return entity.border_count === parseInt(eqBorders[1], 10);
-  }
-  const gtBorders = l.match(/borders\s*>\s*(\d+)/i);
-  if (gtBorders && entity.border_count != null) {
-    return entity.border_count > parseInt(gtBorders[1], 10);
-  }
-  const ltBorders = l.match(/borders\s*<\s*(\d+)/i);
-  if (ltBorders && entity.border_count != null) {
-    return entity.border_count < parseInt(ltBorders[1], 10);
-  }
-  const betweenBorders = l.match(/borders\s*(?:between|from)\s*(\d+)\s*(?:and|to|-|–)\s*(\d+)/i);
-  if (betweenBorders && entity.border_count != null) {
-    const a = parseInt(betweenBorders[1], 10);
-    const b = parseInt(betweenBorders[2], 10);
-    return entity.border_count >= Math.min(a,b) && entity.border_count <= Math.max(a,b);
-    }
-
-  // ---- Rank filters (Population # or Largest Country rank)
-  // Examples:
-  //  "population rank = 1"  | "population rank <= 10" | "population rank between 1-20"
-  //  "area rank = 1"        | "largest country rank 1-5"
-  function rankMatch(prefix, value) {
-    // value is entity.population_rank or entity.area_rank
-    if (value == null) return false;
-    const eq = l.match(new RegExp(prefix + "\\s*=\\s*(\\d+)", "i"));
-    if (eq) return value === parseInt(eq[1], 10);
-    const le = l.match(new RegExp(prefix + "\\s*<=\\s*(\\d+)", "i"));
-    if (le) return value <= parseInt(le[1], 10);
-    const ge = l.match(new RegExp(prefix + "\\s*>=\\s*(\\d+)", "i"));
-    if (ge) return value >= parseInt(ge[1], 10);
-    const lt = l.match(new RegExp(prefix + "\\s*<\\s*(\\d+)", "i"));
-    if (lt) return value < parseInt(lt[1], 10);
-    const gt = l.match(new RegExp(prefix + "\\s*>\\s*(\\d+)", "i"));
-    if (gt) return value > parseInt(gt[1], 10);
-    const between = l.match(new RegExp(prefix + "\\s*(?:between|from)\\s*(\\d+)\\s*(?:and|to|-|–)\\s*(\\d+)", "i"));
-    if (between) {
-      const a = parseInt(between[1], 10);
-      const b = parseInt(between[2], 10);
-      return value >= Math.min(a,b) && value <= Math.max(a,b);
-    }
-    return false;
-  }
-
-  if (l.includes("population rank")) {
-    return rankMatch("population\\s*rank", entity.population_rank);
-  }
-  if (l.includes("area rank") || l.includes("largest country rank") || l.includes("largest country")) {
-    return rankMatch("(?:area\\s*rank|largest\\s*country(?:\\s*rank)?)", entity.area_rank);
+  // ---------- Name CONTAINS ----------
+  const nameContains = l.match(/(?:country\s*name|name)\s*(?:contains|includes)\s*([a-z\s-]+)/i);
+  if (nameContains) {
+    const target = nameContains[1].trim().toLowerCase();
+    return entity.name_lc.includes(target);
   }
 
   return false;
@@ -276,7 +367,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Autocomplete container (same UX pattern)
   const box = document.createElement("div");
   box.id = "autocomplete-box";
-  guessInput && guessInput.insertAdjacentElement("afterend", box);
+  if (guessInput) guessInput.insertAdjacentElement("afterend", box);
 
   // Autocomplete (prefix match on any word; includes aliases)
   function setupAutocomplete() {
@@ -293,7 +384,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .filter(c => {
           const terms = val.split(" ");
           const nameParts = c.name_lc.split(/\s+/);
-          const aliasParts = c.aliases_lc.flatMap(a => a.split(/\s+/));
+          const aliasParts = (c.aliases_lc || []).flatMap(a => a.split(/\s+/));
           const haystack = [...nameParts, ...aliasParts];
           return terms.every(term => haystack.some(part => part.startsWith(term)));
         })
@@ -358,8 +449,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function saveGameState() {
     const gridData = [...document.querySelectorAll(".cell")].map(cell => {
-      const filled = cell.getAttribute("data-entity-name");
-      return filled || null;
+      const name = cell.getAttribute("data-entity-name");
+      return name || null;
     });
     const gameState = {
       guessesLeft,
@@ -382,11 +473,13 @@ document.addEventListener("DOMContentLoaded", () => {
     guessesLeft = state.guessesLeft ?? 9;
     const gc = document.querySelector(".guesses-count");
     if (gc) gc.textContent = guessesLeft;
-    state.usedEntities.forEach(n => usedEntities.add(n));
+    (state.usedEntities || []).forEach(n => usedEntities.add(n));
     const cells = document.querySelectorAll(".cell");
-    state.gridData.forEach((name, i) => {
+    (state.gridData || []).forEach((name, i) => {
       if (name && cells[i]) {
-        cells[i].textContent = name; // Step 1: text only; we’ll add flags/images later
+        const ent = countryData.find(c => c.name === name);
+        const imgSrc = ent?.image_url || "https://via.placeholder.com/400x260?text=No+Image";
+        cells[i].innerHTML = `<img src="${imgSrc}" alt="${name}" class="cell-full-image">`;
         cells[i].setAttribute("data-entity-name", name);
         cells[i].classList.add("correct");
       }
@@ -397,43 +490,46 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   async function handleGuess(inputName) {
-    const guess = inputName.toLowerCase();
+    const guess = String(inputName || "").toLowerCase().trim();
     const match = countryData.find(c => {
       if (c.name_lc === guess) return true;
-      if (c.aliases_lc.includes(guess)) return true;
+      if ((c.aliases_lc || []).includes(guess)) return true;
       return false;
     });
 
+    // Count every guess
     guessesLeft = Math.max(guessesLeft - 1, 0);
     const gc = document.querySelector(".guesses-count");
     if (gc) gc.textContent = guessesLeft;
 
     if (guessesLeft === 0) {
-      box.innerHTML = "";
-      setTimeout(showEndgameSummary, 300);
+      const abox = document.getElementById("autocomplete-box");
+      if (abox) abox.innerHTML = "";
     }
 
     if (guessModal) guessModal.style.display = "none";
-    box.style.display = "none";
-    guessError && (guessError.style.display = "none");
+    const ab = document.getElementById("autocomplete-box");
+    if (ab) ab.style.display = "none";
+    if (guessError) guessError.style.display = "none";
 
     if (!match || usedEntities.has(match.name)) {
       saveGameState();
+      if (guessesLeft === 0) setTimeout(showEndgameSummary, 300);
       return;
     }
 
     const idx = [...document.querySelectorAll(".cell")].indexOf(activeCell);
     const row = Math.floor(idx / 3);
     const col = idx % 3;
-    const rowLabel = document.querySelectorAll(".row-label")[row]?.textContent;
-    const colLabel = document.querySelectorAll(".col-label")[col]?.textContent;
+    const rowLabel = document.querySelectorAll(".row-label")[row]?.textContent || "";
+    const colLabel = document.querySelectorAll(".col-label")[col]?.textContent || "";
 
-    // Step 1: require BOTH labels, but we only support name/contains right now.
-    const okRow = matchGeoLabel(match, rowLabel) || /name/.test((rowLabel || "").toLowerCase()) ? true : matchGeoLabel(match, rowLabel);
-    const okCol = matchGeoLabel(match, colLabel) || /name/.test((colLabel || "").toLowerCase()) ? true : matchGeoLabel(match, colLabel);
+    const okRow = matchGeoLabel(match, rowLabel);
+    const okCol = matchGeoLabel(match, colLabel);
 
     if (okRow && okCol) {
-      activeCell.textContent = match.name; // Step 1: text fill
+      const imgSrc = match.image_url || "https://via.placeholder.com/400x260?text=No+Image";
+      activeCell.innerHTML = `<img src="${imgSrc}" alt="${match.name}" class="cell-full-image">`;
       activeCell.setAttribute("data-entity-name", match.name);
       activeCell.classList.add("correct");
       usedEntities.add(match.name);
@@ -441,6 +537,20 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       saveGameState();
     }
+
+    if (guessesLeft === 0) setTimeout(showEndgameSummary, 300);
+  }
+
+  // Give Up button
+  const giveUpButton = document.querySelector(".give-up-btn");
+  if (giveUpButton) {
+    giveUpButton.addEventListener("click", () => {
+      guessesLeft = 0;
+      const gc = document.querySelector(".guesses-count");
+      if (gc) gc.textContent = guessesLeft;
+      saveGameState();
+      showEndgameSummary();
+    });
   }
 
   if (closeGuess) closeGuess.onclick = () => (guessModal.style.display = "none");
@@ -541,14 +651,15 @@ function showEndgameSummary() {
       const rowLabel = document.querySelectorAll(".row-label")[rowIndex]?.textContent;
       const colLabel = document.querySelectorAll(".col-label")[colIndex]?.textContent;
 
-      // For Step 1 we don’t have full category logic yet; show *all* countries (or we can filter by "name contains")
+      // Compute valid answers for this cell
       const answerList = document.getElementById("answer-list");
       const modal = document.getElementById("answers-modal");
       if (!answerList || !modal) return;
 
       answerList.innerHTML = "";
       const seen = new Set();
-      countryData.forEach(c => {
+      const valid = countryData.filter(c => matchGeoLabel(c, rowLabel) && matchGeoLabel(c, colLabel));
+      valid.forEach(c => {
         if (!seen.has(c.name)) {
           seen.add(c.name);
           const li = document.createElement("li");

@@ -306,9 +306,33 @@
      "Last Name Starts with Vowel"
     ],
     "columns": [
-      "Presidency Number 40-47",
+      "Met Queen Elizabeth II",
     "Lost Re-election",
     "Served in Military"
+    ]
+  },
+  "27": {
+    "rows": [
+      "6 feet or taller",
+      "Shorter than 6 feet",
+     "Attended Ivy League School"
+    ],
+    "columns": [
+      "Democratic Party",
+    "Republican Party",
+      "Served more than 5 years"
+    ]
+  },
+  "28": {
+    "rows": [
+      "Does Not Appear on Currency",
+      "Did Not Win Nobel Prize",
+      "Not Cold War President"
+    ],
+    "columns": [
+     "Did not Serve as Vice President",
+      "Did Not Die in Office",
+      "Does Not Appear on Mount Rushmore"
     ]
   }
 }

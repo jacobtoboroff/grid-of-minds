@@ -1,14 +1,134 @@
 {
     "1": {
       "rows": [
-        "Republican Party",
-        "Served in Military",
-        "Democratic Party"
+        "Country Name starts with A–J",
+        "Hosted Olympics",
+        "Population Rank 1–50"
       ],
       "columns": [
-        "Cold War President",
-        "First Name Starts with A–J",
-        "Served more than 5 years"
+        "Located in North America",
+        "Largest Country Rank 1–50",
+        "Borders Russia"
       ]
-    }
+    },
+    "2": {
+    "rows": [
+      "Island Nation",
+      "Landlocked",
+      "Located in Africa"
+    ],
+    "columns": [
+    "Islam Primary Religion",
+    "On the Equator",
+      "Capital Name Starts with K-Z"
+    ]
+  },
+  "3": {
+    "rows": [
+      "World Cup Winner",
+      "NATO Member",
+      "Borders more than 3 countries"
+    ],
+    "columns": [
+      "Located in Western Europe",
+      "Not Landlocked",
+      "Country Name starts with K–Z"
+    ]
+  },
+  "4": {
+    "rows": [
+        "Largest Country Rank 125–190",
+        "Country Name starts with A–J",
+      "Country Name starts with K–Z"
+    ],
+    "columns": [
+      "Located in Caribbean",
+      "Located in Africa",
+      "Located in South America"
+    ]
+  },
+  "5": {
+    "rows": [
+      "Borders China",
+      "Borders Russia",
+      "Located in Middle East"
+    ],
+    "columns": [
+        "Largest Country Rank 1–50",
+        "Largest Country Rank 50–100",
+        "Largest Country Rank 100–190"
+    ]
+  },
+  "6": {
+    "rows": [
+      "Country Name in Capital Name",
+      "Country Name starts with vowel",
+      "Largest Country Rank 50–100"
+    ],
+    "columns": [
+      "Located in Africa",
+      "Located in South America",
+      "Located in North America"
+    ]
+  },
+  "7": {
+    "rows": [
+      "Located in Oceania",
+      "Countries on the equator",
+      "Island Nation"
+    ],
+    "columns": [
+      "Largest Country Rank 50–100",
+      "Population Rank 1–25",
+      "Did not host Olympics"
+    ]
+  },
+  "8": {
+    "rows": [
+      "Located in North Africa",
+      "Located in Asia",
+      "Located in Eastern Europe"
+    ],
+    "columns": [
+        "Landlocked",
+      "Population Rank 26–75",
+      "Capital starts with vowel"
+    ]
+  },
+  "9": {
+    "rows": [
+      "Located in Europe",
+      "NATO Member",
+      "Country Name starts with K–Z"
+    ],
+    "columns": [
+      "World Cup Winner",
+      "On the Equator",
+      "Island Nation"
+    ]
+  },
+  "10": {
+    "rows": [
+      "Region: Middle East",
+      "Borders Russia",
+      "Capital contains New"
+    ],
+    "columns": [
+      "Population Rank 1–50",
+      "Not Landlocked",
+      "Largest Country Rank 26–75"
+    ]
+  },
+  "11": {
+    "rows": [
+      "Located in Asia",
+      "Islam Primary Religion",
+      "Borders between 3 and 6"
+    ],
+    "columns": [
+      "Top 25 Population",
+      "Capital starts with vowel",
+      "Does not border China"
+    ]
 }
+  }  

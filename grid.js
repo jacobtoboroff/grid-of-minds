@@ -136,7 +136,15 @@ async function loadPresidents() {
           re_elected: (p["Won Re-election"] || "").trim().toLowerCase(),
           born_before_1800: (p["Born Before 1800"] || "").trim().toLowerCase(),
           born_1800_1900: (p["Born 1800 - 1900"] || "").trim().toLowerCase(),
-          born_1900_2000: (p["Born 1900-2000"] || "").trim().toLowerCase()
+          born_1900_2000: (p["Born 1900-2000"] || "").trim().toLowerCase(),
+
+          // NEW: height in inches (numeric). Adjust header name if yours differs.
+          height_in: parseFloat(
+            p["Height (inches)"] || p["Height Inches"] || p["Height"] || ""
+          ) || null
+,
+          met_queen_elizabeth_ii: (p["Met Queen Elizabeth II"] || "").trim().toLowerCase()
+
         })).filter(p => p.name);
         resolve();
       },
@@ -284,44 +292,96 @@ if (nameMatch) {
   const inauguratedAtAgeMatch = l.match(/inaugurated.*age\s*(\d+)/i);
   if (inauguratedAtAgeMatch) return age === parseInt(inauguratedAtAgeMatch[1]);
 
-  // Binary flags
-  const yes = ["yes", "true", "1"];
-  if (l.includes("assassinated")) return yes.includes(safe(p.assassinated));
-  if (l.includes("died in office")) return yes.includes(safe(p.died_in_office));
-  if (l.includes("served in military")) return yes.includes(safe(p.military_service));
-  if (l.includes("served in congress")) return yes.includes(safe(p.served_in_congress));
-  if (l.includes("served in the house")) return yes.includes(safe(p.served_in_house));
-  if (l.includes("served in the senate")) return yes.includes(safe(p.served_in_senate));
-  if (l.includes("served as vice president")) return yes.includes(safe(p.vice_president));
-  if (l.includes("former state governor")) return yes.includes(safe(p.governor));
-  if (l.includes("attended ivy league")) return yes.includes(safe(p.ivy_league));
-  if (l.includes("nobel prize")) return yes.includes(safe(p.nobel));
-  if (l.includes("impeached")) return yes.includes(safe(p.impeached));
-  if (l.includes("without popular vote")) return yes.includes(safe(p.lost_popular_vote));
-  if (l.includes("cold war")) return yes.includes(safe(p.cold_war));
-  if (l.includes("appears on currency")) return yes.includes(safe(p.on_currency));
-  if (l.includes("appears on mount rushmore")) return yes.includes(safe(p.mount_rushmore));
-// matching (add Lost Re-election aliases; allow optional hyphen)
-if (l.includes("won re-election")) return yes.includes(safe(p.re_elected));
-if (
-  l.includes("not re-elected") ||
-  l.includes("not reelected") ||
-  /lost re-?election/.test(l)   // <-- NEW
-) {
-  return safe(p.re_elected) === "no";
+// Binary flags
+const yes = ["yes", "true", "1"];
+const no = ["no", "false", "0"];
+
+// Normalize helper
+const norm = (s) => String(s || "").trim().toLowerCase();
+
+// Helper to check flags
+function checkFlag(val, isNegated) {
+  const v = norm(val);
+  return isNegated ? no.includes(v) : yes.includes(v);
 }
-  if (l.includes("born before 1800")) return yes.includes(safe(p.born_before_1800));
-  if (l.includes("born 1800 - 1900")) return yes.includes(safe(p.born_1800_1900));
-  if (l.includes("born 1900-2000")) return yes.includes(safe(p.born_1900_2000));
 
-  // Birth state
-  const stateMatch = l.match(/born in\s+([a-z\s]+)/i);
-  if (stateMatch) {
-    const targetState = stateMatch[1].trim().toLowerCase();
-    return safe(p.birth_state).includes(targetState);
-  }
+// Normalize label once
+const L = norm(l);
 
-  return false;
+// Figure out if the label is negated (support a bunch of forms)
+const neg = /\b(not|no|did not|does not|was not|is not|didn['’]t|doesn['’]t|isn['’]t)\b/i.test(l);
+
+// --- Binary categories (use broad, tense-agnostic keywords) ---
+if (L.includes("assassin")) return checkFlag(p.assassinated, neg);
+
+if (/die(d)? in office/.test(L)) return checkFlag(p.died_in_office, neg);
+
+if (/serve(d)? in (the )?military/.test(L)) return checkFlag(p.military_service, neg);
+if (/serve(d)? in (the )?congress/.test(L)) return checkFlag(p.served_in_congress, neg);
+if (/serve(d)? in (the )?house/.test(L)) return checkFlag(p.served_in_house, neg);
+if (/serve(d)? in (the )?senate/.test(L)) return checkFlag(p.served_in_senate, neg);
+
+if (/serve(d)? as (the )?vice president/.test(L) || L.includes("vice president"))
+  return checkFlag(p.vice_president, neg);
+
+if (L.includes("governor")) return checkFlag(p.governor, neg);
+
+if (L.includes("ivy")) return checkFlag(p.ivy_league, neg);
+
+if (L.includes("nobel")) return checkFlag(p.nobel, neg);
+
+if (L.includes("impeach")) return checkFlag(p.impeached, neg);
+
+if (L.includes("without popular vote") || L.includes("lost popular vote"))
+  return checkFlag(p.lost_popular_vote, neg);
+
+if (L.includes("cold war")) return checkFlag(p.cold_war, neg);
+
+if (L.includes("currency")) return checkFlag(p.on_currency, neg);
+
+if (L.includes("mount rushmore")) return checkFlag(p.mount_rushmore, neg);
+
+if (L.includes("met queen elizabeth ii")) return checkFlag(p.met_queen_elizabeth_ii, neg);
+
+// --- Height buckets ---
+if (
+  L.includes("6 feet or taller") ||
+  L.includes("at least 6 feet") ||
+  L.includes(">= 6 feet") ||
+  L.includes("six feet or taller")
+) {
+  return p.height_in !== null && p.height_in >= 72;
+}
+if (
+  L.includes("shorter than 6 feet") ||
+  L.includes("under 6 feet") ||
+  L.includes("< 6 feet") ||
+  L.includes("under six feet")
+) {
+  return p.height_in !== null && p.height_in < 72;
+}
+
+// --- Re-election ---
+if (L.includes("won re-election") || L.includes("won reelection"))
+  return yes.includes(norm(p.re_elected));
+
+if (L.includes("not re-elected") || L.includes("not reelected") || /lost re-?election/.test(L))
+  return norm(p.re_elected) === "no";
+
+// --- Birth year ranges ---
+if (L.includes("born before 1800")) return yes.includes(norm(p.born_before_1800));
+if (L.includes("born 1800 - 1900")) return yes.includes(norm(p.born_1800_1900));
+if (L.includes("born 1900-2000")) return yes.includes(norm(p.born_1900_2000));
+
+// --- Birth state ---
+const stateMatch = L.match(/born in\s+([a-z\s]+)/i);
+if (stateMatch) {
+  const targetState = stateMatch[1].trim().toLowerCase();
+  return norm(p.birth_state).includes(targetState);
+}
+
+return false;
+
 }
 
 // ======= DOM Ready =======

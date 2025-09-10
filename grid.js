@@ -87,7 +87,7 @@ async function renderGrid(dataArray) {
 }
 
 // ======= Global State =======
-const launchDate = new Date("August 19, 2025 00:00:00");
+const launchDate = new Date("August 20, 2025 00:00:00");
 const now = new Date();
 // Midnight local
 const todayMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate());

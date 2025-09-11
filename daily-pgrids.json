@@ -334,5 +334,29 @@
       "Did Not Die in Office",
       "Does Not Appear on Mount Rushmore"
     ]
+  },
+  "29": {
+    "rows": [
+      "No College Degree",
+      "Attended Ivy League School",
+      "Served in Congress"
+    ],
+    "columns": [
+      "Presidency Number 1-10",
+      "First Name Starts with A–J",
+      "First Name Starts with K–Z"
+    ]
+  },
+  "30": {
+    "rows": [
+      "180 Pounds or greater",
+      "Less than 180 Pounds",
+      "Appears On Currency"
+    ],
+    "columns": [
+      "Democratic Party",
+      "Republican Party",
+      "Inaugurated older than 50"
+    ]
   }
 }

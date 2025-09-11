@@ -141,8 +141,11 @@ async function loadPresidents() {
           // NEW: height in inches (numeric). Adjust header name if yours differs.
           height_in: parseFloat(
             p["Height (inches)"] || p["Height Inches"] || p["Height"] || ""
-          ) || null
-,
+          ) || null,
+          weight_lbs: parseFloat(
+            (p["Weight (lbs)"] ?? p["Weight (pounds)"] ?? p["Weight Lbs"] ?? p["Weight"] ?? "")
+          ) || null,
+
           met_queen_elizabeth_ii: (p["Met Queen Elizabeth II"] || "").trim().toLowerCase()
 
         })).filter(p => p.name);
@@ -359,6 +362,42 @@ if (
   L.includes("under six feet")
 ) {
   return p.height_in !== null && p.height_in < 72;
+}
+function extractPounds(label) {
+  const m = label.match(/(\d+)\s*(pounds|pound|lbs?)/i);
+  return m ? parseInt(m[1], 10) : null;
+}
+if (L.includes("pound") || L.includes("lbs")) {
+  const n = extractPounds(L);
+  if (n !== null) {
+    // Greater-or-equal style
+    if (
+      L.includes("or greater") ||
+      L.includes("or more") ||
+      L.includes("at least") ||
+      L.includes(">=") ||
+      /greater\s+than\s+or\s+equal/.test(L)
+    ) {
+      return p.weight_lbs !== null && p.weight_lbs >= n;
+    }
+    if (/\s>\s*\d+/.test(L) || /greater\s+than\s+\d+/.test(L)) {
+      return p.weight_lbs !== null && p.weight_lbs > n;
+    }
+
+    // Less-than style
+    if (
+      L.includes("less than") ||
+      L.includes("under") ||
+      L.includes("<")
+    ) {
+      return p.weight_lbs !== null && p.weight_lbs < n;
+    }
+
+    // Fallback: exact match if someone writes "exactly 180 pounds"
+    if (L.includes("exactly")) {
+      return p.weight_lbs !== null && p.weight_lbs === n;
+    }
+  }
 }
 
 // --- Re-election ---

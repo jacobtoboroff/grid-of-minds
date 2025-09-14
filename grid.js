@@ -138,6 +138,7 @@ async function loadPresidents() {
           born_1800_1900: (p["Born 1800 - 1900"] || "").trim().toLowerCase(),
           born_1900_2000: (p["Born 1900-2000"] || "").trim().toLowerCase(),
 
+
           // NEW: height in inches (numeric). Adjust header name if yours differs.
           height_in: parseFloat(
             p["Height (inches)"] || p["Height Inches"] || p["Height"] || ""
@@ -146,8 +147,20 @@ async function loadPresidents() {
             (p["Weight (lbs)"] ?? p["Weight (pounds)"] ?? p["Weight Lbs"] ?? p["Weight"] ?? "")
           ) || null,
 
-          met_queen_elizabeth_ii: (p["Met Queen Elizabeth II"] || "").trim().toLowerCase()
+          met_queen_elizabeth_ii: (p["Met Queen Elizabeth II"] || "").trim().toLowerCase(),
 
+          // NEW (robust to any header capitalization/spacing variant)
+          unmarried_while_in_office: (() => {
+            // find the header key case-insensitively
+            const key = Object.keys(p).find(
+              k => String(k).toLowerCase().trim() === "unmarried while in office"
+                  || String(k).toLowerCase().trim() === "unmarried in office"
+            );
+            const raw = key ? p[key] : "";
+            return String(raw || "").trim().toLowerCase(); // expect yes/no
+          })()
+
+        
         })).filter(p => p.name);
         resolve();
       },
@@ -345,6 +358,14 @@ if (L.includes("currency")) return checkFlag(p.on_currency, neg);
 if (L.includes("mount rushmore")) return checkFlag(p.mount_rushmore, neg);
 
 if (L.includes("met queen elizabeth ii")) return checkFlag(p.met_queen_elizabeth_ii, neg);
+// NEW: Unmarried while in Office (broad, binary yes/no)
+if (
+  L.includes("unmarried while in office") ||
+  L.includes("unmarried in office") ||
+  L.includes("no spouse in office")
+) {
+  return checkFlag(p.unmarried_while_in_office, neg);
+}
 
 // --- Height buckets ---
 if (

@@ -358,5 +358,41 @@
       "Republican Party",
       "Inaugurated older than 50"
     ]
+  },
+  "31": {
+    "rows": [
+      "Born in Virginia",
+      "Served in the senate",
+      "Inaugurated older than 55"
+    ],
+    "columns": [
+      "Democratic-republican Party",
+      "Died in Office",
+      "Served less than 5 years"
+    ]
+  },
+  "32": {
+    "rows": [
+      "Democratic Party",
+      "Born before 1800",
+      "Last Name A–J"
+    ],
+    "columns": [
+      "Unmarried while in Office",
+      "6 feet or taller",
+      "Served in Congress"
+    ]
+  },
+  "33": {
+    "rows": [
+      "Born in Ohio",
+      "Assassinated",
+      "Republican Party"
+    ],
+    "columns": [
+      "Presidency Number 21-30",
+      "Won Re-election",
+      "Not Re-elected"
+    ]
   }
 }

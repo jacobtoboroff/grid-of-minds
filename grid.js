@@ -124,8 +124,48 @@ async function loadPresidents() {
           served_in_senate: (p["Served in the Senate"] || "").trim().toLowerCase(),
           governor: (p["Former State Governors"] || "").trim().toLowerCase(),
           ivy_league: (p["Attended Ivy League School"] || "").trim().toLowerCase(),
+          founding_father: (() => {
+            const key = Object.keys(p).find(k => {
+              const n = String(k).toLowerCase().replace(/\s+/g, "");
+              return n.includes("foundingfather") || n.includes("foundngfather");
+            }) || "Foundng father";
+          
+            const raw = key && p[key] !== undefined ? p[key] : "";
+            const v = String(raw || "").trim().toLowerCase();
+            if (v === "y") return "yes";
+            if (v === "n") return "no";
+            return v;
+          })(),
+          
+          has_facial_hair: (() => {
+            const key = Object.keys(p).find(k => {
+              const n = String(k).toLowerCase().replace(/\s+/g, "");
+              return n.includes("hasfacialhair");
+            }) || "Has Facial Hair";
+          
+            const raw = key && p[key] !== undefined ? p[key] : "";
+            const v = String(raw || "").trim().toLowerCase();
+            if (v === "y") return "yes";
+            if (v === "n") return "no";
+            return v; // expect "yes"/"no"
+          })(),                    
+          
           died_in_office: (p["Died in Office"] || "").trim().toLowerCase(),
           vice_president: (p["Serve as Vice President"] || "").trim().toLowerCase(),
+          secretary_state: (() => {
+            // try to be robust to header variants (Served/Serve/just "Secretary of State")
+            const key =
+              Object.keys(p).find(k =>
+                String(k).toLowerCase().replace(/\s+/g, " ").includes("secretary of state")
+              ) ||
+              "Served as Secretary of State" ||
+              "Serve as Secretary of State" ||
+              "Secretary of State";
+          
+            const raw = key && p[key] !== undefined ? p[key] : "";
+            return String(raw || "").trim().toLowerCase(); // expect "yes"/"no"
+          })(),
+          
           mount_rushmore: (p["Appears on Mount Rushmore"] || "").trim().toLowerCase(),
           years_in_office: parseFloat(p["Years in Office"]) || null,
           nobel: (p["Nobel Prize Winner"] || "").trim().toLowerCase(),
@@ -339,6 +379,16 @@ if (/serve(d)? in (the )?senate/.test(L)) return checkFlag(p.served_in_senate, n
 
 if (/serve(d)? as (the )?vice president/.test(L) || L.includes("vice president"))
   return checkFlag(p.vice_president, neg);
+
+if (L.includes("facial hair"))
+  return checkFlag(p.has_facial_hair, neg);
+
+
+if (L.includes("founding father"))
+  return checkFlag(p.founding_father, neg);
+
+if (/serve(d)? as (the )?secretary of state/.test(L) || L.includes("secretary of state"))
+  return checkFlag(p.secretary_state, neg);
 
 if (L.includes("governor")) return checkFlag(p.governor, neg);
 

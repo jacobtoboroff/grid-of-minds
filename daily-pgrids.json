@@ -394,5 +394,29 @@
       "Won Re-election",
       "Not Re-elected"
     ]
+  },
+  "34": {
+    "rows": [
+     "Served as Secretary of State",
+     "Served as Vice President",
+     "Served in Military"
+    ],
+    "columns": [
+      "Founding Father",
+      "Presidency Number 5-15",
+      "First Name Starts with A–J"
+    ]
+  },
+  "35": {
+    "rows": [
+     "Has Facial Hair",
+       "Impeached",
+       "Former State Governors"
+    ],
+    "columns": [
+      "Served Before 1900",
+      "200 Pounds or greater",
+      "Served more than 5 years"
+    ]
   }
 }

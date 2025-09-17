@@ -148,7 +148,17 @@ async function loadPresidents() {
             if (v === "y") return "yes";
             if (v === "n") return "no";
             return v; // expect "yes"/"no"
-          })(),                    
+          })(),          
+          
+          college_degree: (() => {
+            // robust to case/spacing; expects the column header exactly "College Degree"
+            const key = Object.keys(p).find(k => String(k).toLowerCase().trim() === "college degree");
+            const raw = key ? p[key] : "";
+            const v = String(raw || "").trim().toLowerCase(); // expect "yes"/"no" or "y"/"n"
+            if (v === "y") return "yes";
+            if (v === "n") return "no";
+            return v; // "yes" or "no"
+          })(),          
           
           died_in_office: (p["Died in Office"] || "").trim().toLowerCase(),
           vice_president: (p["Serve as Vice President"] || "").trim().toLowerCase(),
@@ -397,6 +407,10 @@ if (L.includes("ivy")) return checkFlag(p.ivy_league, neg);
 if (L.includes("nobel")) return checkFlag(p.nobel, neg);
 
 if (L.includes("impeach")) return checkFlag(p.impeached, neg);
+
+if (L.includes("college degree"))
+  return checkFlag(p.college_degree, neg);
+
 
 if (L.includes("without popular vote") || L.includes("lost popular vote"))
   return checkFlag(p.lost_popular_vote, neg);

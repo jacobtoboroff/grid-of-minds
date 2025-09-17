@@ -418,5 +418,17 @@
       "200 Pounds or greater",
       "Served more than 5 years"
     ]
+  },
+  "36": {
+    "rows": [
+      "Whig Party",
+      "Democratic Party",
+      "Served in Congress"
+    ],
+    "columns": [
+      "Inaugurated older than 50",
+      "Tied to War of 1812",
+      "Served less than 4 years"
+    ]
   }
 }

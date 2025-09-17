@@ -208,6 +208,20 @@ async function loadPresidents() {
             );
             const raw = key ? p[key] : "";
             return String(raw || "").trim().toLowerCase(); // expect yes/no
+          })(),
+
+          // NEW: Tied to War of 1812 (expects yes/no or y/n)
+          tied_war_1812: (() => {
+            // accept exact or close header variants
+            const key = Object.keys(p).find(k => {
+              const s = String(k).toLowerCase().replace(/\s+/g, " ").trim();
+              return s === "tied to war of 1812" || s === "war of 1812 tied" || s.includes("war of 1812");
+            });
+            const raw = key ? p[key] : "";
+            const v = String(raw || "").trim().toLowerCase();
+            if (v === "y") return "yes";
+            if (v === "n") return "no";
+            return v; // "yes" or "no"
           })()
 
         
@@ -335,6 +349,8 @@ if (nameMatch) {
   // Years in office
   if (l.includes("served more than 5 years")) return years > 5;
   if (l.includes("served less than 5 years")) return years < 5;
+  if (l.includes("served more than 4 years")) return years > 4;
+  if (l.includes("served less than 4 years")) return years < 4;
 
   const yearsMoreMatch = l.match(/years in office\s*>\s*(\d+(\.\d+)?)/i);
   if (yearsMoreMatch) return years > parseFloat(yearsMoreMatch[1]);
@@ -429,6 +445,15 @@ if (
   L.includes("no spouse in office")
 ) {
   return checkFlag(p.unmarried_while_in_office, neg);
+}
+
+// NEW: Tied to War of 1812 (supports a few phrasings)
+if (
+  L.includes("tied to war of 1812") ||
+  L.includes("related to the war of 1812") ||
+  (L.includes("war of 1812") && (L.includes("tied") || L.includes("related")))
+) {
+  return checkFlag(p.tied_war_1812, neg);
 }
 
 // --- Height buckets ---

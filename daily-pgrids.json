@@ -430,5 +430,17 @@
       "Tied to War of 1812",
       "Served less than 4 years"
     ]
+  },
+  "37": {
+    "rows": [
+      "Related to Another President",
+      "Republican Party",
+      "Served in the senate"
+    ],
+    "columns": [
+     "Last Name Starts with Vowel",
+      "Died in Office",
+      "Presidency Number 40-47"
+    ]
   }
 }

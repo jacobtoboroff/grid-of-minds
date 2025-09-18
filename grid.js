@@ -109,9 +109,9 @@ async function loadPresidents() {
           first_name: (p["First Name"] || "").trim(),
           last_name: (p["Last Name"] || "").trim(),
           name: ((p["First Name"] || "") + " " + (p["Last Name"] || "")).trim(),
-          first_name_vowel: /^[aeiou]/i.test((p["First Name"] || "").trim()),  // true/false
-          last_name_vowel: /^[aeiou]/i.test((p["Last Name"] || "").trim()),  // true/false
-          party: (p["Political Party"] || "").trim(),          
+          first_name_vowel: /^[aeiou]/i.test((p["First Name"] || "").trim()),
+          last_name_vowel: /^[aeiou]/i.test((p["Last Name"] || "").trim()),
+          party: (p["Political Party"] || "").trim(),
           term_start: parseInt(p["Start Year"]) || null,
           term_end: parseInt(p["End Year"]) || null,
           assassinated: (p["Assassinated"] || "").trim().toLowerCase(),
@@ -124,46 +124,43 @@ async function loadPresidents() {
           served_in_senate: (p["Served in the Senate"] || "").trim().toLowerCase(),
           governor: (p["Former State Governors"] || "").trim().toLowerCase(),
           ivy_league: (p["Attended Ivy League School"] || "").trim().toLowerCase(),
+        
           founding_father: (() => {
             const key = Object.keys(p).find(k => {
               const n = String(k).toLowerCase().replace(/\s+/g, "");
               return n.includes("foundingfather") || n.includes("foundngfather");
             }) || "Foundng father";
-          
             const raw = key && p[key] !== undefined ? p[key] : "";
             const v = String(raw || "").trim().toLowerCase();
             if (v === "y") return "yes";
             if (v === "n") return "no";
             return v;
           })(),
-          
+        
           has_facial_hair: (() => {
             const key = Object.keys(p).find(k => {
               const n = String(k).toLowerCase().replace(/\s+/g, "");
               return n.includes("hasfacialhair");
             }) || "Has Facial Hair";
-          
             const raw = key && p[key] !== undefined ? p[key] : "";
             const v = String(raw || "").trim().toLowerCase();
             if (v === "y") return "yes";
             if (v === "n") return "no";
-            return v; // expect "yes"/"no"
-          })(),          
-          
+            return v;
+          })(),
+        
           college_degree: (() => {
-            // robust to case/spacing; expects the column header exactly "College Degree"
             const key = Object.keys(p).find(k => String(k).toLowerCase().trim() === "college degree");
             const raw = key ? p[key] : "";
-            const v = String(raw || "").trim().toLowerCase(); // expect "yes"/"no" or "y"/"n"
+            const v = String(raw || "").trim().toLowerCase();
             if (v === "y") return "yes";
             if (v === "n") return "no";
-            return v; // "yes" or "no"
-          })(),          
-          
+            return v;
+          })(),
+        
           died_in_office: (p["Died in Office"] || "").trim().toLowerCase(),
           vice_president: (p["Serve as Vice President"] || "").trim().toLowerCase(),
           secretary_state: (() => {
-            // try to be robust to header variants (Served/Serve/just "Secretary of State")
             const key =
               Object.keys(p).find(k =>
                 String(k).toLowerCase().replace(/\s+/g, " ").includes("secretary of state")
@@ -171,11 +168,10 @@ async function loadPresidents() {
               "Served as Secretary of State" ||
               "Serve as Secretary of State" ||
               "Secretary of State";
-          
             const raw = key && p[key] !== undefined ? p[key] : "";
-            return String(raw || "").trim().toLowerCase(); // expect "yes"/"no"
+            return String(raw || "").trim().toLowerCase();
           })(),
-          
+        
           mount_rushmore: (p["Appears on Mount Rushmore"] || "").trim().toLowerCase(),
           years_in_office: parseFloat(p["Years in Office"]) || null,
           nobel: (p["Nobel Prize Winner"] || "").trim().toLowerCase(),
@@ -187,32 +183,22 @@ async function loadPresidents() {
           born_before_1800: (p["Born Before 1800"] || "").trim().toLowerCase(),
           born_1800_1900: (p["Born 1800 - 1900"] || "").trim().toLowerCase(),
           born_1900_2000: (p["Born 1900-2000"] || "").trim().toLowerCase(),
-
-
-          // NEW: height in inches (numeric). Adjust header name if yours differs.
-          height_in: parseFloat(
-            p["Height (inches)"] || p["Height Inches"] || p["Height"] || ""
-          ) || null,
-          weight_lbs: parseFloat(
-            (p["Weight (lbs)"] ?? p["Weight (pounds)"] ?? p["Weight Lbs"] ?? p["Weight"] ?? "")
-          ) || null,
-
+        
+          height_in: parseFloat(p["Height (inches)"] || p["Height Inches"] || p["Height"] || "") || null,
+          weight_lbs: parseFloat((p["Weight (lbs)"] ?? p["Weight (pounds)"] ?? p["Weight Lbs"] ?? p["Weight"] ?? "")) || null,
+        
           met_queen_elizabeth_ii: (p["Met Queen Elizabeth II"] || "").trim().toLowerCase(),
-
-          // NEW (robust to any header capitalization/spacing variant)
+        
           unmarried_while_in_office: (() => {
-            // find the header key case-insensitively
             const key = Object.keys(p).find(
               k => String(k).toLowerCase().trim() === "unmarried while in office"
-                  || String(k).toLowerCase().trim() === "unmarried in office"
+                || String(k).toLowerCase().trim() === "unmarried in office"
             );
             const raw = key ? p[key] : "";
-            return String(raw || "").trim().toLowerCase(); // expect yes/no
+            return String(raw || "").trim().toLowerCase();
           })(),
-
-          // NEW: Tied to War of 1812 (expects yes/no or y/n)
+        
           tied_war_1812: (() => {
-            // accept exact or close header variants
             const key = Object.keys(p).find(k => {
               const s = String(k).toLowerCase().replace(/\s+/g, " ").trim();
               return s === "tied to war of 1812" || s === "war of 1812 tied" || s.includes("war of 1812");
@@ -221,11 +207,34 @@ async function loadPresidents() {
             const v = String(raw || "").trim().toLowerCase();
             if (v === "y") return "yes";
             if (v === "n") return "no";
-            return v; // "yes" or "no"
-          })()
-
+            return v;
+          })(),
         
-        })).filter(p => p.name);
+          // >>> NEW FIELDS <<<
+          related_to_president: (() => {
+            const key = Object.keys(p).find(k => {
+              const s = String(k).toLowerCase().replace(/[_\s]+/g, " ").trim();
+              return s === "related to another president" || s === "related to president" || s.includes("related to") && s.includes("president");
+            });
+            const raw = key ? p[key] : "";
+            const v = String(raw || "").trim().toLowerCase();
+            if (v === "y") return "yes";
+            if (v === "n") return "no";
+            return v; // expect "yes"/"no"
+          })(),
+        
+          alliterative_name: (() => {
+            const key = Object.keys(p).find(k => {
+              const s = String(k).toLowerCase().replace(/[_\s]+/g, " ").trim();
+              return s === "alliterative name" || s === "alliterative";
+            });
+            const raw = key ? p[key] : "";
+            const v = String(raw || "").trim().toLowerCase();
+            if (v === "y") return "yes";
+            if (v === "n") return "no";
+            return v; // expect "yes"/"no"
+          })()
+        })).filter(p => p.name);        
         resolve();
       },
       error: reject
@@ -409,7 +418,6 @@ if (/serve(d)? as (the )?vice president/.test(L) || L.includes("vice president")
 if (L.includes("facial hair"))
   return checkFlag(p.has_facial_hair, neg);
 
-
 if (L.includes("founding father"))
   return checkFlag(p.founding_father, neg);
 
@@ -427,7 +435,6 @@ if (L.includes("impeach")) return checkFlag(p.impeached, neg);
 if (L.includes("college degree"))
   return checkFlag(p.college_degree, neg);
 
-
 if (L.includes("without popular vote") || L.includes("lost popular vote"))
   return checkFlag(p.lost_popular_vote, neg);
 
@@ -438,7 +445,8 @@ if (L.includes("currency")) return checkFlag(p.on_currency, neg);
 if (L.includes("mount rushmore")) return checkFlag(p.mount_rushmore, neg);
 
 if (L.includes("met queen elizabeth ii")) return checkFlag(p.met_queen_elizabeth_ii, neg);
-// NEW: Unmarried while in Office (broad, binary yes/no)
+
+// Unmarried while in Office
 if (
   L.includes("unmarried while in office") ||
   L.includes("unmarried in office") ||
@@ -447,13 +455,34 @@ if (
   return checkFlag(p.unmarried_while_in_office, neg);
 }
 
-// NEW: Tied to War of 1812 (supports a few phrasings)
+// Tied to War of 1812
 if (
   L.includes("tied to war of 1812") ||
   L.includes("related to the war of 1812") ||
   (L.includes("war of 1812") && (L.includes("tied") || L.includes("related")))
 ) {
   return checkFlag(p.tied_war_1812, neg);
+}
+
+// >>> NEW: Related to another president (handles a few phrasings)
+if (
+  L.includes("related to another president") ||
+  L.includes("related to a president") ||
+  L.includes("related to president") ||
+  L.includes("presidential relative") ||
+  L.includes("family of a president")
+) {
+  return checkFlag(p.related_to_president, neg);
+}
+
+// >>> NEW: Alliterative name (first & last share the same initial)
+if (
+  L.includes("alliterative name") ||
+  L.includes("alliterative") ||
+  L.includes("same first and last initial") ||
+  L.includes("matching initials")
+) {
+  return checkFlag(p.alliterative_name, neg);
 }
 
 // --- Height buckets ---

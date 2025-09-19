@@ -442,5 +442,17 @@
       "Died in Office",
       "Presidency Number 40-47"
     ]
+  },
+  "38": {
+    "rows": [
+      "Alliterative name",
+      "Served in the House",
+      "Nobel Prize Winner"
+    ],
+    "columns": [
+      "Born 1800 - 1900",
+      "Born 1900–2000",
+      "Not Assassinated"
+    ]
   }
 }

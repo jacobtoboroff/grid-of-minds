@@ -148,7 +148,40 @@ async function loadPresidents() {
             if (v === "n") return "no";
             return v;
           })(),
-        
+
+          // NEW: wore_glasses (accepts columns like "Wore Glasses", "Wears Glasses", "Spectacles")
+          // NEW: wore_glasses (accepts columns like "Wore Glasses", "Wears Glasses", "Spectacles")
+          wore_glasses: (() => {
+            const key = Object.keys(p).find(k => {
+              const n = String(k).toLowerCase().replace(/[\s_]+/g, " ").trim();
+              return n === "wore glasses"
+                  || n === "wears glasses"
+                  || n.includes("spectacles")
+                  || n.includes("glasses");
+            });
+            const raw = key ? p[key] : "";
+            const v = String(raw || "").trim().toLowerCase();
+            if (v === "y" || v === "yes" || v === "true" || v === "1") return "yes";
+            if (v === "n" || v === "no"  || v === "false"|| v === "0") return "no";
+            return v; // fall back to whatever's in the CSV
+          })(),
+
+          served_ambassador: (() => {
+            const key = Object.keys(p).find(k => {
+              const s = String(k).toLowerCase().replace(/[\s_]+/g, " ").trim();
+              return s === "served as ambassadors"
+                  || s === "served as ambassador"
+                  || s.includes("ambassador")
+                  || s.includes("diplomat")
+                  || s.includes("minister to");
+            });
+            const raw = key ? p[key] : "";
+            const v = String(raw || "").trim().toLowerCase();
+            if (v === "y" || v === "yes" || v === "true" || v === "1") return "yes";
+            if (v === "n" || v === "no"  || v === "false"|| v === "0") return "no";
+            return v; // allow explicit "yes"/"no" or text if you prefer
+          })(),
+
           college_degree: (() => {
             const key = Object.keys(p).find(k => String(k).toLowerCase().trim() === "college degree");
             const raw = key ? p[key] : "";
@@ -417,6 +450,19 @@ if (/serve(d)? as (the )?vice president/.test(L) || L.includes("vice president")
 
 if (L.includes("facial hair"))
   return checkFlag(p.has_facial_hair, neg);
+
+if (/\b(wore|wears|wearing)?\s*glasses\b/.test(L) || L.includes("spectacles"))
+  return checkFlag(p.wore_glasses, neg);
+
+// NEW: Ambassador/Diplomat
+if (
+  /serve(d)?\s+as\s+(an\s+)?ambassador/.test(L) ||
+  L.includes("ambassador") ||
+  L.includes("diplomat") ||
+  L.includes("minister to")
+) {
+  return checkFlag(p.served_ambassador, neg);
+}
 
 if (L.includes("founding father"))
   return checkFlag(p.founding_father, neg);

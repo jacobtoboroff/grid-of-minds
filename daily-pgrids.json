@@ -259,7 +259,8 @@
     ],
     "columns": [
       "Inaugurated older than 50",
-      "Presidency Number 1-10",
+
+      
       "Last Name K–Z"
     ]
   },
@@ -453,6 +454,30 @@
       "Born 1800 - 1900",
       "Born 1900–2000",
       "Not Assassinated"
+    ]
+  },
+  "39": {
+    "rows": [
+      "Wore Glasses",
+      "Inaugurated older than 60",
+      "Attended Ivy League School"
+    ],
+    "columns": [
+      "Cold War President",
+      "Born 1800 - 1900",
+      "Won Re-election"
+    ]
+  },
+  "40": {
+    "rows": [
+      "Served as ambassadors",
+      "No College Degree",
+      "Not impeached"
+    ],
+    "columns": [
+      "Appears on Mount Rushmore",
+      "Presidency Number 1-10",
+      "First Name Starts with A–J"
     ]
   }
 }

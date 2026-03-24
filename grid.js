@@ -29,16 +29,25 @@ function getGridNumberFromPath() {
   const last = parts[parts.length - 1];
   return /^\d+$/.test(last) ? parseInt(last, 10) : null;
 }
+
 // If your site is served from a subfolder, set base to that (e.g. '/gom')
-const BASE_PATH = "/"; 
 function buildGridPath(n) {
-  return BASE_PATH.replace(/\/$/, "") + "/" + String(n);
+  return "/frontend/" + String(n);
+}
+
+// Helper to safely extract a number from weight labels like "180 Pounds or greater"
+function extractNumber(str) {
+  if (!str) return null;
+  
+  // Matches the first number in the string (180, 200, etc.)
+  const match = str.match(/\d+(\.\d+)?/);
+  return match ? parseFloat(match[0]) : null;
 }
 
 // ======= Label Loader from daily-pgrids.json =======
 async function loadGridByDay(day) {
   try {
-    const res = await fetch("daily-pgrids.json", { cache: "no-cache" });
+    const res = await fetch("/frontend/daily-pgrids.json", { cache: "no-cache" });
     const data = await res.json();
     const grid = data[day];
     if (!grid) return;
@@ -87,7 +96,7 @@ async function renderGrid(dataArray) {
 }
 
 // ======= Global State =======
-const launchDate = new Date("August 20, 2025 00:00:00");
+const launchDate = new Date("November 19, 2025 00:00:00");
 const now = new Date();
 // Midnight local
 const todayMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate());
@@ -149,8 +158,6 @@ async function loadPresidents() {
             return v;
           })(),
 
-          // NEW: wore_glasses (accepts columns like "Wore Glasses", "Wears Glasses", "Spectacles")
-          // NEW: wore_glasses (accepts columns like "Wore Glasses", "Wears Glasses", "Spectacles")
           wore_glasses: (() => {
             const key = Object.keys(p).find(k => {
               const n = String(k).toLowerCase().replace(/[\s_]+/g, " ").trim();
@@ -163,7 +170,7 @@ async function loadPresidents() {
             const v = String(raw || "").trim().toLowerCase();
             if (v === "y" || v === "yes" || v === "true" || v === "1") return "yes";
             if (v === "n" || v === "no"  || v === "false"|| v === "0") return "no";
-            return v; // fall back to whatever's in the CSV
+            return v;
           })(),
 
           served_ambassador: (() => {
@@ -179,7 +186,7 @@ async function loadPresidents() {
             const v = String(raw || "").trim().toLowerCase();
             if (v === "y" || v === "yes" || v === "true" || v === "1") return "yes";
             if (v === "n" || v === "no"  || v === "false"|| v === "0") return "no";
-            return v; // allow explicit "yes"/"no" or text if you prefer
+            return v;
           })(),
 
           college_degree: (() => {
@@ -242,6 +249,18 @@ async function loadPresidents() {
             if (v === "n") return "no";
             return v;
           })(),
+
+          tied_civil_war: (() => {
+            const key = Object.keys(p).find(k => {
+              const s = String(k).toLowerCase().replace(/\s+/g, " ").trim();
+              return s === "tied to civil war" || s === "civil war tied" || s.includes("civil war");
+            });
+            const raw = key ? p[key] : "";
+            const v = String(raw || "").trim().toLowerCase();
+            if (v === "y") return "yes";
+            if (v === "n") return "no";
+            return v;
+          })(),
         
           // >>> NEW FIELDS <<<
           related_to_president: (() => {
@@ -253,7 +272,7 @@ async function loadPresidents() {
             const v = String(raw || "").trim().toLowerCase();
             if (v === "y") return "yes";
             if (v === "n") return "no";
-            return v; // expect "yes"/"no"
+            return v;
           })(),
         
           alliterative_name: (() => {
@@ -265,7 +284,22 @@ async function loadPresidents() {
             const v = String(raw || "").trim().toLowerCase();
             if (v === "y") return "yes";
             if (v === "n") return "no";
-            return v; // expect "yes"/"no"
+            return v;
+          })(),
+
+          // === NEW FIELD FOR "No Biological Children" ===
+          no_biological_children: (() => {
+            const key = Object.keys(p).find(k => {
+              const s = String(k).toLowerCase().replace(/[_\s]+/g, " ").trim();
+              return s.includes("biological children") ||
+                     s.includes("no biological children") ||
+                     (s.includes("children") && s.includes("biological"));
+            });
+            const raw = key ? p[key] : "";
+            const v = String(raw || "").trim().toLowerCase();
+            if (v === "y" || v === "yes" || v === "true" || v === "1") return "yes";
+            if (v === "n" || v === "no" || v === "false" || v === "0") return "no";
+            return v;
           })()
         })).filter(p => p.name);        
         resolve();
@@ -296,42 +330,42 @@ function matchMatchesLabel(p, label) {
   const years = parseFloat(p.years_in_office) || 0;
   const age = parseInt(p.age_at_start) || 0;
 
-// Names
-if (l.includes("first name starts with a-j") || l.includes("first name a-j")) {
-  const firstChar = firstName.charAt(0).toUpperCase();
-  return firstChar >= "A" && firstChar <= "J";
-}
-if (l.includes("first name starts with k-z") || l.includes("first name k-z")) {
-  const firstChar = firstName.charAt(0).toUpperCase();
-  return firstChar >= "K" && firstChar <= "Z";
-}
-if (l.includes("first name starts with vowel") || l.includes("first name vowel")) {
-  return p.first_name_vowel;  // already normalized above
-}
-if (
-  l.includes("last name starts with vowel") ||
-  l.includes("last name vowel") ||
-  l.includes("last name begins with vowel")   // optional alias
-) {
-  return p.last_name_vowel;  // use normalized boolean
-}
-if (l.includes("served past 1850")) return start > 1850;
-if (l.includes("served past 1900")) return start > 1900;
+  // Names
+  if (l.includes("first name starts with a-j") || l.includes("first name a-j")) {
+    const firstChar = firstName.charAt(0).toUpperCase();
+    return firstChar >= "A" && firstChar <= "J";
+  }
+  if (l.includes("first name starts with k-z") || l.includes("first name k-z")) {
+    const firstChar = firstName.charAt(0).toUpperCase();
+    return firstChar >= "K" && firstChar <= "Z";
+  }
+  if (l.includes("first name starts with vowel") || l.includes("first name vowel")) {
+    return p.first_name_vowel;
+  }
+  if (
+    l.includes("last name starts with vowel") ||
+    l.includes("last name vowel") ||
+    l.includes("last name begins with vowel")
+  ) {
+    return p.last_name_vowel;
+  }
+  if (l.includes("served past 1850")) return start > 1850;
+  if (l.includes("served past 1900")) return start > 1900;
 
-if (l.includes("last name a-j")) {
-  const firstChar = lastName.charAt(0).toUpperCase();
-  return firstChar >= "A" && firstChar <= "J";
-}
-if (l.includes("last name k-z")) {
-  const firstChar = lastName.charAt(0).toUpperCase();
-  return firstChar >= "K" && firstChar <= "Z";
-}
+  if (l.includes("last name a-j")) {
+    const firstChar = lastName.charAt(0).toUpperCase();
+    return firstChar >= "A" && firstChar <= "J";
+  }
+  if (l.includes("last name k-z")) {
+    const firstChar = lastName.charAt(0).toUpperCase();
+    return firstChar >= "K" && firstChar <= "Z";
+  }
 
-const nameMatch = l.match(/name\s+([a-z\s]+)/i);
-if (nameMatch) {
-  const targetName = nameMatch[1].trim().toLowerCase();
-  return name.includes(targetName) || lastName.includes(targetName);
-}
+  const nameMatch = l.match(/name\s+([a-z\s]+)/i);
+  if (nameMatch) {
+    const targetName = nameMatch[1].trim().toLowerCase();
+    return name.includes(targetName) || lastName.includes(targetName);
+  }
 
   // Party
   if (l.includes("federalist")) return party.includes("federalist");
@@ -416,196 +450,206 @@ if (nameMatch) {
   const inauguratedAtAgeMatch = l.match(/inaugurated.*age\s*(\d+)/i);
   if (inauguratedAtAgeMatch) return age === parseInt(inauguratedAtAgeMatch[1]);
 
-// Binary flags
-const yes = ["yes", "true", "1"];
-const no = ["no", "false", "0"];
+  // Binary flags
+  const yes = ["yes", "true", "1"];
+  const no = ["no", "false", "0"];
 
-// Normalize helper
-const norm = (s) => String(s || "").trim().toLowerCase();
+  // Normalize helper
+  const norm = (s) => String(s || "").trim().toLowerCase();
 
-// Helper to check flags
-function checkFlag(val, isNegated) {
-  const v = norm(val);
-  return isNegated ? no.includes(v) : yes.includes(v);
-}
+  // Helper to check flags
+  function checkFlag(val, isNegated) {
+    const v = norm(val);
+    return isNegated ? no.includes(v) : yes.includes(v);
+  }
 
-// Normalize label once
-const L = norm(l);
+  // Normalize label once
+  const L = norm(l);
 
-// Figure out if the label is negated (support a bunch of forms)
-const neg = /\b(not|no|did not|does not|was not|is not|didn['’]t|doesn['’]t|isn['’]t)\b/i.test(l);
+  // Figure out if the label is negated
+  const neg = /\b(not|no|did not|does not|was not|is not|didn['’]t|doesn['’]t|isn['’]t)\b/i.test(l);
 
-// --- Binary categories (use broad, tense-agnostic keywords) ---
-if (L.includes("assassin")) return checkFlag(p.assassinated, neg);
+  if (L.includes("assassin")) return checkFlag(p.assassinated, neg);
 
-if (/die(d)? in office/.test(L)) return checkFlag(p.died_in_office, neg);
+  if (/die(d)? in office/.test(L)) return checkFlag(p.died_in_office, neg);
 
-if (/serve(d)? in (the )?military/.test(L)) return checkFlag(p.military_service, neg);
-if (/serve(d)? in (the )?congress/.test(L)) return checkFlag(p.served_in_congress, neg);
-if (/serve(d)? in (the )?house/.test(L)) return checkFlag(p.served_in_house, neg);
-if (/serve(d)? in (the )?senate/.test(L)) return checkFlag(p.served_in_senate, neg);
+  if (/serve(d)? in (the )?military/.test(L)) return checkFlag(p.military_service, neg);
+  if (/serve(d)? in (the )?congress/.test(L)) return checkFlag(p.served_in_congress, neg);
+  if (/serve(d)? in (the )?house/.test(L)) return checkFlag(p.served_in_house, neg);
+  if (/serve(d)? in (the )?senate/.test(L)) return checkFlag(p.served_in_senate, neg);
 
-if (/serve(d)? as (the )?vice president/.test(L) || L.includes("vice president"))
-  return checkFlag(p.vice_president, neg);
+  if (/serve(d)? as (the )?vice president/.test(L) || L.includes("vice president"))
+    return checkFlag(p.vice_president, neg);
 
-if (L.includes("facial hair"))
-  return checkFlag(p.has_facial_hair, neg);
+  if (L.includes("facial hair"))
+    return checkFlag(p.has_facial_hair, neg);
 
-if (/\b(wore|wears|wearing)?\s*glasses\b/.test(L) || L.includes("spectacles"))
-  return checkFlag(p.wore_glasses, neg);
+  if (/\b(wore|wears|wearing)?\s*glasses\b/.test(L) || L.includes("spectacles"))
+    return checkFlag(p.wore_glasses, neg);
 
-// NEW: Ambassador/Diplomat
-if (
-  /serve(d)?\s+as\s+(an\s+)?ambassador/.test(L) ||
-  L.includes("ambassador") ||
-  L.includes("diplomat") ||
-  L.includes("minister to")
-) {
-  return checkFlag(p.served_ambassador, neg);
-}
+  if (
+    /serve(d)?\s+as\s+(an\s+)?ambassador/.test(L) ||
+    L.includes("ambassador") ||
+    L.includes("diplomat") ||
+    L.includes("minister to")
+  ) {
+    return checkFlag(p.served_ambassador, neg);
+  }
 
-if (L.includes("founding father"))
-  return checkFlag(p.founding_father, neg);
+  if (L.includes("founding father"))
+    return checkFlag(p.founding_father, neg);
 
-if (/serve(d)? as (the )?secretary of state/.test(L) || L.includes("secretary of state"))
-  return checkFlag(p.secretary_state, neg);
+  if (/serve(d)? as (the )?secretary of state/.test(L) || L.includes("secretary of state"))
+    return checkFlag(p.secretary_state, neg);
 
-if (L.includes("governor")) return checkFlag(p.governor, neg);
+  if (L.includes("governor")) return checkFlag(p.governor, neg);
 
-if (L.includes("ivy")) return checkFlag(p.ivy_league, neg);
+  if (L.includes("ivy")) return checkFlag(p.ivy_league, neg);
 
-if (L.includes("nobel")) return checkFlag(p.nobel, neg);
+  if (L.includes("nobel")) return checkFlag(p.nobel, neg);
 
-if (L.includes("impeach")) return checkFlag(p.impeached, neg);
+  if (L.includes("impeach")) return checkFlag(p.impeached, neg);
 
-if (L.includes("college degree"))
-  return checkFlag(p.college_degree, neg);
+  if (L.includes("college degree"))
+    return checkFlag(p.college_degree, neg);
 
-if (L.includes("without popular vote") || L.includes("lost popular vote"))
-  return checkFlag(p.lost_popular_vote, neg);
+  if (L.includes("without popular vote") || L.includes("lost popular vote"))
+    return checkFlag(p.lost_popular_vote, neg);
 
-if (L.includes("cold war")) return checkFlag(p.cold_war, neg);
+  if (L.includes("cold war")) return checkFlag(p.cold_war, neg);
 
-if (L.includes("currency")) return checkFlag(p.on_currency, neg);
+  if (L.includes("currency")) return checkFlag(p.on_currency, neg);
 
-if (L.includes("mount rushmore")) return checkFlag(p.mount_rushmore, neg);
+  if (L.includes("mount rushmore")) return checkFlag(p.mount_rushmore, neg);
 
-if (L.includes("met queen elizabeth ii")) return checkFlag(p.met_queen_elizabeth_ii, neg);
+  if (L.includes("met queen elizabeth ii")) return checkFlag(p.met_queen_elizabeth_ii, neg);
 
-// Unmarried while in Office
-if (
-  L.includes("unmarried while in office") ||
-  L.includes("unmarried in office") ||
-  L.includes("no spouse in office")
-) {
-  return checkFlag(p.unmarried_while_in_office, neg);
-}
+  if (
+    L.includes("unmarried while in office") ||
+    L.includes("unmarried in office") ||
+    L.includes("no spouse in office")
+  ) {
+    return checkFlag(p.unmarried_while_in_office, neg);
+  }
 
-// Tied to War of 1812
-if (
-  L.includes("tied to war of 1812") ||
-  L.includes("related to the war of 1812") ||
-  (L.includes("war of 1812") && (L.includes("tied") || L.includes("related")))
-) {
-  return checkFlag(p.tied_war_1812, neg);
-}
+  if (
+    L.includes("tied to war of 1812") ||
+    L.includes("related to the war of 1812") ||
+    (L.includes("war of 1812") && (L.includes("tied") || L.includes("related")))
+  ) {
+    return checkFlag(p.tied_war_1812, neg);
+  }
+  if (
+    L.includes("tied to civil war") ||
+    L.includes("related to civil war") ||
+    (L.includes("civil war") && (L.includes("tied") || L.includes("related")))
+  ) {
+    return checkFlag(p.tied_civil_war, neg);
+  }
 
-// >>> NEW: Related to another president (handles a few phrasings)
-if (
-  L.includes("related to another president") ||
-  L.includes("related to a president") ||
-  L.includes("related to president") ||
-  L.includes("presidential relative") ||
-  L.includes("family of a president")
-) {
-  return checkFlag(p.related_to_president, neg);
-}
+  if (
+    L.includes("related to another president") ||
+    L.includes("related to a president") ||
+    L.includes("related to president") ||
+    L.includes("presidential relative") ||
+    L.includes("family of a president")
+  ) {
+    return checkFlag(p.related_to_president, neg);
+  }
 
-// >>> NEW: Alliterative name (first & last share the same initial)
-if (
-  L.includes("alliterative name") ||
-  L.includes("alliterative") ||
-  L.includes("same first and last initial") ||
-  L.includes("matching initials")
-) {
-  return checkFlag(p.alliterative_name, neg);
-}
+  if (
+    L.includes("alliterative name") ||
+    L.includes("alliterative") ||
+    L.includes("same first and last initial") ||
+    L.includes("matching initials")
+  ) {
+    return checkFlag(p.alliterative_name, neg);
+  }
 
-// --- Height buckets ---
-if (
-  L.includes("6 feet or taller") ||
-  L.includes("at least 6 feet") ||
-  L.includes(">= 6 feet") ||
-  L.includes("six feet or taller")
-) {
-  return p.height_in !== null && p.height_in >= 72;
-}
-if (
-  L.includes("shorter than 6 feet") ||
-  L.includes("under 6 feet") ||
-  L.includes("< 6 feet") ||
-  L.includes("under six feet")
-) {
-  return p.height_in !== null && p.height_in < 72;
-}
-function extractPounds(label) {
-  const m = label.match(/(\d+)\s*(pounds|pound|lbs?)/i);
-  return m ? parseInt(m[1], 10) : null;
-}
-if (L.includes("pound") || L.includes("lbs")) {
-  const n = extractPounds(L);
-  if (n !== null) {
-    // Greater-or-equal style
-    if (
-      L.includes("or greater") ||
-      L.includes("or more") ||
-      L.includes("at least") ||
-      L.includes(">=") ||
-      /greater\s+than\s+or\s+equal/.test(L)
-    ) {
+  if (
+    L.includes("6 feet or taller") ||
+    L.includes("at least 6 feet") ||
+    L.includes(">= 6 feet") ||
+    L.includes("six feet or taller")
+  ) {
+    return p.height_in !== null && p.height_in >= 72;
+  }
+  if (
+    L.includes("shorter than 6 feet") ||
+    L.includes("under 6 feet") ||
+    L.includes("< 6 feet") ||
+    L.includes("under six feet")
+  ) {
+    return p.height_in !== null && p.height_in < 72;
+  }
+
+  // ====================== WEIGHT FILTERING ======================
+  if (
+    L.includes("pound") ||
+    L.includes("lb") ||
+    L.includes("lbs") ||
+    L.includes("weight") ||
+    /\d+\s*(pounds?|lbs?)/i.test(label)
+  ) {
+    const n = extractNumber(label);
+
+    if (n !== null) {
+      if (L.includes("or greater") || L.includes("or more") || 
+          L.includes("at least") || L.includes(">=")) {
+        return p.weight_lbs !== null && p.weight_lbs >= n;
+      }
+      if (/\s>\s*\d+/.test(L) || /greater\s+than\s+\d+/.test(L)) {
+        return p.weight_lbs !== null && p.weight_lbs > n;
+      }
+      if (L.includes("less than") || L.includes("under") || L.includes("<")) {
+        return p.weight_lbs !== null && p.weight_lbs < n;
+      }
+      if (L.includes("exactly")) {
+        return p.weight_lbs !== null && p.weight_lbs === n;
+      }
+
+      // Fallback: if it has a number but no clear operator (e.g. just "180 Pounds")
       return p.weight_lbs !== null && p.weight_lbs >= n;
     }
-    if (/\s>\s*\d+/.test(L) || /greater\s+than\s+\d+/.test(L)) {
-      return p.weight_lbs !== null && p.weight_lbs > n;
-    }
+  }
+  if (L.includes("no biological children") || 
+      L.includes("no biological child")) {
+    
+    const isNoChildren = norm(p.no_biological_children) === "no";
+    const negated = neg;                    // 'neg' is already defined earlier in the function
+    return negated ? !isNoChildren : isNoChildren;
+  }
+  // ====================== END NO BIOLOGICAL CHILDREN ======================
 
-    // Less-than style
-    if (
-      L.includes("less than") ||
-      L.includes("under") ||
-      L.includes("<")
-    ) {
-      return p.weight_lbs !== null && p.weight_lbs < n;
-    }
+  if (L.includes("won re-election") || L.includes("won reelection"))
+    return yes.includes(norm(p.re_elected));
 
-    // Fallback: exact match if someone writes "exactly 180 pounds"
-    if (L.includes("exactly")) {
-      return p.weight_lbs !== null && p.weight_lbs === n;
+  if (L.includes("not re-elected") || L.includes("not reelected") || /lost re-?election/.test(L))
+    return norm(p.re_elected) === "no";
+
+  if (L.includes("born before 1800")) return yes.includes(norm(p.born_before_1800));
+  if (L.includes("born 1800 - 1900")) return yes.includes(norm(p.born_1800_1900));
+  if (L.includes("born 1900-2000")) return yes.includes(norm(p.born_1900_2000));
+
+  // ====================== BORN IN STATE (supports "or") ======================
+  const stateMatch = L.match(/born in\s+(.+)/i);
+  if (stateMatch) {
+    const statePart = stateMatch[1].trim().toLowerCase();
+
+    // Split by " or " or ", " or " and "
+    const states = statePart
+      .split(/\s+or\s+|\s*,\s*|\s+and\s+/i)
+      .map(s => s.trim())
+      .filter(s => s.length > 0);
+
+    if (states.length > 0) {
+      const birthState = norm(p.birth_state);
+      // Return true if the president was born in ANY of the listed states
+      return states.some(target => birthState.includes(target));
     }
   }
-}
 
-// --- Re-election ---
-if (L.includes("won re-election") || L.includes("won reelection"))
-  return yes.includes(norm(p.re_elected));
-
-if (L.includes("not re-elected") || L.includes("not reelected") || /lost re-?election/.test(L))
-  return norm(p.re_elected) === "no";
-
-// --- Birth year ranges ---
-if (L.includes("born before 1800")) return yes.includes(norm(p.born_before_1800));
-if (L.includes("born 1800 - 1900")) return yes.includes(norm(p.born_1800_1900));
-if (L.includes("born 1900-2000")) return yes.includes(norm(p.born_1900_2000));
-
-// --- Birth state ---
-const stateMatch = L.match(/born in\s+([a-z\s]+)/i);
-if (stateMatch) {
-  const targetState = stateMatch[1].trim().toLowerCase();
-  return norm(p.birth_state).includes(targetState);
-}
-
-return false;
-
+  return false;
 }
 
 // ======= DOM Ready =======
@@ -814,11 +858,21 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.target === endgameModal) endgameModal.style.display = "none";
   };
 
-  // Load data first, then decide which grid to show based on PATH
+  // Load data first, then decide which grid to show
   loadPresidents().then(async () => {
     let num = getGridNumberFromPath();
+
+    // NEW: Check for ?grid= parameter (fallback if path doesn't have number)
     if (!num) {
-      // no number in path → show today's grid (no redirect here)
+      const params = new URLSearchParams(window.location.search);
+      const gridParam = params.get("grid");
+      if (gridParam && !isNaN(gridParam)) {
+        num = parseInt(gridParam, 10);
+      }
+    }
+
+    // Fallback to today if still no number
+    if (!num) {
       num = today;
     }
 
@@ -830,7 +884,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (num === today) {
       loadGameState();
     } else {
-      // Past grids → keep board clean
       localStorage.removeItem("gridOfMindsGame");
       const gc = document.querySelector(".guesses-count");
       if (gc) gc.textContent = "9";
@@ -952,7 +1005,7 @@ function showEndgameSummary() {
 }
 
 // ================================
-// Archives Modal Logic (list from min(latest, currentDay) → 1)
+// Archives Modal Logic
 // ================================
 (function () {
   const archivesLink   = document.getElementById("archives-link");
@@ -963,36 +1016,31 @@ function showEndgameSummary() {
 
   if (!archivesLink || !archivesModal || !closeArchives || !archivesList) return;
 
-  const GRID_JSON_URL = "daily-pgrids.json";
-  let __gridsCache = null;
-  let __latestGrid = null;
+  const GRID_JSON_URL = "/frontend/daily-pgrids.json";
+  let gridsCache = null;
+  let latestGrid = null;
 
   async function fetchAllGrids() {
-    if (__gridsCache) return __gridsCache;
+    if (gridsCache) return gridsCache;
     const res = await fetch(GRID_JSON_URL, { cache: "no-cache" });
     if (!res.ok) throw new Error("Failed to fetch daily-pgrids.json");
-    __gridsCache = await res.json();
-    return __gridsCache;
+    gridsCache = await res.json();
+    return gridsCache;
   }
 
   async function getLatestGridNumber() {
-    if (typeof __latestGrid === "number") return __latestGrid;
+    if (typeof latestGrid === "number") return latestGrid;
     const data = await fetchAllGrids();
-    const nums = Object.keys(data).map(k => parseInt(k, 10)).filter(n => !isNaN(n));
-    __latestGrid = nums.length ? Math.max(...nums) : 1;
-    return __latestGrid;
+    const nums = Object.keys(data)
+      .map(k => parseInt(k, 10))
+      .filter(n => !isNaN(n));
+    latestGrid = nums.length ? Math.max(...nums) : 1;
+    return latestGrid;
   }
 
   function selectArchive(n) {
     closeModal();
-    // Prefer pretty paths if available; fallback to ?grid= for local dev
-    if (typeof window.buildGridPath === "function") {
-      window.location.href = window.buildGridPath(n);
-    } else {
-      const url = new URL(window.location.href);
-      url.searchParams.set("grid", String(n));
-      window.location.href = url.toString();
-    }
+    window.location.href = "/frontend/index.html?grid=" + String(n);
   }
 
   function buttonFor(n) {
@@ -1000,59 +1048,65 @@ function showEndgameSummary() {
     btn.className = "archive-item";
     btn.textContent = `Grid #${String(n).padStart(3, "0")}`;
     btn.style.display = "block";
-    btn.style.width   = "100%";
-    btn.style.margin  = "6px 0";
+    btn.style.width = "100%";
+    btn.style.margin = "6px 0";
     btn.style.padding = "10px 12px";
-    btn.style.border  = "none";
+    btn.style.border = "none";
     btn.style.borderRadius = "6px";
-    btn.style.cursor  = "pointer";
+    btn.style.cursor = "pointer";
     btn.onclick = () => selectArchive(n);
     return btn;
   }
 
-  async function populateArchivesFromCap() {
+  async function populateArchives() {
     const latest = await getLatestGridNumber();
-  
-    // Read the global we set after computing currentDay
     const effectiveToday = Number(window.TODAYS_GRID) || 1;
-  
-    // Cap to the smaller of (latest in JSON) and (today)
     const cap = Math.min(latest, effectiveToday);
-  
-    // Debug so you can verify in DevTools console
-    console.log("[Archives] latest in JSON =", latest, " | today =", effectiveToday, " | cap =", cap);
-  
+
+    console.log("[Archives] latest =", latest, "| today =", effectiveToday, "| cap =", cap);
+
     archivesList.innerHTML = "";
+
     for (let n = cap; n >= 1; n--) {
       archivesList.appendChild(buttonFor(n));
     }
-  
+
     if (archivesList.children.length === 0) {
       const p = document.createElement("p");
       p.textContent = "No grids available yet.";
       archivesList.appendChild(p);
     }
-  }  
+  }
 
   async function openModal() {
-    await populateArchivesFromCap();
+    await populateArchives();
     archivesModal.style.display = "block";
   }
+
   function closeModal() {
     archivesModal.style.display = "none";
   }
 
-  // Events
-  archivesLink.addEventListener("click", (e) => { e.preventDefault(); openModal(); });
+  archivesLink.addEventListener("click", (e) => {
+    e.preventDefault();
+    openModal();
+  });
 
   if (gridNumberEl) {
     gridNumberEl.style.cursor = "pointer";
     gridNumberEl.title = "View archives";
-    gridNumberEl.addEventListener("click", (e) => { e.preventDefault(); openModal(); });
+    gridNumberEl.addEventListener("click", (e) => {
+      e.preventDefault();
+      openModal();
+    });
   }
 
   closeArchives.addEventListener("click", closeModal);
-  window.addEventListener("click", (e) => { if (e.target === archivesModal) closeModal(); });
+
+  window.addEventListener("click", (e) => {
+    if (e.target === archivesModal) closeModal();
+  });
+
   window.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && archivesModal.style.display === "block") closeModal();
   });

@@ -1,0 +1,1009 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f6f7f9;
+  padding: 10px;
+  margin: 0;
+  overflow-y: auto;
+}
+/* Works for all breakpoints */
+.cell { position: relative; overflow: hidden; }
+.cell img,
+.cell .cell-full-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;          /* fill the square */
+  object-position: center;    /* keep face centered */
+}
+
+.top-bar {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px; /* was 15px */
+  font-size: 14px;
+  background-color: #f7f9fc;
+  border-bottom: 1px solid #ccc;
+}
+
+.top-bar a {
+  text-decoration: none;
+  color: #3366cc;
+  font-weight: 500;
+}
+/* Grid block wrapper */
+.grid-block {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 0px;
+}
+
+/* Row labels on the left */
+.row-labels {
+  display: grid;
+  grid-template-rows: repeat(3, 180px);
+  justify-items: end;
+  align-items: center;
+  margin-top: 100px; /* align with grid */
+  margin-right: 10px;
+}
+
+.row-label {
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Main container with column labels above grid */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Column labels above the grid */
+.col-labels {
+  display: grid;
+  grid-template-columns: repeat(3, 180px);
+  margin-bottom: 5px;
+}
+
+.col-label {
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 4px;
+  line-height: 1.2;
+
+  max-width: 150px;   /* narrower than the 180px cell */
+  margin: 0 auto;     /* centers the narrower label inside the cell width */
+}
+
+/* Main grid */
+.main-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 180px);
+  grid-template-rows: repeat(3, 180px);
+  border: 1px solid #000;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Each cell */
+.cell {
+  background-color: #fff;
+  border: 1px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+/* Wrapper that holds grid block + side panel side-by-side */
+.wrapper {
+  display: flex;
+  justify-content: center; /* centers both grid + side panel together */
+  align-items: flex-start; /* top align */
+  gap: 30px; /* space between grid and side panel */
+  margin-top: 20px;
+}
+
+/* Side panel styling */
+.side-panel {
+  display: flex;
+  flex-direction: column;
+  margin-top: 310px;
+  align-items: center;
+}
+.guesses-label {
+  font-size: 13px;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.guesses-count {
+  font-size: 42px;
+  font-weight: bold;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+}
+
+.give-up-btn {
+  background-color: #0066ff;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.give-up-btn:hover {
+  background-color: #0052cc;
+}.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin: 40px auto;
+  max-width: 900px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 25px 30px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.close-button {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-size: 24px;
+  color: #666;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  color: #000;
+}
+
+.rules-list {
+  margin-top: 15px;
+  padding-left: 20px;
+}
+
+.rules-list li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.rules-tip {
+  margin-top: 20px;
+  font-style: italic;
+  color: #444;
+}
+
+#guess-modal .modal-content {
+  background-color: #fefee9;
+  margin: 12% auto;
+  padding: 14px 16px;
+  border: 2px solid #003c5f;
+  width: 280px;
+  max-width: 90%;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#guess-modal h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+}
+
+#guess-context {
+  font-size: 13px;
+  color: #333;
+  margin: 0;
+  line-height: 1.3;
+}
+
+#guess-input {
+  width: 100%;
+  padding: 6px;
+  font-size: 15px;
+  margin: 4px 0 0;
+  border: none;
+  border-bottom: 2px solid #003c5f;
+  background-color: transparent;
+  text-align: center;
+  outline: none;
+}
+
+#submit-guess {
+  margin-top: 8px;
+  background-color: #8994a3;
+  color: black;
+  border: none;
+  padding: 9px 18px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#submit-guess:hover {
+  background-color: #6c7482;
+}
+
+#guess-modal .close-button {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: 20px;
+  color: #333;
+  cursor: pointer;
+}
+
+.autocomplete-wrapper {
+  position: relative;
+  width: 480px;
+  max-width: 100%;
+}
+
+#guess-input {
+  border: none;
+  outline: none;
+  font-size: 18px;
+  width: 100%;
+  text-align: center;
+  padding: 12px;
+  background-color: transparent;
+  border-bottom: none !important;
+}
+
+#autocomplete-box {
+  position: absolute;
+  background-color: rgb(254, 254, 233) !important;
+  top: calc(100% + 4px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 312px;
+  max-width: 90vw;
+  border-radius: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border: 2px solid #003c5f;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  display: none;
+  z-index: 1000;
+  overflow-y: auto;
+  max-height: 300px;
+  padding: 6px 0;
+}
+
+.autocomplete-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  background-color: rgb(254, 254, 233) !important;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background 0.2s ease;
+}
+
+.autocomplete-item:hover {
+  background-color: #f1f4f8;
+}
+
+.autocomplete-item:last-child {
+  border-bottom: none;
+}
+
+.autocomplete-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.autocomplete-text strong {
+  font-size: 16px;
+  color: #111;
+}
+
+.autocomplete-text span {
+  font-size: 13px;
+  color: #666;
+  margin-top: 2px;
+}
+
+.autocomplete-select-btn {
+  background-color: #28a745;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.autocomplete-select-btn:hover {
+  background-color: #218838;
+}
+
+.autocomplete-select-btn.disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}
+
+#endgame-modal .modal-content {
+  width: fit-content;
+  margin: auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.summary-section {
+  margin-top: 30px;
+}
+
+.summary-section h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 130px);
+  grid-template-rows: repeat(3, 130px);
+  gap: 0;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid #000;
+}
+
+.summary-grid .cell {
+  width: 130px;
+  height: 130px;
+  border: 1px solid black;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+  text-align: center;
+  padding: 6px;
+  box-sizing: border-box;
+  font-weight: bold;
+}
+
+.summary-grid .correct {
+  background-color: #d4edda;
+  border-color: #28a745;
+  color: #155724;
+}
+
+.summary-grid .empty {
+  background-color: #f8d7da;
+  border-color: #dc3545;
+  color: #721c24;
+}
+
+#copy-results-btn {
+  margin-top: 10px;
+  padding: 10px 16px;
+  background-color: #0077aa;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+#copy-results-btn:hover {
+  background-color: #005f88;
+}
+
+#copy-confirmation {
+  margin-top: 8px;
+  font-size: 13px;
+}
+
+#result-summary-grid .cell {
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#result-summary-grid .cell:hover {
+  background-color: #e0e0e0;
+}
+
+#result-summary-grid .cell:hover {
+  color: #0077cc;
+  text-decoration: underline;
+}
+
+#answers-modal .modal-content {
+  max-width: 300px;
+  margin: auto;
+  padding: 30px 40px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  border-top: 6px solid #0077cc;
+  position: relative;
+}
+
+#answers-modal-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #003c5f;
+  margin-bottom: 20px;
+}
+
+#answer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  color: #222;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+#answer-list li {
+  text-align: center;
+  margin: 12px 0;
+}
+
+#close-answers {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  font-size: 22px;
+  color: #666;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#close-answers:hover {
+  color: #000;
+}
+
+.contact-email {
+  position: absolute;
+  bottom: 40px;
+  left: 30px;
+  font-size: 14px;
+  color: #444;
+  font-family: Arial, sans-serif;
+}
+
+.contact-email a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+.contact-email a:hover {
+  text-decoration: underline;
+}
+
+#play-again-btn,
+#share-results-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#play-again-btn:hover,
+#share-results-btn:hover {
+  background-color: #005fa3;
+}
+
+.grid-heading {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.grid-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #222;
+  margin: 0 0 8px 0;
+  line-height: 1.2;
+}
+
+/* Base cell styling */
+.cell {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+/* Hover effect for empty/unclicked cells */
+.cell:hover {
+  background-color: #e0e0e0; /* light grey */
+}
+
+/* Keep correct cells unchanged on hover */
+.cell.correct:hover {
+  background-color: transparent;
+  cursor: default;
+}
+.footer {
+  text-align: center;     /* or left if you prefer */
+  margin-top: 10px;       /* controls spacing above footer */
+  margin-bottom: 10px;    /* controls spacing below footer */
+  font-size: 18px;
+  color: #444;
+  font-family: Arial, sans-serif;
+}
+
+.footer a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+/* Push grid further down from header */
+.grid-block {
+  margin-top: 25px; /* increase for more space under header */
+}
+
+/* Reduce space below grid */
+.wrapper {
+  margin-bottom: 5px; /* shrink gap above footer */
+}
+
+.card-grid {
+  margin: 10px auto; /* reduce default 40px margin */
+}
+
+/* Footer spacing */
+.footer {
+  margin-top: 5px;  /* less gap above footer */
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 5px;
+  }
+
+  .top-bar {
+    gap: 15px;
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .grid-block {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 10px;
+    gap: 5px;
+  }
+
+  .row-labels {
+    display: grid;
+    grid-template-rows: repeat(3, 120px);
+    justify-items: end;
+    align-items: center;
+    margin-top: 60px;
+    margin-right: 0px;
+  }
+
+  .row-label {
+    font-size: 12px;
+    text-align: right;
+    padding: 5px;
+  }
+
+  .main-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .col-labels {
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 5px;
+  }
+
+  .col-label {
+    font-size: 12px;
+    padding-bottom: 2px;
+    max-width: 120px;
+    margin: 0;
+  }
+
+  .main-grid {
+    grid-template-columns: repeat(3, 120px);
+    grid-template-rows: repeat(3, 120px);
+    margin: 0 auto;
+  }
+
+  .cell {
+    font-size: 12px;
+  }
+
+  .wrapper {
+    flex-direction: column;
+    gap: 15px;
+    margin: 10px auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .side-panel {
+    margin-top: 0;
+    align-items: center;
+    text-align: center;
+  }
+
+  .guesses-label {
+    font-size: 12px;
+  }
+
+  .guesses-count {
+    font-size: 32px;
+  }
+
+  .give-up-btn {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .card-grid {
+    margin: 20px auto;
+    gap: 15px;
+    max-width: 100%;
+  }
+
+  .modal-content {
+    width: 90%;
+    max-width: 400px;
+    padding: 20px;
+  }
+
+  #guess-modal .modal-content {
+    width: 90%;
+    max-width: 300px;
+    padding: 12px;
+  }
+
+  #guess-input {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .autocomplete-wrapper {
+    width: 100%;
+  }
+
+  #autocomplete-box {
+    width: 90%;
+    max-width: 280px;
+  }
+
+  .autocomplete-item {
+    font-size: 14px;
+    padding: 10px 14px;
+  }
+
+  .autocomplete-select-btn {
+    font-size: 12px;
+    padding: 5px 12px;
+  }
+
+  #endgame-modal .modal-content {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .summary-grid {
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+  }
+
+  .summary-grid .cell {
+    width: 100px;
+    height: 100px;
+    font-size: 10px;
+    padding: 4px;
+  }
+
+  #answers-modal .modal-content {
+    max-width: 280px;
+    padding: 20px;
+  }
+
+  #answers-modal-title {
+    font-size: 18px;
+  }
+
+  #answer-list {
+    font-size: 14px;
+  }
+
+  .grid-title {
+    font-size: 24px;
+  }
+
+  .footer {
+    text-align: center;
+    position: static;
+    bottom: auto;
+    left: auto;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .contact-email {
+    position: static;
+    text-align: center;
+    margin: 0;
+  }
+}
+/* ===== Phones (<=480px) — shift side panel + footer right ===== */
+@media (max-width: 780px) {
+  /* change these pixel values to move further right */
+  .side-panel {
+    transform: translateX(40px) !important;  /* ← adjust */
+    transition: transform 0.2s ease;
+  }
+
+  .footer {
+    transform: translateX(40px) !important;  /* ← adjust */
+    transition: transform 0.2s ease;
+  }
+}
+/* ===== Phones (<=480px) — shift side panel + footer right ===== */
+@media (max-width: 480px) {
+  /* change these pixel values to move further right */
+  .side-panel {
+    transform: translateX(40px) !important;  /* ← adjust */
+    transition: transform 0.2s ease;
+  }
+  .footer {
+    transform: translateX(40px) !important;  /* ← adjust */
+    transition: transform 0.2s ease;
+  }
+}
+/* ===== Phones (<=480px) ===== */
+@media (max-width: 480px) {
+  body {
+    padding: 4px;
+  }
+
+  .top-bar {
+    gap: 8px;
+    font-size: 10px;
+    padding: 6px;
+    transform: translateX(40px) !important; /* same shift as side panel/footer */
+    transition: transform 0.2s ease;
+  }
+
+  .grid-block {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 8px;
+    gap: 3px;
+  }
+
+  .row-labels {
+    display: grid;
+    grid-template-rows: repeat(3, 100px); /* was 80px */
+    justify-items: end;
+    align-items: center;
+    margin-top: 60px !important; /* force push down */
+    margin-right: 0;
+  }
+  
+  .row-label {
+    font-size: 10px;
+    text-align: right;
+    padding: 3px;
+  }
+
+  .main-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .col-labels {
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 4px;
+  }
+
+  .col-label {
+    font-size: 10px;
+    padding-bottom: 2px;
+    max-width: 100px; /* was 80px */
+    margin: 0;
+  }
+
+  .main-grid {
+    grid-template-columns: repeat(3, 100px); /* was 80px */
+    grid-template-rows: repeat(3, 100px);    /* was 80px */
+    margin: 0 auto;
+  }
+
+  .cell {
+    font-size: 11px; /* slightly larger for 100px cells */
+  }
+
+  .wrapper {
+    flex-direction: column;
+    gap: 10px;
+    margin: 5px auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* Side panel */
+  .side-panel {
+    margin-top: 0;
+    align-items: center;
+    text-align: center;
+    transform: translateX(40px) !important; /* shift right */
+    transition: transform 0.2s ease;
+  }
+
+  .guesses-label {
+    font-size: 10px;
+  }
+
+  .guesses-count {
+    font-size: 24px;
+  }
+
+  .give-up-btn {
+    padding: 6px 10px;
+    font-size: 10px;
+  }
+
+  .card-grid {
+    margin: 10px auto;
+    gap: 10px;
+    max-width: 100%;
+  }
+
+  .modal-content {
+    width: 90%;
+    max-width: 300px;
+    padding: 12px;
+  }
+
+  #guess-modal .modal-content {
+    width: 85%;
+    max-width: 260px;
+    padding: 10px;
+  }
+
+  #guess-input {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .autocomplete-wrapper {
+    width: 100%;
+  }
+
+  #autocomplete-box {
+    width: 85%;
+    max-width: 240px;
+  }
+
+  .autocomplete-item {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+
+  .autocomplete-select-btn {
+    font-size: 10px;
+    padding: 4px 10px;
+  }
+
+  #endgame-modal .modal-content {
+    width: 85%;
+    padding: 15px;
+  }
+
+  .summary-grid {
+    grid-template-columns: repeat(3, 60px);
+    grid-template-rows: repeat(3, 60px);
+  }
+
+  .summary-grid .cell {
+    width: 60px;
+    height: 60px;
+    font-size: 8px;
+    padding: 3px;
+  }
+
+  #answers-modal .modal-content {
+    max-width: 240px;
+    padding: 15px;
+  }
+
+  #answers-modal-title {
+    font-size: 16px;
+  }
+
+  #answer-list {
+    font-size: 12px;
+  }
+
+  .grid-title {
+    font-size: 20px;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    transform: translateX(40px) !important; /* shift right */
+    transition: transform 0.2s ease;
+  }
+
+  .contact-email {
+    text-align: center;
+    margin: 0;
+  }
+}

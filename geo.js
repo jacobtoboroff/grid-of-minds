@@ -43,7 +43,7 @@ async function loadGeoGridByDay(day) {
 }
 
 // ======= Global Day State =======
-const launchDate = new Date("September 6, 2025 00:00:00");
+const launchDate = new Date("February 26, 2026 00:00:00");
 const now = new Date();
 const todayMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate());
 const msInDay = 24 * 60 * 60 * 1000;

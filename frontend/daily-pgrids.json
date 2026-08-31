@@ -1,0 +1,1802 @@
+{
+  "1": {
+    "rows": [
+      "Republican Party",
+      "Served in Military",
+      "Democratic Party"
+    ],
+    "columns": [
+      "Cold War President",
+      "First Name A–J",
+      "Served more than 5 years"
+    ]
+  },
+  "2": {
+    "rows": [
+      "Democratic Party",
+      "Served in Congress",
+      "Impeached"
+    ],
+    "columns": [
+      "Born 1900–2000",
+      "First Name A–J",
+      "Served less than 5 years"
+    ]
+  },
+  "3": {
+    "rows": [
+      "Republican Party",
+      "Served in the House",
+      "Born before 1800"
+    ],
+    "columns": [
+      "Inaugurated older than 50",
+      "Last Name K–Z",
+      "Died in Office"
+    ]
+  },
+  "4": {
+    "rows": [
+      "Democratic Party",
+      "Born 1900–2000",
+      "First Name A–J"
+    ],
+    "columns": [
+      "Nobel Prize Winner",
+      "Attended Ivy League School",
+      "Former State Governors"
+    ]
+  },
+  "5": {
+    "rows": [
+      "Born 1800 - 1900",
+      "Born before 1800",
+      "Born 1900–2000"
+    ],
+    "columns": [
+      "Served in Congress",
+      "Died in Office",
+      "Served as Vice President"
+    ]
+  },
+  "6": {
+    "rows": [
+      "Appears On Currency",
+      "Served more than 5 years",
+      "Inaugurated older than 60"
+    ],
+    "columns": [
+      "Served in Military",
+      "Served as Vice President",
+      "Served in Congress"
+    ]
+  },
+  "7": {
+    "rows": [
+      "Republican Party",
+      "Last Name K–Z",
+      "Won Re-election"
+    ],
+    "columns": [
+      "Served Past 1850",
+      "Won Without Popular Vote",
+      "First Name A–J"
+    ]
+  },
+  "8": {
+    "rows": [
+      "Democratic Party",
+      "Served more than 5 years",
+      "Former State Governors"
+    ],
+    "columns": [
+      "Born 1900–2000",
+      "First Name A–J",
+      "Attended Ivy League School"
+    ]
+  },
+  "9": {
+    "rows": [
+      "Republican Party",
+      "Served in Military",
+      "Born 1800 - 1900"
+    ],
+    "columns": [
+      "Served in Congress",
+      "Last Name K–Z",
+      "Won Re-election"
+    ]
+  },
+  "10": {
+    "rows": [
+      "Democratic Party",
+      "Served less than 5 years",
+      "Republican Party"
+    ],
+    "columns": [
+      "Born 1900–2000",
+      "Cold War President",
+      "Died in Office"
+    ]
+  },
+  "11": {
+    "rows": [
+      "Republican Party",
+      "Served more than 5 years",
+      "Won Re-election"
+    ],
+    "columns": [
+      "First Name A–J",
+      "Served as Vice President",
+      "Born 1900-2000"
+    ]
+  },
+  "12": {
+    "rows": [
+      "First Name A–J",
+      "Served in Congress",
+      "Attended Ivy League School"
+    ],
+    "columns": [
+      "Republican Party",
+      "Born 1800 - 1900",
+      "Last Name K–Z"
+    ]
+  },
+  "13": {
+    "rows": [
+      "Republican Party",
+      "Served in Military",
+      "Born before 1800"
+    ],
+    "columns": [
+      "Served less than 5 years",
+      "Won Re-election",
+      "First Name A–J"
+    ]
+  },
+  "14": {
+    "rows": [
+      "Democratic Party",
+      "Republican Party",
+      "Last Name A–J"
+    ],
+    "columns": [
+      "Served Past 1900",
+      "Served in Congress",
+      "Served as Vice President"
+    ]
+  },
+  "15": {
+    "rows": [
+      "Democratic-republican Party",
+      "Served in Congress",
+      "First Name K–Z"
+    ],
+    "columns": [
+      "Appears on Currency",
+      "Served in Military",
+      "Served more than 5 years"
+    ]
+  },
+  "16": {
+    "rows": [
+      "Democratic Party",
+      "Republican Party",
+      "First Name A–J"
+    ],
+    "columns": [
+      "Served in the senate",
+      "Served in Congress",
+      "Served in the House"
+    ]
+  },
+  "17": {
+    "rows": [
+      "Born in Virginia",
+      "Served more than 5 years",
+      "Last Name A–J"
+    ],
+    "columns": [
+      "Appears On Currency",
+      "Born before 1800",
+      "Served in Military"
+    ]
+  },
+  "18": {
+    "rows": [
+      "Assassinated",
+      "Inaugurated older than 50",
+      "Democratic Party"
+    ],
+    "columns": [
+      "First Name A–J",
+      "First Name K–Z",
+      "Last Name A–J"
+    ]
+  },
+  "19": {
+    "rows": [
+      "Appears on Mount Rushmore",
+      "Inaugurated older than 50",
+      "Served in Congress"
+    ],
+    "columns": [
+      "Born before 1800",
+      "Born 1800 - 1900",
+      "Republican Party"
+    ]
+  },
+  "20": {
+    "rows": [
+      "Presidency Number 11-20",
+      "Presidency Number 21-30",
+      "Presidency Number 31-40"
+    ],
+    "columns": [
+      "Republican Party",
+      "Democratic Party",
+      "Last Name A–J"
+    ]
+  },
+  "21": {
+    "rows": [
+      "Served as Vice President",
+      "Served more than 5 years",
+      "Won Without Popular Vote"
+    ],
+    "columns": [
+      "Served Past 1900",
+      "Served Before 1900",
+      "First Name A–J"
+    ]
+  },
+  "22": {
+    "rows": [
+      "Former State Governors",
+      "Served in Congress",
+      "Served less than 5 years"
+    ],
+    "columns": [
+      "Inaugurated older than 50",
+      "Democratic Party",
+      "Last Name K–Z"
+    ]
+  },
+  "23": {
+    "rows": [
+      "Nobel Prize Winner",
+      "Won Re-election",
+      "Died in Office"
+    ],
+    "columns": [
+      "Democratic Party",
+      "Last Name A–J",
+      "Served Past 1850"
+    ]
+  },
+  "24": {
+    "rows": [
+      "Last Name A–J",
+      "Last Name K–Z",
+      "Served as Vice President"
+    ],
+    "columns": [
+      "First Name A–J",
+      "First Name K–Z",
+      "Born 1900–2000"
+    ]
+  },
+  "25": {
+    "rows": [
+      "Born before 1800",
+      "Born 1800 - 1900",
+      "First Name Starts with Vowel"
+    ],
+    "columns": [
+      "Democratic Party",
+      "Won Re-election",
+      "Served in Military"
+    ]
+  },
+  "26": {
+    "rows": [
+      "Inaugurated older than 60",
+      "Born 1900-2000",
+      "Last Name Starts with Vowel"
+    ],
+    "columns": [
+      "Met Queen Elizabeth II",
+      "Lost Re-election",
+      "Served in Military"
+    ]
+  },
+  "27": {
+    "rows": [
+      "6 feet or taller",
+      "Shorter than 6 feet",
+      "Attended Ivy League School"
+    ],
+    "columns": [
+      "Democratic Party",
+      "Republican Party",
+      "Served more than 5 years"
+    ]
+  },
+  "28": {
+    "rows": [
+      "Does Not Appear on Currency",
+      "Did Not Win Nobel Prize",
+      "Not Cold War President"
+    ],
+    "columns": [
+      "Did not Serve as Vice President",
+      "Did Not Die in Office",
+      "Does Not Appear on Mount Rushmore"
+    ]
+  },
+  "29": {
+    "rows": [
+      "No College Degree",
+      "Attended Ivy League School",
+      "Served in Congress"
+    ],
+    "columns": [
+      "Presidency Number 1-10",
+      "First Name A–J",
+      "First Name K–Z"
+    ]
+  },
+  "30": {
+    "rows": [
+      "180 Pounds or greater",
+      "Less than 180 Pounds",
+      "Appears On Currency"
+    ],
+    "columns": [
+      "Democratic Party",
+      "Republican Party",
+      "Inaugurated older than 50"
+    ]
+  },
+  "31": {
+    "rows": [
+      "Born in Virginia",
+      "Served in the senate",
+      "Inaugurated older than 55"
+    ],
+    "columns": [
+      "Democratic-republican Party",
+      "Died in Office",
+      "Served less than 5 years"
+    ]
+  },
+  "32": {
+    "rows": [
+      "Democratic Party",
+      "Born before 1800",
+      "Last Name A–J"
+    ],
+    "columns": [
+      "Unmarried while in Office",
+      "6 feet or taller",
+      "Served in Congress"
+    ]
+  },
+  "33": {
+    "rows": [
+      "Born in Ohio",
+      "Assassinated",
+      "Republican Party"
+    ],
+    "columns": [
+      "Presidency Number 21-30",
+      "Won Re-election",
+      "Not Re-elected"
+    ]
+  },
+  "34": {
+    "rows": [
+      "Served as Secretary of State",
+      "Served as Vice President",
+      "Served in Military"
+    ],
+    "columns": [
+      "Founding Father",
+      "Presidency Number 5-15",
+      "First Name A–J"
+    ]
+  },
+  "35": {
+    "rows": [
+      "Has Facial Hair",
+      "Impeached",
+      "Former State Governors"
+    ],
+    "columns": [
+      "Served Before 1900",
+      "200 Pounds or greater",
+      "Served more than 5 years"
+    ]
+  },
+  "36": {
+    "rows": [
+      "Whig Party",
+      "Democratic Party",
+      "Served in Congress"
+    ],
+    "columns": [
+      "Inaugurated older than 50",
+      "Tied to War of 1812",
+      "Served less than 4 years"
+    ]
+  },
+  "37": {
+    "rows": [
+      "Related to Another President",
+      "Republican Party",
+      "Served in the senate"
+    ],
+    "columns": [
+      "Last Name Starts with Vowel",
+      "Died in Office",
+      "Presidency Number 40-47"
+    ]
+  },
+  "38": {
+    "rows": [
+      "Alliterative name",
+      "Served in the House",
+      "Nobel Prize Winner"
+    ],
+    "columns": [
+      "Born 1800 - 1900",
+      "Born 1900–2000",
+      "Not Assassinated"
+    ]
+  },
+  "39": {
+    "rows": [
+      "Wore Glasses",
+      "Inaugurated older than 60",
+      "Attended Ivy League School"
+    ],
+    "columns": [
+      "Cold War President",
+      "Born 1800 - 1900",
+      "Won Re-election"
+    ]
+  },
+  "40": {
+    "rows": [
+      "Served as ambassador",
+      "No College Degree",
+      "Not impeached"
+    ],
+    "columns": [
+      "Appears on Mount Rushmore",
+      "Presidency Number 1-10",
+      "First Name A–J"
+    ]
+  },
+  "41": {
+    "rows": [
+      "6 feet or taller",
+      "Served as Vice President",
+      "Not Founding Father"
+    ],
+    "columns": [
+      "First Name A–J",
+      "Republican Party",
+      "Appears On Currency"
+    ]
+  },
+  "42": {
+    "rows": [
+      "Attended Ivy League School",
+      "Served in the Senate",
+      "Alliterative name"
+    ],
+    "columns": [
+      "Won Re-election",
+      "Democratic Party",
+      "Did not serve in the Military"
+    ]
+  },
+  "43": {
+    "rows": [
+      "Cold War President",
+      "Last Name K–Z",
+      "Died in Office"
+    ],
+    "columns": [
+      "First Name K–Z",
+      "Served in Congress",
+      "Lost Re-election"
+    ]
+  },
+  "44": {
+    "rows": [
+      "First Name A–J",
+      "Related to Another President",
+      "Served as Secretary of State"
+    ],
+    "columns": [
+      "Inaugurated older than 55",
+      "Shorter than 6 feet",
+      "Born before 1800"
+    ]
+  },
+  "45": {
+    "rows": [
+      "Served in the House",
+      "Served in the Senate",
+      "Presidency Number 31-40"
+    ],
+    "columns": [
+      "Born 1800 - 1900",
+      "Last Name Starts with Vowel",
+      "Met Queen Elizabeth II"
+    ]
+  },
+  "46": {
+    "rows": [
+      "Won Re-election",
+      "Served in the House",
+      "Served in the Military"
+    ],
+    "columns": [
+      "Born 1900–2000",
+      "Republican Party",
+      "Assassinated"
+    ]
+  },
+  "47": {
+    "rows": [
+      "Unmarried while in Office",
+      "Tied to War of 1812",
+      "Related to Another President"
+    ],
+    "columns": [
+      "First Name A–J",
+      "Shorter than 6 feet",
+      "First Name K–Z"
+    ]
+  },
+  "48": {
+    "rows": [
+      "Cold War President",
+      "Served as Vice President",
+      "No College Degree"
+    ],
+    "columns": [
+      "Met Queen Elizabeth II",
+      "Won Re-election",
+      "Democratic Party"
+    ]
+  },
+  "49": {
+    "rows": [
+      "Founding Father",
+      "Served as Vice President",
+      "Democratic-republican Party"
+    ],
+    "columns": [
+      "Served in Congress",
+      "Attended Ivy League School",
+      "Born before 1800"
+    ]
+  },
+  "50": {
+    "rows": [
+      "Has Facial Hair",
+      "180 Pounds or greater",
+      "Less than 180 Pounds"
+    ],
+    "columns": [
+      "Presidency Number 21-30",
+      "Served in the Military",
+      "First Name A–J"
+    ]
+  },
+  "51": {
+    "rows": [
+      "Last Name K–Z",
+      "Appears On Mount Rushmore",
+      "Shorter than 6 feet"
+    ],
+    "columns": [
+      "Republican Party",
+      "Wore Glasses",
+      "No Biological Children"
+    ]
+  },
+  "52": {
+    "rows": [
+      "Did Not Win Nobel Prize",
+      "Born 1800 - 1900",
+      "Born 1900-2000"
+    ],
+    "columns": [
+      "First Name K–Z",
+      "Won without Popular Vote",
+      "Assassinated"
+    ]
+  },
+  "53": {
+    "rows": [
+      "6 feet or taller",
+      "Did not Attend Ivy League School",
+      "Democratic Party"
+    ],
+    "columns": [
+      "Served in the Senate",
+      "Served as Vice President",
+      "Related to Another President"
+    ]
+  },
+  "54": {
+    "rows": [
+      "Appears On Currency",
+      "Won Re-election",
+      "Born in Ohio or Virginia"
+    ],
+    "columns": [
+      "Born before 1800",
+      "Served in the Military",
+      "Tied to Civil War"
+    ]
+  },
+  "55": {
+    "rows": [
+      "Inaugurated younger than 60",
+      "Inaugurated older than 60",
+      "Shorter than 6 feet"
+    ],
+    "columns": [
+      "Democratic Party",
+      "Served in the Senate",
+      "Served as Vice President"
+    ]
+  },
+  "56": {
+    "rows": [
+      "Last Name Starts with Vowel",
+      "Democratic Party",
+      "Attended Ivy League School"
+    ],
+    "columns": [
+      "Won Re-election",
+      "born 1800 - 1900",
+      "Presidency Number 40-47"
+    ]
+  },
+  "57": {
+    "rows": [
+      "Former State Governors",
+      "Served more than 5 years",
+      "Did not Serve as Vice President"
+    ],
+    "columns": [
+      "Democratic Party",
+      "Republican Party",
+      "Nobel Prize Winner"
+    ]
+  },
+  "58": {
+    "rows": [
+      "6 feet or taller",
+      "Served in the House",
+      "Cold War President"
+    ],
+    "columns": [
+      "Born 1900–2000",
+      "Served in the Military",
+      "Assassinated"
+    ]
+  },
+  "59": {
+    "rows": [
+      "Last Name K–Z",
+      "Unmarried while in Office",
+      "Appears On Mount Rushmore"
+    ],
+    "columns": [
+      "First Name K–Z",
+      "Shorter than 6 feet",
+      "Won Re-election"
+    ]
+  },
+  "60": {
+    "rows": [
+      "Served in Congress",
+      "Did not Serve in Military",
+      "180 Pounds or greater"
+    ],
+    "columns": [
+      "Wore Glasses",
+      "Met Queen Elizabeth II",
+      "Presidency Number 20-30"
+    ]
+  },
+  "61": {
+    "rows": [
+      "Served less than 4 years",
+      "Served in Military",
+      "Does Not Appear on Mount Rushmore"
+    ],
+    "columns": [
+      "Inaugurated younger than 60",
+      "Did Not Win Nobel Prize",
+      "Born 1900-2000"
+    ]
+  },
+  "62": {
+    "rows": [
+      "Born before 1800",
+      "Died in Office",
+      "Presidency Number 20-30"
+    ],
+    "columns": [
+      "First Name A-J",
+      "Last Name K-Z",
+      "180 Pounds or greater"
+    ]
+  },
+  "63": {
+    "rows": [
+      "No College Degree",
+      "Not Founding Father",
+      "Served in the House"
+    ],
+    "columns": [
+      "Assassinated",
+      "Whig Party",
+      "Served as Secretary of State"
+    ]
+  },
+  "64": {
+    "rows": [
+      "Served Past 1850",
+      "Inaugurated older than 50",
+      "Related to Another President"
+    ],
+    "columns": [
+      "Born 1800 - 1900",
+      "6 feet or taller",
+      "Served as Vice President"
+    ]
+  },
+  "65": {
+    "rows": [
+      "Does Not Appear on Currency",
+      "Met Queen Elizabeth II",
+      "Alliterative name"
+    ],
+    "columns": [
+      "Inaugurated older than 55",
+      "Not Cold War President",
+      "Did not Serve as Vice President"
+    ]
+  },
+  "66": {
+    "rows": [
+      "Not Re-elected",
+      "Former State Governors",
+      "Last Name A-J"
+    ],
+    "columns": [
+      "Presidency Number 5-15",
+      "Has Facial Hair",
+      "Attended Ivy League School"
+    ]
+  },
+  "67": {
+    "rows": [
+      "Wore Glasses",
+      "Presidency Number 31-40",
+      "Served Past 1900"
+    ],
+    "columns": [
+      "Served more than 5 years",
+      "Served as Vice President",
+      "Won Re-election"
+    ]
+  },
+  "68": {
+    "rows": [
+      "Did Not Win Nobel Prize",
+      "200 Pounds or greater",
+      "Tied to Civil War"
+    ],
+    "columns": [
+      "Last Name A-J",
+      "Republican Party",
+      "Served Before 1900"
+    ]
+  },
+  "69": {
+    "rows": [
+      "Unmarried while in Office",
+      "Appears On Currency",
+      "Inaugurated older than 60"
+    ],
+    "columns": [
+      "180 Pounds or greater",
+      "Served in the Senate",
+      "Presidency Number 1-10"
+    ]
+  },
+  "70": {
+    "rows": [
+      "Served less than 5 years",
+      "Not Assassinated",
+      "Born before 1800"
+    ],
+    "columns": [
+      "Served in the House",
+      "Does Not Appear on Mount Rushmore",
+      "Last Name K-Z"
+    ]
+  },
+  "71": {
+    "rows": [
+      "First Name A-J",
+      "Inaugurated older than 50",
+      "First Name K-Z"
+    ],
+    "columns": [
+      "Founding Father",
+      "Appears On Mount Rushmore",
+      "Democratic Party"
+    ]
+  },
+  "72": {
+    "rows": [
+      "Not Founding Father",
+      "Shorter than 6 feet",
+      "Served Past 1850"
+    ],
+    "columns": [
+      "Born 1900-2000",
+      "First Name Starts with Vowel",
+      "Served in Congress"
+    ]
+  },
+  "73": {
+    "rows": [
+      "Born 1800 - 1900",
+      "Nobel Prize Winner",
+      "Less than 180 Pounds"
+    ],
+    "columns": [
+      "Did not Serve as Vice President",
+      "Presidency Number 20-30",
+      "Presidency Number 21-30"
+    ]
+  },
+  "74": {
+    "rows": [
+      "Served less than 4 years",
+      "No College Degree",
+      "Less than 180 Pounds"
+    ],
+    "columns": [
+      "Presidency Number 11-20",
+      "6 feet or taller",
+      "Cold War President"
+    ]
+  },
+  "75": {
+    "rows": [
+      "Tied to Civil War",
+      "200 Pounds or greater",
+      "Does Not Appear on Currency"
+    ],
+    "columns": [
+      "Served Before 1900",
+      "Inaugurated younger than 60",
+      "Last Name A-J"
+    ]
+  },
+  "76": {
+    "rows": [
+      "Did Not Win Nobel Prize",
+      "Served in Military",
+      "Served as Vice President"
+    ],
+    "columns": [
+      "First Name A-J",
+      "Unmarried while in Office",
+      "Won Re-election"
+    ]
+  },
+  "77": {
+    "rows": [
+      "Related to Another President",
+      "Not Assassinated",
+      "No College Degree"
+    ],
+    "columns": [
+      "Inaugurated older than 55",
+      "Does Not Appear on Mount Rushmore",
+      "Has Facial Hair"
+    ]
+  },
+  "78": {
+    "rows": [
+      "Died in Office",
+      "Presidency Number 5-15",
+      "Served as ambassador"
+    ],
+    "columns": [
+      "Tied to War of 1812",
+      "Last Name K-Z",
+      "Shorter than 6 feet"
+    ]
+  },
+  "79": {
+    "rows": [
+      "Not Re-elected",
+      "Served in Congress",
+      "Former State Governors"
+    ],
+    "columns": [
+      "First Name Starts with Vowel",
+      "Served Past 1850",
+      "Democratic Party"
+    ]
+  },
+  "80": {
+    "rows": [
+      "Did not Serve as Vice President",
+      "Republican Party",
+      "First Name K-Z"
+    ],
+    "columns": [
+      "Attended Ivy League School",
+      "Assassinated",
+      "Not Founding Father"
+    ]
+  },
+  "81": {
+    "rows": [
+      "Served in the Senate",
+      "Served more than 5 years",
+      "Served in Congress"
+    ],
+    "columns": [
+      "Founding Father",
+      "Met Queen Elizabeth II",
+      "Presidency Number 20-30"
+    ]
+  },
+  "82": {
+    "rows": [
+      "Served Past 1900",
+      "Served as Secretary of State",
+      "Related to Another President"
+    ],
+    "columns": [
+      "Inaugurated older than 50",
+      "Not Cold War President",
+      "Less than 180 Pounds"
+    ]
+  },
+  "83": {
+    "rows": [
+      "Does Not Appear on Currency",
+      "6 feet or taller",
+      "180 Pounds or greater"
+    ],
+    "columns": [
+      "Served less than 4 years",
+      "Cold War President",
+      "Presidency Number 11-20"
+    ]
+  },
+  "84": {
+    "rows": [
+      "Served in the House",
+      "Presidency Number 31-40",
+      "Appears On Currency"
+    ],
+    "columns": [
+      "Inaugurated older than 60",
+      "Born 1900-2000",
+      "First Name A-J"
+    ]
+  },
+  "85": {
+    "rows": [
+      "Served as Vice President",
+      "Has Facial Hair",
+      "Presidency Number 21-30"
+    ],
+    "columns": [
+      "Won Re-election",
+      "Shorter than 6 feet",
+      "Not Re-elected"
+    ]
+  },
+  "86": {
+    "rows": [
+      "Not Assassinated",
+      "Born before 1800",
+      "Former State Governors"
+    ],
+    "columns": [
+      "Last Name A-J",
+      "Unmarried while in Office",
+      "Democratic-Republican Party"
+    ]
+  },
+  "87": {
+    "rows": [
+      "Served less than 5 years",
+      "Not Founding Father",
+      "Attended Ivy League School"
+    ],
+    "columns": [
+      "Won Without Popular Vote",
+      "Presidency Number 1-10",
+      "Served Before 1900"
+    ]
+  },
+  "88": {
+    "rows": [
+      "Democratic Party",
+      "Served as ambassador",
+      "First Name K-Z"
+    ],
+    "columns": [
+      "Presidency Number 5-15",
+      "Does Not Appear on Mount Rushmore",
+      "Inaugurated younger than 60"
+    ]
+  },
+  "89": {
+    "rows": [
+      "Inaugurated older than 55",
+      "Related to Another President",
+      "Last Name K-Z"
+    ],
+    "columns": [
+      "Did not Serve as Vice President",
+      "Whig Party",
+      "Born 1800 - 1900"
+    ]
+  },
+  "90": {
+    "rows": [
+      "Does Not Appear on Currency",
+      "Inaugurated older than 50",
+      "Served less than 4 years"
+    ],
+    "columns": [
+      "Served in the Senate",
+      "Not Cold War President",
+      "Tied to War of 1812"
+    ]
+  },
+  "91": {
+    "rows": [
+      "Republican Party",
+      "Served in the House",
+      "Tied to Civil War"
+    ],
+    "columns": [
+      "Appears On Currency",
+      "Appears On Mount Rushmore",
+      "First Name A-J"
+    ]
+  },
+  "92": {
+    "rows": [
+      "Presidency Number 31-40",
+      "Alliterative name",
+      "Served Past 1900"
+    ],
+    "columns": [
+      "Served more than 5 years",
+      "Won Re-election",
+      "180 Pounds or greater"
+    ]
+  },
+  "93": {
+    "rows": [
+      "Less than 180 Pounds",
+      "Not Re-elected",
+      "Served Past 1850"
+    ],
+    "columns": [
+      "Last Name A-J",
+      "Presidency Number 20-30",
+      "Not Assassinated"
+    ]
+  },
+  "94": {
+    "rows": [
+      "Born before 1800",
+      "Served as Vice President",
+      "Died in Office"
+    ],
+    "columns": [
+      "Served in Congress",
+      "First Name A-J",
+      "Inaugurated older than 60"
+    ]
+  },
+  "95": {
+    "rows": [
+      "Met Queen Elizabeth II",
+      "Served as Secretary of State",
+      "Served in Military"
+    ],
+    "columns": [
+      "Not Founding Father",
+      "First Name K-Z",
+      "Last Name Starts with Vowel"
+    ]
+  },
+  "96": {
+    "rows": [
+      "Served less than 5 years",
+      "Democratic-Republican Party",
+      "Served in Congress"
+    ],
+    "columns": [
+      "Presidency Number 1-10",
+      "Did not Serve as Vice President",
+      "Did Not Win Nobel Prize"
+    ]
+  },
+  "97": {
+    "rows": [
+      "No College Degree",
+      "Does Not Appear on Mount Rushmore",
+      "Presidency Number 21-30"
+    ],
+    "columns": [
+      "Wore Glasses",
+      "Does Not Appear on Currency",
+      "Democratic Party"
+    ]
+  },
+  "98": {
+    "rows": [
+      "Inaugurated older than 55",
+      "Served less than 4 years",
+      "Has Facial Hair"
+    ],
+    "columns": [
+      "Served in the House",
+      "Appears On Currency",
+      "Last Name K-Z"
+    ]
+  },
+  "99": {
+    "rows": [
+      "Won Re-election",
+      "Not Cold War President",
+      "6 feet or taller"
+    ],
+    "columns": [
+      "No College Degree",
+      "Served as ambassador",
+      "Tied to Civil War"
+    ]
+  },
+  "100": {
+    "rows": [
+      "Won Without Popular Vote",
+      "Last Name A-J",
+      "Served Past 1900"
+    ],
+    "columns": [
+      "Not Re-elected",
+      "Less than 180 Pounds",
+      "Republican Party"
+    ]
+  },
+  "101": {
+    "rows": [
+      "Attended Ivy League School",
+      "Former State Governors",
+      "Presidency Number 20-30"
+    ],
+    "columns": [
+      "Served in the Senate",
+      "Served Before 1900",
+      "First Name A-J"
+    ]
+  },
+  "102": {
+    "rows": [
+      "6 feet or taller",
+      "Inaugurated older than 50",
+      "Shorter than 6 feet"
+    ],
+    "columns": [
+      "Born 1900-2000",
+      "First Name K-Z",
+      "Born before 1800"
+    ]
+  },
+  "103": {
+    "rows": [
+      "Died in Office",
+      "Met Queen Elizabeth II",
+      "Served in Military"
+    ],
+    "columns": [
+      "Related to Another President",
+      "Inaugurated younger than 60",
+      "First Name K-Z"
+    ]
+  },
+  "104": {
+    "rows": [
+      "Served in Congress",
+      "Inaugurated older than 60",
+      "Not Assassinated"
+    ],
+    "columns": [
+      "Not Founding Father",
+      "Presidency Number 31-40",
+      "Met Queen Elizabeth II"
+    ]
+  },
+  "105": {
+    "rows": [
+      "Last Name Starts with Vowel",
+      "Served less than 5 years",
+      "200 Pounds or greater"
+    ],
+    "columns": [
+      "180 Pounds or greater",
+      "Did Not Win Nobel Prize",
+      "Served as Vice President"
+    ]
+  },
+  "106": {
+    "rows": [
+      "Won Re-election",
+      "Does Not Appear on Currency",
+      "Democratic Party"
+    ],
+    "columns": [
+      "Served Past 1850",
+      "Served more than 5 years",
+      "Served in the House"
+    ]
+  },
+  "107": {
+    "rows": [
+      "Not Cold War President",
+      "Not Re-elected",
+      "Does Not Appear on Mount Rushmore"
+    ],
+    "columns": [
+      "Assassinated",
+      "Unmarried while in Office",
+      "Appears On Currency"
+    ]
+  },
+  "108": {
+    "rows": [
+      "Met Queen Elizabeth II",
+      "Last Name K-Z",
+      "Former State Governors"
+    ],
+    "columns": [
+      "Served less than 4 years",
+      "Less than 180 Pounds",
+      "Born 1800 - 1900"
+    ]
+  },
+  "109": {
+    "rows": [
+      "Served Before 1900",
+      "Served as Secretary of State",
+      "Not Founding Father"
+    ],
+    "columns": [
+      "Attended Ivy League School",
+      "Served in the Senate",
+      "Tied to War of 1812"
+    ]
+  },
+  "110": {
+    "rows": [
+      "Inaugurated older than 55",
+      "Former State Governors",
+      "Related to Another President"
+    ],
+    "columns": [
+      "Shorter than 6 feet",
+      "First Name A-J",
+      "Republican Party"
+    ]
+  },
+  "111": {
+    "rows": [
+      "Presidency Number 20-30",
+      "Served in Congress",
+      "Served in Military"
+    ],
+    "columns": [
+      "6 feet or taller",
+      "Served less than 4 years",
+      "Inaugurated older than 50"
+    ]
+  },
+  "112": {
+    "rows": [
+      "First Name K-Z",
+      "Presidency Number 21-30",
+      "Tied to Civil War"
+    ],
+    "columns": [
+      "Has Facial Hair",
+      "No College Degree",
+      "Did Not Win Nobel Prize"
+    ]
+  },
+  "113": {
+    "rows": [
+      "Won Re-election",
+      "Served Past 1850",
+      "Attended Ivy League School"
+    ],
+    "columns": [
+      "Nobel Prize Winner",
+      "Inaugurated younger than 60",
+      "Presidency Number 5-15"
+    ]
+  },
+  "114": {
+    "rows": [
+      "Served in Military",
+      "Presidency Number 1-10",
+      "Served in the House"
+    ],
+    "columns": [
+      "Served more than 5 years",
+      "Not Assassinated",
+      "Last Name Starts with Vowel"
+    ]
+  },
+  "115": {
+    "rows": [
+      "200 Pounds or greater",
+      "Met Queen Elizabeth II",
+      "Born before 1800"
+    ],
+    "columns": [
+      "Last Name A-J",
+      "Not Cold War President",
+      "Inaugurated younger than 60"
+    ]
+  },
+  "116": {
+    "rows": [
+      "Presidency Number 11-20",
+      "Not Founding Father",
+      "Served Before 1900"
+    ],
+    "columns": [
+      "Born before 1800",
+      "Served as Vice President",
+      "Did not Serve as Vice President"
+    ]
+  },
+  "117": {
+    "rows": [
+      "Served Before 1900",
+      "Does Not Appear on Mount Rushmore",
+      "Former State Governors"
+    ],
+    "columns": [
+      "Democratic Party",
+      "Died in Office",
+      "Founding Father"
+    ]
+  },
+  "118": {
+    "rows": [
+      "180 Pounds or greater",
+      "Less than 180 Pounds",
+      "Last Name K-Z"
+    ],
+    "columns": [
+      "Served as ambassador",
+      "Born 1900-2000",
+      "Not Re-elected"
+    ]
+  },
+  "119": {
+    "rows": [
+      "Presidency Number 31-40",
+      "Presidency Number 20-30",
+      "Related to Another President"
+    ],
+    "columns": [
+      "First Name A-J",
+      "Served less than 4 years",
+      "Did Not Win Nobel Prize"
+    ]
+  },
+  "120": {
+    "rows": [
+      "Attended Ivy League School",
+      "Born 1800 - 1900",
+      "Does Not Appear on Currency"
+    ],
+    "columns": [
+      "Presidency Number 21-30",
+      "Served in Congress",
+      "Presidency Number 5-15"
+    ]
+  },
+  "121": {
+    "rows": [
+      "Presidency Number 1-10",
+      "6 feet or taller",
+      "Served in the House"
+    ],
+    "columns": [
+      "Served in Military",
+      "Served as Secretary of State",
+      "Inaugurated older than 50"
+    ]
+  },
+  "122": {
+    "rows": [
+      "Has Facial Hair",
+      "First Name A-J",
+      "Not Assassinated"
+    ],
+    "columns": [
+      "Served Past 1900",
+      "Tied to Civil War",
+      "Served less than 5 years"
+    ]
+  },
+  "123": {
+    "rows": [
+      "First Name Starts with Vowel",
+      "Assassinated",
+      "Not Founding Father"
+    ],
+    "columns": [
+      "Shorter than 6 feet",
+      "Served in the Senate",
+      "Presidency Number 11-20"
+    ]
+  },
+  "124": {
+    "rows": [
+      "Born before 1800",
+      "No College Degree",
+      "180 Pounds or greater"
+    ],
+    "columns": [
+      "Appears On Mount Rushmore",
+      "Democratic Party",
+      "Died in Office"
+    ]
+  },
+  "125": {
+    "rows": [
+      "First Name K-Z",
+      "Born 1900-2000",
+      "Inaugurated older than 55"
+    ],
+    "columns": [
+      "Did not Serve as Vice President",
+      "Won Re-election",
+      "Appears On Currency"
+    ]
+  },
+  "126": {
+    "rows": [
+      "Less than 180 Pounds",
+      "Presidency Number 31-40",
+      "Presidency Number 20-30"
+    ],
+    "columns": [
+      "Does Not Appear on Mount Rushmore",
+      "Served in the Senate",
+      "Served as Vice President"
+    ]
+  },
+  "127": {
+    "rows": [
+      "Did Not Win Nobel Prize",
+      "Not Re-elected",
+      "Served Past 1850"
+    ],
+    "columns": [
+      "Last Name K-Z",
+      "Unmarried while in Office",
+      "First Name K-Z"
+    ]
+  },
+  "128": {
+    "rows": [
+      "Served as Secretary of State",
+      "Attended Ivy League School",
+      "Served Before 1900"
+    ],
+    "columns": [
+      "Served more than 5 years",
+      "First Name K-Z",
+      "Founding Father"
+    ]
+  },
+  "129": {
+    "rows": [
+      "Won Without Popular Vote",
+      "Last Name A-J",
+      "Last Name Starts with Vowel"
+    ],
+    "columns": [
+      "Met Queen Elizabeth II",
+      "Not Cold War President",
+      "Presidency Number 1-10"
+    ]
+  },
+  "130": {
+    "rows": [
+      "Not Assassinated",
+      "Served in the House",
+      "Inaugurated younger than 60"
+    ],
+    "columns": [
+      "Has Facial Hair",
+      "Served less than 5 years",
+      "First Name A-J"
+    ]
+  },
+  "131": {
+    "rows": [
+      "Less than 180 Pounds",
+      "Served in Military",
+      "Served in Congress"
+    ],
+    "columns": [
+      "Died in Office",
+      "Inaugurated older than 50",
+      "No Biological Children"
+    ]
+  },
+  "132": {
+    "rows": [
+      "Not Assassinated",
+      "200 Pounds or greater",
+      "Impeached"
+    ],
+    "columns": [
+      "6 feet or taller",
+      "Won Re-election",
+      "Democratic Party"
+    ]
+  },
+  "133": {
+    "rows": [
+      "Not Founding Father",
+      "Attended Ivy League School",
+      "Presidency Number 31-40"
+    ],
+    "columns": [
+      "Born 1800 - 1900",
+      "Born 1900-2000",
+      "Inaugurated older than 55"
+    ]
+  },
+  "134": {
+    "rows": [
+      "Wore Glasses",
+      "Served less than 4 years",
+      "Not Re-elected"
+    ],
+    "columns": [
+      "Served Past 1850",
+      "No College Degree",
+      "Served Past 1900"
+    ]
+  },
+  "135": {
+    "rows": [
+      "Founding Father",
+      "Former State Governors",
+      "Served as Secretary of State"
+    ],
+    "columns": [
+      "Does Not Appear on Mount Rushmore",
+      "Inaugurated younger than 60",
+      "Served more than 5 years"
+    ]
+  },
+  "136": {
+    "rows": [
+      "Presidency Number 21-30",
+      "Last Name A-J",
+      "Democratic-Republican Party"
+    ],
+    "columns": [
+      "Did not Serve as Vice President",
+      "Did Not Win Nobel Prize",
+      "Shorter than 6 feet"
+    ]
+  },
+  "137": {
+    "rows": [
+      "Whig Party",
+      "Cold War President",
+      "Served as ambassador"
+    ],
+    "columns": [
+      "First Name K-Z",
+      "Inaugurated older than 60",
+      "Served as Vice President"
+    ]
+  },
+  "138": {
+    "rows": [
+      "180 Pounds or greater",
+      "Assassinated",
+      "Presidency Number 20-30"
+    ],
+    "columns": [
+      "Served in the Senate",
+      "Inaugurated older than 50",
+      "Has Facial Hair"
+    ]
+  },
+  "139": {
+    "rows": [
+      "Republican Party",
+      "Presidency Number 1-10",
+      "Served less than 5 years"
+    ],
+    "columns": [
+      "Not Assassinated",
+      "Last Name Starts with Vowel",
+      "Inaugurated older than 55"
+    ]
+  },
+  "140": {
+    "rows": [
+      "Tied to War of 1812",
+      "Born before 1800",
+      "Presidency Number 5-15"
+    ],
+    "columns": [
+      "Shorter than 6 feet",
+      "Won Re-election",
+      "Served Before 1900"
+    ]
+  },
+  "141": {
+    "rows": [
+      "Nobel Prize Winner",
+      "Not Cold War President",
+      "Not Founding Father"
+    ],
+    "columns": [
+      "Wore Glasses",
+      "Presidency Number 31-40",
+      "Met Queen Elizabeth II"
+    ]
+  },
+  "142": {
+    "rows": [
+      "Presidency Number 11-20",
+      "First Name A-J",
+      "Not Re-elected"
+    ],
+    "columns": [
+      "Less than 180 Pounds",
+      "No College Degree",
+      "Inaugurated younger than 60"
+    ]
+  },
+  "143": {
+    "rows": [
+      "6 feet or taller",
+      "Served in Military",
+      "Served Past 1850"
+    ],
+    "columns": [
+      "Served less than 4 years",
+      "Last Name A-J",
+      "Democratic Party"
+    ]
+  },
+  "144": {
+    "rows": [
+      "Inaugurated older than 60",
+      "Born 1900-2000",
+      "Attended Ivy League School"
+    ],
+    "columns": [
+      "Did not Serve as Vice President",
+      "Served Past 1900",
+      "Served Past 1850"
+    ]
+  },
+  "145": {
+    "rows": [
+      "Presidency Number 20-30",
+      "Served more than 5 years",
+      "Appears On Currency"
+    ],
+    "columns": [
+      "Has Facial Hair",
+      "Served as Vice President",
+      "Served in the Senate"
+    ]
+  },
+  "146": {
+    "rows": [
+      "Alliterative name",
+      "200 Pounds or greater",
+      "Does Not Appear on Mount Rushmore"
+    ],
+    "columns": [
+      "Not Assassinated",
+      "First Name A-J",
+      "Does Not Appear on Currency"
+    ]
+  },
+  "147": {
+    "rows": [
+      "Did Not Win Nobel Prize",
+      "Presidency Number 21-30",
+      "Shorter than 6 feet"
+    ],
+    "columns": [
+      "Last Name K-Z",
+      "Served Before 1900",
+      "Inaugurated older than 55"
+    ]
+  },
+  "148": {
+    "rows": [
+      "180 Pounds or greater",
+      "Died in Office",
+      "First Name K-Z"
+    ],
+    "columns": [
+      "Born 1800 - 1900",
+      "Republican Party",
+      "Born before 1800"
+    ]
+  },
+  "149": {
+    "rows": [
+      "Born 1800 - 1900",
+      "Not Re-elected",
+      "Less than 180 Pounds"
+    ],
+    "columns": [
+      "Presidency Number 11-20",
+      "Last Name Starts with Vowel",
+      "Not Cold War President"
+    ]
+  },
+  "150": {
+    "rows": [
+      "Served less than 5 years",
+      "Served in Military",
+      "Inaugurated younger than 60"
+    ],
+    "columns": [
+      "Democratic Party",
+      "Presidency Number 1-10",
+      "Whig Party"
+    ]
+  }
+}

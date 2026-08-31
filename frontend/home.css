@@ -1,0 +1,179 @@
+/* ==========================================================
+   Grid of Minds — Home / landing page
+   Same design system as grid.css / shakegrid.css / authors.css:
+   navy + gold + cream civic-document theme, Playfair Display
+   + Inter. This page has its own layout (card grid, hero)
+   since it isn't a puzzle grid itself.
+   ========================================================== */
+
+   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+   :root {
+     --navy-950: #0f1e33;
+     --navy-800: #1b2f4e;
+     --navy-700: #24406a;
+     --gold-600: #b8892b;
+     --gold-500: #c9a227;
+     --gold-100: #f4e6c1;
+     --cream-50: #f8f4ea;
+     --cream-100: #f0e9d8;
+     --paper: #fffdf8;
+     --ink: #1c2333;
+     --ink-soft: #566178;
+     --shadow-sm: 0 1px 2px rgba(15, 30, 51, 0.08);
+     --shadow-lg: 0 12px 32px rgba(15, 30, 51, 0.18);
+   }
+   
+   * { box-sizing: border-box; }
+   
+   body {
+     font-family: 'Inter', Arial, sans-serif;
+     background:
+       radial-gradient(circle at 15% 0%, rgba(184, 137, 43, 0.07), transparent 45%),
+       var(--cream-50);
+     margin: 0;
+     color: var(--ink);
+     min-height: 100vh;
+   }
+   
+   .top-bar {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     gap: 20px;
+     padding: 12px;
+     font-size: 14px;
+     background-color: var(--paper);
+     border-bottom: 1px solid var(--cream-100);
+     box-shadow: var(--shadow-sm);
+   }
+   
+   .top-bar .brand {
+     font-family: 'Playfair Display', Georgia, serif;
+     font-weight: 700;
+     color: var(--navy-950);
+     letter-spacing: 0.03em;
+     margin-right: 8px;
+   }
+   
+   .top-bar a {
+     text-decoration: none;
+     color: var(--navy-700);
+     font-weight: 600;
+     letter-spacing: 0.01em;
+     transition: color 0.15s ease;
+   }
+   
+   .top-bar a:hover {
+     color: var(--gold-600);
+   }
+   
+   .hero {
+     text-align: center;
+     padding: 56px 20px 24px;
+   }
+   
+   .hero-title {
+     font-family: 'Playfair Display', Georgia, serif;
+     font-weight: 800;
+     font-size: 48px;
+     color: var(--navy-950);
+     margin: 0 0 10px 0;
+     letter-spacing: 0.01em;
+   }
+   
+   .hero-tagline {
+     font-size: 17px;
+     color: var(--ink-soft);
+     margin: 0;
+   }
+   
+   .grid-picker {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+     gap: 24px;
+     max-width: 1100px;
+     margin: 40px auto 60px;
+     padding: 0 24px;
+   }
+   
+   .game-card {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     text-align: center;
+     text-decoration: none;
+     color: var(--ink);
+     background-color: var(--paper);
+     border-radius: 16px;
+     border-top: 4px solid var(--gold-500);
+     box-shadow: var(--shadow-lg);
+     padding: 36px 28px 30px;
+     transition: transform 0.2s ease, box-shadow 0.2s ease;
+   }
+   
+   .game-card:hover {
+     transform: translateY(-6px);
+     box-shadow: 0 18px 40px rgba(15, 30, 51, 0.24);
+   }
+   
+   .game-card-emblem {
+     font-size: 44px;
+     margin-bottom: 14px;
+     line-height: 1;
+   }
+   
+   .game-card-title {
+     font-family: 'Playfair Display', Georgia, serif;
+     font-size: 22px;
+     font-weight: 700;
+     color: var(--navy-950);
+     margin: 0 0 10px 0;
+   }
+   
+   .game-card-desc {
+     font-size: 14px;
+     line-height: 1.5;
+     color: var(--ink-soft);
+     margin: 0 0 18px 0;
+     flex-grow: 1;
+   }
+   
+   .game-card-cta {
+     font-size: 14px;
+     font-weight: 700;
+     color: var(--navy-700);
+     letter-spacing: 0.02em;
+     transition: color 0.15s ease;
+   }
+   
+   .game-card:hover .game-card-cta {
+     color: var(--gold-600);
+   }
+   
+   .footer {
+     text-align: center;
+     margin-top: 5px;
+     margin-bottom: 20px;
+     font-size: 15px;
+     color: var(--ink-soft);
+     font-family: 'Inter', Arial, sans-serif;
+   }
+   
+   .footer a {
+     color: var(--navy-700);
+     text-decoration: none;
+     font-weight: 600;
+   }
+   
+   .footer a:hover {
+     text-decoration: underline;
+   }
+   
+   @media (max-width: 600px) {
+     .hero { padding: 40px 16px 16px; }
+     .hero-title { font-size: 34px; }
+     .hero-tagline { font-size: 15px; }
+     .grid-picker { grid-template-columns: 1fr; margin: 30px auto 40px; }
+     .top-bar { gap: 12px; font-size: 12px; flex-wrap: wrap; }
+   }

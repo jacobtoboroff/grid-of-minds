@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Classic Authors Grid – Daily Logic Puzzle Game</title>
+    <meta name="description" content="Test your knowledge of classic literature with Classic Authors Grid – a free daily trivia logic puzzle game. Match novels to their authors!" />
+
+    <!-- ✅ Google Analytics Tag -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1YNP618T59"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-1YNP618T59');
+    </script>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Classic Authors Grid – Daily Literature Puzzle Game" />
+    <meta property="og:description" content="Play a free daily game where you match classic novels to their authors." />
+    <meta property="og:image" content="https://gridofminds.com/authors-og-image.jpg" />
+    <meta property="og:url" content="https://gridofminds.com/authors.html" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Classic Authors Grid – Daily Literature Puzzle Game" />
+    <meta name="twitter:description" content="Challenge your mind with a daily classic-literature logic puzzle." />
+    <meta name="twitter:image" content="https://gridofminds.com/authors-og-image.jpg" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://gridofminds.com/authors.html" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="authors.css" />
+  </head>
+
+<body>
+  <div class="top-bar">
+    <span class="grid-number" id="grid-number"></span>
+    <a href="../home.html">Home</a>
+    <a href="#" id="rules-link">Rules</a>
+    <a href="#" id="archives-link">Archives</a>
+    <a href="../about.html">About</a>
+    <a href="../privacypolicy.html">Privacy Policy</a>
+  </div>
+
+  <div class="wrapper">
+
+    <div class="grid-block">
+      <div class="row-labels">
+        <div class="row-label">Row 1</div>
+        <div class="row-label">Row 2</div>
+        <div class="row-label">Row 3</div>
+      </div>
+      <div class="main-container">
+        <div class="grid-heading">
+          <h1 class="grid-title">
+            <span>A</span><span>u</span><span>t</span><span>h</span><span>o</span><span>r</span><span>s</span>
+            <span> </span>
+            <span>G</span><span>r</span><span>i</span><span>d</span>
+          </h1>
+          <div class="info-note">
+            <span class="info-icon" tabindex="0">ⓘ
+              <span class="info-tooltip">Leading articles — "A," "An," and "The" — don't count as a title's first letter. For example, "The Shining" counts as S, and "A Tale of Two Cities" counts as T.</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="grid-wrapper">
+          <div class="col-labels">
+            <div class="col-label">Column 1</div>
+            <div class="col-label">Column 2</div>
+          </div>
+
+          <div class="main-grid">
+            <!-- 3 rows x 2 columns = 6 cells -->
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-panel">
+      <div class="guesses-label">GUESSES LEFT:</div>
+      <div class="guesses-count">6</div>
+      <button class="give-up-btn">Give Up?</button>
+    </div>
+
+  </div>
+
+  <div id="card-grid" class="card-grid"></div>
+
+  <!-- Rules Modal -->
+  <div id="rules-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-button" id="close-rules">&times;</span>
+      <h2>📚 How to Play Classic Authors Grid</h2>
+      <ul class="rules-list">
+        <li>Click on a cell in the grid to submit a guess that matches the criteria for that row and column.</li>
+        <li>Each <strong>row</strong> is a classic author. Each <strong>column</strong> is a letter range for the novel's title.</li>
+        <li>You have <strong>6 guesses</strong> total to complete the entire grid.</li>
+        <li><strong>Each guess counts</strong>, whether it's right or wrong.</li>
+        <li>You can click any cell in any order.</li>
+        <li><strong>Each guess must be the title of a novel written by that row's author</strong>, and its title must start with a letter in that column's range.</li>
+        <li>Leading articles ("A," "An," "The") don't count as a title's first letter — e.g. "The Shining" counts as S.</li>
+        <li>Once all 6 cells are filled correctly — you win!</li>
+      </ul>
+      <p class="rules-tip"><em>Tip: Think carefully — every guess matters!</em></p>
+    </div>
+  </div>
+
+  <!-- Guess Modal -->
+  <div id="guess-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-button" id="close-guess">&times;</span>
+      <h2>Enter Your Guess</h2>
+      <p id="guess-context">Row 1 × Column 1</p>
+      <div class="autocomplete-wrapper">
+        <input type="text" id="guess-input" placeholder="Enter novel title..." autocomplete="off" />
+        <div id="autocomplete-box"></div>
+      </div>
+
+      <p id="guess-error" style="color: red; display: none; margin-top: 10px;"></p>
+    </div>
+  </div>
+
+  <!-- ✅ End-of-Game Modal -->
+  <div id="endgame-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-button" id="close-endgame">&times;</span>
+      <h2>Game Over – Here's how you did!</h2>
+
+      <div class="summary-section">
+        <h3>Your Grid</h3>
+        <div id="player-summary-grid" class="summary-grid"></div>
+
+        <div style="margin-top: 15px; text-align: center;">
+          <button id="play-again-btn">Play Again</button>
+        </div>
+        <div style="margin-top: 15px; text-align: center;">
+          <button id="share-results-btn">Share Results</button>
+        </div>
+
+        <div style="margin-top: 15px; margin-bottom: 15px;">
+          <button id="copy-results-btn">Copy Results to Clipboard</button>
+          <p id="copy-confirmation" style="display: none; color: green;">Copied!</p>
+        </div>
+
+      </div>
+
+      <div class="summary-section">
+        <h3>View Results</h3>
+        <div id="result-summary-grid" class="summary-grid"></div>
+      </div>
+
+      <div class="summary-section">
+        <h3>Summary</h3>
+        <p id="final-score-text">You got X out of 6 correct!</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 🧾 Eligible Answers Modal -->
+  <div id="answers-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-button" id="close-answers">&times;</span>
+      <h2 id="answers-modal-title">Matching Novels</h2>
+      <ul id="answer-list" class="answer-list"></ul>
+    </div>
+  </div>
+  <!-- 📚 Archives Modal -->
+  <div id="archives-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-button" id="close-archives">&times;</span>
+      <h2>Previous Grids</h2>
+      <div id="archives-list"></div>
+    </div>
+  </div>
+
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+<script src="authors.js"></script>
+<!-- Contact Email -->
+<footer class="footer">
+  Contact Us: <a href="mailto:gridofminds123@gmail.com">gridofminds123@gmail.com</a>
+</footer>
+
+</div>
+</body>
+</html>

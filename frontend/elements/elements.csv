@@ -1,0 +1,119 @@
+AtomicNumber,Symbol,Name,Category,PhysicalState,NaturallyOccurring,DiscoveryYear,DiscoveryEra,NamedAfterPerson,NamedAfterPlace,SymbolLength,DiatomicInNature
+1,H,Hydrogen,Nonmetal,Gas,Yes,1766,1700s-1800s,No,No,1,Yes
+2,He,Helium,Noble Gas,Gas,Yes,1868,1700s-1800s,No,No,2,No
+3,Li,Lithium,Alkali Metal,Solid,Yes,1817,1700s-1800s,No,No,2,No
+4,Be,Beryllium,Alkaline Earth Metal,Solid,Yes,1798,1700s-1800s,No,No,2,No
+5,B,Boron,Metalloid,Solid,Yes,1808,1700s-1800s,No,No,1,No
+6,C,Carbon,Nonmetal,Solid,Yes,-3750,Ancient,No,No,1,No
+7,N,Nitrogen,Nonmetal,Gas,Yes,1772,1700s-1800s,No,No,1,Yes
+8,O,Oxygen,Nonmetal,Gas,Yes,1774,1700s-1800s,No,No,1,Yes
+9,F,Fluorine,Halogen,Gas,Yes,1886,1700s-1800s,No,No,1,Yes
+10,Ne,Neon,Noble Gas,Gas,Yes,1898,1700s-1800s,No,No,2,No
+11,Na,Sodium,Alkali Metal,Solid,Yes,1807,1700s-1800s,No,No,2,No
+12,Mg,Magnesium,Alkaline Earth Metal,Solid,Yes,1755,1700s-1800s,No,Yes,2,No
+13,Al,Aluminium,Post-Transition Metal,Solid,Yes,1825,1700s-1800s,No,No,2,No
+14,Si,Silicon,Metalloid,Solid,Yes,1824,1700s-1800s,No,No,2,No
+15,P,Phosphorus,Nonmetal,Solid,Yes,1669,Ancient,No,No,1,No
+16,S,Sulfur,Nonmetal,Solid,Yes,-2000,Ancient,No,No,1,No
+17,Cl,Chlorine,Halogen,Gas,Yes,1774,1700s-1800s,No,No,2,Yes
+18,Ar,Argon,Noble Gas,Gas,Yes,1894,1700s-1800s,No,No,2,No
+19,K,Potassium,Alkali Metal,Solid,Yes,1807,1700s-1800s,No,No,1,No
+20,Ca,Calcium,Alkaline Earth Metal,Solid,Yes,1808,1700s-1800s,No,No,2,No
+21,Sc,Scandium,Transition Metal,Solid,Yes,1879,1700s-1800s,No,Yes,2,No
+22,Ti,Titanium,Transition Metal,Solid,Yes,1791,1700s-1800s,No,No,2,No
+23,V,Vanadium,Transition Metal,Solid,Yes,1801,1700s-1800s,No,No,1,No
+24,Cr,Chromium,Transition Metal,Solid,Yes,1797,1700s-1800s,No,No,2,No
+25,Mn,Manganese,Transition Metal,Solid,Yes,1774,1700s-1800s,No,Yes,2,No
+26,Fe,Iron,Transition Metal,Solid,Yes,-3000,Ancient,No,No,2,No
+27,Co,Cobalt,Transition Metal,Solid,Yes,1735,1700s-1800s,No,No,2,No
+28,Ni,Nickel,Transition Metal,Solid,Yes,1751,1700s-1800s,No,No,2,No
+29,Cu,Copper,Transition Metal,Solid,Yes,-9000,Ancient,No,Yes,2,No
+30,Zn,Zinc,Transition Metal,Solid,Yes,1746,1700s-1800s,No,No,2,No
+31,Ga,Gallium,Post-Transition Metal,Solid,Yes,1875,1700s-1800s,No,Yes,2,No
+32,Ge,Germanium,Metalloid,Solid,Yes,1886,1700s-1800s,No,Yes,2,No
+33,As,Arsenic,Metalloid,Solid,Yes,1250,Ancient,No,No,2,No
+34,Se,Selenium,Nonmetal,Solid,Yes,1817,1700s-1800s,No,No,2,No
+35,Br,Bromine,Halogen,Liquid,Yes,1826,1700s-1800s,No,No,2,Yes
+36,Kr,Krypton,Noble Gas,Gas,Yes,1898,1700s-1800s,No,No,2,No
+37,Rb,Rubidium,Alkali Metal,Solid,Yes,1861,1700s-1800s,No,No,2,No
+38,Sr,Strontium,Alkaline Earth Metal,Solid,Yes,1790,1700s-1800s,No,Yes,2,No
+39,Y,Yttrium,Transition Metal,Solid,Yes,1794,1700s-1800s,No,Yes,1,No
+40,Zr,Zirconium,Transition Metal,Solid,Yes,1789,1700s-1800s,No,No,2,No
+41,Nb,Niobium,Transition Metal,Solid,Yes,1801,1700s-1800s,No,No,2,No
+42,Mo,Molybdenum,Transition Metal,Solid,Yes,1781,1700s-1800s,No,No,2,No
+43,Tc,Technetium,Transition Metal,Solid,No,1937,1900-1950,No,No,2,No
+44,Ru,Ruthenium,Transition Metal,Solid,Yes,1844,1700s-1800s,No,Yes,2,No
+45,Rh,Rhodium,Transition Metal,Solid,Yes,1803,1700s-1800s,No,No,2,No
+46,Pd,Palladium,Transition Metal,Solid,Yes,1803,1700s-1800s,No,No,2,No
+47,Ag,Silver,Transition Metal,Solid,Yes,-5000,Ancient,No,No,2,No
+48,Cd,Cadmium,Transition Metal,Solid,Yes,1817,1700s-1800s,No,No,2,No
+49,In,Indium,Post-Transition Metal,Solid,Yes,1863,1700s-1800s,No,No,2,No
+50,Sn,Tin,Post-Transition Metal,Solid,Yes,-3500,Ancient,No,No,2,No
+51,Sb,Antimony,Metalloid,Solid,Yes,-3000,Ancient,No,No,2,No
+52,Te,Tellurium,Metalloid,Solid,Yes,1782,1700s-1800s,No,No,2,No
+53,I,Iodine,Halogen,Solid,Yes,1811,1700s-1800s,No,No,1,Yes
+54,Xe,Xenon,Noble Gas,Gas,Yes,1898,1700s-1800s,No,No,2,No
+55,Cs,Cesium,Alkali Metal,Solid,Yes,1860,1700s-1800s,No,No,2,No
+56,Ba,Barium,Alkaline Earth Metal,Solid,Yes,1808,1700s-1800s,No,No,2,No
+57,La,Lanthanum,Lanthanide,Solid,Yes,1839,1700s-1800s,No,No,2,No
+58,Ce,Cerium,Lanthanide,Solid,Yes,1803,1700s-1800s,No,No,2,No
+59,Pr,Praseodymium,Lanthanide,Solid,Yes,1885,1700s-1800s,No,No,2,No
+60,Nd,Neodymium,Lanthanide,Solid,Yes,1885,1700s-1800s,No,No,2,No
+61,Pm,Promethium,Lanthanide,Solid,No,1945,1900-1950,No,No,2,No
+62,Sm,Samarium,Lanthanide,Solid,Yes,1879,1700s-1800s,Yes,No,2,No
+63,Eu,Europium,Lanthanide,Solid,Yes,1901,1900-1950,No,Yes,2,No
+64,Gd,Gadolinium,Lanthanide,Solid,Yes,1880,1700s-1800s,Yes,No,2,No
+65,Tb,Terbium,Lanthanide,Solid,Yes,1843,1700s-1800s,No,Yes,2,No
+66,Dy,Dysprosium,Lanthanide,Solid,Yes,1886,1700s-1800s,No,No,2,No
+67,Ho,Holmium,Lanthanide,Solid,Yes,1878,1700s-1800s,No,Yes,2,No
+68,Er,Erbium,Lanthanide,Solid,Yes,1843,1700s-1800s,No,Yes,2,No
+69,Tm,Thulium,Lanthanide,Solid,Yes,1879,1700s-1800s,No,Yes,2,No
+70,Yb,Ytterbium,Lanthanide,Solid,Yes,1878,1700s-1800s,No,Yes,2,No
+71,Lu,Lutetium,Lanthanide,Solid,Yes,1907,1900-1950,No,Yes,2,No
+72,Hf,Hafnium,Transition Metal,Solid,Yes,1923,1900-1950,No,Yes,2,No
+73,Ta,Tantalum,Transition Metal,Solid,Yes,1802,1700s-1800s,No,No,2,No
+74,W,Tungsten,Transition Metal,Solid,Yes,1783,1700s-1800s,No,No,1,No
+75,Re,Rhenium,Transition Metal,Solid,Yes,1925,1900-1950,No,Yes,2,No
+76,Os,Osmium,Transition Metal,Solid,Yes,1803,1700s-1800s,No,No,2,No
+77,Ir,Iridium,Transition Metal,Solid,Yes,1803,1700s-1800s,No,No,2,No
+78,Pt,Platinum,Transition Metal,Solid,Yes,1735,1700s-1800s,No,No,2,No
+79,Au,Gold,Transition Metal,Solid,Yes,-6000,Ancient,No,No,2,No
+80,Hg,Mercury,Transition Metal,Liquid,Yes,-1500,Ancient,No,No,2,No
+81,Tl,Thallium,Post-Transition Metal,Solid,Yes,1861,1700s-1800s,No,No,2,No
+82,Pb,Lead,Post-Transition Metal,Solid,Yes,-7000,Ancient,No,No,2,No
+83,Bi,Bismuth,Post-Transition Metal,Solid,Yes,1753,1700s-1800s,No,No,2,No
+84,Po,Polonium,Post-Transition Metal,Solid,Yes,1898,1700s-1800s,No,Yes,2,No
+85,At,Astatine,Halogen,Solid,Yes,1940,1900-1950,No,No,2,No
+86,Rn,Radon,Noble Gas,Gas,Yes,1900,1900-1950,No,No,2,No
+87,Fr,Francium,Alkali Metal,Solid,Yes,1939,1900-1950,No,Yes,2,No
+88,Ra,Radium,Alkaline Earth Metal,Solid,Yes,1898,1700s-1800s,No,No,2,No
+89,Ac,Actinium,Actinide,Solid,Yes,1899,1700s-1800s,No,No,2,No
+90,Th,Thorium,Actinide,Solid,Yes,1829,1700s-1800s,No,No,2,No
+91,Pa,Protactinium,Actinide,Solid,Yes,1913,1900-1950,No,No,2,No
+92,U,Uranium,Actinide,Solid,Yes,1789,1700s-1800s,No,No,1,No
+93,Np,Neptunium,Actinide,Solid,Yes,1940,1900-1950,No,No,2,No
+94,Pu,Plutonium,Actinide,Solid,Yes,1940,1900-1950,No,No,2,No
+95,Am,Americium,Actinide,Solid,No,1944,1900-1950,No,Yes,2,No
+96,Cm,Curium,Actinide,Solid,No,1944,1900-1950,Yes,No,2,No
+97,Bk,Berkelium,Actinide,Solid,No,1949,1900-1950,No,Yes,2,No
+98,Cf,Californium,Actinide,Solid,No,1950,1900-1950,No,Yes,2,No
+99,Es,Einsteinium,Actinide,Solid,No,1952,After 1950,Yes,No,2,No
+100,Fm,Fermium,Actinide,Solid,No,1952,After 1950,Yes,No,2,No
+101,Md,Mendelevium,Actinide,Solid,No,1955,After 1950,Yes,No,2,No
+102,No,Nobelium,Actinide,Solid,No,1958,After 1950,Yes,No,2,No
+103,Lr,Lawrencium,Actinide,Solid,No,1961,After 1950,Yes,No,2,No
+104,Rf,Rutherfordium,Transition Metal,Solid,No,1964,After 1950,Yes,No,2,No
+105,Db,Dubnium,Transition Metal,Solid,No,1967,After 1950,No,Yes,2,No
+106,Sg,Seaborgium,Transition Metal,Solid,No,1974,After 1950,Yes,No,2,No
+107,Bh,Bohrium,Transition Metal,Solid,No,1981,After 1950,Yes,No,2,No
+108,Hs,Hassium,Transition Metal,Solid,No,1984,After 1950,No,Yes,2,No
+109,Mt,Meitnerium,Transition Metal,Solid,No,1982,After 1950,Yes,No,2,No
+110,Ds,Darmstadtium,Transition Metal,Solid,No,1994,After 1950,No,Yes,2,No
+111,Rg,Roentgenium,Transition Metal,Solid,No,1994,After 1950,Yes,No,2,No
+112,Cn,Copernicium,Transition Metal,Solid,No,1996,After 1950,Yes,No,2,No
+113,Nh,Nihonium,Post-Transition Metal,Solid,No,2004,After 1950,No,Yes,2,No
+114,Fl,Flerovium,Post-Transition Metal,Solid,No,1998,After 1950,Yes,No,2,No
+115,Mc,Moscovium,Post-Transition Metal,Solid,No,2003,After 1950,No,Yes,2,No
+116,Lv,Livermorium,Post-Transition Metal,Solid,No,2000,After 1950,No,Yes,2,No
+117,Ts,Tennessine,Halogen,Solid,No,2010,After 1950,No,Yes,2,No
+118,Og,Oganesson,Noble Gas,Gas,No,2002,After 1950,Yes,No,2,No

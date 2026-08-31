@@ -1,0 +1,1802 @@
+{
+    "1": {
+      "rows": [
+        "Atomic Number 60-118",
+        "Diatomic in Nature",
+        "Atomic Number 1-50"
+      ],
+      "columns": [
+        "Naturally Occurring",
+        "Two-Letter Symbol",
+        "Name Starts with A-J"
+      ]
+    },
+    "2": {
+      "rows": [
+        "Transition Metal",
+        "Post-Transition Metal",
+        "Name Starts with a Vowel"
+      ],
+      "columns": [
+        "Named After a Place",
+        "Atomic Number 1-30",
+        "Atomic Number 50-100"
+      ]
+    },
+    "3": {
+      "rows": [
+        "One-Letter Symbol",
+        "Noble Gas",
+        "Two-Letter Symbol"
+      ],
+      "columns": [
+        "Atomic Number 50-100",
+        "Name Starts with a Consonant",
+        "Gas at Room Temperature"
+      ]
+    },
+    "4": {
+      "rows": [
+        "Two-Letter Symbol",
+        "Name Starts with K-Z",
+        "Alkali Metal"
+      ],
+      "columns": [
+        "Naturally Occurring",
+        "Atomic Number 40-100",
+        "Atomic Number 1-30"
+      ]
+    },
+    "5": {
+      "rows": [
+        "Name Starts with K-Z",
+        "Alkali Metal",
+        "Solid at Room Temperature"
+      ],
+      "columns": [
+        "Naturally Occurring",
+        "Atomic Number 1-20",
+        "Atomic Number 50-118"
+      ]
+    },
+    "6": {
+      "rows": [
+        "Gas at Room Temperature",
+        "Solid at Room Temperature",
+        "Name Starts with A-J"
+      ],
+      "columns": [
+        "Atomic Number 1-50",
+        "Atomic Number 70-118",
+        "One-Letter Symbol"
+      ]
+    },
+    "7": {
+      "rows": [
+        "Gas at Room Temperature",
+        "Actinide",
+        "Transition Metal"
+      ],
+      "columns": [
+        "Atomic Number 80-118",
+        "Only Made in a Lab",
+        "Name Starts with a Vowel"
+      ]
+    },
+    "8": {
+      "rows": [
+        "Name Starts with a Consonant",
+        "Atomic Number 1-70",
+        "Two-Letter Symbol"
+      ],
+      "columns": [
+        "Only Made in a Lab",
+        "Naturally Occurring",
+        "Alkali Metal"
+      ]
+    },
+    "9": {
+      "rows": [
+        "Atomic Number 50-100",
+        "Named After a Place",
+        "Named After a Person"
+      ],
+      "columns": [
+        "Only Made in a Lab",
+        "Solid at Room Temperature",
+        "Lanthanide"
+      ]
+    },
+    "10": {
+      "rows": [
+        "Two-Letter Symbol",
+        "Atomic Number 60-118",
+        "Atomic Number 1-40"
+      ],
+      "columns": [
+        "Post-Transition Metal",
+        "Name Starts with K-Z",
+        "Naturally Occurring"
+      ]
+    },
+    "11": {
+      "rows": [
+        "One-Letter Symbol",
+        "Alkaline Earth Metal",
+        "Halogen"
+      ],
+      "columns": [
+        "Atomic Number 1-30",
+        "Name Starts with A-J",
+        "Atomic Number 60-118"
+      ]
+    },
+    "12": {
+      "rows": [
+        "Gas at Room Temperature",
+        "Solid at Room Temperature",
+        "Name Starts with a Consonant"
+      ],
+      "columns": [
+        "Atomic Number 50-118",
+        "Two-Letter Symbol",
+        "Atomic Number 1-40"
+      ]
+    },
+    "13": {
+      "rows": [
+        "Atomic Number 80-118",
+        "Actinide",
+        "Name Starts with a Vowel"
+      ],
+      "columns": [
+        "Two-Letter Symbol",
+        "Solid at Room Temperature",
+        "Naturally Occurring"
+      ]
+    },
+    "14": {
+      "rows": [
+        "Named After a Person",
+        "Atomic Number 70-118",
+        "Named After a Place"
+      ],
+      "columns": [
+        "Two-Letter Symbol",
+        "Naturally Occurring",
+        "Name Starts with A-J"
+      ]
+    },
+    "15": {
+      "rows": [
+        "Named After a Place",
+        "Name Starts with A-J",
+        "Atomic Number 1-70"
+      ],
+      "columns": [
+        "Lanthanide",
+        "Only Made in a Lab",
+        "Transition Metal"
+      ]
+    },
+    "16": {
+      "rows": [
+        "Two-Letter Symbol",
+        "Solid at Room Temperature",
+        "Naturally Occurring"
+      ],
+      "columns": [
+        "Atomic Number 1-30",
+        "Atomic Number 40-100",
+        "Name Starts with a Consonant"
+      ]
+    },
+    "17": {
+      "rows": [
+        "Atomic Number 1-60",
+        "Diatomic in Nature",
+        "Name Starts with A-J"
+      ],
+      "columns": [
+        "Halogen",
+        "Gas at Room Temperature",
+        "Naturally Occurring"
+      ]
+    },
+    "18": {
+      "rows": [
+        "Atomic Number 1-40",
+        "Name Starts with A-J",
+        "Atomic Number 50-118"
+      ],
+      "columns": [
+        "Halogen",
+        "One-Letter Symbol",
+        "Post-Transition Metal"
+      ]
+    },
+    "19": {
+      "rows": [
+        "Named After a Place",
+        "Two-Letter Symbol",
+        "Naturally Occurring"
+      ],
+      "columns": [
+        "Atomic Number 80-118",
+        "Atomic Number 1-50",
+        "Name Starts with K-Z"
+      ]
+    },
+    "20": {
+      "rows": [
+        "Named After a Place",
+        "One-Letter Symbol",
+        "Only Made in a Lab"
+      ],
+      "columns": [
+        "Atomic Number 50-100",
+        "Name Starts with a Vowel",
+        "Transition Metal"
+      ]
+    },
+    "21": {
+      "rows": [
+        "Solid at Room Temperature",
+        "Name Starts with K-Z",
+        "Atomic Number 1-70"
+      ],
+      "columns": [
+        "Alkaline Earth Metal",
+        "Naturally Occurring",
+        "Nonmetal"
+      ]
+    },
+    "22": {
+      "rows": [
+        "Halogen",
+        "Metalloid",
+        "Two-Letter Symbol"
+      ],
+      "columns": [
+        "Atomic Number 1-40",
+        "Atomic Number 50-100",
+        "Name Starts with a Consonant"
+      ]
+    },
+    "23": {
+      "rows": [
+        "Naturally Occurring",
+        "Lanthanide",
+        "Solid at Room Temperature"
+      ],
+      "columns": [
+        "Name Starts with K-Z",
+        "Atomic Number 1-60",
+        "Named After a Person"
+      ]
+    },
+    "24": {
+      "rows": [
+        "Alkaline Earth Metal",
+        "Name Starts with A-J",
+        "Gas at Room Temperature"
+      ],
+      "columns": [
+        "Naturally Occurring",
+        "Atomic Number 1-50",
+        "Atomic Number 70-118"
+      ]
+    },
+    "25": {
+      "rows": [
+        "Name Starts with A-J",
+        "Named After a Place",
+        "Post-Transition Metal"
+      ],
+      "columns": [
+        "Atomic Number 1-40",
+        "Atomic Number 60-100",
+        "Only Made in a Lab"
+      ]
+    },
+    "26": {
+      "rows": [
+        "One-Letter Symbol",
+        "Atomic Number 1-40",
+        "Two-Letter Symbol"
+      ],
+      "columns": [
+        "Naturally Occurring",
+        "Alkali Metal",
+        "Name Starts with a Vowel"
+      ]
+    },
+    "27": {
+      "rows": [
+        "Halogen",
+        "Two-Letter Symbol",
+        "Atomic Number 1-30"
+      ],
+      "columns": [
+        "Name Starts with a Consonant",
+        "Diatomic in Nature",
+        "Gas at Room Temperature"
+      ]
+    },
+    "28": {
+      "rows": [
+        "Metalloid",
+        "Solid at Room Temperature",
+        "Nonmetal"
+      ],
+      "columns": [
+        "Name Starts with K-Z",
+        "Two-Letter Symbol",
+        "One-Letter Symbol"
+      ]
+    },
+    "29": {
+      "rows": [
+        "Naturally Occurring",
+        "Two-Letter Symbol",
+        "Transition Metal"
+      ],
+      "columns": [
+        "Named After a Place",
+        "Name Starts with a Consonant",
+        "Atomic Number 40-100"
+      ]
+    },
+    "30": {
+      "rows": [
+        "Name Starts with A-J",
+        "Atomic Number 1-50",
+        "Atomic Number 80-118"
+      ],
+      "columns": [
+        "Named After a Place",
+        "Alkaline Earth Metal",
+        "Only Made in a Lab"
+      ]
+    },
+    "31": {
+      "rows": [
+        "Gas at Room Temperature",
+        "Two-Letter Symbol",
+        "Name Starts with a Vowel"
+      ],
+      "columns": [
+        "Atomic Number 1-40",
+        "Noble Gas",
+        "Atomic Number 50-100"
+      ]
+    },
+    "32": {
+      "rows": [
+        "Atomic Number 50-118",
+        "Two-Letter Symbol",
+        "Name Starts with a Vowel"
+      ],
+      "columns": [
+        "Post-Transition Metal",
+        "Metalloid",
+        "Solid at Room Temperature"
+      ]
+    },
+    "33": {
+      "rows": [
+        "Diatomic in Nature",
+        "Atomic Number 1-20",
+        "Atomic Number 50-100"
+      ],
+      "columns": [
+        "Name Starts with a Consonant",
+        "Gas at Room Temperature",
+        "Halogen"
+      ]
+    },
+    "34": {
+      "rows": [
+        "Transition Metal",
+        "Alkali Metal",
+        "Naturally Occurring"
+      ],
+      "columns": [
+        "Name Starts with K-Z",
+        "Atomic Number 1-30",
+        "Solid at Room Temperature"
+      ]
+    },
+    "35": {
+      "rows": [
+        "Two-Letter Symbol",
+        "Name Starts with A-J",
+        "Atomic Number 1-60"
+      ],
+      "columns": [
+        "Only Made in a Lab",
+        "Transition Metal",
+        "Alkaline Earth Metal"
+      ]
+    },
+    "36": {
+      "rows": [
+        "Atomic Number 1-50",
+        "Atomic Number 60-118",
+        "Naturally Occurring"
+      ],
+      "columns": [
+        "Post-Transition Metal",
+        "Two-Letter Symbol",
+        "Named After a Place"
+      ]
+    },
+    "37": {
+      "rows": [
+        "Name Starts with a Consonant",
+        "Two-Letter Symbol",
+        "Named After a Person"
+      ],
+      "columns": [
+        "Solid at Room Temperature",
+        "Atomic Number 50-118",
+        "Only Made in a Lab"
+      ]
+    },
+    "38": {
+      "rows": [
+        "Atomic Number 1-40",
+        "Two-Letter Symbol",
+        "One-Letter Symbol"
+      ],
+      "columns": [
+        "Halogen",
+        "Nonmetal",
+        "Name Starts with a Vowel"
+      ]
+    },
+    "39": {
+      "rows": [
+        "Atomic Number 1-70",
+        "Actinide",
+        "Transition Metal"
+      ],
+      "columns": [
+        "Solid at Room Temperature",
+        "Name Starts with K-Z",
+        "Naturally Occurring"
+      ]
+    },
+    "40": {
+      "rows": [
+        "Atomic Number 50-100",
+        "Name Starts with K-Z",
+        "Atomic Number 1-30"
+      ],
+      "columns": [
+        "One-Letter Symbol",
+        "Alkaline Earth Metal",
+        "Noble Gas"
+      ]
+    },
+    "41": {
+      "rows": [
+        "Atomic Number 40-100",
+        "Naturally Occurring",
+        "Post-Transition Metal"
+      ],
+      "columns": [
+        "Named After a Place",
+        "Two-Letter Symbol",
+        "Name Starts with a Vowel"
+      ]
+    },
+    "42": {
+      "rows": [
+        "Diatomic in Nature",
+        "Solid at Room Temperature",
+        "Alkali Metal"
+      ],
+      "columns": [
+        "Name Starts with a Consonant",
+        "Atomic Number 50-118",
+        "Atomic Number 1-30"
+      ]
+    },
+    "43": {
+      "rows": [
+        "Halogen",
+        "Name Starts with a Consonant",
+        "Noble Gas"
+      ],
+      "columns": [
+        "Atomic Number 60-118",
+        "Atomic Number 1-40",
+        "Gas at Room Temperature"
+      ]
+    },
+    "44": {
+      "rows": [
+        "Two-Letter Symbol",
+        "Atomic Number 70-118",
+        "Name Starts with A-J"
+      ],
+      "columns": [
+        "Lanthanide",
+        "Solid at Room Temperature",
+        "Post-Transition Metal"
+      ]
+    },
+    "45": {
+      "rows": [
+        "Two-Letter Symbol",
+        "Naturally Occurring",
+        "Name Starts with K-Z"
+      ],
+      "columns": [
+        "Atomic Number 1-20",
+        "Named After a Person",
+        "Actinide"
+      ]
+    },
+    "46": {
+      "rows": [
+        "Atomic Number 50-100",
+        "One-Letter Symbol",
+        "Naturally Occurring"
+      ],
+      "columns": [
+        "Name Starts with a Consonant",
+        "Transition Metal",
+        "Gas at Room Temperature"
+      ]
+    },
+    "47": {
+      "rows": [
+        "Atomic Number 1-30",
+        "Name Starts with K-Z",
+        "Atomic Number 40-100"
+      ],
+      "columns": [
+        "Alkaline Earth Metal",
+        "Diatomic in Nature",
+        "Transition Metal"
+      ]
+    },
+    "48": {
+      "rows": [
+        "Name Starts with A-J",
+        "Two-Letter Symbol",
+        "Nonmetal"
+      ],
+      "columns": [
+        "Solid at Room Temperature",
+        "Diatomic in Nature",
+        "Atomic Number 1-70"
+      ]
+    },
+    "49": {
+      "rows": [
+        "Lanthanide",
+        "Naturally Occurring",
+        "Alkali Metal"
+      ],
+      "columns": [
+        "Solid at Room Temperature",
+        "Atomic Number 50-118",
+        "Name Starts with a Consonant"
+      ]
+    },
+    "50": {
+      "rows": [
+        "Only Made in a Lab",
+        "Name Starts with a Vowel",
+        "Naturally Occurring"
+      ],
+      "columns": [
+        "Atomic Number 60-118",
+        "Actinide",
+        "Two-Letter Symbol"
+      ]
+    },
+    "51": {
+      "rows": [
+        "Naturally Occurring",
+        "Gas at Room Temperature",
+        "Name Starts with a Consonant"
+      ],
+      "columns": [
+        "Atomic Number 80-118",
+        "Atomic Number 1-20",
+        "Halogen"
+      ]
+    },
+    "52": {
+      "rows": [
+        "One-Letter Symbol",
+        "Naturally Occurring",
+        "Named After a Place"
+      ],
+      "columns": [
+        "Atomic Number 1-40",
+        "Atomic Number 50-118",
+        "Metalloid"
+      ]
+    },
+    "53": {
+      "rows": [
+        "Named After a Place",
+        "Solid at Room Temperature",
+        "Name Starts with K-Z"
+      ],
+      "columns": [
+        "Naturally Occurring",
+        "Two-Letter Symbol",
+        "Atomic Number 1-60"
+      ]
+    },
+    "54": {
+      "rows": [
+        "Post-Transition Metal",
+        "Transition Metal",
+        "Two-Letter Symbol"
+      ],
+      "columns": [
+        "Atomic Number 1-30",
+        "Name Starts with K-Z",
+        "Atomic Number 70-118"
+      ]
+    },
+    "55": {
+      "rows": [
+        "Naturally Occurring",
+        "Solid at Room Temperature",
+        "Name Starts with A-J"
+      ],
+      "columns": [
+        "Lanthanide",
+        "Atomic Number 60-118",
+        "Named After a Person"
+      ]
+    },
+    "56": {
+      "rows": [
+        "Gas at Room Temperature",
+        "Name Starts with a Consonant",
+        "Post-Transition Metal"
+      ],
+      "columns": [
+        "Two-Letter Symbol",
+        "Naturally Occurring",
+        "Atomic Number 1-70"
+      ]
+    },
+    "57": {
+      "rows": [
+        "Atomic Number 1-40",
+        "Nonmetal",
+        "Diatomic in Nature"
+      ],
+      "columns": [
+        "Naturally Occurring",
+        "Name Starts with a Vowel",
+        "One-Letter Symbol"
+      ]
+    },
+    "58": {
+      "rows": [
+        "Only Made in a Lab",
+        "Post-Transition Metal",
+        "Named After a Place"
+      ],
+      "columns": [
+        "Atomic Number 1-50",
+        "Name Starts with A-J",
+        "Atomic Number 80-118"
+      ]
+    },
+    "59": {
+      "rows": [
+        "Naturally Occurring",
+        "Atomic Number 50-118",
+        "Atomic Number 1-30"
+      ],
+      "columns": [
+        "Alkali Metal",
+        "Transition Metal",
+        "Named After a Place"
+      ]
+    },
+    "60": {
+      "rows": [
+        "Naturally Occurring",
+        "Solid at Room Temperature",
+        "Two-Letter Symbol"
+      ],
+      "columns": [
+        "Diatomic in Nature",
+        "Name Starts with K-Z",
+        "Atomic Number 70-118"
+      ]
+    },
+    "61": {
+      "rows": [
+        "Atomic Number 50-118",
+        "Solid at Room Temperature",
+        "Name Starts with a Consonant"
+      ],
+      "columns": [
+        "Actinide",
+        "Metalloid",
+        "One-Letter Symbol"
+      ]
+    },
+    "62": {
+      "rows": [
+        "Name Starts with a Vowel",
+        "Solid at Room Temperature",
+        "Two-Letter Symbol"
+      ],
+      "columns": [
+        "Transition Metal",
+        "Actinide",
+        "Atomic Number 40-100"
+      ]
+    },
+    "63": {
+      "rows": [
+        "Atomic Number 1-40",
+        "Only Made in a Lab",
+        "Atomic Number 80-118"
+      ],
+      "columns": [
+        "Transition Metal",
+        "Name Starts with a Consonant",
+        "Two-Letter Symbol"
+      ]
+    },
+    "64": {
+      "rows": [
+        "One-Letter Symbol",
+        "Name Starts with A-J",
+        "Atomic Number 1-60"
+      ],
+      "columns": [
+        "Gas at Room Temperature",
+        "Halogen",
+        "Alkali Metal"
+      ]
+    },
+    "65": {
+      "rows": [
+        "Named After a Place",
+        "Solid at Room Temperature",
+        "Transition Metal"
+      ],
+      "columns": [
+        "Name Starts with A-J",
+        "Atomic Number 1-50",
+        "Naturally Occurring"
+      ]
+    },
+    "66": {
+      "rows": [
+        "Naturally Occurring",
+        "Atomic Number 1-40",
+        "Diatomic in Nature"
+      ],
+      "columns": [
+        "Gas at Room Temperature",
+        "Name Starts with K-Z",
+        "Nonmetal"
+      ]
+    },
+    "67": {
+      "rows": [
+        "Name Starts with a Consonant",
+        "Actinide",
+        "Noble Gas"
+      ],
+      "columns": [
+        "Atomic Number 50-118",
+        "Two-Letter Symbol",
+        "Naturally Occurring"
+      ]
+    },
+    "68": {
+      "rows": [
+        "Naturally Occurring",
+        "Name Starts with K-Z",
+        "Lanthanide"
+      ],
+      "columns": [
+        "Atomic Number 50-100",
+        "Named After a Person",
+        "Named After a Place"
+      ]
+    },
+    "69": {
+      "rows": [
+        "Solid at Room Temperature",
+        "Halogen",
+        "Only Made in a Lab"
+      ],
+      "columns": [
+        "Name Starts with a Consonant",
+        "Atomic Number 1-70",
+        "Two-Letter Symbol"
+      ]
+    },
+    "70": {
+      "rows": [
+        "Naturally Occurring",
+        "Name Starts with K-Z",
+        "Atomic Number 1-30"
+      ],
+      "columns": [
+        "Alkali Metal",
+        "Transition Metal",
+        "Alkaline Earth Metal"
+      ]
+    },
+    "71": {
+      "rows": [
+        "Name Starts with A-J",
+        "Atomic Number 40-100",
+        "Naturally Occurring"
+      ],
+      "columns": [
+        "Post-Transition Metal",
+        "Solid at Room Temperature",
+        "Gas at Room Temperature"
+      ]
+    },
+    "72": {
+      "rows": [
+        "Atomic Number 70-118",
+        "Atomic Number 1-20",
+        "Nonmetal"
+      ],
+      "columns": [
+        "Solid at Room Temperature",
+        "One-Letter Symbol",
+        "Name Starts with A-J"
+      ]
+    },
+    "73": {
+      "rows": [
+        "Named After a Place",
+        "Two-Letter Symbol",
+        "Transition Metal"
+      ],
+      "columns": [
+        "Name Starts with a Consonant",
+        "Atomic Number 1-60",
+        "Naturally Occurring"
+      ]
+    },
+    "74": {
+      "rows": [
+        "Atomic Number 50-118",
+        "Two-Letter Symbol",
+        "Atomic Number 1-40"
+      ],
+      "columns": [
+        "Naturally Occurring",
+        "Diatomic in Nature",
+        "Name Starts with a Vowel"
+      ]
+    },
+    "75": {
+      "rows": [
+        "Halogen",
+        "Name Starts with K-Z",
+        "Naturally Occurring"
+      ],
+      "columns": [
+        "Atomic Number 80-118",
+        "Gas at Room Temperature",
+        "Atomic Number 1-50"
+      ]
+    },
+    "76": {
+      "rows": [
+        "Solid at Room Temperature",
+        "Atomic Number 40-100",
+        "Naturally Occurring"
+      ],
+      "columns": [
+        "Named After a Person",
+        "Alkaline Earth Metal",
+        "Post-Transition Metal"
+      ]
+    },
+    "77": {
+      "rows": [
+        "One-Letter Symbol",
+        "Halogen",
+        "Only Made in a Lab"
+      ],
+      "columns": [
+        "Gas at Room Temperature",
+        "Name Starts with A-J",
+        "Atomic Number 1-70"
+      ]
+    },
+    "78": {
+      "rows": [
+        "Alkali Metal",
+        "Atomic Number 1-30",
+        "Atomic Number 70-118"
+      ],
+      "columns": [
+        "Named After a Place",
+        "Name Starts with a Consonant",
+        "Two-Letter Symbol"
+      ]
+    },
+    "79": {
+      "rows": [
+        "Diatomic in Nature",
+        "Name Starts with a Vowel",
+        "Halogen"
+      ],
+      "columns": [
+        "Atomic Number 50-118",
+        "Two-Letter Symbol",
+        "Atomic Number 1-20"
+      ]
+    },
+    "80": {
+      "rows": [
+        "Atomic Number 60-100",
+        "Atomic Number 1-40",
+        "Nonmetal"
+      ],
+      "columns": [
+        "Solid at Room Temperature",
+        "Name Starts with a Consonant",
+        "Naturally Occurring"
+      ]
+    },
+    "81": {
+      "rows": [
+        "Name Starts with A-J",
+        "Atomic Number 1-60",
+        "Naturally Occurring"
+      ],
+      "columns": [
+        "Transition Metal",
+        "Two-Letter Symbol",
+        "Alkaline Earth Metal"
+      ]
+    },
+    "82": {
+      "rows": [
+        "Gas at Room Temperature",
+        "Atomic Number 1-30",
+        "Atomic Number 80-118"
+      ],
+      "columns": [
+        "Two-Letter Symbol",
+        "Noble Gas",
+        "Name Starts with K-Z"
+      ]
+    },
+    "83": {
+      "rows": [
+        "Post-Transition Metal",
+        "Name Starts with a Vowel",
+        "Named After a Place"
+      ],
+      "columns": [
+        "Naturally Occurring",
+        "Atomic Number 40-100",
+        "Only Made in a Lab"
+      ]
+    },
+    "84": {
+      "rows": [
+        "Halogen",
+        "Solid at Room Temperature",
+        "Name Starts with K-Z"
+      ],
+      "columns": [
+        "One-Letter Symbol",
+        "Naturally Occurring",
+        "Atomic Number 50-118"
+      ]
+    },
+    "85": {
+      "rows": [
+        "Solid at Room Temperature",
+        "Name Starts with a Consonant",
+        "Atomic Number 50-118"
+      ],
+      "columns": [
+        "Two-Letter Symbol",
+        "Actinide",
+        "Lanthanide"
+      ]
+    },
+    "86": {
+      "rows": [
+        "Two-Letter Symbol",
+        "Name Starts with A-J",
+        "Transition Metal"
+      ],
+      "columns": [
+        "Atomic Number 1-70",
+        "Solid at Room Temperature",
+        "Only Made in a Lab"
+      ]
+    },
+    "87": {
+      "rows": [
+        "Metalloid",
+        "Diatomic in Nature",
+        "Noble Gas"
+      ],
+      "columns": [
+        "Atomic Number 50-118",
+        "Atomic Number 1-40",
+        "Naturally Occurring"
+      ]
+    },
+    "88": {
+      "rows": [
+        "Named After a Person",
+        "Two-Letter Symbol",
+        "Named After a Place"
+      ],
+      "columns": [
+        "Naturally Occurring",
+        "Solid at Room Temperature",
+        "Atomic Number 60-100"
+      ]
+    },
+    "89": {
+      "rows": [
+        "Name Starts with K-Z",
+        "Solid at Room Temperature",
+        "Alkali Metal"
+      ],
+      "columns": [
+        "Atomic Number 1-50",
+        "Atomic Number 80-118",
+        "One-Letter Symbol"
+      ]
+    },
+    "90": {
+      "rows": [
+        "Gas at Room Temperature",
+        "Name Starts with a Vowel",
+        "Solid at Room Temperature"
+      ],
+      "columns": [
+        "Atomic Number 1-30",
+        "Nonmetal",
+        "Atomic Number 40-100"
+      ]
+    },
+    "91": {
+      "rows": [
+        "Atomic Number 1-70",
+        "Named After a Person",
+        "Actinide"
+      ],
+      "columns": [
+        "Name Starts with a Consonant",
+        "Solid at Room Temperature",
+        "Naturally Occurring"
+      ]
+    },
+    "92": {
+      "rows": [
+        "Atomic Number 60-118",
+        "Only Made in a Lab",
+        "Naturally Occurring"
+      ],
+      "columns": [
+        "Lanthanide",
+        "Transition Metal",
+        "Name Starts with a Consonant"
+      ]
+    },
+    "93": {
+      "rows": [
+        "Name Starts with a Vowel",
+        "Alkaline Earth Metal",
+        "Post-Transition Metal"
+      ],
+      "columns": [
+        "Two-Letter Symbol",
+        "Atomic Number 50-100",
+        "Atomic Number 1-40"
+      ]
+    },
+    "94": {
+      "rows": [
+        "Metalloid",
+        "Halogen",
+        "Solid at Room Temperature"
+      ],
+      "columns": [
+        "Atomic Number 40-100",
+        "One-Letter Symbol",
+        "Name Starts with A-J"
+      ]
+    },
+    "95": {
+      "rows": [
+        "Named After a Place",
+        "One-Letter Symbol",
+        "Two-Letter Symbol"
+      ],
+      "columns": [
+        "Naturally Occurring",
+        "Solid at Room Temperature",
+        "Atomic Number 60-100"
+      ]
+    },
+    "96": {
+      "rows": [
+        "Two-Letter Symbol",
+        "Name Starts with K-Z",
+        "Alkali Metal"
+      ],
+      "columns": [
+        "Atomic Number 60-100",
+        "Naturally Occurring",
+        "Atomic Number 1-20"
+      ]
+    },
+    "97": {
+      "rows": [
+        "Name Starts with a Consonant",
+        "Atomic Number 1-60",
+        "Gas at Room Temperature"
+      ],
+      "columns": [
+        "Diatomic in Nature",
+        "Noble Gas",
+        "Two-Letter Symbol"
+      ]
+    },
+    "98": {
+      "rows": [
+        "Name Starts with a Consonant",
+        "Solid at Room Temperature",
+        "Atomic Number 50-100"
+      ],
+      "columns": [
+        "Actinide",
+        "Post-Transition Metal",
+        "Named After a Person"
+      ]
+    },
+    "99": {
+      "rows": [
+        "Atomic Number 50-118",
+        "Solid at Room Temperature",
+        "Atomic Number 1-30"
+      ],
+      "columns": [
+        "Transition Metal",
+        "Alkaline Earth Metal",
+        "Name Starts with a Vowel"
+      ]
+    },
+    "100": {
+      "rows": [
+        "Post-Transition Metal",
+        "Only Made in a Lab",
+        "Metalloid"
+      ],
+      "columns": [
+        "Atomic Number 1-50",
+        "Name Starts with A-J",
+        "Named After a Place"
+      ]
+    },
+    "101": {
+      "rows": [
+        "Atomic Number 1-70",
+        "Two-Letter Symbol",
+        "Name Starts with A-J"
+      ],
+      "columns": [
+        "Alkali Metal",
+        "Transition Metal",
+        "Lanthanide"
+      ]
+    },
+    "102": {
+      "rows": [
+        "Atomic Number 1-60",
+        "Naturally Occurring",
+        "Noble Gas"
+      ],
+      "columns": [
+        "Name Starts with a Consonant",
+        "Gas at Room Temperature",
+        "Two-Letter Symbol"
+      ]
+    },
+    "103": {
+      "rows": [
+        "Name Starts with K-Z",
+        "Naturally Occurring",
+        "Diatomic in Nature"
+      ],
+      "columns": [
+        "Atomic Number 1-70",
+        "Two-Letter Symbol",
+        "Nonmetal"
+      ]
+    },
+    "104": {
+      "rows": [
+        "Gas at Room Temperature",
+        "Halogen",
+        "One-Letter Symbol"
+      ],
+      "columns": [
+        "Atomic Number 50-118",
+        "Atomic Number 1-30",
+        "Diatomic in Nature"
+      ]
+    },
+    "105": {
+      "rows": [
+        "Atomic Number 70-118",
+        "Two-Letter Symbol",
+        "Solid at Room Temperature"
+      ],
+      "columns": [
+        "Post-Transition Metal",
+        "Named After a Place",
+        "Naturally Occurring"
+      ]
+    },
+    "106": {
+      "rows": [
+        "Alkaline Earth Metal",
+        "Lanthanide",
+        "Atomic Number 50-100"
+      ],
+      "columns": [
+        "Naturally Occurring",
+        "Two-Letter Symbol",
+        "Name Starts with A-J"
+      ]
+    },
+    "107": {
+      "rows": [
+        "Naturally Occurring",
+        "Two-Letter Symbol",
+        "Atomic Number 60-118"
+      ],
+      "columns": [
+        "Name Starts with A-J",
+        "Named After a Person",
+        "Noble Gas"
+      ]
+    },
+    "108": {
+      "rows": [
+        "Only Made in a Lab",
+        "Atomic Number 1-70",
+        "Alkali Metal"
+      ],
+      "columns": [
+        "Two-Letter Symbol",
+        "Solid at Room Temperature",
+        "Name Starts with a Consonant"
+      ]
+    },
+    "109": {
+      "rows": [
+        "Atomic Number 50-118",
+        "Transition Metal",
+        "Atomic Number 1-20"
+      ],
+      "columns": [
+        "One-Letter Symbol",
+        "Naturally Occurring",
+        "Name Starts with A-J"
+      ]
+    },
+    "110": {
+      "rows": [
+        "Name Starts with K-Z",
+        "Halogen",
+        "Two-Letter Symbol"
+      ],
+      "columns": [
+        "Atomic Number 70-118",
+        "Atomic Number 1-20",
+        "Diatomic in Nature"
+      ]
+    },
+    "111": {
+      "rows": [
+        "Atomic Number 80-118",
+        "Alkaline Earth Metal",
+        "Atomic Number 1-30"
+      ],
+      "columns": [
+        "Solid at Room Temperature",
+        "Name Starts with A-J",
+        "Named After a Place"
+      ]
+    },
+    "112": {
+      "rows": [
+        "Naturally Occurring",
+        "Solid at Room Temperature",
+        "Atomic Number 40-100"
+      ],
+      "columns": [
+        "Post-Transition Metal",
+        "Lanthanide",
+        "Two-Letter Symbol"
+      ]
+    },
+    "113": {
+      "rows": [
+        "Only Made in a Lab",
+        "Named After a Place",
+        "Atomic Number 1-60"
+      ],
+      "columns": [
+        "Name Starts with a Consonant",
+        "Transition Metal",
+        "Post-Transition Metal"
+      ]
+    },
+    "114": {
+      "rows": [
+        "Naturally Occurring",
+        "Atomic Number 60-118",
+        "Gas at Room Temperature"
+      ],
+      "columns": [
+        "One-Letter Symbol",
+        "Noble Gas",
+        "Name Starts with a Vowel"
+      ]
+    },
+    "115": {
+      "rows": [
+        "Atomic Number 50-100",
+        "Solid at Room Temperature",
+        "Atomic Number 1-20"
+      ],
+      "columns": [
+        "One-Letter Symbol",
+        "Naturally Occurring",
+        "Halogen"
+      ]
+    },
+    "116": {
+      "rows": [
+        "Solid at Room Temperature",
+        "Two-Letter Symbol",
+        "Nonmetal"
+      ],
+      "columns": [
+        "Atomic Number 1-50",
+        "Name Starts with K-Z",
+        "Naturally Occurring"
+      ]
+    },
+    "117": {
+      "rows": [
+        "Diatomic in Nature",
+        "Noble Gas",
+        "Solid at Room Temperature"
+      ],
+      "columns": [
+        "Atomic Number 50-118",
+        "Name Starts with a Consonant",
+        "Two-Letter Symbol"
+      ]
+    },
+    "118": {
+      "rows": [
+        "Name Starts with A-J",
+        "Named After a Place",
+        "Atomic Number 50-118"
+      ],
+      "columns": [
+        "Only Made in a Lab",
+        "Transition Metal",
+        "Lanthanide"
+      ]
+    },
+    "119": {
+      "rows": [
+        "Two-Letter Symbol",
+        "Solid at Room Temperature",
+        "Name Starts with a Vowel"
+      ],
+      "columns": [
+        "Atomic Number 1-30",
+        "Only Made in a Lab",
+        "Post-Transition Metal"
+      ]
+    },
+    "120": {
+      "rows": [
+        "Name Starts with K-Z",
+        "Halogen",
+        "Atomic Number 1-20"
+      ],
+      "columns": [
+        "Gas at Room Temperature",
+        "One-Letter Symbol",
+        "Solid at Room Temperature"
+      ]
+    },
+    "121": {
+      "rows": [
+        "Name Starts with K-Z",
+        "Solid at Room Temperature",
+        "Naturally Occurring"
+      ],
+      "columns": [
+        "Actinide",
+        "Alkali Metal",
+        "Named After a Person"
+      ]
+    },
+    "122": {
+      "rows": [
+        "Named After a Place",
+        "Naturally Occurring",
+        "Atomic Number 1-60"
+      ],
+      "columns": [
+        "Name Starts with A-J",
+        "Two-Letter Symbol",
+        "Alkaline Earth Metal"
+      ]
+    },
+    "123": {
+      "rows": [
+        "One-Letter Symbol",
+        "Naturally Occurring",
+        "Transition Metal"
+      ],
+      "columns": [
+        "Atomic Number 60-118",
+        "Name Starts with a Consonant",
+        "Atomic Number 1-40"
+      ]
+    },
+    "124": {
+      "rows": [
+        "Lanthanide",
+        "Noble Gas",
+        "Naturally Occurring"
+      ],
+      "columns": [
+        "Atomic Number 50-100",
+        "Name Starts with A-J",
+        "Two-Letter Symbol"
+      ]
+    },
+    "125": {
+      "rows": [
+        "Atomic Number 50-100",
+        "Name Starts with a Vowel",
+        "Halogen"
+      ],
+      "columns": [
+        "Solid at Room Temperature",
+        "Gas at Room Temperature",
+        "Two-Letter Symbol"
+      ]
+    },
+    "126": {
+      "rows": [
+        "Post-Transition Metal",
+        "Solid at Room Temperature",
+        "Noble Gas"
+      ],
+      "columns": [
+        "Atomic Number 80-118",
+        "Two-Letter Symbol",
+        "Name Starts with K-Z"
+      ]
+    },
+    "127": {
+      "rows": [
+        "Atomic Number 70-118",
+        "Two-Letter Symbol",
+        "Solid at Room Temperature"
+      ],
+      "columns": [
+        "Name Starts with a Consonant",
+        "Actinide",
+        "Alkali Metal"
+      ]
+    },
+    "128": {
+      "rows": [
+        "One-Letter Symbol",
+        "Named After a Place",
+        "Naturally Occurring"
+      ],
+      "columns": [
+        "Name Starts with a Consonant",
+        "Atomic Number 70-118",
+        "Atomic Number 1-50"
+      ]
+    },
+    "129": {
+      "rows": [
+        "Named After a Person",
+        "Lanthanide",
+        "Halogen"
+      ],
+      "columns": [
+        "Name Starts with A-J",
+        "Atomic Number 1-70",
+        "Two-Letter Symbol"
+      ]
+    },
+    "130": {
+      "rows": [
+        "Metalloid",
+        "Gas at Room Temperature",
+        "Alkaline Earth Metal"
+      ],
+      "columns": [
+        "Atomic Number 1-30",
+        "Atomic Number 40-100",
+        "Two-Letter Symbol"
+      ]
+    },
+    "131": {
+      "rows": [
+        "Two-Letter Symbol",
+        "One-Letter Symbol",
+        "Transition Metal"
+      ],
+      "columns": [
+        "Atomic Number 60-118",
+        "Name Starts with K-Z",
+        "Atomic Number 1-30"
+      ]
+    },
+    "132": {
+      "rows": [
+        "Naturally Occurring",
+        "Name Starts with a Vowel",
+        "Only Made in a Lab"
+      ],
+      "columns": [
+        "Actinide",
+        "Two-Letter Symbol",
+        "Atomic Number 60-100"
+      ]
+    },
+    "133": {
+      "rows": [
+        "Name Starts with A-J",
+        "Solid at Room Temperature",
+        "Named After a Place"
+      ],
+      "columns": [
+        "Only Made in a Lab",
+        "Alkali Metal",
+        "Atomic Number 1-60"
+      ]
+    },
+    "134": {
+      "rows": [
+        "Transition Metal",
+        "Post-Transition Metal",
+        "Lanthanide"
+      ],
+      "columns": [
+        "Name Starts with A-J",
+        "Atomic Number 50-100",
+        "Two-Letter Symbol"
+      ]
+    },
+    "135": {
+      "rows": [
+        "Gas at Room Temperature",
+        "Name Starts with a Consonant",
+        "Post-Transition Metal"
+      ],
+      "columns": [
+        "Atomic Number 70-118",
+        "Only Made in a Lab",
+        "Atomic Number 1-40"
+      ]
+    },
+    "136": {
+      "rows": [
+        "One-Letter Symbol",
+        "Halogen",
+        "Two-Letter Symbol"
+      ],
+      "columns": [
+        "Solid at Room Temperature",
+        "Name Starts with a Consonant",
+        "Diatomic in Nature"
+      ]
+    },
+    "137": {
+      "rows": [
+        "Two-Letter Symbol",
+        "Name Starts with a Vowel",
+        "One-Letter Symbol"
+      ],
+      "columns": [
+        "Naturally Occurring",
+        "Actinide",
+        "Atomic Number 60-118"
+      ]
+    },
+    "138": {
+      "rows": [
+        "Atomic Number 50-118",
+        "Two-Letter Symbol",
+        "Atomic Number 1-30"
+      ],
+      "columns": [
+        "Alkaline Earth Metal",
+        "Solid at Room Temperature",
+        "Noble Gas"
+      ]
+    },
+    "139": {
+      "rows": [
+        "Atomic Number 1-20",
+        "Name Starts with A-J",
+        "Two-Letter Symbol"
+      ],
+      "columns": [
+        "Alkali Metal",
+        "Nonmetal",
+        "Metalloid"
+      ]
+    },
+    "140": {
+      "rows": [
+        "Post-Transition Metal",
+        "Named After a Place",
+        "Only Made in a Lab"
+      ],
+      "columns": [
+        "Name Starts with A-J",
+        "Two-Letter Symbol",
+        "Atomic Number 80-118"
+      ]
+    },
+    "141": {
+      "rows": [
+        "Solid at Room Temperature",
+        "Two-Letter Symbol",
+        "Gas at Room Temperature"
+      ],
+      "columns": [
+        "Diatomic in Nature",
+        "Atomic Number 1-40",
+        "Name Starts with a Consonant"
+      ]
+    },
+    "142": {
+      "rows": [
+        "Solid at Room Temperature",
+        "Name Starts with K-Z",
+        "Naturally Occurring"
+      ],
+      "columns": [
+        "Alkali Metal",
+        "Atomic Number 1-50",
+        "Two-Letter Symbol"
+      ]
+    },
+    "143": {
+      "rows": [
+        "Atomic Number 70-118",
+        "Two-Letter Symbol",
+        "Atomic Number 1-30"
+      ],
+      "columns": [
+        "Solid at Room Temperature",
+        "Name Starts with a Vowel",
+        "Transition Metal"
+      ]
+    },
+    "144": {
+      "rows": [
+        "Lanthanide",
+        "Named After a Person",
+        "Actinide"
+      ],
+      "columns": [
+        "Name Starts with K-Z",
+        "Solid at Room Temperature",
+        "Atomic Number 60-118"
+      ]
+    },
+    "145": {
+      "rows": [
+        "Atomic Number 50-118",
+        "Name Starts with A-J",
+        "Only Made in a Lab"
+      ],
+      "columns": [
+        "Lanthanide",
+        "Actinide",
+        "Named After a Place"
+      ]
+    },
+    "146": {
+      "rows": [
+        "Noble Gas",
+        "Name Starts with a Consonant",
+        "Diatomic in Nature"
+      ],
+      "columns": [
+        "Naturally Occurring",
+        "Gas at Room Temperature",
+        "Atomic Number 1-40"
+      ]
+    },
+    "147": {
+      "rows": [
+        "Atomic Number 80-118",
+        "Atomic Number 1-70",
+        "Two-Letter Symbol"
+      ],
+      "columns": [
+        "Alkali Metal",
+        "Name Starts with a Consonant",
+        "Named After a Place"
+      ]
+    },
+    "148": {
+      "rows": [
+        "Name Starts with A-J",
+        "Transition Metal",
+        "Metalloid"
+      ],
+      "columns": [
+        "One-Letter Symbol",
+        "Naturally Occurring",
+        "Atomic Number 1-50"
+      ]
+    },
+    "149": {
+      "rows": [
+        "Two-Letter Symbol",
+        "One-Letter Symbol",
+        "Solid at Room Temperature"
+      ],
+      "columns": [
+        "Atomic Number 1-30",
+        "Atomic Number 40-100",
+        "Name Starts with K-Z"
+      ]
+    },
+    "150": {
+      "rows": [
+        "Only Made in a Lab",
+        "Post-Transition Metal",
+        "Lanthanide"
+      ],
+      "columns": [
+        "Name Starts with a Consonant",
+        "Atomic Number 60-118",
+        "Solid at Room Temperature"
+      ]
+    }
+  }

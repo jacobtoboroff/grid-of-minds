@@ -1040,7 +1040,7 @@ function showEndgameSummary() {
 
   function selectArchive(n) {
     closeModal();
-    window.location.href = "/frontend/index.html?grid=" + String(n);
+    window.location.href = "/frontend/grid.html?grid=" + String(n);
   }
 
   function buttonFor(n) {

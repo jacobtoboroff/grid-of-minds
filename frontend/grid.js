@@ -47,7 +47,7 @@ function extractNumber(str) {
 // ======= Label Loader from daily-pgrids.json =======
 async function loadGridByDay(day) {
   try {
-    const res = await fetch("/frontend/daily-pgrids.json", { cache: "no-cache" });
+    const res = await fetch("/daily-pgrids.json", { cache: "no-cache" });
     const data = await res.json();
     const grid = data[day];
     if (!grid) return;

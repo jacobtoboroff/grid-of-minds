@@ -1016,7 +1016,7 @@ function showEndgameSummary() {
 
   if (!archivesLink || !archivesModal || !closeArchives || !archivesList) return;
 
-  const GRID_JSON_URL = "/frontend/daily-pgrids.json";
+  const GRID_JSON_URL = "/daily-pgrids.json";
   let gridsCache = null;
   let latestGrid = null;
 

@@ -228,7 +228,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const strong = document.createElement("strong");
       strong.textContent = el.name;
       const span = document.createElement("span");
-      span.textContent = el.symbol;
       textWrap.appendChild(strong);
       textWrap.appendChild(span);
 

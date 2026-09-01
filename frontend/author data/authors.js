@@ -183,7 +183,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const strong = document.createElement("strong");
       strong.textContent = b.title;
       const span = document.createElement("span");
-      span.textContent = b.author;
       textWrap.appendChild(strong);
       textWrap.appendChild(span);
 

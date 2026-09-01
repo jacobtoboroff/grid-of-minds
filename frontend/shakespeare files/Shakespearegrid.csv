@@ -1,6 +1,6 @@
-Play Title,History,Comedy,Tragedy,Late Romance,First Henriad,Second Henriad,Includes / Mentions John Falstaff,Characted named Antonio,Cross-dressing,Length,Ghosts / Spirits Appear,Sibling Rivalry,Set in Britain,Set in Italy,Set in Greece/ Turkey,Character Name in Title,Cuckhold Theme,Female Character with Most Lines,Titular Character Dies,Bastard Characters,Play within a  Play,Storms / Shipwrecks,Suicide Committed
-Hamlet,No,No,Yes,No,No,No,No,No,No,1,Yes,Yes,No,No,No,Yes,No,No,Yes,No,Yes,No,Yes
-Macbeth,No,No,Yes,No,No,No,No,No,No,33,Yes,No,Yes,No,No,Yes,No,No,Yes,No,No,No,No
+Play Title,History,Comedy,Tragedy,Late Romance,First Henriad,Second Henriad,Includes / Mentions John Falstaff,Characted named Antonio,Cross-dressing,Length,"Ghosts, Spirits, or Fairies Appear",Sibling Rivalry,Set in Britain,Set in Italy,Set in Greece/ Turkey,Character Name in Title,Cuckhold Theme,Female Character with Most Lines,Titular Character Dies,Bastard Characters,Play within a  Play,Storms / Shipwrecks,Suicide Committed
+Hamlet,No,No,Yes,No,No,No,No,No,Yes,1,Yes,Yes,No,No,No,Yes,No,No,Yes,No,Yes,No,Yes
+Macbeth,No,No,Yes,No,No,No,No,No,No,33,Yes,No,Yes,No,No,Yes,No,No,Yes,No,No,No,Yes
 King Lear,No,No,Yes,No,No,No,No,No,No,7,No,Yes,Yes,No,No,Yes,No,No,Yes,Yes,No,Yes,No
 Othello,No,No,Yes,No,No,No,No,No,No,6,No,No,No,Yes,No,Yes,Yes,No,Yes,No,No,Yes,Yes
 Romeo and Juliet,No,No,Yes,No,No,No,No,No,No,15,No,No,No,Yes,No,Yes,No,No,Yes,No,No,No,Yes
@@ -11,29 +11,29 @@ Cymbeline,No,No,Yes,Yes,No,No,No,No,Yes,3,Yes,No,Yes,No,No,Yes,Yes,Yes,No,No,No,
 Coriolanus,No,No,Yes,No,No,No,No,No,No,2,No,No,No,Yes,No,Yes,No,No,Yes,No,No,No,No
 Timon of Athens,No,No,Yes,No,No,No,No,No,No,31,No,No,No,No,Yes,Yes,No,No,Yes,No,No,No,No
 Troilus and Cressida,No,No,Yes,No,No,No,No,No,No,8,No,No,No,No,Yes,Yes,Yes,No,No,Yes,No,No,No
-A Midsummer Night's Dream,No,Yes,No,No,No,No,No,No,No,37,No,No,No,No,Yes,No,No,No,X,No,Yes,No,No
+A Midsummer Night's Dream,No,Yes,No,No,No,No,No,No,Yes,37,Yes,No,No,No,Yes,No,No,No,X,No,Yes,No,No
 Twelfth Night,No,Yes,No,No,No,No,No,Yes,Yes,32,No,No,No,No,No,No,No,No,X,No,No,Yes,No
-The Merchant of Venice,No,Yes,No,No,No,No,No,Yes,Yes,24,No,No,No,Yes,No,Yes,No,Yes,No,No,No,Yes,No
+Merchant of Venice,No,Yes,No,No,No,No,No,Yes,Yes,24,No,No,No,Yes,No,Yes,No,Yes,No,No,No,Yes,No
 As You Like It,No,Yes,No,No,No,No,No,No,Yes,23,No,Yes,No,No,No,No,No,Yes,X,No,No,No,No
-The Taming of the Shrew,No,Yes,No,No,No,No,No,No,Yes,26,No,No,No,Yes,No,Yes,No,No,No,No,Yes,No,No
+Taming of the Shrew,No,Yes,No,No,No,No,No,No,Yes,26,No,No,No,Yes,No,Yes,No,No,No,No,Yes,No,No
 Love's Labour's Lost,No,Yes,No,No,No,No,No,No,No,21,No,No,No,No,No,No,No,No,X,No,Yes,No,No
-The Two Noble Kinsmen,No,Yes,No,Yes,No,No,No,No,No,13,No,No,No,No,Yes,Yes,No,No,Yes,No,No,No,No
-The Two Gentlemen of Verona,No,Yes,No,No,No,No,No,Yes,Yes,36,No,No,No,Yes,No,Yes,No,No,No,No,No,No,No
+Two Noble Kinsmen,No,Yes,No,Yes,No,No,No,No,No,13,No,No,No,No,Yes,Yes,No,No,Yes,No,No,No,No
+Two Gentlemen of Verona,No,Yes,No,No,No,No,No,Yes,Yes,36,No,No,No,Yes,No,Yes,No,No,No,No,No,No,No
 Measure for Measure,No,Yes,No,No,No,No,No,No,No,19,No,No,No,No,No,No,No,No,X,No,No,No,No
 Much Ado About Nothing,No,Yes,No,No,No,No,No,Yes,No,29,No,Yes,No,Yes,No,No,Yes,No,X,Yes,No,No,No
 All's Well that Ends Well,No,Yes,No,No,No,No,No,No,No,18,No,No,No,No,No,No,No,Yes,X,No,No,No,No
-"Pericles, Prince of Tyre",No,Yes,No,Yes,No,No,No,No,No,34,No,No,No,No,Yes,Yes,No,No,No,No,No,Yes,No
+"Pericles, Prince of Tyre",No,Yes,No,Yes,No,No,No,No,No,34,Yes,No,No,No,Yes,Yes,No,No,No,No,No,Yes,No
 Comedy of Errors,No,Yes,No,No,No,No,No,No,No,38,No,No,No,No,Yes,No,No,No,X,No,No,Yes,No
-The Merry Wives of Windsor,No,Yes,No,No,No,No,Yes,No,Yes,28,No,No,Yes,No,No,Yes,Yes,No,No,No,No,No,No
-The Tempest,No,Yes,No,Yes,No,No,No,Yes,No,35,No,Yes,No,No,No,No,No,No,X,No,No,Yes,No
-The Winter's Tale,No,Yes,No,Yes,No,No,No,No,No,9,No,No,No,Yes,No,No,Yes,No,X,No,No,Yes,No
+Merry Wives of Windsor,No,Yes,No,No,No,No,Yes,No,Yes,28,No,No,Yes,No,No,Yes,Yes,No,No,No,No,No,No
+The Tempest,No,Yes,No,No,No,No,No,Yes,No,35,No,Yes,No,No,No,No,No,No,X,No,No,Yes,No
+Winter's Tale,No,Yes,No,Yes,No,No,No,No,No,9,No,No,No,Yes,No,No,Yes,No,X,No,No,Yes,No
 King  John,Yes,No,No,No,No,No,No,No,No,25,No,No,Yes,No,No,Yes,No,No,Yes,Yes,No,No,No
-Richard II,Yes,No,No,No,Yes,No,No,No,No,20,No,No,Yes,No,No,Yes,No,No,Yes,No,No,No,No
-Henry IV Part I,Yes,No,No,No,Yes,No,Yes,No,No,16,No,No,Yes,No,No,Yes,No,No,No,No,No,No,No
-Henry IV Part II,Yes,No,No,No,Yes,No,Yes,No,No,10,No,No,Yes,No,No,Yes,No,No,Yes,No,No,No,No
-Henry V,Yes,No,No,No,Yes,No,Yes,No,No,12,No,No,Yes,No,No,Yes,No,No,No,No,No,No,No
-Henry VI Part I,Yes,No,No,No,No,Yes,No,No,No,22,No,No,Yes,No,No,Yes,No,No,No,Yes,No,No,No
-Henry VI Part II,Yes,No,No,No,No,Yes,No,No,No,14,Yes,No,Yes,No,No,Yes,No,No,No,No,No,No,No
-Henry VI Part III,Yes,No,No,No,No,Yes,No,No,No,17,No,No,Yes,No,No,Yes,No,No,Yes,No,No,No,No
-Richard III,Yes,No,No,No,No,Yes,No,No,No,4,Yes,Yes,Yes,No,No,Yes,No,No,Yes,No,No,No,No
+Richard II,Yes,No,No,No,No,Yes,No,No,No,20,No,No,Yes,No,No,Yes,No,No,Yes,No,No,No,No
+Henry IV Part I,Yes,No,No,No,No,Yes,Yes,No,No,16,No,No,Yes,No,No,Yes,No,No,No,No,No,No,No
+Henry IV Part 2,Yes,No,No,No,No,Yes,Yes,No,No,10,No,No,Yes,No,No,Yes,No,No,Yes,No,No,No,No
+Henry V,Yes,No,No,No,No,Yes,Yes,No,No,12,No,No,Yes,No,No,Yes,No,No,No,No,No,No,No
+Henry VI Part I,Yes,No,No,No,Yes,No,No,No,No,22,No,No,Yes,No,No,Yes,No,No,No,Yes,No,No,No
+Henry VI Part II,Yes,No,No,No,Yes,No,No,No,No,14,Yes,No,Yes,No,No,Yes,No,No,No,No,No,No,No
+Henry VI Part III,Yes,No,No,No,Yes,No,No,No,No,17,No,No,Yes,No,No,Yes,No,No,Yes,No,No,No,No
+Richard III,Yes,No,No,No,Yes,No,No,No,No,4,Yes,Yes,Yes,No,No,Yes,No,No,Yes,No,No,No,No
 Henry VIII,Yes,No,No,No,No,No,No,No,No,11,No,No,Yes,No,No,Yes,No,No,No,No,No,No,No

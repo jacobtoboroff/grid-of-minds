@@ -53,7 +53,7 @@ async function loadGridByDay(day) {
 
 // ======= Global State =======
 // NOTE: adjust this to whenever Shakespeare Grid actually launches.
-const launchDate = new Date("August 19, 2026 00:00:00");
+const launchDate = new Date("September 1, 2026 00:00:00");
 const now = new Date();
 const todayMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate());
 const msInDay = 24 * 60 * 60 * 1000;

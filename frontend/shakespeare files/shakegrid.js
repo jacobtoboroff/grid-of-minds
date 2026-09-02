@@ -53,7 +53,7 @@ async function loadGridByDay(day) {
 
 // ======= Global State =======
 // NOTE: adjust this to whenever Shakespeare Grid actually launches.
-const launchDate = new Date("September 1, 2026 00:00:00");
+const launchDate = new Date("August 19, 2026 00:00:00");
 const now = new Date();
 const todayMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate());
 const msInDay = 24 * 60 * 60 * 1000;
@@ -84,7 +84,7 @@ async function loadPlays() {
             antonio: norm(row["Characted named Antonio"]),
             cross_dressing: norm(row["Cross-dressing"]),
             length_rank: parseInt(row["Length"]) || null,
-            ghosts: norm(row["Ghosts / Spirits Appear"]),
+            ghosts: norm(row["Ghosts, Spirits, or Fairies Appear"]),
             sibling_rivalry: norm(row["Sibling Rivalry"]),
             set_britain: norm(row["Set in Britain"]),
             set_italy: norm(row["Set in Italy"]),
@@ -126,8 +126,8 @@ function matchMatchesLabel(p, label) {
   if (l === "no character named antonio") return p.antonio === "no";
   if (l === "features cross-dressing") return p.cross_dressing === "yes";
   if (l === "no cross-dressing") return p.cross_dressing === "no";
-  if (l === "ghosts or spirits appear") return p.ghosts === "yes";
-  if (l === "no ghosts or spirits") return p.ghosts === "no";
+  if (l === "ghosts, spirits, or fairies appear") return p.ghosts === "yes";
+  if (l === "no ghosts, spirits, or fairies") return p.ghosts === "no";
   if (l === "sibling rivalry theme") return p.sibling_rivalry === "yes";
   if (l === "set in britain") return p.set_britain === "yes";
   if (l === "set in italy") return p.set_italy === "yes";

@@ -1,0 +1,1502 @@
+{
+  "1": {
+    "rows": [
+      "United States Not a Party",
+      "Did Not Overturn a Prior Precedent"
+    ],
+    "columns": [
+      "Did Not Establish a New Right",
+      "Decided Before 1970"
+    ]
+  },
+  "2": {
+    "rows": [
+      "Race Was Not a Central Issue",
+      "Case Name Starts with K-Z"
+    ],
+    "columns": [
+      "United States Named as a Party",
+      "Not a Unanimous Decision"
+    ]
+  },
+  "3": {
+    "rows": [
+      "Involves the 14th Amendment",
+      "Race Was a Central Issue"
+    ],
+    "columns": [
+      "Equal Protection/Civil Rights Case",
+      "Case Name Starts with A-J"
+    ]
+  },
+  "4": {
+    "rows": [
+      "Established a New Right",
+      "Overturned a Prior Precedent"
+    ],
+    "columns": [
+      "Criminal Procedure Case",
+      "Decided 1970 or Later"
+    ]
+  },
+  "5": {
+    "rows": [
+      "No Amendment Directly Involved",
+      "Unanimous Decision"
+    ],
+    "columns": [
+      "Decided Before 1970",
+      "Federalism/Government Structure Case"
+    ]
+  },
+  "6": {
+    "rows": [
+      "Did Not Establish a New Right",
+      "United States Not a Party"
+    ],
+    "columns": [
+      "Did Not Overturn a Prior Precedent",
+      "Involves the 5th Amendment"
+    ]
+  },
+  "7": {
+    "rows": [
+      "Involves the 4th Amendment",
+      "Case Name Starts with K-Z"
+    ],
+    "columns": [
+      "United States Named as a Party",
+      "Race Was Not a Central Issue"
+    ]
+  },
+  "8": {
+    "rows": [
+      "Case Name Starts with A-J",
+      "Involves the 14th Amendment"
+    ],
+    "columns": [
+      "Not a Unanimous Decision",
+      "Race Was a Central Issue"
+    ]
+  },
+  "9": {
+    "rows": [
+      "Equal Protection/Civil Rights Case",
+      "Decided 1970 or Later"
+    ],
+    "columns": [
+      "Overturned a Prior Precedent",
+      "Did Not Establish a New Right"
+    ]
+  },
+  "10": {
+    "rows": [
+      "Federalism/Government Structure Case",
+      "Decided Before 1970"
+    ],
+    "columns": [
+      "No Amendment Directly Involved",
+      "Unanimous Decision"
+    ]
+  },
+  "11": {
+    "rows": [
+      "Involves the 1st Amendment",
+      "Did Not Overturn a Prior Precedent"
+    ],
+    "columns": [
+      "United States Not a Party",
+      "Did Not Establish a New Right"
+    ]
+  },
+  "12": {
+    "rows": [
+      "Criminal Procedure Case",
+      "Race Was Not a Central Issue"
+    ],
+    "columns": [
+      "Case Name Starts with K-Z",
+      "Involves the 4th Amendment"
+    ]
+  },
+  "13": {
+    "rows": [
+      "Case Name Starts with A-J",
+      "Not a Unanimous Decision"
+    ],
+    "columns": [
+      "Race Was a Central Issue",
+      "Involves the 14th Amendment"
+    ]
+  },
+  "14": {
+    "rows": [
+      "Decided 1970 or Later",
+      "Did Not Establish a New Right"
+    ],
+    "columns": [
+      "Equal Protection/Civil Rights Case",
+      "Overturned a Prior Precedent"
+    ]
+  },
+  "15": {
+    "rows": [
+      "United States Named as a Party",
+      "Federalism/Government Structure Case"
+    ],
+    "columns": [
+      "Decided Before 1970",
+      "No Amendment Directly Involved"
+    ]
+  },
+  "16": {
+    "rows": [
+      "Did Not Overturn a Prior Precedent",
+      "United States Not a Party"
+    ],
+    "columns": [
+      "Involves the 5th Amendment",
+      "Established a New Right"
+    ]
+  },
+  "17": {
+    "rows": [
+      "Unanimous Decision",
+      "Case Name Starts with K-Z"
+    ],
+    "columns": [
+      "Race Was Not a Central Issue",
+      "Criminal Procedure Case"
+    ]
+  },
+  "18": {
+    "rows": [
+      "Did Not Establish a New Right",
+      "Race Was a Central Issue"
+    ],
+    "columns": [
+      "Not a Unanimous Decision",
+      "Involves the 14th Amendment"
+    ]
+  },
+  "19": {
+    "rows": [
+      "Not a Unanimous Decision",
+      "Overturned a Prior Precedent"
+    ],
+    "columns": [
+      "Involves the 4th Amendment",
+      "Decided 1970 or Later"
+    ]
+  },
+  "20": {
+    "rows": [
+      "United States Named as a Party",
+      "Did Not Establish a New Right"
+    ],
+    "columns": [
+      "Involves the 1st Amendment",
+      "Decided Before 1970"
+    ]
+  },
+  "21": {
+    "rows": [
+      "Equal Protection/Civil Rights Case",
+      "United States Not a Party"
+    ],
+    "columns": [
+      "Did Not Overturn a Prior Precedent",
+      "Case Name Starts with A-J"
+    ]
+  },
+  "22": {
+    "rows": [
+      "Federalism/Government Structure Case",
+      "Unanimous Decision"
+    ],
+    "columns": [
+      "Case Name Starts with K-Z",
+      "Race Was Not a Central Issue"
+    ]
+  },
+  "23": {
+    "rows": [
+      "Involves the 14th Amendment",
+      "Did Not Overturn a Prior Precedent"
+    ],
+    "columns": [
+      "Race Was a Central Issue",
+      "Established a New Right"
+    ]
+  },
+  "24": {
+    "rows": [
+      "Individual Rights & Privacy Case",
+      "Involves the 4th Amendment"
+    ],
+    "columns": [
+      "Not a Unanimous Decision",
+      "Overturned a Prior Precedent"
+    ]
+  },
+  "25": {
+    "rows": [
+      "No Amendment Directly Involved",
+      "Decided Before 1970"
+    ],
+    "columns": [
+      "United States Named as a Party",
+      "Did Not Establish a New Right"
+    ]
+  },
+  "26": {
+    "rows": [
+      "Involves the 1st Amendment",
+      "Equal Protection/Civil Rights Case"
+    ],
+    "columns": [
+      "United States Not a Party",
+      "Case Name Starts with A-J"
+    ]
+  },
+  "27": {
+    "rows": [
+      "Case Name Starts with K-Z",
+      "Criminal Procedure Case"
+    ],
+    "columns": [
+      "Race Was Not a Central Issue",
+      "Involves the 5th Amendment"
+    ]
+  },
+  "28": {
+    "rows": [
+      "Did Not Overturn a Prior Precedent",
+      "Race Was a Central Issue"
+    ],
+    "columns": [
+      "Unanimous Decision",
+      "Case Name Starts with K-Z"
+    ]
+  },
+  "29": {
+    "rows": [
+      "Involves the 14th Amendment",
+      "Executive Power Case"
+    ],
+    "columns": [
+      "Decided 1970 or Later",
+      "Not a Unanimous Decision"
+    ]
+  },
+  "30": {
+    "rows": [
+      "Race Was Not a Central Issue",
+      "Decided Before 1970"
+    ],
+    "columns": [
+      "Did Not Establish a New Right",
+      "Involves the 4th Amendment"
+    ]
+  },
+  "31": {
+    "rows": [
+      "Equal Protection/Civil Rights Case",
+      "Individual Rights & Privacy Case"
+    ],
+    "columns": [
+      "Case Name Starts with A-J",
+      "Established a New Right"
+    ]
+  },
+  "32": {
+    "rows": [
+      "Criminal Procedure Case",
+      "Decided Before 1970"
+    ],
+    "columns": [
+      "Overturned a Prior Precedent",
+      "United States Not a Party"
+    ]
+  },
+  "33": {
+    "rows": [
+      "Case Name Starts with K-Z",
+      "Did Not Overturn a Prior Precedent"
+    ],
+    "columns": [
+      "Race Was a Central Issue",
+      "Unanimous Decision"
+    ]
+  },
+  "34": {
+    "rows": [
+      "Not a Unanimous Decision",
+      "United States Named as a Party"
+    ],
+    "columns": [
+      "Involves the 1st Amendment",
+      "Decided 1970 or Later"
+    ]
+  },
+  "35": {
+    "rows": [
+      "Race Was Not a Central Issue",
+      "No Amendment Directly Involved"
+    ],
+    "columns": [
+      "Did Not Overturn a Prior Precedent",
+      "Did Not Establish a New Right"
+    ]
+  },
+  "36": {
+    "rows": [
+      "Individual Rights & Privacy Case",
+      "United States Not a Party"
+    ],
+    "columns": [
+      "Involves the 14th Amendment",
+      "Case Name Starts with A-J"
+    ]
+  },
+  "37": {
+    "rows": [
+      "Did Not Establish a New Right",
+      "Involves the 5th Amendment"
+    ],
+    "columns": [
+      "Decided Before 1970",
+      "Equal Protection/Civil Rights Case"
+    ]
+  },
+  "38": {
+    "rows": [
+      "Unanimous Decision",
+      "Case Name Starts with K-Z"
+    ],
+    "columns": [
+      "Federalism/Government Structure Case",
+      "Overturned a Prior Precedent"
+    ]
+  },
+  "39": {
+    "rows": [
+      "Not a Unanimous Decision",
+      "United States Named as a Party"
+    ],
+    "columns": [
+      "Decided 1970 or Later",
+      "Race Was a Central Issue"
+    ]
+  },
+  "40": {
+    "rows": [
+      "Established a New Right",
+      "Did Not Overturn a Prior Precedent"
+    ],
+    "columns": [
+      "United States Not a Party",
+      "Race Was Not a Central Issue"
+    ]
+  },
+  "41": {
+    "rows": [
+      "Involves the 14th Amendment",
+      "Involves the 1st Amendment"
+    ],
+    "columns": [
+      "Case Name Starts with A-J",
+      "Race Was Not a Central Issue"
+    ]
+  },
+  "42": {
+    "rows": [
+      "Did Not Establish a New Right",
+      "Criminal Procedure Case"
+    ],
+    "columns": [
+      "Decided Before 1970",
+      "United States Not a Party"
+    ]
+  },
+  "43": {
+    "rows": [
+      "Unanimous Decision",
+      "Case Name Starts with K-Z"
+    ],
+    "columns": [
+      "Overturned a Prior Precedent",
+      "No Amendment Directly Involved"
+    ]
+  },
+  "44": {
+    "rows": [
+      "Decided 1970 or Later",
+      "Race Was a Central Issue"
+    ],
+    "columns": [
+      "Equal Protection/Civil Rights Case",
+      "United States Named as a Party"
+    ]
+  },
+  "45": {
+    "rows": [
+      "Involves the 5th Amendment",
+      "Individual Rights & Privacy Case"
+    ],
+    "columns": [
+      "Not a Unanimous Decision",
+      "Established a New Right"
+    ]
+  },
+  "46": {
+    "rows": [
+      "Involves the 1st Amendment",
+      "Did Not Overturn a Prior Precedent"
+    ],
+    "columns": [
+      "Race Was Not a Central Issue",
+      "Case Name Starts with A-J"
+    ]
+  },
+  "47": {
+    "rows": [
+      "United States Not a Party",
+      "Did Not Establish a New Right"
+    ],
+    "columns": [
+      "Criminal Procedure Case",
+      "Involves the 14th Amendment"
+    ]
+  },
+  "48": {
+    "rows": [
+      "Federalism/Government Structure Case",
+      "Decided Before 1970"
+    ],
+    "columns": [
+      "No Amendment Directly Involved",
+      "Case Name Starts with K-Z"
+    ]
+  },
+  "49": {
+    "rows": [
+      "Equal Protection/Civil Rights Case",
+      "United States Not a Party"
+    ],
+    "columns": [
+      "Race Was a Central Issue",
+      "Unanimous Decision"
+    ]
+  },
+  "50": {
+    "rows": [
+      "Individual Rights & Privacy Case",
+      "Decided 1970 or Later"
+    ],
+    "columns": [
+      "Not a Unanimous Decision",
+      "Established a New Right"
+    ]
+  },
+  "51": {
+    "rows": [
+      "Race Was Not a Central Issue",
+      "United States Named as a Party"
+    ],
+    "columns": [
+      "Overturned a Prior Precedent",
+      "Executive Power Case"
+    ]
+  },
+  "52": {
+    "rows": [
+      "Did Not Overturn a Prior Precedent",
+      "Case Name Starts with A-J"
+    ],
+    "columns": [
+      "Involves the 1st Amendment",
+      "Did Not Establish a New Right"
+    ]
+  },
+  "53": {
+    "rows": [
+      "Involves the 5th Amendment",
+      "No Amendment Directly Involved"
+    ],
+    "columns": [
+      "Case Name Starts with K-Z",
+      "Decided Before 1970"
+    ]
+  },
+  "54": {
+    "rows": [
+      "United States Not a Party",
+      "Involves the 14th Amendment"
+    ],
+    "columns": [
+      "Equal Protection/Civil Rights Case",
+      "Unanimous Decision"
+    ]
+  },
+  "55": {
+    "rows": [
+      "Not a Unanimous Decision",
+      "Established a New Right"
+    ],
+    "columns": [
+      "Individual Rights & Privacy Case",
+      "Decided 1970 or Later"
+    ]
+  },
+  "56": {
+    "rows": [
+      "Involves the 4th Amendment",
+      "United States Named as a Party"
+    ],
+    "columns": [
+      "Overturned a Prior Precedent",
+      "Race Was Not a Central Issue"
+    ]
+  },
+  "57": {
+    "rows": [
+      "Race Was a Central Issue",
+      "Involves the 1st Amendment"
+    ],
+    "columns": [
+      "Case Name Starts with A-J",
+      "Did Not Establish a New Right"
+    ]
+  },
+  "58": {
+    "rows": [
+      "Decided Before 1970",
+      "Did Not Overturn a Prior Precedent"
+    ],
+    "columns": [
+      "Criminal Procedure Case",
+      "No Amendment Directly Involved"
+    ]
+  },
+  "59": {
+    "rows": [
+      "Involves the 14th Amendment",
+      "Unanimous Decision"
+    ],
+    "columns": [
+      "United States Not a Party",
+      "Equal Protection/Civil Rights Case"
+    ]
+  },
+  "60": {
+    "rows": [
+      "Individual Rights & Privacy Case",
+      "Not a Unanimous Decision"
+    ],
+    "columns": [
+      "Case Name Starts with K-Z",
+      "Established a New Right"
+    ]
+  },
+  "61": {
+    "rows": [
+      "Executive Power Case",
+      "United States Named as a Party"
+    ],
+    "columns": [
+      "Race Was Not a Central Issue",
+      "Decided 1970 or Later"
+    ]
+  },
+  "62": {
+    "rows": [
+      "Case Name Starts with A-J",
+      "Did Not Establish a New Right"
+    ],
+    "columns": [
+      "Involves the 1st Amendment",
+      "Involves the 5th Amendment"
+    ]
+  },
+  "63": {
+    "rows": [
+      "Race Was a Central Issue",
+      "Involves the 4th Amendment"
+    ],
+    "columns": [
+      "Overturned a Prior Precedent",
+      "Decided Before 1970"
+    ]
+  },
+  "64": {
+    "rows": [
+      "United States Not a Party",
+      "Did Not Overturn a Prior Precedent"
+    ],
+    "columns": [
+      "Equal Protection/Civil Rights Case",
+      "Involves the 14th Amendment"
+    ]
+  },
+  "65": {
+    "rows": [
+      "Not a Unanimous Decision",
+      "Case Name Starts with K-Z"
+    ],
+    "columns": [
+      "Race Was Not a Central Issue",
+      "Criminal Procedure Case"
+    ]
+  },
+  "66": {
+    "rows": [
+      "No Amendment Directly Involved",
+      "United States Named as a Party"
+    ],
+    "columns": [
+      "Decided 1970 or Later",
+      "Executive Power Case"
+    ]
+  },
+  "67": {
+    "rows": [
+      "Did Not Establish a New Right",
+      "Unanimous Decision"
+    ],
+    "columns": [
+      "United States Not a Party",
+      "Involves the 1st Amendment"
+    ]
+  },
+  "68": {
+    "rows": [
+      "Case Name Starts with A-J",
+      "Overturned a Prior Precedent"
+    ],
+    "columns": [
+      "Decided Before 1970",
+      "Race Was a Central Issue"
+    ]
+  },
+  "69": {
+    "rows": [
+      "Individual Rights & Privacy Case",
+      "Involves the 5th Amendment"
+    ],
+    "columns": [
+      "Did Not Overturn a Prior Precedent",
+      "Established a New Right"
+    ]
+  },
+  "70": {
+    "rows": [
+      "Case Name Starts with K-Z",
+      "Involves the 14th Amendment"
+    ],
+    "columns": [
+      "Equal Protection/Civil Rights Case",
+      "Race Was Not a Central Issue"
+    ]
+  },
+  "71": {
+    "rows": [
+      "No Amendment Directly Involved",
+      "Not a Unanimous Decision"
+    ],
+    "columns": [
+      "United States Named as a Party",
+      "Decided 1970 or Later"
+    ]
+  },
+  "72": {
+    "rows": [
+      "Unanimous Decision",
+      "Involves the 1st Amendment"
+    ],
+    "columns": [
+      "Did Not Establish a New Right",
+      "United States Not a Party"
+    ]
+  },
+  "73": {
+    "rows": [
+      "Race Was a Central Issue",
+      "Federalism/Government Structure Case"
+    ],
+    "columns": [
+      "Decided Before 1970",
+      "Case Name Starts with A-J"
+    ]
+  },
+  "74": {
+    "rows": [
+      "Established a New Right",
+      "Did Not Overturn a Prior Precedent"
+    ],
+    "columns": [
+      "Involves the 5th Amendment",
+      "Individual Rights & Privacy Case"
+    ]
+  },
+  "75": {
+    "rows": [
+      "Equal Protection/Civil Rights Case",
+      "Case Name Starts with K-Z"
+    ],
+    "columns": [
+      "Involves the 14th Amendment",
+      "Race Was Not a Central Issue"
+    ]
+  },
+  "76": {
+    "rows": [
+      "Overturned a Prior Precedent",
+      "Involves the 4th Amendment"
+    ],
+    "columns": [
+      "Not a Unanimous Decision",
+      "Criminal Procedure Case"
+    ]
+  },
+  "77": {
+    "rows": [
+      "United States Not a Party",
+      "Did Not Establish a New Right"
+    ],
+    "columns": [
+      "Involves the 1st Amendment",
+      "Unanimous Decision"
+    ]
+  },
+  "78": {
+    "rows": [
+      "Executive Power Case",
+      "Decided 1970 or Later"
+    ],
+    "columns": [
+      "United States Named as a Party",
+      "No Amendment Directly Involved"
+    ]
+  },
+  "79": {
+    "rows": [
+      "Race Was a Central Issue",
+      "Individual Rights & Privacy Case"
+    ],
+    "columns": [
+      "Did Not Overturn a Prior Precedent",
+      "Decided Before 1970"
+    ]
+  },
+  "80": {
+    "rows": [
+      "Equal Protection/Civil Rights Case",
+      "Case Name Starts with A-J"
+    ],
+    "columns": [
+      "Established a New Right",
+      "Involves the 14th Amendment"
+    ]
+  },
+  "81": {
+    "rows": [
+      "Race Was Not a Central Issue",
+      "Criminal Procedure Case"
+    ],
+    "columns": [
+      "Not a Unanimous Decision",
+      "Involves the 4th Amendment"
+    ]
+  },
+  "82": {
+    "rows": [
+      "Overturned a Prior Precedent",
+      "United States Not a Party"
+    ],
+    "columns": [
+      "Case Name Starts with K-Z",
+      "Did Not Establish a New Right"
+    ]
+  },
+  "83": {
+    "rows": [
+      "United States Named as a Party",
+      "Executive Power Case"
+    ],
+    "columns": [
+      "No Amendment Directly Involved",
+      "Decided 1970 or Later"
+    ]
+  },
+  "84": {
+    "rows": [
+      "Federalism/Government Structure Case",
+      "Involves the 1st Amendment"
+    ],
+    "columns": [
+      "Unanimous Decision",
+      "Decided Before 1970"
+    ]
+  },
+  "85": {
+    "rows": [
+      "Race Was a Central Issue",
+      "Involves the 14th Amendment"
+    ],
+    "columns": [
+      "Case Name Starts with A-J",
+      "Did Not Overturn a Prior Precedent"
+    ]
+  },
+  "86": {
+    "rows": [
+      "Criminal Procedure Case",
+      "Established a New Right"
+    ],
+    "columns": [
+      "Race Was Not a Central Issue",
+      "Not a Unanimous Decision"
+    ]
+  },
+  "87": {
+    "rows": [
+      "Case Name Starts with K-Z",
+      "United States Not a Party"
+    ],
+    "columns": [
+      "Did Not Establish a New Right",
+      "Equal Protection/Civil Rights Case"
+    ]
+  },
+  "88": {
+    "rows": [
+      "Decided 1970 or Later",
+      "Case Name Starts with K-Z"
+    ],
+    "columns": [
+      "Overturned a Prior Precedent",
+      "Individual Rights & Privacy Case"
+    ]
+  },
+  "89": {
+    "rows": [
+      "No Amendment Directly Involved",
+      "Involves the 1st Amendment"
+    ],
+    "columns": [
+      "Unanimous Decision",
+      "Decided Before 1970"
+    ]
+  },
+  "90": {
+    "rows": [
+      "Federalism/Government Structure Case",
+      "Involves the 14th Amendment"
+    ],
+    "columns": [
+      "Did Not Overturn a Prior Precedent",
+      "Case Name Starts with A-J"
+    ]
+  },
+  "91": {
+    "rows": [
+      "Not a Unanimous Decision",
+      "Race Was Not a Central Issue"
+    ],
+    "columns": [
+      "Established a New Right",
+      "Criminal Procedure Case"
+    ]
+  },
+  "92": {
+    "rows": [
+      "United States Not a Party",
+      "Equal Protection/Civil Rights Case"
+    ],
+    "columns": [
+      "Race Was a Central Issue",
+      "Involves the 5th Amendment"
+    ]
+  },
+  "93": {
+    "rows": [
+      "Case Name Starts with K-Z",
+      "Overturned a Prior Precedent"
+    ],
+    "columns": [
+      "Involves the 4th Amendment",
+      "Did Not Establish a New Right"
+    ]
+  },
+  "94": {
+    "rows": [
+      "Unanimous Decision",
+      "No Amendment Directly Involved"
+    ],
+    "columns": [
+      "Decided Before 1970",
+      "United States Named as a Party"
+    ]
+  },
+  "95": {
+    "rows": [
+      "Involves the 14th Amendment",
+      "Did Not Overturn a Prior Precedent"
+    ],
+    "columns": [
+      "United States Not a Party",
+      "Decided 1970 or Later"
+    ]
+  },
+  "96": {
+    "rows": [
+      "Individual Rights & Privacy Case",
+      "Not a Unanimous Decision"
+    ],
+    "columns": [
+      "Race Was Not a Central Issue",
+      "Case Name Starts with A-J"
+    ]
+  },
+  "97": {
+    "rows": [
+      "Established a New Right",
+      "Race Was a Central Issue"
+    ],
+    "columns": [
+      "Not a Unanimous Decision",
+      "Equal Protection/Civil Rights Case"
+    ]
+  },
+  "98": {
+    "rows": [
+      "Involves the 1st Amendment",
+      "Involves the 4th Amendment"
+    ],
+    "columns": [
+      "Did Not Establish a New Right",
+      "Case Name Starts with K-Z"
+    ]
+  },
+  "99": {
+    "rows": [
+      "Decided Before 1970",
+      "Unanimous Decision"
+    ],
+    "columns": [
+      "Federalism/Government Structure Case",
+      "Overturned a Prior Precedent"
+    ]
+  },
+  "100": {
+    "rows": [
+      "Involves the 5th Amendment",
+      "Involves the 14th Amendment"
+    ],
+    "columns": [
+      "United States Not a Party",
+      "Did Not Overturn a Prior Precedent"
+    ]
+  },
+  "101": {
+    "rows": [
+      "Did Not Establish a New Right",
+      "Race Was Not a Central Issue"
+    ],
+    "columns": [
+      "Case Name Starts with A-J",
+      "Decided 1970 or Later"
+    ]
+  },
+  "102": {
+    "rows": [
+      "United States Named as a Party",
+      "Equal Protection/Civil Rights Case"
+    ],
+    "columns": [
+      "Not a Unanimous Decision",
+      "Race Was a Central Issue"
+    ]
+  },
+  "103": {
+    "rows": [
+      "Involves the 4th Amendment",
+      "Case Name Starts with K-Z"
+    ],
+    "columns": [
+      "Criminal Procedure Case",
+      "Did Not Establish a New Right"
+    ]
+  },
+  "104": {
+    "rows": [
+      "Unanimous Decision",
+      "United States Not a Party"
+    ],
+    "columns": [
+      "Involves the 1st Amendment",
+      "Decided Before 1970"
+    ]
+  },
+  "105": {
+    "rows": [
+      "Race Was Not a Central Issue",
+      "No Amendment Directly Involved"
+    ],
+    "columns": [
+      "Federalism/Government Structure Case",
+      "Did Not Overturn a Prior Precedent"
+    ]
+  },
+  "106": {
+    "rows": [
+      "Overturned a Prior Precedent",
+      "Established a New Right"
+    ],
+    "columns": [
+      "Decided 1970 or Later",
+      "Individual Rights & Privacy Case"
+    ]
+  },
+  "107": {
+    "rows": [
+      "Not a Unanimous Decision",
+      "Race Was a Central Issue"
+    ],
+    "columns": [
+      "Involves the 14th Amendment",
+      "Case Name Starts with A-J"
+    ]
+  },
+  "108": {
+    "rows": [
+      "Did Not Establish a New Right",
+      "United States Named as a Party"
+    ],
+    "columns": [
+      "Involves the 4th Amendment",
+      "Case Name Starts with K-Z"
+    ]
+  },
+  "109": {
+    "rows": [
+      "Involves the 5th Amendment",
+      "Involves the 1st Amendment"
+    ],
+    "columns": [
+      "United States Not a Party",
+      "Decided Before 1970"
+    ]
+  },
+  "110": {
+    "rows": [
+      "Unanimous Decision",
+      "Executive Power Case"
+    ],
+    "columns": [
+      "Race Was Not a Central Issue",
+      "Did Not Overturn a Prior Precedent"
+    ]
+  },
+  "111": {
+    "rows": [
+      "Overturned a Prior Precedent",
+      "Individual Rights & Privacy Case"
+    ],
+    "columns": [
+      "Established a New Right",
+      "Decided 1970 or Later"
+    ]
+  },
+  "112": {
+    "rows": [
+      "Not a Unanimous Decision",
+      "Race Was a Central Issue"
+    ],
+    "columns": [
+      "Case Name Starts with A-J",
+      "United States Not a Party"
+    ]
+  },
+  "113": {
+    "rows": [
+      "Did Not Establish a New Right",
+      "United States Named as a Party"
+    ],
+    "columns": [
+      "Case Name Starts with K-Z",
+      "No Amendment Directly Involved"
+    ]
+  },
+  "114": {
+    "rows": [
+      "Equal Protection/Civil Rights Case",
+      "Not a Unanimous Decision"
+    ],
+    "columns": [
+      "Involves the 14th Amendment",
+      "Decided Before 1970"
+    ]
+  },
+  "115": {
+    "rows": [
+      "Involves the 1st Amendment",
+      "Unanimous Decision"
+    ],
+    "columns": [
+      "Race Was Not a Central Issue",
+      "Did Not Overturn a Prior Precedent"
+    ]
+  },
+  "116": {
+    "rows": [
+      "Not a Unanimous Decision",
+      "Overturned a Prior Precedent"
+    ],
+    "columns": [
+      "Criminal Procedure Case",
+      "Decided 1970 or Later"
+    ]
+  },
+  "117": {
+    "rows": [
+      "Involves the 5th Amendment",
+      "Individual Rights & Privacy Case"
+    ],
+    "columns": [
+      "Case Name Starts with A-J",
+      "United States Not a Party"
+    ]
+  },
+  "118": {
+    "rows": [
+      "Did Not Establish a New Right",
+      "Case Name Starts with K-Z"
+    ],
+    "columns": [
+      "Involves the 4th Amendment",
+      "United States Named as a Party"
+    ]
+  },
+  "119": {
+    "rows": [
+      "United States Not a Party",
+      "Race Was a Central Issue"
+    ],
+    "columns": [
+      "Decided Before 1970",
+      "Involves the 14th Amendment"
+    ]
+  },
+  "120": {
+    "rows": [
+      "Unanimous Decision",
+      "Did Not Overturn a Prior Precedent"
+    ],
+    "columns": [
+      "Involves the 1st Amendment",
+      "No Amendment Directly Involved"
+    ]
+  },
+  "121": {
+    "rows": [
+      "Decided 1970 or Later",
+      "Not a Unanimous Decision"
+    ],
+    "columns": [
+      "Equal Protection/Civil Rights Case",
+      "Established a New Right"
+    ]
+  },
+  "122": {
+    "rows": [
+      "Overturned a Prior Precedent",
+      "Race Was Not a Central Issue"
+    ],
+    "columns": [
+      "Criminal Procedure Case",
+      "United States Not a Party"
+    ]
+  },
+  "123": {
+    "rows": [
+      "Involves the 4th Amendment",
+      "Did Not Establish a New Right"
+    ],
+    "columns": [
+      "Case Name Starts with K-Z",
+      "United States Named as a Party"
+    ]
+  },
+  "124": {
+    "rows": [
+      "Decided Before 1970",
+      "Involves the 14th Amendment"
+    ],
+    "columns": [
+      "United States Not a Party",
+      "Race Was a Central Issue"
+    ]
+  },
+  "125": {
+    "rows": [
+      "Did Not Overturn a Prior Precedent",
+      "Federalism/Government Structure Case"
+    ],
+    "columns": [
+      "Case Name Starts with A-J",
+      "Unanimous Decision"
+    ]
+  },
+  "126": {
+    "rows": [
+      "Decided 1970 or Later",
+      "Not a Unanimous Decision"
+    ],
+    "columns": [
+      "Involves the 1st Amendment",
+      "United States Not a Party"
+    ]
+  },
+  "127": {
+    "rows": [
+      "Equal Protection/Civil Rights Case",
+      "Race Was Not a Central Issue"
+    ],
+    "columns": [
+      "Overturned a Prior Precedent",
+      "Did Not Establish a New Right"
+    ]
+  },
+  "128": {
+    "rows": [
+      "Did Not Overturn a Prior Precedent",
+      "Involves the 4th Amendment"
+    ],
+    "columns": [
+      "Case Name Starts with K-Z",
+      "Criminal Procedure Case"
+    ]
+  },
+  "129": {
+    "rows": [
+      "Race Was a Central Issue",
+      "No Amendment Directly Involved"
+    ],
+    "columns": [
+      "United States Named as a Party",
+      "Decided Before 1970"
+    ]
+  },
+  "130": {
+    "rows": [
+      "Involves the 14th Amendment",
+      "Federalism/Government Structure Case"
+    ],
+    "columns": [
+      "Unanimous Decision",
+      "Case Name Starts with A-J"
+    ]
+  },
+  "131": {
+    "rows": [
+      "Decided 1970 or Later",
+      "United States Not a Party"
+    ],
+    "columns": [
+      "Individual Rights & Privacy Case",
+      "Established a New Right"
+    ]
+  },
+  "132": {
+    "rows": [
+      "Not a Unanimous Decision",
+      "Involves the 1st Amendment"
+    ],
+    "columns": [
+      "Did Not Establish a New Right",
+      "Race Was Not a Central Issue"
+    ]
+  },
+  "133": {
+    "rows": [
+      "Case Name Starts with K-Z",
+      "Did Not Overturn a Prior Precedent"
+    ],
+    "columns": [
+      "Involves the 5th Amendment",
+      "Criminal Procedure Case"
+    ]
+  },
+  "134": {
+    "rows": [
+      "Equal Protection/Civil Rights Case",
+      "Decided Before 1970"
+    ],
+    "columns": [
+      "Race Was a Central Issue",
+      "Case Name Starts with K-Z"
+    ]
+  },
+  "135": {
+    "rows": [
+      "Overturned a Prior Precedent",
+      "No Amendment Directly Involved"
+    ],
+    "columns": [
+      "Unanimous Decision",
+      "United States Named as a Party"
+    ]
+  },
+  "136": {
+    "rows": [
+      "United States Not a Party",
+      "Case Name Starts with A-J"
+    ],
+    "columns": [
+      "Did Not Overturn a Prior Precedent",
+      "Involves the 14th Amendment"
+    ]
+  },
+  "137": {
+    "rows": [
+      "Not a Unanimous Decision",
+      "Decided 1970 or Later"
+    ],
+    "columns": [
+      "Established a New Right",
+      "Race Was Not a Central Issue"
+    ]
+  },
+  "138": {
+    "rows": [
+      "Did Not Establish a New Right",
+      "Involves the 4th Amendment"
+    ],
+    "columns": [
+      "Overturned a Prior Precedent",
+      "Criminal Procedure Case"
+    ]
+  },
+  "139": {
+    "rows": [
+      "Involves the 1st Amendment",
+      "Involves the 5th Amendment"
+    ],
+    "columns": [
+      "Decided Before 1970",
+      "Case Name Starts with K-Z"
+    ]
+  },
+  "140": {
+    "rows": [
+      "Unanimous Decision",
+      "United States Named as a Party"
+    ],
+    "columns": [
+      "No Amendment Directly Involved",
+      "Did Not Overturn a Prior Precedent"
+    ]
+  },
+  "141": {
+    "rows": [
+      "Equal Protection/Civil Rights Case",
+      "Involves the 14th Amendment"
+    ],
+    "columns": [
+      "Race Was a Central Issue",
+      "Case Name Starts with A-J"
+    ]
+  },
+  "142": {
+    "rows": [
+      "Decided 1970 or Later",
+      "Race Was Not a Central Issue"
+    ],
+    "columns": [
+      "Not a Unanimous Decision",
+      "Individual Rights & Privacy Case"
+    ]
+  },
+  "143": {
+    "rows": [
+      "Did Not Establish a New Right",
+      "Criminal Procedure Case"
+    ],
+    "columns": [
+      "Overturned a Prior Precedent",
+      "Involves the 4th Amendment"
+    ]
+  },
+  "144": {
+    "rows": [
+      "United States Not a Party",
+      "Decided Before 1970"
+    ],
+    "columns": [
+      "Case Name Starts with K-Z",
+      "Established a New Right"
+    ]
+  },
+  "145": {
+    "rows": [
+      "Executive Power Case",
+      "United States Named as a Party"
+    ],
+    "columns": [
+      "No Amendment Directly Involved",
+      "Did Not Overturn a Prior Precedent"
+    ]
+  },
+  "146": {
+    "rows": [
+      "Case Name Starts with A-J",
+      "Equal Protection/Civil Rights Case"
+    ],
+    "columns": [
+      "Race Was a Central Issue",
+      "Involves the 14th Amendment"
+    ]
+  },
+  "147": {
+    "rows": [
+      "Not a Unanimous Decision",
+      "Race Was Not a Central Issue"
+    ],
+    "columns": [
+      "Decided 1970 or Later",
+      "Involves the 1st Amendment"
+    ]
+  },
+  "148": {
+    "rows": [
+      "Decided Before 1970",
+      "Did Not Establish a New Right"
+    ],
+    "columns": [
+      "Overturned a Prior Precedent",
+      "Unanimous Decision"
+    ]
+  },
+  "149": {
+    "rows": [
+      "Did Not Establish a New Right",
+      "Case Name Starts with K-Z"
+    ],
+    "columns": [
+      "United States Not a Party",
+      "Federalism/Government Structure Case"
+    ]
+  },
+  "150": {
+    "rows": [
+      "No Amendment Directly Involved",
+      "Did Not Overturn a Prior Precedent"
+    ],
+    "columns": [
+      "United States Named as a Party",
+      "Did Not Establish a New Right"
+    ]
+  }
+}

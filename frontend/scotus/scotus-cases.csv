@@ -1,0 +1,32 @@
+Case,YearDecided,Unanimous,Amendment,AreaOfLaw,OverturnedPriorPrecedent,EstablishedNewRight,UnitedStatesParty,RaceCentralIssue
+Marbury v. Madison,1803,Yes,None,Federalism/Government Structure,No,No,No,No
+McCulloch v. Maryland,1819,Yes,None,Federalism/Government Structure,No,No,No,No
+Gibbons v. Ogden,1824,Yes,None,Federalism/Government Structure,No,No,No,No
+Dred Scott v. Sandford,1857,No,5th,Equal Protection/Civil Rights,No,No,No,Yes
+Plessy v. Ferguson,1896,No,14th,Equal Protection/Civil Rights,No,No,No,Yes
+Schenck v. United States,1919,Yes,1st,First Amendment,No,No,Yes,No
+Korematsu v. United States,1944,No,5th,Equal Protection/Civil Rights,No,No,Yes,Yes
+Brown v. Board of Education,1954,Yes,14th,Equal Protection/Civil Rights,Yes,No,No,Yes
+Cooper v. Aaron,1958,Yes,14th,Equal Protection/Civil Rights,No,No,No,Yes
+Mapp v. Ohio,1961,No,4th,Criminal Procedure,Yes,No,No,No
+Engel v. Vitale,1962,No,1st,First Amendment,No,No,No,No
+Gideon v. Wainwright,1963,Yes,6th,Criminal Procedure,Yes,No,No,No
+New York Times Co. v. Sullivan,1964,Yes,1st,First Amendment,No,No,No,No
+Griswold v. Connecticut,1965,No,14th,Individual Rights & Privacy,No,Yes,No,No
+Miranda v. Arizona,1966,No,5th,Criminal Procedure,No,Yes,No,No
+Loving v. Virginia,1967,Yes,14th,Equal Protection/Civil Rights,No,No,No,Yes
+Katz v. United States,1967,No,4th,Criminal Procedure,Yes,No,Yes,No
+Terry v. Ohio,1968,No,4th,Criminal Procedure,No,No,No,No
+Tinker v. Des Moines,1969,No,1st,First Amendment,No,No,No,No
+New York Times Co. v. United States,1971,No,1st,First Amendment,No,No,Yes,No
+Roe v. Wade,1973,No,14th,Individual Rights & Privacy,No,Yes,No,No
+United States v. Nixon,1974,Yes,None,Executive Power,No,No,Yes,No
+Texas v. Johnson,1989,No,1st,First Amendment,No,No,No,No
+Planned Parenthood v. Casey,1992,No,14th,Individual Rights & Privacy,No,No,No,No
+Bush v. Gore,2000,No,14th,Elections & Voting,No,No,No,No
+District of Columbia v. Heller,2008,No,2nd,Individual Rights & Privacy,No,Yes,No,No
+Citizens United v. FEC,2010,No,1st,First Amendment,Yes,No,No,No
+Obergefell v. Hodges,2015,No,14th,Equal Protection/Civil Rights,Yes,Yes,No,No
+Dobbs v. Jackson Women's Health Organization,2022,No,14th,Individual Rights & Privacy,Yes,No,No,No
+Students for Fair Admissions v. Harvard/UNC,2023,No,14th,Equal Protection/Civil Rights,Yes,No,No,Yes
+Trump v. United States,2024,No,None,Executive Power,No,No,Yes,No

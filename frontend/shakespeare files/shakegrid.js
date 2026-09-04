@@ -278,7 +278,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  let guessesLeft = 9;
+  let guessesLeft = 10;
   const usedPlays = new Set();
 
   function saveGameState() {
@@ -301,7 +301,7 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.removeItem("gridOfMindsShakespeareGame");
       return;
     }
-    guessesLeft = state.guessesLeft ?? 9;
+    guessesLeft = state.guessesLeft ?? 10;
     document.querySelector(".guesses-count").textContent = guessesLeft;
     (state.usedPlays || []).forEach(name => usedPlays.add(name));
     const cells = document.querySelectorAll(".cell");
@@ -380,7 +380,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       localStorage.removeItem("gridOfMindsShakespeareGame");
       const gc = document.querySelector(".guesses-count");
-      if (gc) gc.textContent = "9";
+      if (gc) gc.textContent = "10";
       document.querySelectorAll(".main-grid .cell").forEach(c => {
         c.textContent = "";
         c.className = "cell";

@@ -300,8 +300,35 @@ async function loadPresidents() {
             if (v === "y" || v === "yes" || v === "true" || v === "1") return "yes";
             if (v === "n" || v === "no" || v === "false" || v === "0") return "no";
             return v;
+          })(),
+
+          // === 500+ electoral votes in election ===
+          electoral_votes_500_plus: (() => {
+            const key = Object.keys(p).find(k => {
+              const s = String(k).toLowerCase().replace(/[_\s+]+/g, " ").trim();
+              return s.includes("500") && s.includes("electoral");
+            });
+            const raw = key ? p[key] : "";
+            const v = String(raw || "").trim().toLowerCase();
+            if (v === "y" || v === "yes" || v === "true" || v === "1") return "yes";
+            if (v === "n" || v === "no" || v === "false" || v === "0") return "no";
+            return v;
+          })(),
+
+          // === Asked Congress for Declaration of War ===
+          asked_declaration_of_war: (() => {
+            const key = Object.keys(p).find(k => {
+              const s = String(k).toLowerCase().replace(/[_\s]+/g, " ").trim();
+              return s.includes("declaration of war")
+                  || (s.includes("asked") && s.includes("congress") && s.includes("war"));
+            });
+            const raw = key ? p[key] : "";
+            const v = String(raw || "").trim().toLowerCase();
+            if (v === "y" || v === "yes" || v === "true" || v === "1") return "yes";
+            if (v === "n" || v === "no" || v === "false" || v === "0") return "no";
+            return v;
           })()
-        })).filter(p => p.name);        
+        })).filter(p => p.name);
         resolve();
       },
       error: reject
@@ -365,6 +392,22 @@ function matchMatchesLabel(p, label) {
   if (nameMatch) {
     const targetName = nameMatch[1].trim().toLowerCase();
     return name.includes(targetName) || lastName.includes(targetName);
+  }
+
+  if (
+    (L.includes("500") && L.includes("electoral")) ||
+    L.includes("500+ electoral") ||
+    L.includes("500 or more electoral")
+  ) {
+    return checkFlag(p.electoral_votes_500_plus, neg);
+  }
+
+  if (
+    L.includes("declaration of war") ||
+    (L.includes("asked congress") && L.includes("war")) ||
+    L.includes("asked for a declaration of war")
+  ) {
+    return checkFlag(p.asked_declaration_of_war, neg);
   }
 
   // Party

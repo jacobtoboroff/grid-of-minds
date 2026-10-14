@@ -399,7 +399,7 @@ function matchMatchesLabel(p, label) {
     l.includes("500+ electoral") ||
     l.includes("500 or more electoral")
   ) {
-    return checkFlag(p.electoral_votes_500_plus, neg);
+    return yes.includes(norm(p.electoral_votes_500_plus));
   }
 
   if (
@@ -407,7 +407,7 @@ function matchMatchesLabel(p, label) {
     (l.includes("asked congress") && L.includes("war")) ||
     l.includes("asked for a declaration of war")
   ) {
-    return checkFlag(p.asked_declaration_of_war, neg);
+    return yes.includes(norm(p.asked_declaration_of_war));
   }
 
   // Party

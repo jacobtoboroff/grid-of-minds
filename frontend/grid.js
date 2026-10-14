@@ -395,17 +395,17 @@ function matchMatchesLabel(p, label) {
   }
 
   if (
-    (L.includes("500") && L.includes("electoral")) ||
-    L.includes("500+ electoral") ||
-    L.includes("500 or more electoral")
+    (l.includes("500") && L.includes("electoral")) ||
+    l.includes("500+ electoral") ||
+    l.includes("500 or more electoral")
   ) {
     return checkFlag(p.electoral_votes_500_plus, neg);
   }
 
   if (
-    L.includes("declaration of war") ||
-    (L.includes("asked congress") && L.includes("war")) ||
-    L.includes("asked for a declaration of war")
+    l.includes("declaration of war") ||
+    (l.includes("asked congress") && L.includes("war")) ||
+    l.includes("asked for a declaration of war")
   ) {
     return checkFlag(p.asked_declaration_of_war, neg);
   }
